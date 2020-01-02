@@ -81,7 +81,6 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
                 e.printStackTrace();
             }
         }
-
     }
 
     //@Test(description = "取消授权")
