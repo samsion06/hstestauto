@@ -87,7 +87,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description ="分页查询用户收货地址列表")
+    @Test(description ="5.分页查询用户收货地址列表")
     public void queryUserAddressByPageTest(){
         try{
             httpClient = HttpClients.createDefault();
@@ -103,7 +103,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description ="获取省市区域树area")
+    @Test(description ="6.获取省市区域树area")
     public void  getSysSubAreaTest(){
         try{
             httpClient = HttpClients.createDefault();
@@ -119,7 +119,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description ="获取省市区域树tree")
+    @Test(description ="7.获取省市区域树tree")
     public void  getSysAreaTreeTest(){
         try{
             httpClient = HttpClients.createDefault();
@@ -134,7 +134,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description ="更新用户收货地址标签(幂等 x")
+    //@Test(description ="8.更新用户收货地址标签(幂等 x")
     public void tagUpdateTest(){
         try{
             httpClient = HttpClients.createDefault();

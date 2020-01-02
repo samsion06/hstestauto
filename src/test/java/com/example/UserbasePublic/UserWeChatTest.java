@@ -71,7 +71,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description = "用户一键登录微信")
+    @Test(description = "3.用户一键登录微信")
     public void loginByOneKey(){ ;
         try{
 
@@ -96,8 +96,8 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description = "用户微信登录(幂等)" +
-                        "根据openId查询用户微信列表信息 ")
+    @Test(description = "4.用户微信登录(幂等)" +
+                        "5.根据openId查询用户微信列表信息 ")
     public void weChatLoginAndGetInfoByOpenId(){
         try{
             String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
@@ -132,6 +132,13 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             }
         }
     }
+
+    //根据渠道用户Id查询用户微信列表信息(幂等)
+    @Test(description = "3.用户一键登录微信")
+    public void test(){
+
+    }
+
 
     @Test(description = "检查手机号绑定")
     public void checkPhoneTest(){
