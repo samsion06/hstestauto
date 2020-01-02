@@ -1,9 +1,7 @@
 package com.example.UserbasePublic;
-
-import com.example.utils.CheckReponseResult;
+import com.example.utils.DataTransferUtil;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
-import com.hs.user.base.proto.UserAddressServiceProto;
 import com.hs.user.base.proto.UserMobileAreaServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -16,6 +14,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.net.URI;
 
 @SpringBootTest
@@ -29,7 +28,7 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
     private static HttpResponse response;
 
     @Test(description = "用户手机国际区号查询(幂等)")
-    public void serMobileAreaCodeList_Empty_Test(){
+    public void serMobileAreaCodeListTest(){
         try{
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/list/query", null);
@@ -45,11 +44,17 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             Reporter.log(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    //@Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
-    public void userMobileAreaCodeQuery_Null_Test() {
+    @Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
+    public void userMobileAreaCodeQueryTest() {
 
         try {
             httpClient = HttpClients.createDefault();
@@ -57,15 +62,31 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             post = new HttpPost(uri);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-
-
-
+            byteArrayEntity = DataTransferUtil.UserMobileAreaCodeRequest("86","CN");
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            JsonFormat jsonFormat =new JsonFormat();
+            if (response.getStatusLine().getStatusCode() == 200) {
+                UserMobileAreaServiceProto.UserMobileAreaCodeResponse resp = UserMobileAreaServiceProto.UserMobileAreaCodeResponse.parseFrom(response.getEntity().getContent());
+                if (UserMobileAreaServiceProto.UserMobileAreaCode.getDefaultInstance() ==resp.getUserMobileAreaCode()|| UserMobileAreaServiceProto.UserMobileAreaCode.getDefaultInstance().equals(resp.getUserMobileAreaCode())) {
+                    System.out.println("Is Empty");
+                }
+            } else {
+                System.out.println(response.getStatusLine().getStatusCode());
+            }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-
-
     }
+
+
 
 
 }
