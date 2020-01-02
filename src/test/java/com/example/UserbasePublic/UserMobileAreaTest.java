@@ -47,6 +47,24 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
         }
     }
 
+    @Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
+    public void userMobileAreaCodeQuery_Null_Test() {
+
+        try {
+            httpClient = HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/query", null);
+            post = new HttpPost(uri);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
 
 
 }

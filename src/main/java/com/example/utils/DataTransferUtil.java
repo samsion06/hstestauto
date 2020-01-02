@@ -509,5 +509,20 @@ public class DataTransferUtil {
         return bytes;
     }
 
+    /**
+     * 手机国际区号
+     */
+    //根据手机国际区号查询手机国际区号信息查询(幂等)
+    public static ByteArrayEntity UserMobileAreaCodeRequest(String mobileAreaCode,String ccIso){
+        UserMobileAreaServiceProto.UserMobileAreaCodeRequest.Builder builder =UserMobileAreaServiceProto.UserMobileAreaCodeRequest.newBuilder();
+        builder.setMobileAreaCode(mobileAreaCode);
+        builder.setCcIso(ccIso);
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        System.out.println(builder);
+        Reporter.log("根据手机国际区号查询手机国际区号信息查询(幂等)_"+incomeMessage+builder+ "}");
+        return bytes;
+    }
+
+
 
 }
