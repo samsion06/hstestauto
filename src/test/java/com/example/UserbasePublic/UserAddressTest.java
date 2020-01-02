@@ -134,7 +134,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description ="更新用户收货地址标签(幂等 x")
+    //@Test(description ="更新用户收货地址标签(幂等 x")
     public void tagUpdateTest(){
         try{
             httpClient = HttpClients.createDefault();

@@ -47,7 +47,7 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
+    //@Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
     public void userMobileAreaCodeQuery_Null_Test() {
 
         try {
