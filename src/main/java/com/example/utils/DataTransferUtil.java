@@ -118,16 +118,32 @@ public class DataTransferUtil {
     }
 
     //修改用户身份状态
-    public static ByteArrayEntity UserStatusUpdateRequest(Integer channelId, String unionId, String openId){
-        UserBaseServiceProto.UserInfoUnionIdOpenIdRequest.Builder builder= UserBaseServiceProto.UserInfoUnionIdOpenIdRequest.newBuilder();
+    public static ByteArrayEntity UserStatusUpdateRequest(Integer channelId, String channelUserId, Integer userStatus){
+        UserBaseServiceProto.UserStatusUpdateRequest.Builder builder= UserBaseServiceProto.UserStatusUpdateRequest.newBuilder();
         builder.setChannelId(channelId);
-        builder.setOpenId(openId);
-        builder.setUnionId(unionId);
-        //System.out.println(builder);
+        builder.setChannelUserId(channelUserId);
+        builder.setUserStatus(userStatus);
+        System.out.println(builder);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         Reporter.log("修改用户身份状态_"+incomeMessage+builder+ "}");
         return bytes;
     }
+
+    //修改用户邀请码(幂等)
+    public static ByteArrayEntity UserInviteCodeUpdateRequest(Integer channelId, String channelUserId, String inviteCode){
+        UserBaseServiceProto.UserInviteCodeUpdateRequest.Builder builder= UserBaseServiceProto.UserInviteCodeUpdateRequest.newBuilder();
+        builder.setChannelId(channelId);
+        builder.setChannelUserId(channelUserId);
+        builder.setInviteCode(inviteCode);
+        System.out.println(builder);
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        Reporter.log("修改用户身份状态_"+incomeMessage+builder+ "}");
+        return bytes;
+    }
+
+
+
+
 
 
     //获取用户基础信息
