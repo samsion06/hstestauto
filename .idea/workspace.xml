@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserIdCardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UseraliPayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UseraliPayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager" selected="TestNG.UseraliPayTest.test6">
-    <configuration name="UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -162,7 +162,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577934948857</updated>
       <workItem from="1577934952275" duration="1969000" />
-      <workItem from="1577943484700" duration="13435000" />
+      <workItem from="1577943484700" duration="13688000" />
     </task>
     <task id="LOCAL-00001" summary="ASDASD">
       <created>1577936027333</created>
@@ -360,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577957261986</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="update">
+      <created>1577957950801</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1577957950801</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,11 +395,11 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="690" y="407" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.954@0.23.1680.954" timestamp="1577935020756" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1577957261895">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1577957950696">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1577951534967" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577957261895" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577957950696" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1577955228041" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1577936027017" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom" timestamp="1577957838864">
