@@ -113,10 +113,10 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-//        @org.testng.annotations.Test(description = "1.实名认证" +
-//                    "                               2.实名认证查询")
+        @org.testng.annotations.Test(description = "1.实名认证" +
+                    "                               2.实名认证查询")
     public void test6(){
-        String channeluserId="2571";
+        String channeluserId="56903884418";
         try {
 //            uri = new URI(HttpConfig.scheme, HttpConfig.url, "/user/idCard/identify","");
 //            post = new HttpPost(uri);

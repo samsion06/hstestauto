@@ -318,12 +318,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
 }
 
 
