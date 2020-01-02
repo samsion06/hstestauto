@@ -119,9 +119,9 @@
         <result column="login_name" property="loginName"/>
         <result column="login_pwd" property="loginPwd"/>
         <result column="last_login_time" property="loginSalt"/>
-        <result column="create_time" property="isDelete"/>
-<!--        <result column="update_time" property="creatTime"/>-->
-<!--        <result column="is_delete" property="updateTime"/>-->
+        <result column="is_delete" property="isDelete"/>
+<!--        <result column="update_time" property="updateTime"/>-->
+<!--        <result column="creat_Time" property="creatTime"/>-->
     </resultMap>
 
     <select id="queryUserLoginInfo"  parameterType="java.lang.String" resultMap="UserLoginInfoMap">
