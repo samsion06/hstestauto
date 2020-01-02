@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.hs.protosdk.platfrom-service:product-service-api:0.1.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hs/protosdk/platfrom-service/product-service-api/0.1.4/product-service-api-0.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hs/protosdk/platfrom-service/product-service-api/0.1.4/product-service-api-0.1.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/hs/protosdk/platfrom-service/product-service-api/0.1.4/product-service-api-0.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
