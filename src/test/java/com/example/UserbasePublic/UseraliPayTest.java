@@ -112,10 +112,8 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             }
         }
     }
-
-
-    }
 }
+
 
 
 
