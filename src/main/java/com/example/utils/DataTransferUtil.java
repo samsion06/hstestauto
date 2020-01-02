@@ -371,6 +371,7 @@ public class DataTransferUtil {
         builder.setAddressId(addressId);
         builder.setAddressTag(addressTag);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        System.out.println(builder);
         Reporter.log("更新用户收货地址标签_"+incomeMessage+builder+ "}");
         return bytes;
     }

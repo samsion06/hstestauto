@@ -128,23 +128,22 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponses(response,UserAddressServiceProto.SysAreaNodeTreeResponse.class);
-            System.out.println("123");
 
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    @Test(description ="更新用户收货地址标签(幂等)2020/01/02")
+    @Test(description ="更新用户收货地址标签(幂等 x")
     public void tagUpdateTest(){
         try{
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/tag/update", null);
             post = new HttpPost(uri);
-            byteArrayEntity =  DataTransferUtil.UserAddressTagRequest("5201314",1,"1",1);
+            byteArrayEntity =  DataTransferUtil.UserAddressTagRequest("17702015334",1,"774195ceb7ce455b95c69d2beb1f5723",2);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            CheckReponseResult.AssertResponses(response,UserAddressServiceProto.SysAreaNodeTreeResponse.class);
+            CheckReponseResult.AssertResponse(response);
         }catch (Exception e){
             e.printStackTrace();
         }

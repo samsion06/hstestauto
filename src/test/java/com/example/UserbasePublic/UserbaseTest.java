@@ -285,7 +285,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "修改用户身份状态")
+    //@Test(description = "修改用户身份状态 404")
     public void userStatusUpdate(){
         try{
             httpClient=HttpClients.createDefault();
@@ -296,6 +296,24 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    //@Test(description = "修改用户邀请码(幂等) 404")
+    public void inviteCodeUpdate(){
+        try{
+
+            httpClient=HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/invite/code/update ","");
+            post = new HttpPost(uri);;
+            byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(channelId, "3693070", "5201314");
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponses(response, UserBaseServiceProto.ResponseCode.class);
+
         }catch (Exception e){
             e.printStackTrace();
         }
