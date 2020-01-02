@@ -84,7 +84,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
 
     }
 
-   // @Test(description = "取消授权")
+    @Test(description = "取消授权")
     public void test1(){
         String channelUserId="184003";
         String tbAccount="327420130";

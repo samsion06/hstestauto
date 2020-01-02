@@ -39,7 +39,8 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             JsonFormat jsonFormat =new JsonFormat();
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserMobileAreaServiceProto.UserMobileAreaCodeListResponse resp = UserMobileAreaServiceProto.UserMobileAreaCodeListResponse.parseFrom(response.getEntity().getContent());
-            Assert.assertTrue(resp.getUserMobileAreaCodeList().isEmpty(),"返回的对象为空");
+            System.out.println(resp.getUserMobileAreaCodeList().isEmpty());
+            Assert.assertFalse(resp.getUserMobileAreaCodeList().isEmpty(),"返回的对象为空");
             System.out.println(resp);
             Reporter.log(resp.toString());
         } catch (Exception e) {
