@@ -134,13 +134,16 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     }
 
     //根据渠道用户Id查询用户微信列表信息(幂等)
-    @Test(description = "3.用户一键登录微信")
+    //@Test(description = "3.用户一键登录微信")
     public void test(){
+
+
+
+
 
     }
 
-
-    @Test(description = "检查手机号绑定")
+    //@Test(description = "检查手机号绑定")
     public void checkPhoneTest(){
 
 
