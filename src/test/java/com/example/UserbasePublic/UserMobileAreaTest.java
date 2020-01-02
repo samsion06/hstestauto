@@ -12,6 +12,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.net.URI;
@@ -27,7 +29,7 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
     private static HttpResponse response;
 
     @Test(description = "用户手机国际区号查询(幂等)")
-    public void listQueryTest(){
+    public void serMobileAreaCodeList_Empty_Test(){
         try{
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/list/query", null);
@@ -35,18 +37,16 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             JsonFormat jsonFormat =new JsonFormat();
-            if (response.getStatusLine().getStatusCode() == 200) {
-                UserMobileAreaServiceProto.UserMobileAreaCodeListResponse resp = UserMobileAreaServiceProto.UserMobileAreaCodeListResponse.parseFrom(response.getEntity().getContent());
-                if (resp.getUserMobileAreaCodeList().isEmpty()) {
-                    System.out.println("Is Empty");
-                }else{
-                    System.out.println(resp);
-                }
-            } else {
-                System.out.println(response.getStatusLine().getStatusCode());
-            }
+            Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
+            UserMobileAreaServiceProto.UserMobileAreaCodeListResponse resp = UserMobileAreaServiceProto.UserMobileAreaCodeListResponse.parseFrom(response.getEntity().getContent());
+            Assert.assertTrue(resp.getUserMobileAreaCodeList().isEmpty(),"返回的对象为空");
+            System.out.println(resp);
+            Reporter.log(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+
 }

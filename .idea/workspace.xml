@@ -2,38 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserMobileAreaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserAddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserAddressTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/IdCardIdentifyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/IdCardIdentifyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/SysAreaPerformTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/SysAreaPerformTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserAddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserAddressTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserAliPayAuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserAliPayAuthServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserAliPayAuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserAliPayAuthTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserBaseEsSyncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserBaseEsSyncTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserBaseSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserBaseSysTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserHsrjTaoBaoAuthServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserHsrjTaoBaoAuthServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserInfoPerformTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserInfoPerformTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserInfoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserLoginInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserLoginInfoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserMobileAreaCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserMobileAreaCodeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/UserWeChatAuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/UserWeChatAuthTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/AnyTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/AnyTypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/UserBaseInfoBindingNewMobileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/UserBaseInfoBindingNewMobileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/UserBaseInfoGetByMobileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/UserBaseInfoGetByMobileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/UserBaseQueryByConditionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/UserBaseQueryByConditionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/UserWeChatAuthServiceBingdingPhoneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/UserWeChatAuthServiceBingdingPhoneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/UserWeChatAuthServiceCheckPhoneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/UserWeChatAuthServiceCheckPhoneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestFile/test/UserWeChatAuthServiceGetUserInfoByOpenIdTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TestFile/test/UserWeChatAuthServiceGetUserInfoByOpenIdTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mapper/UserBaseInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/mapper/UserBaseInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/report/ExtentTestNGReporterListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/report/ExtentTestNGReporterListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/utils/DataTransferUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/utils/DataTransferUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/libs/ApacheJMeter_core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/libs/ApacheJMeter_core.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/libs/ApacheJMeter_java.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/libs/ApacheJMeter_java.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/UserbasePublic/UserAddressTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/UserbasePublic/UserAddressTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/UserbasePublic/UserbaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/UserbasePublic/UserbaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserMobileAreaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserMobileAreaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +162,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577934948857</updated>
       <workItem from="1577934952275" duration="1969000" />
-      <workItem from="1577943484700" duration="4429000" />
+      <workItem from="1577943484700" duration="5429000" />
     </task>
     <task id="LOCAL-00001" summary="ASDASD">
       <created>1577936027333</created>
@@ -207,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577945644208</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1577948478198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577948478198</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,10 +205,11 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="690" y="407" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.954@0.23.1680.954" timestamp="1577935020756" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1577945643999">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1577948478050">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1577945643999" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577948478050" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1577936027017" />
     <state width="1638" height="280" key="GridCell.Tab.0.bottom" timestamp="1577948437942">
       <screen x="0" y="23" width="1680" height="952" />
