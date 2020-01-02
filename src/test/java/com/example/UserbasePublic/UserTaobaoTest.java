@@ -84,8 +84,8 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
 
     }
 
-    @Test(description = "取消授权")
-    public void test1(){
+    //@Test(description = "取消授权")
+    public void authCancel(){
         String channelUserId="184003";
         String tbAccount="327420130";
         Long companyId=1642L;
@@ -108,16 +108,4 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
