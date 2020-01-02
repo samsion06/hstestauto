@@ -38,7 +38,6 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             JsonFormat jsonFormat =new JsonFormat();
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserMobileAreaServiceProto.UserMobileAreaCodeListResponse resp = UserMobileAreaServiceProto.UserMobileAreaCodeListResponse.parseFrom(response.getEntity().getContent());
-            System.out.println(resp.getUserMobileAreaCodeList().isEmpty());
             Assert.assertFalse(resp.getUserMobileAreaCodeList().isEmpty(),"返回的对象为空");
             //System.out.println(resp);
             Reporter.log(resp.toString());
@@ -53,9 +52,8 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
+    //@Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
     public void userMobileAreaCodeQueryTest() {
-
         try {
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/query", null);
@@ -86,7 +84,27 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-
-
-
+    @Test(description = "手机国际区号缓存刷新(幂等)")
+    public void userMobileAreaCodeCacheRefreshTest(){
+        try {
+            httpClient = HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/cache/refresh", null);
+            HttpPost post = new HttpPost(uri);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            HttpResponse response = httpClient.execute(post);
+            Reporter.log("手机号缓存刷新_");
+            JsonFormat jsonFormat = new JsonFormat();
+            Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
+            UserMobileAreaServiceProto.ResponseCode resp = UserMobileAreaServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            Reporter.log(resp.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
