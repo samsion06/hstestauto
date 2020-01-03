@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
 import java.net.URI;
@@ -25,25 +26,33 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
     private static HttpResponse response;
     private static ByteArrayEntity byteArrayEntity;
 
+
+    @BeforeTest
+    public void beforeTest(){
+        System.out.println("123");
+    }
+
     @org.testng.annotations.Test(description = "1.实名认证" +
                                                "2.实名认证查询")
     public void queryStatus() {
 
-             //实名认证
+        String attachmentUrl="http://images.huasheng100.com/public/1573632666839292.jpg;http://images.huasheng100.com/public/1573632674240333.jpg";
+        String channeluserId = "56903884418";
+        String realName="尹小芳";
+        String idCardNum="430525199204064942";
+
+        //实名认证
         try {
             httpClient = HttpClients.createDefault();
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/queryStatus", "");
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/identify", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserIdCardIdentifyRequestConvertBuilder("1", channelId,"1","1","1");
+            byteArrayEntity = DataTransferUtil.UserIdCardIdentifyRequestConvertBuilder(channeluserId, channelId,realName,idCardNum,attachmentUrl);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponse(response);
 
-
-            //主要看user_attachment 的channeluserid
-            //实名认证查询
-            String channeluserId = "56903884418";
+            //实名认证查询 主要看user_attachment 的channeluserid
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/queryStatus", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.userIdCardStatusQueryRequestConvertBuilder(channeluserId, channelId);
