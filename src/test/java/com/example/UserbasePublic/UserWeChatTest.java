@@ -180,9 +180,26 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
        }
     }
 
-    //Test(description = "8.设置用户微信号(幂等) 只返回成功与失败")
-    public void test(){
-
+    @Test(description = "8.设置用户微信号(幂等) 只返回成功与失败")
+    public void setWxNoChannelIdTest(){
+        try{
+            httpClient=HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/wxno/set","");
+            post = new HttpPost(uri);;
+            byteArrayEntity =  DataTransferUtil.UserWeChatAuthCheckPhoneRequest(channelId,"3692091","oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4");
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponses(response, UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneResponse.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 
     }
