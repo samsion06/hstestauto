@@ -160,7 +160,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
     @Test(description = "7.检查手机号绑定")//这里检查的是userbase表里面的mobile
     public void checkPhoneTest(){
-
        try{
            httpClient=HttpClients.createDefault();
            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/checkPhone","");
@@ -170,7 +169,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
            post.setHeader("Content-Type", "application/x-protobuf");
            response = httpClient.execute(post);
            CheckReponseResult.AssertResponses(response, UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneResponse.class);
-
        }catch (Exception e){
             e.printStackTrace();
        }finally {
@@ -182,7 +180,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
        }
     }
 
-    @Test(description = "8.设置用户微信号(幂等) 只返回成功与失败")
+    //Test(description = "8.设置用户微信号(幂等) 只返回成功与失败")
     public void test(){
 
 

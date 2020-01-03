@@ -61,6 +61,8 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponse(response);
 
+            Thread.sleep(3000L);
+
             //取消收授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/cancel", "");
             post = new HttpPost(uri);
@@ -83,7 +85,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description = "取消授权")
+    @Test(description = "取消授权")
     public void authCancel(){
         String channelUserId="184003";
         String tbAccount="327420130";

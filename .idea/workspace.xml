@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="update">
+    <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/report/ExtentTestNGReporterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/report/ExtentTestNGReporterListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTaobaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTaobaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +39,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager" selected="TestNG.UserWeChatTest.getWeChatByChannelUserIdTest">
+  <component name="RunManager" selected="TestNG.UserTaobaoTest.authAndCancel">
     <configuration name="UserAddressTest.getSysSubAreaTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -75,7 +76,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTaobaoTest.authAndCancel" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +85,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserMobileAreaTest" />
-      <option name="METHOD_NAME" value="userMobileAreaCodeCacheRefreshTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserTaobaoTest" />
+      <option name="METHOD_NAME" value="authAndCancel" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTaobaoTest.authCancel" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserTaobaoTest" />
+      <option name="METHOD_NAME" value="authCancel" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -129,31 +148,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UseraliPayTest.test6" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UseraliPayTest" />
-      <option name="METHOD_NAME" value="test6" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserTaobaoTest.authAndCancel" />
+        <item itemvalue="TestNG.UserTaobaoTest.authCancel" />
         <item itemvalue="TestNG.UserWeChatTest.getWeChatByChannelUserIdTest" />
         <item itemvalue="TestNG.UserWeChatTest.checkPhoneTest" />
         <item itemvalue="TestNG.UserAddressTest.getSysSubAreaTest" />
-        <item itemvalue="TestNG.UseraliPayTest.test6" />
-        <item itemvalue="TestNG.UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +182,7 @@
       <updated>1577934948857</updated>
       <workItem from="1577934952275" duration="1969000" />
       <workItem from="1577943484700" duration="15017000" />
-      <workItem from="1578014045953" duration="3802000" />
+      <workItem from="1578014045953" duration="4418000" />
     </task>
     <task id="LOCAL-00001" summary="ASDASD">
       <created>1577936027333</created>
@@ -470,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578018276812</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update">
+      <created>1578018699439</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1578018699439</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,35 +506,35 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="690" y="407" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.954@0.23.1680.954" timestamp="1577935020756" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578018628845">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578018699314">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578018628845" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578018699314" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577959478012" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1577955228041" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1577936027017" />
-    <state width="1638" height="96" key="GridCell.Tab.0.bottom" timestamp="1578017264156">
+    <state width="1638" height="369" key="GridCell.Tab.0.bottom" timestamp="1578019327517">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="96" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578017264156" />
+    <state width="1638" height="369" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578019327517" />
     <state width="1638" height="189" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
     <state width="1638" height="453" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1577955251630" />
-    <state width="1638" height="96" key="GridCell.Tab.0.center" timestamp="1578017264155">
+    <state width="1638" height="369" key="GridCell.Tab.0.center" timestamp="1578019327516">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="96" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578017264155" />
+    <state width="1638" height="369" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578019327516" />
     <state width="1638" height="189" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
     <state width="1638" height="453" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1577955251629" />
-    <state width="1638" height="96" key="GridCell.Tab.0.left" timestamp="1578017264154">
+    <state width="1638" height="369" key="GridCell.Tab.0.left" timestamp="1578019327515">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="96" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578017264154" />
+    <state width="1638" height="369" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578019327515" />
     <state width="1638" height="189" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1577959536282" />
     <state width="1638" height="453" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1577955251629" />
-    <state width="1638" height="96" key="GridCell.Tab.0.right" timestamp="1578017264155">
+    <state width="1638" height="369" key="GridCell.Tab.0.right" timestamp="1578019327516">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="96" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578017264155" />
+    <state width="1638" height="369" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578019327516" />
     <state width="1638" height="189" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
     <state width="1638" height="453" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1577955251630" />
     <state x="328" y="81" key="SettingsEditor" timestamp="1577955362247">
@@ -535,10 +543,10 @@
     <state x="328" y="81" key="SettingsEditor/0.23.1680.952@0.23.1680.952" timestamp="1577955362247" />
     <state x="328" y="81" key="SettingsEditor/0.23.1680.954@0.23.1680.954" timestamp="1577935011462" />
     <state x="328" y="81" key="SettingsEditor/0.23.1680.956@0.23.1680.956" timestamp="1577935398338" />
-    <state x="551" y="220" key="Vcs.Push.Dialog.v2" timestamp="1578017431737">
+    <state x="551" y="220" key="Vcs.Push.Dialog.v2" timestamp="1578018757877">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.950@0.23.1680.950" timestamp="1578017431737" />
+    <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.950@0.23.1680.950" timestamp="1578018757877" />
     <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.952@0.23.1680.952" timestamp="1577959488095" />
     <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1577936119457" />
     <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.956@0.23.1680.956" timestamp="1577935620229" />
