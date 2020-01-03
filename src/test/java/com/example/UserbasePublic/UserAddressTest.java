@@ -109,7 +109,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/sys/sub/area", null);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserSysSubAreaRequest("123");
+            byteArrayEntity = DataTransferUtil.UserSysSubAreaRequest("0");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);

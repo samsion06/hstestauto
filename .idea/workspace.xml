@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserAddressTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserAddressTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,25 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager" selected="TestNG.UseraliPayTest.test6">
+  <component name="RunManager" selected="TestNG.UserAddressTest.getSysSubAreaTest">
+    <configuration name="UserAddressTest.getSysSubAreaTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserAddressTest" />
+      <option name="METHOD_NAME" value="getSysSubAreaTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -130,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserAddressTest.getSysSubAreaTest" />
         <item itemvalue="TestNG.UseraliPayTest.test6" />
-        <item itemvalue="TestNG.UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest (1)" />
         <item itemvalue="TestNG.UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest" />
         <item itemvalue="TestNG.UserMobileAreaTest.userMobileAreaCodeQueryTest" />
         <item itemvalue="TestNG.UserbaseTest.mdfMobileAndPwdUpdate" />
@@ -161,7 +179,8 @@
       <option name="presentableId" value="Default" />
       <updated>1577934948857</updated>
       <workItem from="1577934952275" duration="1969000" />
-      <workItem from="1577943484700" duration="14947000" />
+      <workItem from="1577943484700" duration="15017000" />
+      <workItem from="1578014045953" duration="517000" />
     </task>
     <task id="LOCAL-00001" summary="ASDASD">
       <created>1577936027333</created>
@@ -401,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577959189202</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="update">
+      <created>1577959478109</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1577959478109</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,36 +455,36 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="690" y="407" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.954@0.23.1680.954" timestamp="1577935020756" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1577959189102">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1577959478012">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1577951534967" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577959189102" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577959478012" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1577955228041" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1577936027017" />
-    <state width="1638" height="214" key="GridCell.Tab.0.bottom" timestamp="1577957838864">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="269" key="GridCell.Tab.0.bottom" timestamp="1578015189610">
+      <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1577950821377" />
-    <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1577957838864" />
+    <state width="1638" height="269" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578015189610" />
+    <state width="1638" height="189" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
     <state width="1638" height="453" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1577955251630" />
-    <state width="1638" height="214" key="GridCell.Tab.0.center" timestamp="1577957838863">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="269" key="GridCell.Tab.0.center" timestamp="1578015189609">
+      <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1577950821376" />
-    <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1577957838863" />
+    <state width="1638" height="269" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578015189609" />
+    <state width="1638" height="189" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
     <state width="1638" height="453" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1577955251629" />
-    <state width="1638" height="214" key="GridCell.Tab.0.left" timestamp="1577957838862">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="269" key="GridCell.Tab.0.left" timestamp="1578015189609">
+      <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1577950821376" />
-    <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1577957838862" />
+    <state width="1638" height="269" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578015189609" />
+    <state width="1638" height="189" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1577959536282" />
     <state width="1638" height="453" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1577955251629" />
-    <state width="1638" height="214" key="GridCell.Tab.0.right" timestamp="1577957838863">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="269" key="GridCell.Tab.0.right" timestamp="1578015189610">
+      <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1577950821377" />
-    <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1577957838863" />
+    <state width="1638" height="269" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578015189610" />
+    <state width="1638" height="189" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
     <state width="1638" height="453" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1577955251630" />
     <state x="328" y="81" key="SettingsEditor" timestamp="1577955362247">
       <screen x="0" y="23" width="1680" height="952" />
@@ -466,17 +492,17 @@
     <state x="328" y="81" key="SettingsEditor/0.23.1680.952@0.23.1680.952" timestamp="1577955362247" />
     <state x="328" y="81" key="SettingsEditor/0.23.1680.954@0.23.1680.954" timestamp="1577935011462" />
     <state x="328" y="81" key="SettingsEditor/0.23.1680.956@0.23.1680.956" timestamp="1577935398338" />
-    <state x="551" y="220" key="Vcs.Push.Dialog.v2" timestamp="1577955490389">
+    <state x="551" y="220" key="Vcs.Push.Dialog.v2" timestamp="1577959488095">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.950@0.23.1680.950" timestamp="1577951159319" />
-    <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.952@0.23.1680.952" timestamp="1577955490389" />
+    <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.952@0.23.1680.952" timestamp="1577959488095" />
     <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1577936119457" />
     <state x="551" y="220" key="Vcs.Push.Dialog.v2/0.23.1680.956@0.23.1680.956" timestamp="1577935620229" />
-    <state x="519" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1577943486168">
+    <state x="519" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1578014046446">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="519" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.950@0.23.1680.950" timestamp="1577943486168" />
+    <state x="519" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.950@0.23.1680.950" timestamp="1578014046446" />
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1577934952656" />
     <state x="505" y="231" width="670" height="676" key="search.everywhere.popup" timestamp="1577944977949">
       <screen x="0" y="23" width="1680" height="950" />
