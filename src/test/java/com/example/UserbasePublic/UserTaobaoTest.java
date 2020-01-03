@@ -40,7 +40,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
     @Test(description = "1.淘宝授权 6个参数齐" +
             "            2.授权查询 4个参数齐" +
             "            3.取消授权 1个参数齐")
-    public void authAndCancel(){
+    public void authAndCancelTest(){
         try {
             String channelUserId="184003";
             String tbAccount="327420130";
@@ -87,7 +87,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
     }
 
    // @Test(description = "取消授权")
-    public void authCancel(){
+    public void authCancelTest(){
         String channelUserId="184003";
         String tbAccount="327420130";
         Long companyId=1642L;

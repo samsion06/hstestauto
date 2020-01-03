@@ -170,7 +170,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Test(description = "1.修改手机号" +
                         "2.修改密码" +
                         "3.登录")
-    public void mdfMobileAndPwdUpdate(){
+    public void mdfMobileAndPwdUpdateTest(){
         String ChannelUserId="178803"; //17786709004
         try{
             String mobile="177"+(int)((Math.random()*9+1)*10000000); //修改登录得手机号
@@ -224,7 +224,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
 
     @Test(description = "忘记密码(修改密码)")
-    public void forgetPassword(){
+    public void forgetPasswordTest(){
         try{
 
             String loginPwd="123456";
@@ -263,7 +263,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test(description = "根据微信ID和OPENID获取用户信息")
-    public void getByOpenIdAndUnionldId() {
+    public void getByOpenIdAndUnionldIdTest() {
         try {
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/get/by/unionId/openId","");
@@ -287,7 +287,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     }
 
     //@Test(description = "修改用户身份状态 404")
-    public void userStatusUpdate(){
+    public void userStatusUpdateTest(){
         try{
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/status/update ","");
@@ -303,7 +303,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     }
 
     //@Test(description = "修改用户邀请码(幂等) 404")
-    public void inviteCodeUpdate(){
+    public void inviteCodeUpdateTest(){
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/invite/code/update ","");
             post = new HttpPost(uri);;

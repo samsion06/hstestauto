@@ -35,7 +35,7 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
 
     @org.testng.annotations.Test(description = "1.实名认证" +
                                                "2.实名认证查询")
-    public void identifyAndQueryStatus() {
+    public void identifyAndQueryStatusTest() {
 
         String attachmentUrl="http://images.huasheng100.com/public/1573632666839292.jpg;http://images.huasheng100.com/public/1573632674240333.jpg";
         String channeluserId = "56903884418";

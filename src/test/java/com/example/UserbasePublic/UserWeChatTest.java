@@ -51,7 +51,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
     @Test(description = "1.微信绑定" +
             "            2.微信解绑 ")
-    public void bindingAndunBinding(){
+    public void bindingAndunBindingTest(){
         String openId= DataUtils.getRandomString(9);    //随机生成openId
         String channelUserId=String.valueOf((int)((Math.random()*9+1)*1000)); //随机生成ChannelUserId
         try {
@@ -83,7 +83,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     }
 
     @Test(description = "3.用户一键登录微信")
-    public void loginByOneKey(){ ;
+    public void loginByOneKeyTest(){ ;
         try{
             String mobile="17702015334";
             String inviteChannelUserId="177417";
@@ -105,7 +105,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
     @Test(description = "4.用户微信登录(幂等)" +
                         "5.根据openId查询用户微信列表信息 ")
-    public void weChatLoginAndGetInfoByOpenId(){
+    public void weChatLoginAndGetInfoByOpenIdTest(){
         try{
             String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
             String appId="Appid01";
