@@ -578,14 +578,15 @@ public class DataTransferUtil {
 
     //解绑(删除)团长关系(幂等)
     public static ByteArrayEntity UserTeamRelationUntyingRequest(){
-        UserTeamRelationServiceProto.UserTeamRelationCommonRequest.Builder Requestbuilder=UserTeamRelationServiceProto.UserTeamRelationCommonRequest.newBuilder();
-        Requestbuilder.setChannelId(1);
-        Requestbuilder.setChannelUserId("1");
-        Requestbuilder.setAppType(1);
+        //传对象
+        UserTeamRelationServiceProto.UserTeamRelationCommonRequest.Builder userTeamRelationCommonRequest=UserTeamRelationServiceProto.UserTeamRelationCommonRequest.newBuilder();
+        userTeamRelationCommonRequest.setChannelId(1);
+        userTeamRelationCommonRequest.setChannelUserId("1");
+        userTeamRelationCommonRequest.setAppType(1);
 
         UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.Builder builder=UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.newBuilder();
-        builder.setCommonRequest(Requestbuilder);
-        builder.setTeamUserId("asdasdasdasd");
+        builder.setCommonRequest(userTeamRelationCommonRequest);
+        builder.setTeamUserId("1");
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         System.out.println(builder);
         Reporter.log("解绑(删除)团长关系(幂等)_"+incomeMessage+builder+ "}");
