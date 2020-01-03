@@ -37,7 +37,6 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
     @Test(description = "用户手机国际区号查询(幂等)")
     public void serMobileAreaCodeListTest(){
         try{
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/list/query", null);
             post = new HttpPost(uri);
             post.setHeader("Content-Type", "application/x-protobuf");
@@ -50,19 +49,12 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             Reporter.log(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     //@Test(description = "根据手机国际区号查询手机国际区号信息查询(幂等)")
     public void userMobileAreaCodeQueryTest() {
         try {
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/query", null);
             post = new HttpPost(uri);
             post.setHeader("Content-Type", "application/x-protobuf");
@@ -82,19 +74,12 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             }
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     @Test(description = "手机国际区号缓存刷新(幂等)")
     public void userMobileAreaCodeCacheRefreshTest(){
         try {
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/mobile/area/cache/refresh", null);
             HttpPost post = new HttpPost(uri);
             post.setHeader("Content-Type", "application/x-protobuf");
@@ -106,12 +91,6 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             Reporter.log(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -119,8 +98,4 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
     public void afterTest() throws IOException {
         httpClient.close();
     }
-
-
-
-
 }
