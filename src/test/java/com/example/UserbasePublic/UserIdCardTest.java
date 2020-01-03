@@ -29,16 +29,16 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
                                                "2.实名认证查询")
     public void queryStatus() {
 
-        //实名认证
+             //实名认证
         try {
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/queryStatus", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userIdCardStatusQueryRequestConvertBuilder(channeluserId, channelId);
+            byteArrayEntity = DataTransferUtil.UserIdCardIdentifyRequestConvertBuilder("1", channelId,"1","1","1");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            CheckReponseResult.AssertResponses(response, UserIdCardIdentifyServiceProto.UserIdCardIdentifyInfo.class);
+            CheckReponseResult.AssertResponse(response);
 
 
             //主要看user_attachment 的channeluserid
