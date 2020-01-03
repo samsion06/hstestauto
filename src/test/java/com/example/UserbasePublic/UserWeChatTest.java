@@ -90,7 +90,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             String mobileAreaCode="86";
 
             //用户一键登录微信
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/loginByOneKey","");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.userWeChatOneKeyLoginRequest(channelId,mobile,inviteChannelUserId,mobileAreaCode);
@@ -113,7 +112,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             String channelUserId="3692091";
 
             //用户微信登录(幂等)
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/login","");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserWeChatAuthLoginRequest(channelId,channelUserId,openId,appId);
@@ -164,7 +162,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
            String channelUserId="3692091";
            String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
 
-           httpClient=HttpClients.createDefault();
            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/checkPhone","");
            post = new HttpPost(uri);;
            byteArrayEntity =  DataTransferUtil.UserWeChatAuthCheckPhoneRequest(channelId,channelUserId,openId);
@@ -181,7 +178,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     public void setWxNoChannelIdTest(){
         try{
 
-            httpClient=HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/wxno/set","");
             post = new HttpPost(uri);;
             byteArrayEntity = DataTransferUtil.UserWeChatWxNoRequest();

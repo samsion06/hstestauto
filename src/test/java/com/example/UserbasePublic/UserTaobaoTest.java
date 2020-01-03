@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.net.URI;
@@ -30,6 +32,11 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
     private static HttpPost post;
     private static HttpResponse response;
 
+    @BeforeTest
+    public void beforeTest(){
+        httpClient = HttpClients.createDefault();
+    }
+
     @Test(description = "1.淘宝授权 6个参数齐" +
             "            2.授权查询 4个参数齐" +
             "            3.取消授权 1个参数齐")
@@ -41,7 +48,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             Long tbAccountId=327420130L;
 
             //淘宝授权
-            httpClient = HttpClients.createDefault(); //184003
+            //184003
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthRequest(channelUserId, 528467632L,528467634L,companyId,tbAccountId,tbAccount);
@@ -76,12 +83,6 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -93,7 +94,6 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
         Long tbAccountId=327420130L;
 
         try{
-            httpClient = HttpClients.createDefault();
             //取消收授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/cancel", "");
             post = new HttpPost(uri);
@@ -109,4 +109,12 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             e.printStackTrace();
         }
     }
+
+    @AfterTest
+    public void afterTest() throws IOException {
+        httpClient.close();
+    }
+
+
+
 }
