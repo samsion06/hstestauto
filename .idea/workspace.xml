@@ -38,25 +38,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="RunManager" selected="TestNG.UserTaobaoTest.authAndCancel">
-    <configuration name="UserAddressTest.getSysSubAreaTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserAddressTest" />
-      <option name="METHOD_NAME" value="getSysSubAreaTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.UserWeChatTest.setWxNoChannelIdTest">
     <configuration name="UserMobileAreaTest.userMobileAreaCodeCacheRefreshTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -147,13 +129,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserWeChatTest.setWxNoChannelIdTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserWeChatTest" />
+      <option name="METHOD_NAME" value="setWxNoChannelIdTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserWeChatTest.setWxNoChannelIdTest" />
         <item itemvalue="TestNG.UserTaobaoTest.authAndCancel" />
         <item itemvalue="TestNG.UserTaobaoTest.authCancel" />
         <item itemvalue="TestNG.UserWeChatTest.getWeChatByChannelUserIdTest" />
         <item itemvalue="TestNG.UserWeChatTest.checkPhoneTest" />
-        <item itemvalue="TestNG.UserAddressTest.getSysSubAreaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +181,7 @@
       <updated>1577934948857</updated>
       <workItem from="1577934952275" duration="1969000" />
       <workItem from="1577943484700" duration="15017000" />
-      <workItem from="1578014045953" duration="5259000" />
+      <workItem from="1578014045953" duration="5398000" />
     </task>
     <task id="LOCAL-00001" summary="ASDASD">
       <created>1577936027333</created>
@@ -498,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578020011209</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update">
+      <created>1578020187907</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1578020187907</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,36 +533,36 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="690" y="407" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1680.954@0.23.1680.954" timestamp="1577935020756" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578020011093">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578020187744">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578020011093" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1577959478012" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578020187744" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1577955228041" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1577936027017" />
-    <state width="1638" height="369" key="GridCell.Tab.0.bottom" timestamp="1578019327517">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="216" key="GridCell.Tab.0.bottom" timestamp="1578020285890">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="369" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578019327517" />
-    <state width="1638" height="189" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
+    <state width="1638" height="216" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578020285890" />
     <state width="1638" height="453" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1577955251630" />
-    <state width="1638" height="369" key="GridCell.Tab.0.center" timestamp="1578019327516">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="216" key="GridCell.Tab.0.center" timestamp="1578020285889">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="369" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578019327516" />
-    <state width="1638" height="189" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
+    <state width="1638" height="216" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578020285889" />
     <state width="1638" height="453" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1577955251629" />
-    <state width="1638" height="369" key="GridCell.Tab.0.left" timestamp="1578019327515">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="216" key="GridCell.Tab.0.left" timestamp="1578020285889">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="369" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578019327515" />
-    <state width="1638" height="189" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1577959536282" />
+    <state width="1638" height="216" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578020285889" />
     <state width="1638" height="453" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1577955251629" />
-    <state width="1638" height="369" key="GridCell.Tab.0.right" timestamp="1578019327516">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="216" key="GridCell.Tab.0.right" timestamp="1578020285890">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="369" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578019327516" />
-    <state width="1638" height="189" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1577959536283" />
+    <state width="1638" height="216" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578020285890" />
     <state width="1638" height="453" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1577955251630" />
     <state x="328" y="81" key="SettingsEditor" timestamp="1577955362247">
       <screen x="0" y="23" width="1680" height="952" />

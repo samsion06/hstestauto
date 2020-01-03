@@ -515,7 +515,6 @@ public class DataTransferUtil {
     }
     //设置微信号
     public static ByteArrayEntity UserWeChatWxNoRequest(){
-
         //openid oBrt31epHkTX4M9lpH12mIOxsdm4
         //unionid oBrt31epHkTX4M9lpH12mIOxsdmUnqq
         //wxno 9358324293

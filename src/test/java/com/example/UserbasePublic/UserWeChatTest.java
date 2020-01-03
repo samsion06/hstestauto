@@ -180,7 +180,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
        }
     }
 
-    @Test(description = "8.设置用户微信号(幂等) 只返回成功与失败")
+    //@Test(description = "8.设置用户微信号(幂等) 只返回成功与失败 x")
     public void setWxNoChannelIdTest(){
         try{
 
