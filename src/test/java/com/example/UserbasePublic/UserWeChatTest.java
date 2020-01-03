@@ -135,14 +135,12 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-
     @Test(description = "6.根据渠道用户Id查询用户微信列表信息(幂等)")
     public void getWeChatByChannelUserIdTest(){
         try{
             String channelUserId="3692091";
             String appId="Appid01";
 
-            httpClient=HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatByChannelUserId","");
             post = new HttpPost(uri);;
             byteArrayEntity =  DataTransferUtil.getUserWeChatAuthByChannelUserIdRequest(channelId,channelUserId,appId);

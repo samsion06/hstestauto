@@ -12,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -26,6 +28,11 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
+
+    @BeforeTest
+    public void beforeTest(){
+        httpClient = HttpClients.createDefault();
+    }
 
     @Test(description = "用户手机国际区号查询(幂等)")
     public void serMobileAreaCodeListTest(){
@@ -108,6 +115,10 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
         }
     }
 
+    @AfterTest
+    public void afterTest() throws IOException {
+        httpClient.close();
+    }
 
 
 
