@@ -513,9 +513,25 @@ public class DataTransferUtil {
         Reporter.log("是否绑定过手机号(幂等)_"+incomeMessage+builder+ "}");
         return bytes;
     }
+    //设置微信号
+    public static ByteArrayEntity UserWeChatWxNoRequest(Integer channelId,String channelUserId,String openId){
 
-
-
+        //openid oBrt31epHkTX4M9lpH12mIOxsdm4
+        //unionid oBrt31epHkTX4M9lpH12mIOxsdmUnqq
+        //wxno 9358324293
+        //channeluserid 9358324293
+        //channelid 0
+        UserWeChatAuthServiceProto.UserWeChatWxNoRequest.Builder builder=UserWeChatAuthServiceProto.UserWeChatWxNoRequest.newBuilder();
+        builder.setOpenId("oBrt31epHkTX4M9lpH12mIOxsdm4");
+        builder.setUnionId("oBrt31epHkTX4M9lpH12mIOxsdmUnqq");
+        builder.setWxNo("9358324293");
+        builder.setChannelUserId("176879");
+        builder.setChannelId(0);
+        //builder.setMobileAreaCode("86");
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        Reporter.log("设置微信号_"+incomeMessage+builder+ "}");
+        return bytes
+    }
 
     /**
      * 手机国际区号

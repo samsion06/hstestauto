@@ -181,4 +181,11 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
            }
        }
     }
+
+    @Test(description = "8.设置用户微信号(幂等) 只返回成功与失败")
+    public void test(){
+
+
+
+    }
 }
