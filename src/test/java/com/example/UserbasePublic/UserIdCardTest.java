@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
 
     @BeforeTest
     public void beforeTest(){
-        System.out.println("123");
+        httpClient = HttpClients.createDefault();
     }
 
     @org.testng.annotations.Test(description = "1.实名认证" +
@@ -44,7 +45,6 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
             //实名认证 主要看userbase的字段
         try {
 
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/identify", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserIdCardIdentifyRequestConvertBuilder(channeluserId, channelId,realName,idCardNum,attachmentUrl);
@@ -64,11 +64,11 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-            }
         }
+    }
+
+    @AfterTest
+    public void afterTest() throws IOException {
+            httpClient.close();
     }
 }
