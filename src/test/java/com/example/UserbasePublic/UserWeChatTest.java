@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.net.URI;
@@ -31,16 +33,20 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
 
-
     /**
      * 1.微信绑定:随机生成 AppId, channelId,channelUserId,openId
-     * 2.微信解绑：channelUserId,channelUserId
+     * 2.微信解绑：openId, channelId,channelUserId,AppId
      * 3.用户一键登录微信：channelId,mobile,inviteChannelUserId,mobileAreaCode
      * 4.用户微信登录(幂等)：channelId,channelUserId,openId,appId
      * 5.根据openId查询用户微信列表信息：channelId,openId,appId
      * 6.根据渠道用户Id查询用户微信列表信息(幂等)：channelId,channelUserId,appId
      * 7.设置用户微信号(幂等) 只返回成功与失败
      */
+
+    @BeforeTest
+    public void beforeTest(){
+        httpClient = HttpClients.createDefault();
+    }
 
 
     @Test(description = "1.微信绑定" +
@@ -49,7 +55,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         String openId= DataUtils.getRandomString(9);    //随机生成openId
         String channelUserId=String.valueOf((int)((Math.random()*9+1)*1000)); //随机生成ChannelUserId
         try {
-            httpClient = HttpClients.createDefault();
             //微信绑定
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/binding","");
             post = new HttpPost(uri);
@@ -74,12 +79,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         }catch(Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -102,12 +101,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -141,12 +134,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -168,12 +155,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -193,12 +174,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
            CheckReponseResult.AssertResponses(response, UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneResponse.class);
        }catch (Exception e){
             e.printStackTrace();
-       }finally {
-           try {
-               httpClient.close();
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
        }
     }
 
@@ -217,13 +192,12 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
+    }
+
+    @AfterTest
+    public void afterTest() throws IOException {
+        httpClient.close();
     }
 
 
