@@ -286,6 +286,21 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
+    @Test(description = "修改用户标签(幂等)")
+    public  void userTagUpdateTest(){
+        try{
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/tag/update ","");
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",2);
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponse(response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     //@Test(description = "修改用户身份状态 404")
     public void userStatusUpdateTest(){
         try{
@@ -297,6 +312,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
+
         }catch (Exception e){
             e.printStackTrace();
         }

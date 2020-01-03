@@ -140,6 +140,19 @@ public class DataTransferUtil {
         Reporter.log("修改用户身份状态_"+incomeMessage+builder+ "}");
         return bytes;
     }
+
+    //修改用户标签(幂等)
+    public static ByteArrayEntity UserInfoTagRequest( String channelUserId,Integer userTag ){
+        //178803
+        //2
+        UserBaseServiceProto.UserInfoTagRequest.Builder builder = UserBaseServiceProto.UserInfoTagRequest.newBuilder();
+        builder.setChannelUserId(channelUserId);
+        builder.setUserTag(userTag);
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        Reporter.log("修改用户标签_"+incomeMessage+builder+ "}");
+        return bytes;
+    }
+
     //获取用户基础信息
     public static ByteArrayEntity UserInfoRequest(Integer channelId,String channelUserId){
         UserBaseServiceProto.UserInfoRequest.Builder builder=UserBaseServiceProto.UserInfoRequest.newBuilder();
