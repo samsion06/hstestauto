@@ -563,9 +563,38 @@ public class DataTransferUtil {
     /**
      * 团长关系信息
      */
-    public static ByteArrayEntity UserTeamRelationRegisterRequest(){
-
-
-        return  null;
+    //绑定(新增)团长关系(幂等)
+    public static ByteArrayEntity UserTeamRelationRegisterRequest(String channelUserId,Integer channelId,Integer appType,String teamUserId){
+        UserTeamRelationServiceProto.UserTeamRelationRegisterRequest.Builder builder=UserTeamRelationServiceProto.UserTeamRelationRegisterRequest.newBuilder();
+        builder.setChannelUserId(channelUserId);
+        builder.setChannelId(channelId);
+        builder.setAppType(appType);
+        builder.setTeamUserId(teamUserId);
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        System.out.println(builder);
+        Reporter.log("绑定(新增)团长关系(幂等)_"+incomeMessage+builder+ "}");
+        return bytes;
     }
+
+    //解绑(删除)团长关系(幂等)
+    public static ByteArrayEntity UserTeamRelationUntyingRequest(){
+        UserTeamRelationServiceProto.UserTeamRelationCommonRequest.Builder Requestbuilder=UserTeamRelationServiceProto.UserTeamRelationCommonRequest.newBuilder();
+        Requestbuilder.setChannelId(1);
+        Requestbuilder.setChannelUserId("1");
+        Requestbuilder.setAppType(1);
+
+        UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.Builder builder=UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.newBuilder();
+        builder.setCommonRequest(Requestbuilder);
+        builder.setTeamUserId("asdasdasdasd");
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        System.out.println(builder);
+        Reporter.log("解绑(删除)团长关系(幂等)_"+incomeMessage+builder+ "}");
+        return bytes;
+    }
+
+
+
+
+
+
 }
