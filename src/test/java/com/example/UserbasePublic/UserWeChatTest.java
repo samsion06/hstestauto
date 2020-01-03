@@ -133,11 +133,35 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    //根据渠道用户Id查询用户微信列表信息(幂等)
-    //@Test(description = "3.用户一键登录微信")
-    public void test(){ }
 
-    @Test(description = "检查手机号绑定")//这里检查的是userbase表里面的mobile
+    @Test(description = "6.根据渠道用户Id查询用户微信列表信息(幂等)")
+    public void getWeChatByChannelUserIdTest(){
+        try{
+
+            httpClient=HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatByChannelUserId","");
+            post = new HttpPost(uri);;
+            byteArrayEntity =  DataTransferUtil.getUserWeChatAuthByChannelUserIdRequest(channelId,"3692091","Appid01");
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponses(response, UserWeChatAuthServiceProto.UserWeChatAuthInfoResponseList.class);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+    }
+
+    @Test(description = "7.检查手机号绑定")//这里检查的是userbase表里面的mobile
     public void checkPhoneTest(){
 
        try{
