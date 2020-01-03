@@ -156,9 +156,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
                 e.printStackTrace();
             }
         }
-
-
-
     }
 
     @Test(description = "7.检查手机号绑定")//这里检查的是userbase表里面的mobile
