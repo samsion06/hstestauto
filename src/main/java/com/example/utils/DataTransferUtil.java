@@ -530,7 +530,7 @@ public class DataTransferUtil {
         //builder.setMobileAreaCode("86");
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         Reporter.log("设置微信号_"+incomeMessage+builder+ "}");
-        return bytes
+        return null;
     }
 
     /**
