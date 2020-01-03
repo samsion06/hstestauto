@@ -514,7 +514,7 @@ public class DataTransferUtil {
         return bytes;
     }
     //设置微信号
-    public static ByteArrayEntity UserWeChatWxNoRequest(Integer channelId,String channelUserId,String openId){
+    public static ByteArrayEntity UserWeChatWxNoRequest(){
 
         //openid oBrt31epHkTX4M9lpH12mIOxsdm4
         //unionid oBrt31epHkTX4M9lpH12mIOxsdmUnqq
