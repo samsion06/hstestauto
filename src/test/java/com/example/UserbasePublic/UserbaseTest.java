@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.net.URI;
@@ -29,6 +31,13 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     private static HttpPost post;
     private static HttpResponse response;
 
+
+    @BeforeTest
+    public void beforeTest(){
+        httpClient = HttpClients.createDefault();
+    }
+
+
     @Test(description = "1.用户登录" +
                      "   2.获取用户基础信息" +
                      "   3.修改昵称" +
@@ -40,8 +49,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         String headimgurl = DataUtils.getRandomString(15);//随机生成用户名
         //注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
         try {
-            httpClient = HttpClients.createDefault();
-
             //登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
             post = new HttpPost(uri);
@@ -101,7 +108,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void getInfoByInviteCode() {
         try {
 
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/get/by/invite/code", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.userInviteCodeQueryRequest("p88vcdo", channelId,"UserInfoInviteCodeResponse");
@@ -138,7 +144,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //规则：userbase里面得手机号和要在映射表userindx里面得indexid有才行
             //根据手机号码获取用户信息
             String mobile="18756989065";
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/getUserInfoByMobile", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserInfoByMobileRequest(mobile,"86",channelId,"UserBaseInfo");
@@ -168,7 +173,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void mdfMobileAndPwdUpdate(){
         String ChannelUserId="178803"; //17786709004
         try{
-            httpClient = HttpClients.createDefault();
             String mobile="177"+(int)((Math.random()*9+1)*10000000); //修改登录得手机号
             //修改手机号
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/mobile/update", "");
@@ -226,7 +230,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             String loginPwd="123456";
             String md5pwd = MD5Util.toMD5(loginPwd.trim().toUpperCase());
             //用户忘记登录密码
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/forget/pwd", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.userForgetPwdRequest(channelId,md5pwd,"15053755782","86");
@@ -246,7 +249,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         try{
 
             //根据查询条件查询用户列表
-            httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/getUsersByCondition", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserBaseInfoByConditionRequest("3693070",channelId);
@@ -264,7 +266,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void getByOpenIdAndUnionldId() {
         try {
 
-            httpClient=HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/get/by/unionId/openId","");
             System.out.println(uri);
             post = new HttpPost(uri);;
@@ -288,7 +289,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     //@Test(description = "修改用户身份状态 404")
     public void userStatusUpdate(){
         try{
-            httpClient=HttpClients.createDefault();
+
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/status/update ","");
             post = new HttpPost(uri);;
             byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(channelId, "3693070", 1);
@@ -304,8 +305,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     //@Test(description = "修改用户邀请码(幂等) 404")
     public void inviteCodeUpdate(){
         try{
-
-            httpClient=HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/invite/code/update ","");
             post = new HttpPost(uri);;
             byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(channelId, "3693070", "5201314");
@@ -318,6 +317,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             e.printStackTrace();
         }
     }
+
+    @AfterTest
+    public void afterTest() throws IOException {
+        httpClient.close();
+    }
+
 }
 
 
