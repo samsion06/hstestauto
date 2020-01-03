@@ -31,6 +31,18 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
 
+
+    /**
+     * 1.微信绑定:随机生成 AppId, channelId,channelUserId,openId
+     * 2.微信解绑：channelUserId,channelUserId
+     * 3.用户一键登录微信：channelId,mobile,inviteChannelUserId,mobileAreaCode
+     * 4.用户微信登录(幂等)：channelId,channelUserId,openId,appId
+     * 5.根据openId查询用户微信列表信息：channelId,openId,appId
+     * 6.根据渠道用户Id查询用户微信列表信息(幂等)：channelId,channelUserId,appId
+     * 7.设置用户微信号(幂等) 只返回成功与失败
+     */
+
+
     @Test(description = "1.微信绑定" +
             "            2.微信解绑 ")
     public void bindingAndunBinding(){
@@ -74,12 +86,15 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Test(description = "3.用户一键登录微信")
     public void loginByOneKey(){ ;
         try{
+            String mobile="17702015334";
+            String inviteChannelUserId="177417";
+            String mobileAreaCode="86";
 
             //用户一键登录微信
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/loginByOneKey","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userWeChatOneKeyLoginRequest(channelId,"17702015334","177417","86");
+            byteArrayEntity = DataTransferUtil.userWeChatOneKeyLoginRequest(channelId,mobile,inviteChannelUserId,mobileAreaCode);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -102,11 +117,13 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         try{
             String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
             String appId="Appid01";
+            String channelUserId="3692091";
+
             //用户微信登录(幂等)
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/login","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserWeChatAuthLoginRequest(channelId,"3692091",openId,appId);
+            byteArrayEntity = DataTransferUtil.UserWeChatAuthLoginRequest(channelId,channelUserId,openId,appId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -137,11 +154,13 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Test(description = "6.根据渠道用户Id查询用户微信列表信息(幂等)")
     public void getWeChatByChannelUserIdTest(){
         try{
+            String channelUserId="3692091";
+            String appId="Appid01";
 
             httpClient=HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatByChannelUserId","");
             post = new HttpPost(uri);;
-            byteArrayEntity =  DataTransferUtil.getUserWeChatAuthByChannelUserIdRequest(channelId,"3692091","Appid01");
+            byteArrayEntity =  DataTransferUtil.getUserWeChatAuthByChannelUserIdRequest(channelId,channelUserId,appId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -161,10 +180,13 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Test(description = "7.检查手机号绑定")//这里检查的是userbase表里面的mobile
     public void checkPhoneTest(){
        try{
+           String channelUserId="3692091";
+           String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
+
            httpClient=HttpClients.createDefault();
            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/checkPhone","");
            post = new HttpPost(uri);;
-           byteArrayEntity =  DataTransferUtil.UserWeChatAuthCheckPhoneRequest(channelId,"3692091","oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4");
+           byteArrayEntity =  DataTransferUtil.UserWeChatAuthCheckPhoneRequest(channelId,channelUserId,openId);
            post.setEntity(byteArrayEntity);
            post.setHeader("Content-Type", "application/x-protobuf");
            response = httpClient.execute(post);
