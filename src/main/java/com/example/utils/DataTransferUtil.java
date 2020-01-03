@@ -502,6 +502,20 @@ public class DataTransferUtil {
         Reporter.log("根据openId获取用户微信信息_"+incomeMessage+builder+ "}");
         return bytes;
     }
+    //是否绑定过手机号(幂等)
+    public static ByteArrayEntity UserWeChatAuthCheckPhoneRequest(Integer channelId,String channelUserId,String openId){
+        UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneRequest.Builder builder = UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneRequest.newBuilder();
+        builder.setChannelId(channelId);
+        builder.setChannelUserId(channelUserId);
+        builder.setOpenId(openId);
+        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+        System.out.println(builder);
+        Reporter.log("是否绑定过手机号(幂等)_"+incomeMessage+builder+ "}");
+        return bytes;
+    }
+
+
+
 
     /**
      * 手机国际区号
