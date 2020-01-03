@@ -28,10 +28,22 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
     @org.testng.annotations.Test(description = "1.实名认证" +
                                                "2.实名认证查询")
     public void queryStatus() {
-        //主要看user_attachment 的channeluserid
-        String channeluserId = "56903884418";
+
+        //实名认证
         try {
             httpClient = HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/queryStatus", "");
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.userIdCardStatusQueryRequestConvertBuilder(channeluserId, channelId);
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponses(response, UserIdCardIdentifyServiceProto.UserIdCardIdentifyInfo.class);
+
+
+            //主要看user_attachment 的channeluserid
+            //实名认证查询
+            String channeluserId = "56903884418";
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/queryStatus", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.userIdCardStatusQueryRequestConvertBuilder(channeluserId, channelId);
