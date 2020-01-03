@@ -37,7 +37,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         httpClient = HttpClients.createDefault();
     }
 
-
     @Test(description = "1.用户登录" +
                      "   2.获取用户基础信息" +
                      "   3.修改昵称" +
