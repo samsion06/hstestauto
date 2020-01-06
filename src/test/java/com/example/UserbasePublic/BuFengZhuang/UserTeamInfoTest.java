@@ -129,9 +129,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             commonRequest.setAppType(1);
             commonRequest.setChannelId(1);
             commonRequest.setChannelUserId("5201314");
-
-            Reporter.log(incomeMessage+builder+"}");
             builder.setCommonRequest(commonRequest);
+            Reporter.log(incomeMessage+builder+"}");
+
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
@@ -142,8 +142,35 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             System.out.println("result:" + JsonFormat.printToString(resp));
             Reporter.log(JsonFormat.printToString(resp));
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    @Test(description ="删除团长信息(幂等)")
+    public void fansTeamInfoDeleteAppTypeTest(){
+        try {
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
+            post = new HttpPost(uri);
+            UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
+            UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
+            commonRequest.setAppType(1);
+            commonRequest.setChannelId(1);
+            commonRequest.setChannelUserId("5201314");
+            builder.setDeleteRequest(commonRequest);
+            Reporter.log(incomeMessage+builder+"}");
 
+            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
+            post.setHeader("Content-Type", "application/x-protobuf");
+
+            HttpResponse response = httpClient.execute(post);
+            JsonFormat jsonFormat =new JsonFormat();
+            if (response.getStatusLine().getStatusCode() == 200) {
+                UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+                System.out.println("result:" + jsonFormat.printToString(resp));
+            } else {
+                System.out.println(response.getStatusLine().getStatusCode());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
