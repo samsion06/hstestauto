@@ -29,6 +29,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
     private static JsonFormat JsonFormat;
+    private static String incomeMessage="传入参数:"+" {";
 
     @BeforeTest
     public void beforeTest(){
@@ -48,9 +49,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             builder.setRealName("周雄鑫");
             builder.setChannelId(1);
             builder.setChannelUserId("5201314");
+
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
+
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(JsonFormat.printToString(resp));
@@ -75,9 +78,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             entity.setChannelUserId("5201314");
             entity.setRealName("xiongxinzhou");
             builder.setUpdateRequest(entity.build());
+
+            Reporter.log(incomeMessage+"}");
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
+
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println(JsonFormat.printToString(resp));
@@ -103,10 +109,15 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(resp));
+            Reporter.log(JsonFormat.printToString(resp));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+
+
 
 
 
