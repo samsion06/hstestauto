@@ -3,6 +3,7 @@ package com.example.UserbasePublic;
 import com.example.utils.CheckReponseResult;
 import com.example.utils.DataTransferUtil;
 import com.example.utils.HttpConfigUtil;
+import com.googlecode.protobuf.format.JsonFormat;
 import com.hs.user.base.proto.UserTeamRelationServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -12,6 +13,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -36,15 +38,23 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
     @Test(description = "1.绑定(新增)团长关系(幂等)")
     public void teamRelationRegisterTest(){
-        try{
 
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/team/relation/register", "");
+        Integer appType=1;
+        String channelUserId="5201314";
+        String teamUserId="5201314";
+
+        try{
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
+            System.out.println(uri);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest("1",1,1,"1");
+            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest(channelUserId,channelId,appType,teamUserId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            CheckReponseResult.AssertResponses(response, UserTeamRelationServiceProto.UserTeamRelationRegisterResponse.class);
+            JsonFormat jsonFormat =new JsonFormat();
+            UserTeamRelationServiceProto.UserTeamRelationRegisterResponse resp = UserTeamRelationServiceProto.UserTeamRelationRegisterResponse.parseFrom(response.getEntity().getContent());
+            Reporter.log(resp.toString());
+            System.out.println("result:" + jsonFormat.printToString(resp));
 
         }catch (Exception e){
             e.printStackTrace();

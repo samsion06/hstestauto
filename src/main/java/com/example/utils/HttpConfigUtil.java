@@ -3,6 +3,7 @@ package com.example.utils;
 public class HttpConfigUtil {
     //阿里云环境
     public static final String url="platform.huasheng100.com/user-base";
+    public static final String urlyx="platform.huasheng100.com/user-base-hsyx";
     //public static final Integer port=8080;
     public static final String scheme="http";
 

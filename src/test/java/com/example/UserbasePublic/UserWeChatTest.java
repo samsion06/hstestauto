@@ -213,9 +213,13 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             e.printStackTrace();
         }
 
+
+
+
+
+
+
     }
-
-
 
     @AfterTest
     public void afterTest() throws IOException {
