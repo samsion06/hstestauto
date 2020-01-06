@@ -613,9 +613,7 @@ public class DataTransferUtil {
         return bytes;
     }
 
-
-
-
-
-
+    /**
+     * 团长信息 从这个开始不封装试试
+     */
 }
