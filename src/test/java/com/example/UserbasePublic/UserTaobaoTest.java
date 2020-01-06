@@ -23,6 +23,8 @@ import java.net.URI;
 @SpringBootTest
 public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
 
+    //淘宝中心3个接口
+
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;
     private static Integer channelId=1;

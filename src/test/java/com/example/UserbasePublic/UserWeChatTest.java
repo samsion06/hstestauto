@@ -22,6 +22,8 @@ import java.net.URI;
 @SpringBootTest
 public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
+    //10个接口
+
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;//数据库取数据用
 
@@ -114,7 +116,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             //用户微信登录(幂等)
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/login","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserWeChatAuthLoginRequest(channelId,channelUserId,openId,appId);
+            byteArrayEntity = DataTransferUtil.UserWeChatAuthLoginRequest(channelId,channelUserId,openId,appId,"login");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -189,11 +191,32 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }
     }
 
+    @Test(description = "9.设置用户微信号(幂等) 只返回成功与失败 x")
+    public void getWeChatUserByOpenIdOrUnionIdTest(){
+
+        String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
+        String appId="Appid01";
+        String channelUserId="3692091";
+
+        try{
+
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatUserByOpenIdOrUnionId","");
+            post = new HttpPost(uri);;
+            byteArrayEntity =  DataTransferUtil.UserWeChatAuthLoginRequest(channelId,channelUserId,openId,appId,"getWeChatUserByOpenIdOrUnionId");
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponses(response, UserWeChatAuthServiceProto.UserWeChatAuthInfoResponse.class);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
     @AfterTest
     public void afterTest() throws IOException {
         httpClient.close();
     }
-
-
 
 }

@@ -21,6 +21,8 @@ import java.net.URI;
 @SpringBootTest
 public class UserAddressTest extends AbstractTestNGSpringContextTests {
 
+    //地址8个接口
+
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;
 

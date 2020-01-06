@@ -483,14 +483,19 @@ public class DataTransferUtil {
         return bytes;
     }
     //用户微信登录(幂等)
-    public static ByteArrayEntity UserWeChatAuthLoginRequest(Integer channelId,String channelUserId,String openId,String appId){
+    public static ByteArrayEntity UserWeChatAuthLoginRequest(Integer channelId,String channelUserId,String openId,String appId,String method){
         UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.Builder builder =UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.newBuilder();
         builder.setChannelId(channelId);
         builder.setChannelUserId(channelUserId);
         builder.setOpenId(openId);
         builder.setAppId(appId);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
-        Reporter.log("用户微信登录(幂等)_"+incomeMessage+builder+ "}");
+        System.out.println(builder);
+        if(method.equals("getWeChatUserByOpenIdOrUnionId")){
+            Reporter.log("根据chanelId和openId查询用户微信信息_"+incomeMessage+builder+ "}");
+        }else {
+            Reporter.log("用户微信登录(幂等)_"+incomeMessage+builder+ "}");
+        }
         return bytes;
     }
     //根据渠道用户Id查询用户微信列表信息(
@@ -515,6 +520,19 @@ public class DataTransferUtil {
         Reporter.log("根据openId获取用户微信信息_"+incomeMessage+builder+ "}");
         return bytes;
     }
+    //根据chaanelid和openid查询用户微信信息
+//    public static ByteArrayEntity UserWeChatAuthLoginRequest(Integer channelId,String channelUserId,String openId,String appId){
+//        UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.Builder builder= UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.newBuilder();
+//        builder.setAppId(appId);
+//        builder.setChannelId(channelId);
+//        builder.setChannelUserId(channelUserId);
+//        builder.setOpenId(openId);
+//        ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
+//        System.out.println(builder);
+//        Reporter.log("根据openId获取用户微信信息_"+incomeMessage+builder+ "}");
+//        return bytes;
+//    }
+
     //是否绑定过手机号(幂等)
     public static ByteArrayEntity UserWeChatAuthCheckPhoneRequest(Integer channelId,String channelUserId,String openId){
         UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneRequest.Builder builder = UserWeChatAuthServiceProto.UserWeChatAuthCheckPhoneRequest.newBuilder();

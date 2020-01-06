@@ -22,6 +22,8 @@ import java.net.URI;
 @SpringBootTest
 public class UseraliPayTest extends AbstractTestNGSpringContextTests {
 
+    //支付宝中心 4个接口
+
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;
 
