@@ -112,9 +112,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(resp));
             Reporter.log(JsonFormat.printToString(resp));
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
 
 
 
