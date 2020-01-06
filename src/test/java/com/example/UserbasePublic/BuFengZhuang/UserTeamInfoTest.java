@@ -1,4 +1,5 @@
 package com.example.UserbasePublic.BuFengZhuang;
+import com.example.utils.DataUtils;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
 import com.hs.user.base.proto.UserTeamInfoServiceProto;
@@ -14,7 +15,6 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.net.URI;
 
@@ -78,7 +78,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             entity.setRealName("xiongxinzhou");
             builder.setUpdateRequest(entity.build());
 
-            Reporter.log(incomeMessage+builder+"}");
+            DataUtils.logBuilder(builder,"修改团长信息(幂等)_");
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -176,9 +176,20 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     }
 
 
-    @Test(description ="删除团长信息(幂等)")
+    @Test(description ="1.注册团长" +
+                       "2.修改团长" +
+                       "3.查询团长" +
+                       "4.查询粉丝团长" +
+                       "5.根据批量channelUserId查询团长信息")
     public void userTeamCURD(){
         try{
+
+
+
+
+
+
+
 
 
 

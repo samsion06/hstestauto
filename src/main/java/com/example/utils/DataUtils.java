@@ -1,5 +1,7 @@
 package com.example.utils;
 
+import org.testng.Reporter;
+
 import java.util.Random;
 
 public class DataUtils {
@@ -23,4 +25,8 @@ public class DataUtils {
         return  element;
     }
 
+    public static void logBuilder(Object object,String interfaceName){
+        System.out.println("object is:"+object);
+        Reporter.log(interfaceName+"传入参数:{"+object+"}");
+    }
 }
