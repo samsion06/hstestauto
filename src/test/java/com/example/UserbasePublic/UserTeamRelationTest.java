@@ -1,6 +1,4 @@
 package com.example.UserbasePublic;
-
-import com.example.utils.CheckReponseResult;
 import com.example.utils.DataTransferUtil;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
@@ -65,7 +63,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     public void teamRelationDeleteTest(){
         try{
 
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/team/relation/delete", "");
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest();
             post.setEntity(byteArrayEntity);
@@ -73,7 +71,8 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserTeamRelationServiceProto.ResponseCode resp = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println(resp);
+            Reporter.log(resp.toString());
+
         }catch (Exception e){
             e.printStackTrace();
         }

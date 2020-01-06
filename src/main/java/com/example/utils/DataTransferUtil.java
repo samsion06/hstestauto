@@ -601,12 +601,12 @@ public class DataTransferUtil {
         //传对象
         UserTeamRelationServiceProto.UserTeamRelationCommonRequest.Builder userTeamRelationCommonRequest=UserTeamRelationServiceProto.UserTeamRelationCommonRequest.newBuilder();
         userTeamRelationCommonRequest.setChannelId(1);
-        userTeamRelationCommonRequest.setChannelUserId("1");
+        userTeamRelationCommonRequest.setChannelUserId("5201314");
         userTeamRelationCommonRequest.setAppType(1);
 
         UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.Builder builder=UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.newBuilder();
         builder.setCommonRequest(userTeamRelationCommonRequest);
-        builder.setTeamUserId("1");
+        builder.setTeamUserId("5201314");
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         System.out.println(builder);
         Reporter.log("解绑(删除)团长关系(幂等)_"+incomeMessage+builder+ "}");

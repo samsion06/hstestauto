@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/TestFile/test/UserTeamRelationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTeamInfoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/HttpConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/HttpConfigUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Product/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Product/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTeamRelationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTeamRelationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/TestFile/test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserTeamRelationTest.teamRelationRegisterTest">
+  <component name="RunManager" selected="TestNG.UserTeamRelationTest.teamRelationDeleteTest">
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Product.test" />
       <module name="demo" />
@@ -56,6 +54,24 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTeamRelationTest.teamRelationDeleteTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserTeamRelationTest" />
+      <option name="METHOD_NAME" value="teamRelationDeleteTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,31 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserbaseTest.userTagUpdateTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
-      <option name="METHOD_NAME" value="userTagUpdateTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserTeamRelationTest.teamRelationDeleteTest" />
         <item itemvalue="TestNG.UserTeamRelationTest.teamRelationRegisterTest" />
         <item itemvalue="Application.test" />
         <item itemvalue="TestNG.UserWeChatTest.getWeChatUserByOpenIdOrUnionIdTest" />
         <item itemvalue="TestNG.UserWeChatTest.getWeChatUserByOpenIdOrUnionIdTest (1)" />
-        <item itemvalue="TestNG.UserbaseTest.userTagUpdateTest" />
       </list>
     </recent_temporary>
   </component>
@@ -173,14 +171,7 @@
       <workItem from="1578108427316" duration="335000" />
       <workItem from="1578108880879" duration="72000" />
       <workItem from="1578109039337" duration="182000" />
-      <workItem from="1578273569185" duration="10820000" />
-    </task>
-    <task id="LOCAL-00028" summary="update">
-      <created>1577957261986</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1577957261986</updated>
+      <workItem from="1578273569185" duration="11440000" />
     </task>
     <task id="LOCAL-00029" summary="update">
       <created>1577957950801</created>
@@ -518,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578291251997</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="update">
+      <created>1578293434782</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1578293434782</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,49 +548,50 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578291251893">
-      <screen x="0" y="23" width="1680" height="961" />
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578293434658">
+      <screen x="0" y="23" width="1680" height="960" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578045602015" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578041138627" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578277270579" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578280848885" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578293434658" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1578291251893" />
-    <state width="1638" height="278" key="GridCell.Tab.0.bottom" timestamp="1578293366979">
+    <state width="1638" height="135" key="GridCell.Tab.0.bottom" timestamp="1578293864246">
       <screen x="0" y="23" width="1680" height="960" />
     </state>
     <state width="1638" height="354" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578045836450" />
     <state width="1638" height="180" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578039798979" />
     <state width="1638" height="339" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="819" height="339" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578280815867" />
-    <state width="1638" height="278" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578293366979" />
+    <state width="1638" height="135" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578293864246" />
     <state width="1638" height="208" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="278" key="GridCell.Tab.0.center" timestamp="1578293366978">
+    <state width="1638" height="135" key="GridCell.Tab.0.center" timestamp="1578293864246">
       <screen x="0" y="23" width="1680" height="960" />
     </state>
     <state width="1638" height="354" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578045836450" />
     <state width="1638" height="180" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578039798978" />
     <state width="1638" height="339" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="819" height="339" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578280815866" />
-    <state width="1638" height="278" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578293366978" />
+    <state width="1638" height="135" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578293864246" />
     <state width="1638" height="208" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="278" key="GridCell.Tab.0.left" timestamp="1578293366978">
+    <state width="1638" height="135" key="GridCell.Tab.0.left" timestamp="1578293864245">
       <screen x="0" y="23" width="1680" height="960" />
     </state>
     <state width="1638" height="354" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578045836449" />
     <state width="1638" height="180" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578039798978" />
     <state width="1638" height="339" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="819" height="339" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578280815865" />
-    <state width="1638" height="278" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578293366978" />
+    <state width="1638" height="135" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578293864245" />
     <state width="1638" height="208" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="278" key="GridCell.Tab.0.right" timestamp="1578293366979">
+    <state width="1638" height="135" key="GridCell.Tab.0.right" timestamp="1578293864246">
       <screen x="0" y="23" width="1680" height="960" />
     </state>
     <state width="1638" height="354" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578045836450" />
     <state width="1638" height="180" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578039798979" />
     <state width="1638" height="339" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="819" height="339" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578280815866" />
-    <state width="1638" height="278" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578293366978" />
+    <state width="1638" height="135" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578293864246" />
     <state width="1638" height="208" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
     <state x="328" y="81" key="SettingsEditor" timestamp="1577955362247">
       <screen x="0" y="23" width="1680" height="952" />
