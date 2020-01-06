@@ -79,7 +79,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             entity.setRealName("xiongxinzhou");
             builder.setUpdateRequest(entity.build());
 
-            Reporter.log(incomeMessage+"}");
+            Reporter.log(incomeMessage+builder+"}");
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -103,7 +103,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             builder.setAppType(1);
             builder.setChannelId(1);
             builder.addChannelUserId("5201314");
-
+            
+            Reporter.log(incomeMessage+builder+"}");
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -116,13 +117,38 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
     }
+
+    @Test(description ="查询粉丝团长(幂等)")
+    public void fansTeamInfoQueryChannelUserIdTest(){
+        try {
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query", "");
+            HttpPost post = new HttpPost(uri);
+            UserTeamInfoServiceProto.FansTeamInfoQueryRequest.Builder builder = UserTeamInfoServiceProto.FansTeamInfoQueryRequest.newBuilder();
+            UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
+            commonRequest.setAppType(1);
+            commonRequest.setChannelId(1);
+            commonRequest.setChannelUserId("5201314");
+
+            Reporter.log(incomeMessage+builder+"}");
+            builder.setCommonRequest(commonRequest);
+            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
+            post.setHeader("Content-Type", "application/x-protobuf");
+            HttpResponse response = httpClient.execute(post);
+            JsonFormat =new JsonFormat();
+
+            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            UserTeamInfoServiceProto.FansTeamInfoQueryResponse resp = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
+            System.out.println("result:" + JsonFormat.printToString(resp));
+            Reporter.log(JsonFormat.printToString(resp));
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 
