@@ -3,7 +3,6 @@ package com.example.UserbasePublic;
 import com.example.utils.CheckReponseResult;
 import com.example.utils.DataTransferUtil;
 import com.example.utils.HttpConfigUtil;
-import com.hs.user.base.proto.UserMobileAreaServiceProto;
 import com.hs.user.base.proto.UserTeamRelationServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;

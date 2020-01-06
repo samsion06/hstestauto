@@ -489,7 +489,7 @@ public class DataTransferUtil {
         builder.setChannelId(channelId);
         builder.setChannelUserId(channelUserId);
         builder.setOpenId(openId);
-      //  builder.setAppId(appId);
+        //builder.setAppId(appId);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         System.out.println(builder);
 
