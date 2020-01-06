@@ -28,13 +28,15 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
+    private static JsonFormat JsonFormat;
 
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
+        JsonFormat =new JsonFormat();
     }
 
-    @Test(description ="注册团长信息(幂等)")
+    //@Test(description ="注册团长信息(幂等)")
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
             //Assert.assertEquals("RESP_CODE_SUCCESS",authResponseMsg);
@@ -49,11 +51,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            JsonFormat jsonFormat = new JsonFormat();
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
-            System.out.println(jsonFormat.printToString(resp));
-            Reporter.log(jsonFormat.printToString(resp));
+            System.out.println(JsonFormat.printToString(resp));
+            Reporter.log(JsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,18 +78,35 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            JsonFormat jsonFormat =new JsonFormat();
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println(jsonFormat.printToString(resp));
-            Reporter.log(jsonFormat.printToString(resp));
+            System.out.println(JsonFormat.printToString(resp));
+            Reporter.log(JsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    @Test(description ="修改团长信息(幂等)")
 
+    @Test(description ="根据批量channelUserId查询团长信息(幂等)")
+    public void fansTeamInfoQueryBatchAppTypeTest(){
+        try {
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
+            post = new HttpPost(uri);
+            UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.newBuilder();
+            builder.setAppType(1);
+            builder.setChannelId(1);
+            builder.addChannelUserId("5201314");
+            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
+            System.out.println("result:" + JsonFormat.printToString(resp));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
