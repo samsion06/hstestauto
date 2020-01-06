@@ -103,9 +103,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             builder.setAppType(1);
             builder.setChannelId(1);
             builder.addChannelUserId("5201314");
+
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
+
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(resp));
@@ -113,6 +115,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
+
     }
 
 
