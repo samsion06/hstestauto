@@ -222,8 +222,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     }
 
     @AfterTest
-    public void afterTest() throws IOException {
-        httpClient.close();
-    }
+    public void afterTest() throws IOException {httpClient.close(); }
 
 }

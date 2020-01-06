@@ -11,7 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 import java.net.URI;
 
 
@@ -25,12 +29,16 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
 
+    @BeforeTest
+    public void beforeTest(){
+        httpClient = HttpClients.createDefault();
+    }
+
     @Test(description ="注册团长信息(幂等)")
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
             //Assert.assertEquals("RESP_CODE_SUCCESS",authResponseMsg);
             //注册团长
-            httpClient= HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
@@ -47,12 +55,43 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             System.out.println(jsonFormat.printToString(resp));
             Reporter.log(jsonFormat.printToString(resp));
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test(description ="修改团长信息(幂等)")
+    public void userTeamInfoUpdateChannelUserIdTest(){
+        try {
+
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");
+            post = new HttpPost(uri);
+            UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
+            UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity =UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
+            entity.setAppType(1);
+            entity.setChannelId(1);
+            entity.setChannelUserId("5201314");
+            entity.setRealName("xiongxinzhou");
+            builder.setUpdateRequest(entity.build());
+            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            JsonFormat jsonFormat =new JsonFormat();
+            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            System.out.println(jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
+    @Test(description ="修改团长信息(幂等)")
+
+
+
+
+    @AfterTest
+    public void afterTest() throws IOException {httpClient.close(); }
 }
