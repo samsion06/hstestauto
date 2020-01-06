@@ -485,12 +485,14 @@ public class DataTransferUtil {
     //用户微信登录(幂等)
     public static ByteArrayEntity UserWeChatAuthLoginRequest(Integer channelId,String channelUserId,String openId,String appId,String method){
         UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.Builder builder =UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.newBuilder();
+
         builder.setChannelId(channelId);
         builder.setChannelUserId(channelUserId);
         builder.setOpenId(openId);
-        builder.setAppId(appId);
+      //  builder.setAppId(appId);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         System.out.println(builder);
+
         if(method.equals("getWeChatUserByOpenIdOrUnionId")){
             Reporter.log("根据chanelId和openId查询用户微信信息_"+incomeMessage+builder+ "}");
         }else {

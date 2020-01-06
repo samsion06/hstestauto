@@ -191,12 +191,12 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description = "9.设置用户微信号(幂等) 只返回成功与失败 x")
+    @Test(description = "9.根据微信openid和channelid查询用户信息")
     public void getWeChatUserByOpenIdOrUnionIdTest(){
 
-        String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
+        String openId="oBrt31TuIVYEKJ1r-KNxDjEQFTIA3";
         String appId="Appid01";
-        String channelUserId="3692091";
+        String channelUserId="3693070";
 
         try{
 
