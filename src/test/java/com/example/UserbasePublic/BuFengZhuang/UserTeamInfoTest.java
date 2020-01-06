@@ -1,5 +1,4 @@
-package com.example.UserbasePublic;
-
+package com.example.UserbasePublic.BuFengZhuang;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
 import com.hs.user.base.proto.UserTeamInfoServiceProto;
@@ -7,12 +6,12 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 import java.net.URI;
 
 
@@ -26,10 +25,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
 
-    @Test
+    @Test(description ="注册团长信息(幂等)")
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
             //Assert.assertEquals("RESP_CODE_SUCCESS",authResponseMsg);
+            //注册团长
+            httpClient= HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
@@ -45,8 +46,13 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(resp));
             Reporter.log(jsonFormat.printToString(resp));
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
     }
 }
