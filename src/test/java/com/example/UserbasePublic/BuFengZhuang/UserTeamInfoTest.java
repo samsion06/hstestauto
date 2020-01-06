@@ -178,9 +178,13 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     @Test(description ="删除团长信息(幂等)")
     public void userTeamCURD(){
+        try{
 
 
 
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
