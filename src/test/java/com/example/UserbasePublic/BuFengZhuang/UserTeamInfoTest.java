@@ -24,7 +24,6 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     private static Integer channelId=1;
     private static CloseableHttpClient httpClient;
-    private static ByteArrayEntity byteArrayEntity;
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
