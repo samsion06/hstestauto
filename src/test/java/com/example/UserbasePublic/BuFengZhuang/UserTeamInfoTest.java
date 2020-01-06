@@ -47,7 +47,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
             builder.setAppType(1);
             builder.setRealName("周雄鑫");
-            builder.setChannelId(1);
+            builder.setChannelId(channelId);
             builder.setChannelUserId("5201314");
 
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
@@ -74,7 +74,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity =UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
             entity.setAppType(1);
-            entity.setChannelId(1);
+            entity.setChannelId(channelId);
             entity.setChannelUserId("5201314");
             entity.setRealName("xiongxinzhou");
             builder.setUpdateRequest(entity.build());
@@ -101,7 +101,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.newBuilder();
             builder.setAppType(1);
-            builder.setChannelId(1);
+            builder.setChannelId(channelId);
             builder.addChannelUserId("5201314");
             
             Reporter.log(incomeMessage+builder+"}");
@@ -127,7 +127,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.FansTeamInfoQueryRequest.Builder builder = UserTeamInfoServiceProto.FansTeamInfoQueryRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
             commonRequest.setAppType(1);
-            commonRequest.setChannelId(1);
+            commonRequest.setChannelId(channelId);
             commonRequest.setChannelUserId("5201314");
             builder.setCommonRequest(commonRequest);
             Reporter.log(incomeMessage+builder+"}");
@@ -147,7 +147,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="删除团长信息(幂等)")
+    //@Test(description ="删除团长信息(幂等)")
     public void fansTeamInfoDeleteAppTypeTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
@@ -155,7 +155,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
             commonRequest.setAppType(1);
-            commonRequest.setChannelId(1);
+            commonRequest.setChannelId(channelId);
             commonRequest.setChannelUserId("5201314");
             builder.setDeleteRequest(commonRequest);
             Reporter.log(incomeMessage+builder+"}");
@@ -164,10 +164,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setHeader("Content-Type", "application/x-protobuf");
 
             HttpResponse response = httpClient.execute(post);
-            JsonFormat jsonFormat =new JsonFormat();
+            JsonFormat =new JsonFormat();
             if (response.getStatusLine().getStatusCode() == 200) {
                 UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-                System.out.println("result:" + jsonFormat.printToString(resp));
+                System.out.println("result:" + JsonFormat.printToString(resp));
             } else {
                 System.out.println(response.getStatusLine().getStatusCode());
             }
@@ -175,6 +175,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             e.printStackTrace();
         }
     }
+
+
+
+
 
 
 
