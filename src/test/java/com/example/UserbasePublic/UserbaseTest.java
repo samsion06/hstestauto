@@ -93,12 +93,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -126,12 +120,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -212,12 +200,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -256,6 +238,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             //校验结果
             CheckReponseResult.AssertResponses(response,UserBaseServiceProto.UserBaseInfoByConditionPage.class);
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -276,17 +259,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     //@Test(description = "修改用户标签(幂等)404")
     public  void userTagUpdateTest(){
+
         try{
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/tag/update ","");
