@@ -1,5 +1,6 @@
 package com.example.Product;
 
+import com.example.utils.HttpConfigUtil;
 import com.hs.user.base.proto.ResultResponse;
 import com.hs.user.base.proto.UserWeChatAuthServiceProto;
 import org.apache.http.HttpResponse;
@@ -16,15 +17,13 @@ public class test {
     public static void main(String [] args) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         try {
-            URI uri = new URI("http", null, "172.18.0.112", 8080, "/weChat/getWeChatUserByOpenIdOrUnionId", "", null);
+           // URI uri = new URI("http", null, "172.18.0.112", 8080, "/weChat/getWeChatUserByOpenIdOrUnionId", "", null);
+
+            URI uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatUserByOpenIdOrUnionId","");
             HttpPost post = new HttpPost(uri);
             UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.Builder builder = UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.newBuilder();
-            //builder.setOpenId("oBrt31epHkTX4M9lpH12mIOxsdm4");
-            //builder.setChannelUserId("176879");
             builder.setChannelId(1);
             builder.setOpenId("oBrt31TuIVYEKJ1r-KNxDjEQFTIA");
-           // builder.setUnionId("nZmwj1tpZEGa22Qod03OhFxsQfvgunion");
-          //  builder.setAppId("1111");
             builder.setChannelUserId("3693070");
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");

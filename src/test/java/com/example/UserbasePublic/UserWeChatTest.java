@@ -2,6 +2,7 @@ package com.example.UserbasePublic;
 
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
+import com.hs.user.base.proto.ResultResponse;
 import com.hs.user.base.proto.UserBaseServiceProto;
 import com.hs.user.base.proto.UserWeChatAuthServiceProto;
 import org.apache.http.HttpResponse;
@@ -194,10 +195,37 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Test(description = "9.根据微信openid和channelid查询用户信息")
     public void getWeChatUserByOpenIdOrUnionIdTest(){
 
-        String openId="oBrt31TuIVYEKJ1r-KNxDjEQFTIA3";
-        String appId="Appid01";
+        String openId="oBrt31TuIVYEKJ1r-KNxDjEQFTIA";
         String channelUserId="3693070";
-
+        String appId="1231";
+//        CloseableHttpClient httpClient = HttpClients.createDefault();
+//        try {
+//            // URI uri = new URI("http", null, "172.18.0.112", 8080, "/weChat/getWeChatUserByOpenIdOrUnionId", "", null);
+//
+//            URI uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatUserByOpenIdOrUnionId","");
+//            HttpPost post = new HttpPost(uri);
+//            UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.Builder builder = UserWeChatAuthServiceProto.UserWeChatAuthLoginRequest.newBuilder();
+//            builder.setChannelId(1);
+//            builder.setOpenId(openId);
+//            builder.setChannelUserId(channelUserId);
+//            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
+//            post.setHeader("Content-Type", "application/x-protobuf");
+//            HttpResponse response = httpClient.execute(post);
+//            if (response.getStatusLine().getStatusCode() == 200) {
+//                ResultResponse.ResultSet resp = ResultResponse.ResultSet.parseFrom(response.getEntity().getContent());
+//                System.out.println("result:" + resp.getCodeValue());
+//                System.out.println("msg:" + resp.getMsg());
+//                if (resp.getCode() == ResultResponse.ResponseCode.RESP_CODE_SUCCESS && resp.getData().is(UserWeChatAuthServiceProto.UserWeChatAuthInfoResponse.class) ) {
+//                    UserWeChatAuthServiceProto.UserWeChatAuthInfoResponse entity = resp.getData().unpack(UserWeChatAuthServiceProto.UserWeChatAuthInfoResponse.class);
+//                    System.out.println("result:" + entity.getChannelUserId());
+//                }
+//            } else {
+//                System.out.println(response.getStatusLine().getStatusCode());
+//            }
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//
         try{
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/getWeChatUserByOpenIdOrUnionId","");
