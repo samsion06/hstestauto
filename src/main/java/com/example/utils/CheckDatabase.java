@@ -107,12 +107,19 @@ public class CheckDatabase {
                 System.out.println(userTaobaoInfo);
                 Reporter.log(AllMsg+userTaobaoInfo);
                 break;
-            case "teamRegister":  //注册团长信息
-                 userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
-                 //获取channelUserId查看是否插入成功
-                 Assert.assertEquals(targetOutPut,userTeamInfo.getChannelUserId());
-
-
+            case "teamRegister": //注册团长信息
+                userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
+                //获取channelUserId查看是否插入成功
+                Assert.assertEquals(targetOutPut,userTeamInfo.getChannelUserId());
+                System.out.println(userTeamInfo);
+                Reporter.log(AllMsg+userTaobaoInfo);
+                break;
+            case "teamUpdate": //修改团长信息
+                userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
+                //判断姓名是否修改成功
+                Assert.assertEquals(targetOutPut,userTeamInfo.getRealName());
+                System.out.println(userTeamInfo.getRealName());
+                Reporter.log(PartMsg+userTaobaoInfo.ge);
 
 
             default:
