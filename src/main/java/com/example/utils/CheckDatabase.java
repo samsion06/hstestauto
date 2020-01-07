@@ -137,7 +137,7 @@ public class CheckDatabase {
             case "relationDelete": //解除绑定团长关系
                 userRleationInfo=teamRealtionInfoMapper.queryUserRleationInfo(channelUserId);
                 Assert.assertEquals(targetOutPut,userRleationInfo.getIsDelete());
-                System.out.println(userTeamInfo.getIsDelete());
+                System.out.println(userTeamInfo.getIsDelete()+"");
                 DataUtils.logDatabase(1,"is_delete",userRleationInfo.getIsDelete()+"");
                 break;
 
