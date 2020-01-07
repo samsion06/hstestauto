@@ -1,4 +1,5 @@
 package com.example.UserbasePublic.BuFengZhuang;
+import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.utils.DataUtils;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
@@ -8,6 +9,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
@@ -21,6 +23,10 @@ import java.net.URI;
 
 @SpringBootTest
 public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
+
+
+    @Autowired
+    private TeamRealtionInfoMapper teamRealtionInfoMapper;
 
     private static Integer channelId=1;
     private static String channelUserId;
@@ -287,6 +293,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void testsql(){
+        System.out.println(teamRealtionInfoMapper.queryUserTeamInfo("8e8459d2b0c54ff49b3e17f9a8d27ed9"));
     }
 
 
