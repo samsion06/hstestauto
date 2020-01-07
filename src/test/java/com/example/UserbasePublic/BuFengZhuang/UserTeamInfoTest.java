@@ -31,7 +31,6 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpResponse response;
     private static JsonFormat JsonFormat;
 
-
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
