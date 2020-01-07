@@ -78,7 +78,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String nickNameResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS", nickNameResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper, "NickNameUpdate", nickname, ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null, "NickNameUpdate", nickname, ChannelUserId);
 
             //修改头像
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/head/img/update", "");
@@ -89,7 +89,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String headUrlImg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS", headUrlImg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper, "HeadUrlImg", headimgurl, ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper, null,"HeadUrlImg", headimgurl, ChannelUserId);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -186,7 +186,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String pwdResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",pwdResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"PwdUpdate",md5pwd,ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"PwdUpdate",md5pwd,ChannelUserId);
 
             //再次登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");

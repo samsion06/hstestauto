@@ -57,7 +57,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             HttpResponse response = httpClient.execute(post);
             String bindResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",bindResponseMsg);//expected  actual
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"AliPayBind","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AliPayBind","1",channelUserId);
 
             //用户支付宝授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth","");
@@ -68,7 +68,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String authResponse = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",authResponse);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"AliPayAuth","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AliPayAuth","1",channelUserId);
 
             //用户取消授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth/cancel","");
@@ -79,7 +79,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String unbindResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",unbindResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"AliPayCancel","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AliPayCancel","1",channelUserId);
 
         } catch (Exception e) {
             e.printStackTrace();
