@@ -300,13 +300,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             e.printStackTrace();
         }
     }
-
-    @Test
-    public void testsql(){
-        System.out.println(teamRealtionInfoMapper.queryUserTeamInfo("8e8459d2b0c54ff49b3e17f9a8d27ed9"));
-    }
-
-
+    
     @AfterTest
     public void afterTest() throws IOException {httpClient.close(); }
 }

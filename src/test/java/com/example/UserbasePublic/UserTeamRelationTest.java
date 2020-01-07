@@ -22,15 +22,20 @@ import java.net.URI;
 public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
     private static Integer channelId=1;
+    private static String channelUserId;
+    private static Integer appType=1;
     private static CloseableHttpClient httpClient;
-    private static ByteArrayEntity byteArrayEntity;
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
+    private static JsonFormat JsonFormat;
+    private static ByteArrayEntity byteArrayEntity;
 
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
+        JsonFormat =new JsonFormat();
+        channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
     }
 
     @Test(description = "1.绑定(新增)团长关系(幂等)")
@@ -76,6 +81,19 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             e.printStackTrace();
         }
     }
+
+
+    @Test(description = "3.团长关系聚合)")
+    public void teamRelationCURD(){
+
+
+
+
+    }
+
+
+
+
 
     @AfterTest
     public void afterTest() throws IOException {
