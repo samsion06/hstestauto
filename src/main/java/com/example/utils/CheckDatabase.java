@@ -127,7 +127,8 @@ public class CheckDatabase {
                 System.out.println(userTeamInfo.getIsDelete());
                 DataUtils.logDatabase(1,"is_delete",userTeamInfo.getIsDelete()+"");
                 break;
-            case "relationRegister":
+            case "relationRegister": //绑定团长关系
+
 
 
                 break;
