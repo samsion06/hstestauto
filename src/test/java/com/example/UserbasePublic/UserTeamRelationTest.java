@@ -84,7 +84,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     }
 
 
-    @Test(description = "3.团长关系聚合")
+    //@Test(description = "3.团长关系聚合")
     public void teamRelationCURD(){
 
         String teamUserId="5201314";
