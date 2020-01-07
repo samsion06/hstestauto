@@ -4,6 +4,8 @@
 
 <mapper namespace="com.example.mapper.UserBaseInfoMapper">
 
+    <!--resources mapper.xml存放目录要与java接口mapper一致-->
+
     <!--映射收货地址字段 17-->
     <resultMap id="AddressInfoMap" type="com.example.domain.UserAddressInfo">
         <id column="id" property="id"/>
