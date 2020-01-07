@@ -9,12 +9,12 @@ import org.apache.ibatis.annotations.Select;
 public interface TeamRealtionInfoMapper {
 
     //查询团长信息
-    @Select("select * from product_category where channel_user_id = #{channelUserId}")
+    @Select("select * from user_team_info where channel_user_id = #{channelUserId}")
     @Results({
             @Result(column = "id", property = "id"),
-            @Result(column = "real_name", property = "channelId"),
+            @Result(column = "real_name", property = "realName"),
             @Result(column = "channel_user_id", property = "channelUserId"),
-            @Result(column = "channel_id", property = "realName"),
+            @Result(column = "channel_id", property = "channelId"),
             @Result(column = "app_type", property = "appType"),
             @Result(column = "deposit", property = "deposit"),
             @Result(column = "recommend", property = "recommend"),
