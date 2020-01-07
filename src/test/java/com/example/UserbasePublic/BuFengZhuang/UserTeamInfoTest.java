@@ -199,6 +199,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setRealName("周雄鑫");
             registerBuilder.setChannelId(channelId);
             registerBuilder.setChannelUserId(channelUserId);
+            DataUtils.logBuilder(registerBuilder,"注册团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(registerBuilder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
