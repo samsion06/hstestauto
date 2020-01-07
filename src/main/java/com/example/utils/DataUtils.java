@@ -39,8 +39,9 @@ public class DataUtils {
         }else{
             Reporter.log("数据库全部匹配："+targetName);
         }
+    }
 
-
-
+    public static void logResponse(String response){
+        Reporter.log("返回值：【："+response+"】");
     }
 }

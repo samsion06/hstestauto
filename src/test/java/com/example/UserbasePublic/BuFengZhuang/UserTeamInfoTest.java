@@ -208,7 +208,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(JsonFormat.printToString(resp));
-            Reporter.log(JsonFormat.printToString(resp));
+            DataUtils.logResponse(JsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamRegister",channelUserId,channelUserId);
 
             //2.修改团长
@@ -231,7 +231,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode respa = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println(JsonFormat.printToString(respa));
-            Reporter.log(JsonFormat.printToString(respa));
+            DataUtils.logResponse(JsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamUpdate","xiongxinzhou",channelUserId);
 
             //3.根据批量channelUserId查询团长信息(幂等)
@@ -250,7 +250,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse respb = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(respb));
-            Reporter.log(JsonFormat.printToString(respb));
+            DataUtils.logResponse(JsonFormat.printToString(resp));
 
 
             //4.查询粉丝团长
@@ -272,7 +272,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.FansTeamInfoQueryResponse respc = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(respc));
-            Reporter.log(JsonFormat.printToString(respc));
+            DataUtils.logResponse(JsonFormat.printToString(resp));
 
             //5.删除丝团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
@@ -293,7 +293,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode respd = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(respd));
-            Reporter.log(JsonFormat.printToString(respd));
+            DataUtils.logResponse(JsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamDelete","1",channelUserId);
 
         } catch (Exception e) {
