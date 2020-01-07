@@ -42,7 +42,6 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         httpClient = HttpClients.createDefault();
         JsonFormat =new JsonFormat();
         channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
-
     }
 
     @Test(description ="注册团长信息(幂等)")
