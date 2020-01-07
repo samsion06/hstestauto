@@ -1,5 +1,6 @@
 package com.example.UserbasePublic.BuFengZhuang;
 import com.example.mapper.TeamRealtionInfoMapper;
+import com.example.utils.CheckDatabase;
 import com.example.utils.DataUtils;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
@@ -207,6 +208,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(JsonFormat.printToString(resp));
             Reporter.log(JsonFormat.printToString(resp));
+            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamRegister",channelUserId,channelUserId);
 
             //2.修改团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");
@@ -220,6 +222,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             updateBuilder.setUpdateRequest(entity.build());
             DataUtils.logBuilder(updateBuilder,"修改团长信息(幂等)_");
 
+
             post.setEntity(new ByteArrayEntity(updateBuilder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -228,6 +231,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.ResponseCode respa = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println(JsonFormat.printToString(respa));
             Reporter.log(JsonFormat.printToString(respa));
+            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamUpdate","xiongxinzhou",channelUserId);
 
             //3.根据批量channelUserId查询团长信息(幂等)
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
@@ -246,6 +250,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse respb = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(respb));
             Reporter.log(JsonFormat.printToString(respb));
+
 
             //4.查询粉丝团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query", "");
@@ -288,6 +293,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.ResponseCode respd = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + JsonFormat.printToString(respd));
             Reporter.log(JsonFormat.printToString(respd));
+            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamDelete","1",channelUserId);
 
         } catch (Exception e) {
             e.printStackTrace();

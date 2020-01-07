@@ -107,7 +107,7 @@ public class CheckDatabase {
                 System.out.println(userTaobaoInfo);
                 Reporter.log(AllMsg+userTaobaoInfo);
                 break;
-            case "teamRegister": //注册团长信息
+            case "teamRegister": //注册团长信息 1.targetoutput数据库拿来比对的字段(string) 2.channeluserid数据库拿来插数据的字段
                 userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
                 //获取channelUserId查看是否插入成功
                 Assert.assertEquals(targetOutPut,userTeamInfo.getChannelUserId());
@@ -123,9 +123,9 @@ public class CheckDatabase {
                 break;
             case "teamDelete"://删除团长信息
                 userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
-                Assert.assertEquals(targetOutPut,userTeamInfo.getIsDelete());
+                Assert.assertEquals(targetOutPut,userTeamInfo.getIsDelete()+"");
                 System.out.println(userTeamInfo.getIsDelete());
-                DataUtils.logDatabase(1,"is_delete",String.valueOf(userTeamInfo.getIsDelete()));
+                DataUtils.logDatabase(1,"is_delete",userTeamInfo.getIsDelete()+"");
                 break;
             default:
                 System.out.println("没找到方法");
