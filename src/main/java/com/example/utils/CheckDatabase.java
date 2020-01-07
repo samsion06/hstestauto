@@ -123,7 +123,7 @@ public class CheckDatabase {
                 DataUtils.logDatabase(1,"real_name",userTeamInfo.getRealName());
                 break;
             case "teamDelete"://删除团长信息
-                userTeamInfo = ç.queryUserTeamInfo(channelUserId);
+                userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
                 Assert.assertEquals(targetOutPut,userTeamInfo.getIsDelete()+"");
                 System.out.println(userTeamInfo.getIsDelete());
                 DataUtils.logDatabase(1,"is_delete",userTeamInfo.getIsDelete()+"");
