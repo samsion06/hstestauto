@@ -12,7 +12,7 @@ public interface UserBaseInfoMapper {
     //查询用户
     public UserBaseInfo queryUserBaseInfo(String channelUserId);
 
-   //查询微信  public List<UserAlipayAuthInfo> queryWeChatInfos(String channel_user_id);
+    //查询微信  public List<UserAlipayAuthInfo> queryWeChatInfos(String channel_user_id);
     public UserWeChatInfo queryWeChatInfo(String channelUserId);
 
     //查询支付宝
