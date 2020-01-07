@@ -1,4 +1,6 @@
 package com.example.UserbasePublic;
+import com.example.mapper.TeamRealtionInfoMapper;
+import com.example.utils.CheckDatabase;
 import com.example.utils.DataTransferUtil;
 import com.example.utils.DataUtils;
 import com.example.utils.HttpConfigUtil;
@@ -9,6 +11,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
@@ -31,6 +34,9 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     private static HttpResponse response;
     private static JsonFormat jsonFormat;
     private static ByteArrayEntity byteArrayEntity;
+
+    @Autowired
+    private TeamRealtionInfoMapper teamRealtionInfoMapper;
 
     @BeforeTest
     public void beforeTest(){
@@ -101,6 +107,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             UserTeamRelationServiceProto.UserTeamRelationRegisterResponse resp = UserTeamRelationServiceProto.UserTeamRelationRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(resp));
             DataUtils.logResponse(jsonFormat.printToString(resp));
+            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"relationRegister",channelUserId,channelUserId);
 
             //解除团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
@@ -112,6 +119,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserTeamRelationServiceProto.ResponseCode resp1 = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             DataUtils.logResponse(resp1.toString());
+            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"relationDelete",channelUserId,channelUserId);
 
         }catch (Exception e){
             e.printStackTrace();
