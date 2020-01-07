@@ -279,9 +279,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builderDelete = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest1 = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
-            commonRequest.setAppType(appType);
-            commonRequest.setChannelId(channelId);
-            commonRequest.setChannelUserId(channelUserId);
+            commonRequest1.setAppType(appType);
+            commonRequest1.setChannelId(channelId);
+            commonRequest1.setChannelUserId(channelUserId);
             builderDelete.setDeleteRequest(commonRequest);
             DataUtils.logBuilder(builder,"删除团长信息(幂等)_");
 

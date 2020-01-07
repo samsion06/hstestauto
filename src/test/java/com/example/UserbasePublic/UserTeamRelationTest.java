@@ -39,7 +39,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
     }
 
-    @Test(description = "1.绑定(新增)团长关系(幂等)")
+    //@Test(description = "1.绑定(新增)团长关系(幂等)")
     public void teamRelationRegisterTest(){
 
         Integer appType=1;
@@ -64,7 +64,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "2.解绑(删除)团长关系(幂等)")
+    //@Test(description = "2.解绑(删除)团长关系(幂等)")
     public void teamRelationDeleteTest(){
         try{
 
@@ -84,7 +84,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     }
 
 
-    //@Test(description = "3.团长关系聚合")
+    @Test(description = "3.团长关系聚合")
     public void teamRelationCURD(){
 
         String teamUserId="5201314";
