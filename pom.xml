@@ -157,6 +157,15 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.1</version>
 		</dependency>
+
+		<!--实体类采用注解方式-->
+<!--		<dependency>-->
+<!--			<groupId>javax.persistence</groupId>-->
+<!--			<artifactId>persistence-api</artifactId>-->
+<!--			<version>1.0</version>-->
+<!--		</dependency>-->
+
+
 	</dependencies>
 
 	<build>
