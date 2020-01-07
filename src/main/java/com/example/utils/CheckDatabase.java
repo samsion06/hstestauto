@@ -15,6 +15,7 @@ public class CheckDatabase {
     private static UserLoginInfo userLoginInfo;
     private static UserTaobaoInfo userTaobaoInfo;
     private static UserTeamInfo userTeamInfo;
+    private static UserRleationInfo userRleationInfo;
 
     private static String AllMsg="数据库全部匹配：";
     private static String PartMsg="数据库部分匹配：";
@@ -122,16 +123,24 @@ public class CheckDatabase {
                 DataUtils.logDatabase(1,"real_name",userTeamInfo.getRealName());
                 break;
             case "teamDelete"://删除团长信息
-                userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
+                userTeamInfo = ç.queryUserTeamInfo(channelUserId);
                 Assert.assertEquals(targetOutPut,userTeamInfo.getIsDelete()+"");
                 System.out.println(userTeamInfo.getIsDelete());
                 DataUtils.logDatabase(1,"is_delete",userTeamInfo.getIsDelete()+"");
                 break;
             case "relationRegister": //绑定团长关系
-
-
-
+                userRleationInfo=teamRealtionInfoMapper.queryUserRleationInfo(channelUserId);
+                Assert.assertEquals(targetOutPut,userRleationInfo.getChannelUserId());
+                System.out.println(userTeamInfo);
+                DataUtils.logDatabase(2,null,userRleationInfo.toString());
                 break;
+            case "relationDelete": //解除绑定团长关系
+                userRleationInfo=teamRealtionInfoMapper.queryUserRleationInfo(channelUserId);
+                Assert.assertEquals(targetOutPut,userRleationInfo.getIsDelete());
+                System.out.println(userTeamInfo.getIsDelete());
+                DataUtils.logDatabase(1,"is_delete",userRleationInfo.getIsDelete()+"");
+                break;
+
             default:
                 System.out.println("没找到方法");
                 break;
