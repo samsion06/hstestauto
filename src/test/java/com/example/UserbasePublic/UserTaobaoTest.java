@@ -59,7 +59,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String authResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",authResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"TaoBaoAuth","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"TaoBaoAuth","1",channelUserId);
 
             //授权查询
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/info", "");
@@ -81,7 +81,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String cancelResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",cancelResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"TaoBaoCancel","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"TaoBaoCancel","1",channelUserId);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,7 +105,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String cancelResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",cancelResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"TaoBaoCancel","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"TaoBaoCancel","1",channelUserId);
 
         }catch (Exception e){
             e.printStackTrace();

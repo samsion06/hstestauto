@@ -74,7 +74,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String updateResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",updateResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"AddressUpadate",name,ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AddressUpadate",name,ChannelUserId);
 
             //删除收货地址
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/delete","");
@@ -85,7 +85,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String deleteResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",deleteResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,"AddressDelete","1",ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AddressDelete","1",ChannelUserId);
         }catch (Exception e){
             e.printStackTrace();
         }

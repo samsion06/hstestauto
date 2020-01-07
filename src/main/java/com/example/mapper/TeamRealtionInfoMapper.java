@@ -32,6 +32,7 @@ public interface TeamRealtionInfoMapper {
             @Result(column = "head_num", property = "headNum"),
             @Result(column = "emergency_number", property = "emergencyNum"),
             @Result(column = "audit_time", property = "auditTime"),
+            @Result(column = "is_delete", property = "isDelete"),
     })
     public UserTeamInfo queryUserTeamInfo(String channelUserId);
 
