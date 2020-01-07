@@ -84,12 +84,11 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     }
 
 
-    @Test(description = "3.团长关系聚合)")
+    @Test(description = "3.团长关系聚合")
     public void teamRelationCURD(){
 
         String teamUserId="5201314";
         try{
-
             //绑定团长关系
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
             System.out.println(uri);
@@ -111,28 +110,12 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
-            UserTeamRelationServiceProto.ResponseCode resp = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            Reporter.log(resp.toString());
-
-
-
-
-
-
-
-
-
+            UserTeamRelationServiceProto.ResponseCode resp1 = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            DataUtils.logResponse(resp1.toString());
 
         }catch (Exception e){
-
-
-
-
-
+            e.printStackTrace();
         }
-
-
-
     }
 
 
