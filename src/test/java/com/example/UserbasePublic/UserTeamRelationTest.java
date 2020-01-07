@@ -106,6 +106,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             jsonFormat =new JsonFormat();
             UserTeamRelationServiceProto.UserTeamRelationRegisterResponse resp = UserTeamRelationServiceProto.UserTeamRelationRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(resp));
+            //判断
             DataUtils.logResponse(jsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"relationRegister",channelUserId,channelUserId);
 
@@ -118,6 +119,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserTeamRelationServiceProto.ResponseCode resp1 = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            //判断
             DataUtils.logResponse(resp1.toString());
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"relationDelete",channelUserId,channelUserId);
 

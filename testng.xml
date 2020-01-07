@@ -36,17 +36,17 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-<!--    <test name="团长关系信息">-->
-<!--        <classes>-->
-<!--            <class name="com.example.UserbasePublic.UserTeamRelationTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-    <test name="团长信息">
+    <test name="团长关系信息">
         <classes>
-            <class name="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest"/>
+            <class name="com.example.UserbasePublic.UserTeamRelationTest"/>
         </classes>
     </test>
+
+<!--    <test name="团长信息">-->
+<!--        <classes>-->
+<!--            <class name="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 
     <!--testng执行方式：https://www.cnblogs.com/926xiuxiu/p/9055846.html-->
