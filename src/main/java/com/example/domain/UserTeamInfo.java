@@ -24,6 +24,16 @@ public class UserTeamInfo {
     private String headNum;
     private String emergencyNum;
     private Integer auditTime;
+    private Integer isDelete;
+
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
+    }
 
     public Long getId() {
         return id;
@@ -226,6 +236,7 @@ public class UserTeamInfo {
                 ", headNum='" + headNum + '\'' +
                 ", emergencyNum='" + emergencyNum + '\'' +
                 ", auditTime=" + auditTime +
+                ", isDelete=" + isDelete +
                 '}';
     }
 }

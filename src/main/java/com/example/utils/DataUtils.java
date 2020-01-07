@@ -37,7 +37,7 @@ public class DataUtils {
         if (code==1){
             Reporter.log("数据库部分匹配："+fieldName+"的值得变更为："+targetName);
         }else{
-            Reporter.log("数据库全部匹配：");
+            Reporter.log("数据库全部匹配："+targetName);
         }
 
 

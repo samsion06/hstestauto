@@ -112,16 +112,21 @@ public class CheckDatabase {
                 //获取channelUserId查看是否插入成功
                 Assert.assertEquals(targetOutPut,userTeamInfo.getChannelUserId());
                 System.out.println(userTeamInfo);
-                Reporter.log(AllMsg+userTaobaoInfo);
+                DataUtils.logDatabase(2,"null",userTeamInfo.toString());
                 break;
             case "teamUpdate": //修改团长信息
                 userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
                 //判断姓名是否修改成功
                 Assert.assertEquals(targetOutPut,userTeamInfo.getRealName());
                 System.out.println(userTeamInfo.getRealName());
-                Reporter.log(PartMsg+userTaobaoInfo.ge);
-
-
+                DataUtils.logDatabase(1,"real_name",userTeamInfo.getRealName());
+                break;
+            case "teamDelete"://删除团长信息
+                userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
+                Assert.assertEquals(targetOutPut,userTeamInfo.getIsDelete());
+                System.out.println(userTeamInfo.getIsDelete());
+                DataUtils.logDatabase(1,"is_delete",String.valueOf(userTeamInfo.getIsDelete()));
+                break;
             default:
                 System.out.println("没找到方法");
                 break;
