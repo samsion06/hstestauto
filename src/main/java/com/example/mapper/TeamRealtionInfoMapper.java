@@ -39,7 +39,7 @@ public interface TeamRealtionInfoMapper {
 
 
     //查询团长关系
-    @Select("select * from user_team_info where channel_user_id = #{channelUserId}")
+    @Select("select * from user_team_relation where channel_user_id = #{channelUserId}")
     @Results({
             @Result(column = "id", property = "id"),
             @Result(column = "channel_id", property = "channelId"),

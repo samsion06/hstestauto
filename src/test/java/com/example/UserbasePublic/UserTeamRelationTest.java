@@ -95,6 +95,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
         String teamUserId="5201314";
         try{
+
             //绑定团长关系
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
             System.out.println(uri);
