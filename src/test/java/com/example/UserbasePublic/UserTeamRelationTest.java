@@ -118,10 +118,6 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-
-
-
-
     @AfterTest
     public void afterTest() throws IOException {
         httpClient.close();

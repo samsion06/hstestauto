@@ -127,6 +127,10 @@ public class CheckDatabase {
                 System.out.println(userTeamInfo.getIsDelete());
                 DataUtils.logDatabase(1,"is_delete",userTeamInfo.getIsDelete()+"");
                 break;
+            case "relationRegister":
+
+
+                break;
             default:
                 System.out.println("没找到方法");
                 break;
