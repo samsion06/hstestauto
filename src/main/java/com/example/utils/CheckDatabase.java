@@ -1,6 +1,7 @@
 package com.example.utils;
 
 import com.example.domain.*;
+import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.mapper.UserBaseInfoMapper;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -13,6 +14,7 @@ public class CheckDatabase {
     private static UserBaseInfo userBaseInfo;
     private static UserLoginInfo userLoginInfo;
     private static UserTaobaoInfo userTaobaoInfo;
+    private static UserTeamInfo userTeamInfo;
 
     private static String AllMsg="数据库全部匹配：";
     private static String PartMsg="数据库部分匹配：";
@@ -25,10 +27,10 @@ public class CheckDatabase {
      */
 
     //数据库检查
-    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper,String method, String targetOutPut,String channelUserId){
+    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper, TeamRealtionInfoMapper teamRealtionInfoMapper, String method, String targetOutPut, String channelUserId){
         switch (method){
             //微信解绑
-            case "WeChatInfoUnbind":
+            case "WeChatInfoUnbind"://微信解除绑定
                 userWeChatInfos = userBaseInfoMapper.queryWeChatInfo(channelUserId);
                 int wechatIsDelete = userWeChatInfos.getIsDelete(); //比对
                 Assert.assertEquals(1,wechatIsDelete);
@@ -105,6 +107,14 @@ public class CheckDatabase {
                 System.out.println(userTaobaoInfo);
                 Reporter.log(AllMsg+userTaobaoInfo);
                 break;
+            case "teamRegister":  //注册团长信息
+                 userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
+                 //获取channelUserId查看是否插入成功
+                 Assert.assertEquals(targetOutPut,userTeamInfo.getChannelUserId());
+
+
+
+
             default:
                 System.out.println("没找到方法");
                 break;
