@@ -597,11 +597,11 @@ public class DataTransferUtil {
     }
 
     //解绑(删除)团长关系(幂等)
-    public static ByteArrayEntity UserTeamRelationUntyingRequest(){
+    public static ByteArrayEntity UserTeamRelationUntyingRequest(String channelUserId){
         //传对象
         UserTeamRelationServiceProto.UserTeamRelationCommonRequest.Builder userTeamRelationCommonRequest=UserTeamRelationServiceProto.UserTeamRelationCommonRequest.newBuilder();
         userTeamRelationCommonRequest.setChannelId(1);
-        userTeamRelationCommonRequest.setChannelUserId("5201314");
+        userTeamRelationCommonRequest.setChannelUserId(channelUserId);
         userTeamRelationCommonRequest.setAppType(1);
 
         UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.Builder builder=UserTeamRelationServiceProto.UserTeamRelationUntyingRequest.newBuilder();

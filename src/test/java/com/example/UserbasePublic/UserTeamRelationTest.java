@@ -70,7 +70,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description = "2.解绑(删除)团长关系(幂等)")
+    @Test(description = "2.解绑(删除)团长关系(幂等)")
     public void teamRelationDeleteTest(){
         try{
 
@@ -114,7 +114,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             //解除团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest();
+            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest(channelUserId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -122,7 +122,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
             UserTeamRelationServiceProto.ResponseCode resp1 = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             //判断
             DataUtils.logResponse(resp1.toString());
-            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"relationDelete",channelUserId,channelUserId);
+            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"relationDelete","1",channelUserId);
 
         }catch (Exception e){
             e.printStackTrace();
