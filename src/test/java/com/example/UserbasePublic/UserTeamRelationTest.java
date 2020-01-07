@@ -70,7 +70,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "2.解绑(删除)团长关系(幂等)")
+    //@Test(description = "2.解绑(删除)团长关系(幂等)")
     public void teamRelationDeleteTest(){
         try{
 

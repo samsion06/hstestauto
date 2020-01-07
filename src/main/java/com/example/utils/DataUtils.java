@@ -42,6 +42,6 @@ public class DataUtils {
     }
 
     public static void logResponse(String response){
-        Reporter.log("返回值：【"+response+"】");
+        Reporter.log("返回值:["+response+"]");
     }
 }
