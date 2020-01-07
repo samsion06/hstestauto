@@ -36,12 +36,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
-    private static JsonFormat JsonFormat;
+    private static JsonFormat jsonFormat;
 
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
-        JsonFormat =new JsonFormat();
+        jsonFormat =new JsonFormat();
         channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
     }
 
@@ -64,8 +64,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
-            System.out.println(JsonFormat.printToString(resp));
-            Reporter.log(JsonFormat.printToString(resp));
+            System.out.println(jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,8 +94,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println(JsonFormat.printToString(resp));
-            Reporter.log(JsonFormat.printToString(resp));
+            System.out.println(jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,8 +119,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + JsonFormat.printToString(resp));
-            Reporter.log(JsonFormat.printToString(resp));
+            System.out.println("result:" + jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,12 +143,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
-            JsonFormat =new JsonFormat();
+            jsonFormat =new JsonFormat();
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.FansTeamInfoQueryResponse resp = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + JsonFormat.printToString(resp));
-            Reporter.log(JsonFormat.printToString(resp));
+            System.out.println("result:" + jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -171,12 +171,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            JsonFormat =new JsonFormat();
+            jsonFormat =new JsonFormat();
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + JsonFormat.printToString(resp));
-            Reporter.log(JsonFormat.printToString(resp));
+            System.out.println("result:" + jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -207,8 +207,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
-            System.out.println(JsonFormat.printToString(resp));
-            DataUtils.logResponse(JsonFormat.printToString(resp));
+            System.out.println(jsonFormat.printToString(resp));
+            DataUtils.logResponse(jsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamRegister",channelUserId,channelUserId);
 
             //2.修改团长
@@ -230,8 +230,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode respa = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println(JsonFormat.printToString(respa));
-            DataUtils.logResponse(JsonFormat.printToString(resp));
+            System.out.println(jsonFormat.printToString(respa));
+            DataUtils.logResponse(jsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamUpdate","xiongxinzhou",channelUserId);
 
             //3.根据批量channelUserId查询团长信息(幂等)
@@ -249,8 +249,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse respb = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + JsonFormat.printToString(respb));
-            DataUtils.logResponse(JsonFormat.printToString(resp));
+            System.out.println("result:" + jsonFormat.printToString(respb));
+            DataUtils.logResponse(jsonFormat.printToString(resp));
 
 
             //4.查询粉丝团长
@@ -267,12 +267,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
-            JsonFormat =new JsonFormat();
+            jsonFormat =new JsonFormat();
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.FansTeamInfoQueryResponse respc = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + JsonFormat.printToString(respc));
-            DataUtils.logResponse(JsonFormat.printToString(resp));
+            System.out.println("result:" + jsonFormat.printToString(respc));
+            DataUtils.logResponse(jsonFormat.printToString(resp));
 
             //5.删除丝团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
@@ -288,19 +288,19 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            JsonFormat =new JsonFormat();
+            jsonFormat =new JsonFormat();
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode respd = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + JsonFormat.printToString(respd));
-            DataUtils.logResponse(JsonFormat.printToString(resp));
+            System.out.println("result:" + jsonFormat.printToString(respd));
+            DataUtils.logResponse(jsonFormat.printToString(resp));
             CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamDelete","1",channelUserId);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     @AfterTest
     public void afterTest() throws IOException {httpClient.close(); }
 }

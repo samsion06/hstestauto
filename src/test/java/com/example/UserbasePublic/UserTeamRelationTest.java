@@ -1,5 +1,6 @@
 package com.example.UserbasePublic;
 import com.example.utils.DataTransferUtil;
+import com.example.utils.DataUtils;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
 import com.hs.user.base.proto.UserTeamRelationServiceProto;
@@ -28,13 +29,13 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
-    private static JsonFormat JsonFormat;
+    private static JsonFormat jsonFormat;
     private static ByteArrayEntity byteArrayEntity;
 
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
-        JsonFormat =new JsonFormat();
+        jsonFormat =new JsonFormat();
         channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
     }
 
@@ -85,7 +86,42 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
     @Test(description = "3.团长关系聚合)")
     public void teamRelationCURD(){
+
+        String teamUserId="5201314";
         try{
+
+            //绑定团长关系
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
+            System.out.println(uri);
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest(channelUserId,channelId,appType,teamUserId);
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            jsonFormat =new JsonFormat();
+            UserTeamRelationServiceProto.UserTeamRelationRegisterResponse resp = UserTeamRelationServiceProto.UserTeamRelationRegisterResponse.parseFrom(response.getEntity().getContent());
+            System.out.println("result:" + jsonFormat.printToString(resp));
+            DataUtils.logResponse(jsonFormat.printToString(resp));
+
+            //解除团长
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest();
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
+            UserTeamRelationServiceProto.ResponseCode resp = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            Reporter.log(resp.toString());
+
+
+
+
+
+
+
+
+
 
         }catch (Exception e){
 
