@@ -191,7 +191,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
                        "5.删除团长信息")
     public void userTeamCURD(){
         try {
-            //1.注册团长
+            //1.注册团长 29
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder registerBuilder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
@@ -199,43 +199,52 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setRealName("周雄鑫");
             registerBuilder.setChannelId(channelId);
             registerBuilder.setChannelUserId(channelUserId);
-//            registerBuilder.setAuditorName("细密是");
-//            registerBuilder.setDeposit(299229999);
-//            registerBuilder.setEmergencyNumber("17702015334");
-//            registerBuilder.setGender(1);
-//            registerBuilder.setHeadNum("13660607451");
-//            registerBuilder.setIsShowCommission(1);
+            registerBuilder.setAuditorName("周雄鑫");
+            registerBuilder.setDeposit(5201314);
+            registerBuilder.setEmergencyNumber("17702015334");
+            registerBuilder.setGender(1);
+            registerBuilder.setHeadNum("13660607451");
+            registerBuilder.setIsShowCommission(1);
+            registerBuilder.setIsVirtual(1);
+            registerBuilder.setLicenseImg("http://www.baidu.com/fuck.jpg");
+            registerBuilder.setMobile("17702015334");
+            registerBuilder.setOperatorId("5201314");
+            registerBuilder.setOperatorLongId(5201314L);
+            registerBuilder.setOperatorTel("17702015334");
+            registerBuilder.setRecommend("5201314");
+            registerBuilder.setSource(2);
+            registerBuilder.setStatus(1);
+            registerBuilder.setStopReason("jij小");
+            registerBuilder.setCompanyId(5201314L);
+            registerBuilder.setWeixin("xiongxinzhou");
+            registerBuilder.setCompanyName("周氏集团");
+            registerBuilder.setStartTime(202001061234L);
+            registerBuilder.setStopEndTime(202001061534L);
+            registerBuilder.setGender(1);
+            registerBuilder.setAuditTime(520134L);
+            registerBuilder.setAuditorName("周雄鑫");
 
+            UserTeamInfoServiceProto.UserTeamAddressRegister.Builder userTeamAddressRegisteruilder = UserTeamInfoServiceProto.UserTeamAddressRegister.newBuilder();
+            userTeamAddressRegisteruilder.setChannelUserId(channelUserId);
+            userTeamAddressRegisteruilder.setChannelId(channelId);
+            userTeamAddressRegisteruilder.setAppType(1);
+            userTeamAddressRegisteruilder.setProvinceCode(86);
+            userTeamAddressRegisteruilder.setCityCode(86);
+            userTeamAddressRegisteruilder.setDistrictCode(86);
+            userTeamAddressRegisteruilder.setAdcode(86);
+            userTeamAddressRegisteruilder.setProvince("广东");
+            userTeamAddressRegisteruilder.setCity("广州");
+            userTeamAddressRegisteruilder.setDistrict("海珠区");
+            userTeamAddressRegisteruilder.setAddress("天意酒店");
+            userTeamAddressRegisteruilder.setCommunity("幸坛小区");
+            userTeamAddressRegisteruilder.setAddressDetail("520");
+            userTeamAddressRegisteruilder.setMemberNumber(20);
+            userTeamAddressRegisteruilder.setLongitude(5201314);
+            userTeamAddressRegisteruilder.setLatitude(5201314);
+            userTeamAddressRegisteruilder.setGeoHash("fuck");
+            userTeamAddressRegisteruilder.setGeoHash("fuck");
 
-
-//
-//            builder.setAppType(1);
-//            builder.setAuditorName("细密是");
-//            builder.setChannelId(1);
-//            builder.setChannelUserId("9384439");
-//            builder.setCompanyName("小米");
-//            builder.setDeposit(299229999);
-//            builder.setEmergencyNumber("135879998778");
-//            builder.setGender(1);
-//            builder.setHeadNum("1928283833");
-//            builder.setIsShowCommission(1);
-//            builder.setIsVirtual(1);
-//            builder.setLicenseImg("/sd/fs/d/fsdf/sd/f");
-//            builder.setLicenseNumber("2121321e21321");
-//            builder.setMobile("5666623231231");
-//            builder.setOperatorId("123213");
-//            builder.setOperatorLongId(123213);
-//            builder.setOperatorTel("dfsdfwefsd");
-//            builder.setRealName("李白");
-//            builder.setRecommend("23213123");
-//            builder.setSource(2);
-//            builder.setStatus(1);
-//
-//            builder.setStopReason("销售小能手");
-//            builder.setCompanyId(22);
-//            builder.setWeixin("213123213");
-
-
+            registerBuilder.setAddress(userTeamAddressRegisteruilder);
             DataUtils.logBuilder(registerBuilder, "注册团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(registerBuilder.build().toByteArray()));
