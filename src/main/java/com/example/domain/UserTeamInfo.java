@@ -19,21 +19,12 @@ public class UserTeamInfo {
     private Integer gender;
     private String weixin;
     private String stopReason;
-    private Integer stopStartTime;
-    private Integer stopEndTime;
+    private Long stopStartTime;
+    private Long stopEndTime;
     private String headNum;
     private String emergencyNum;
-    private Integer auditTime;
+    private Long auditTime;
     private Integer isDelete;
-
-
-    public Integer getIsDelete() {
-        return isDelete;
-    }
-
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
-    }
 
     public Long getId() {
         return id;
@@ -171,19 +162,19 @@ public class UserTeamInfo {
         this.stopReason = stopReason;
     }
 
-    public Integer getStopStartTime() {
+    public Long getStopStartTime() {
         return stopStartTime;
     }
 
-    public void setStopStartTime(Integer stopStartTime) {
+    public void setStopStartTime(Long stopStartTime) {
         this.stopStartTime = stopStartTime;
     }
 
-    public Integer getStopEndTime() {
+    public Long getStopEndTime() {
         return stopEndTime;
     }
 
-    public void setStopEndTime(Integer stopEndTime) {
+    public void setStopEndTime(Long stopEndTime) {
         this.stopEndTime = stopEndTime;
     }
 
@@ -203,12 +194,20 @@ public class UserTeamInfo {
         this.emergencyNum = emergencyNum;
     }
 
-    public Integer getAuditTime() {
+    public Long getAuditTime() {
         return auditTime;
     }
 
-    public void setAuditTime(Integer auditTime) {
+    public void setAuditTime(Long auditTime) {
         this.auditTime = auditTime;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 
     @Override
