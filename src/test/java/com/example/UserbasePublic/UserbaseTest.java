@@ -52,6 +52,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         userBaseInfo.setHeadImg(headimgurl);
         userBaseInfo.setChannelId(1);
 
+
         //用户登陆
         userLoginInfo=new UserLoginInfo();
         userLoginInfo.setLoginName(loginName);
@@ -75,13 +76,13 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String result = CheckReponseResult.AssertResponses(response, UserBaseServiceProto.userInfoPdCombine.class);
-            String ChannelUserId = DataUtils.substring(result, "userId", 10, ",", 1);
+            userLoginInfo.setChannelUserId(DataUtils.substring(result, "userId", 10, ",", 1));
 
             //获取用户基础信息
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/getUserBaseInfo","");
             System.out.println(uri);
             post = new HttpPost(uri);;
-            byteArrayEntity = DataTransferUtil.UserInfoRequest(userLoginInfo.getChannelId(),ChannelUserId);
+            byteArrayEntity = DataTransferUtil.UserInfoRequest(userLoginInfo.getChannelId(),userLoginInfo.getChannelUserId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -90,7 +91,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //修改昵称
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/nick/name/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userNickNameUpdateRequestConvertBuilder(userBaseInfo.getChannelId(), ChannelUserId, userBaseInfo.getNickName());
+            byteArrayEntity = DataTransferUtil.userNickNameUpdateRequestConvertBuilder(userBaseInfo.getChannelId(), userLoginInfo.getChannelUserId(), userBaseInfo.getNickName());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -101,7 +102,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //修改头像
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/head/img/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userHeadImgUpdateRequestConvertBuilder(userBaseInfo.getChannelId(), ChannelUserId, userBaseInfo.getHeadImg());
+            byteArrayEntity = DataTransferUtil.userHeadImgUpdateRequestConvertBuilder(userBaseInfo.getChannelId(), userLoginInfo.getChannelUserId(), userBaseInfo.getHeadImg());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
