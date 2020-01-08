@@ -218,7 +218,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setRecommend(userTeamInfo.getRecommend());
             registerBuilder.setSource(userTeamInfo.getSource());
             registerBuilder.setStatus(userTeamInfo.getStatus());
-            registerBuilder.setStopReason();
+            registerBuilder.setStopReason(userTeamInfo.getStopReason());
             registerBuilder.setCompanyId(userTeamInfo.getCompanyId());
             registerBuilder.setWeixin(userTeamInfo.getWeixin());
             registerBuilder.setCompanyName(userTeamInfo.getCompanyName());
