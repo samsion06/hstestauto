@@ -127,6 +127,7 @@ public class CheckDatabase {
                 Assert.assertEquals(userTeamInfo.getRealName(),dataBaseUserTeamInfo.getRealName());
                 //记录
                 DataUtils.logDatabase(1, "real_name", dataBaseUserTeamInfo.getRealName());
+                break;
             case "teamDelete":
                 dataBaseUserTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(userTeamInfo.getChannelUserId());
                 Assert.assertEquals(userTeamInfo.getIsDelete(), dataBaseUserTeamInfo.getIsDelete());
