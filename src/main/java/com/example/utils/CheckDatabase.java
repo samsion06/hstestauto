@@ -13,7 +13,7 @@ public class CheckDatabase {
     private static UserWeChatInfo userWeChatInfos;
     private static UserAddressInfo userAddressInfo;
     private static UserBaseInfo dataBaseUserBaseInfo;
-    private static UserLoginInfo userLoginInfo;
+    private static UserLoginInfo dataUserLoginInfo;
     private static UserTaobaoInfo userTaobaoInfo;
     private static UserTeamInfo dataBaseUserTeamInfo;
     private static UserRleationInfo dataBaseUserRleationInfo;
@@ -77,30 +77,6 @@ public class CheckDatabase {
                 Assert.assertEquals(1, addressIsDelete);
                 Reporter.log(PartMsg + "is_delete值变更为：" + addressIsDelete);
                 break;
-            case "NickNameUpdate": //昵称更新
-                userBaseInfo = userBaseInfoMapper.queryUserBaseInfo(channelUserId);
-                String nickname = userBaseInfo.getNickName();
-                Assert.assertEquals(targetOutPut, nickname);
-                Reporter.log(PartMsg + "nick_name值变更为：" + nickname);
-                break;
-            case "HeadUrlImg": //修改头像
-                userBaseInfo = userBaseInfoMapper.queryUserBaseInfo(channelUserId);
-                String headurlimg = userBaseInfo.getHeadImg();
-                Assert.assertEquals(targetOutPut, headurlimg);
-                Reporter.log(PartMsg + "head_img值变更为：" + headurlimg);
-                break;
-            case "MobileUpadate"://修改手机
-                userLoginInfo = userBaseInfoMapper.queryUserLoginInfo(channelUserId);
-                String mobile = userLoginInfo.getLoginName();
-                Assert.assertEquals(targetOutPut, mobile);
-                Reporter.log(PartMsg + "login_name值变更为：" + mobile);
-                break;
-            case "PwdUpdate"://修改密码
-                userLoginInfo = userBaseInfoMapper.queryUserLoginInfo(channelUserId);
-                String pwd = userLoginInfo.getLoginPwd();
-                Assert.assertEquals(targetOutPut, pwd);
-                Reporter.log(PartMsg + "login_pwd值变更为：" + pwd);
-                break;
             case "TaoBaoAuth"://淘宝授权
                 userTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(channelUserId);
                 System.out.println(userTaobaoInfo);
@@ -114,36 +90,32 @@ public class CheckDatabase {
         }
     }
 
-    public static void CheckDatabaseUserBaseInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserBaseInfo userBaseInfo){
+    //用户信息
+    public static void CheckDatabaseUserBaseInfo(UserBaseInfoMapper userBaseInfoMapper,String method,
+                                                 UserBaseInfo userBaseInfo,UserLoginInfo userLoginInfo){
         switch (method) {
             case "NickNameUpdate": //昵称更新
                 dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userBaseInfo.getChannelUserId());
-                String nickname = userBaseInfo.getNickName();
                 Assert.assertEquals(userBaseInfo.getChannelUserId(), dataBaseUserBaseInfo.getNickName());
-                DataUtils.logDatabase(1,"nick_name",nickname);
+                DataUtils.logDatabase(1,"nick_name",dataBaseUserBaseInfo.getNickName());
                 break;
             case "HeadUrlImg": //修改头像
                 dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userBaseInfo.getChannelUserId());
-                String headurlimg = userBaseInfo.getHeadImg();
-                Assert.assertEquals(userBaseInfo.getHeadImg(), headurlimg);
-                DataUtils.logDatabase(1,"head_img",headurlimg);
+                Assert.assertEquals(userBaseInfo.getHeadImg(), dataBaseUserBaseInfo.getHeadImg());
+                DataUtils.logDatabase(1,"head_img",dataBaseUserBaseInfo.getHeadImg());
                 break;
             case "MobileUpadate"://修改手机
-                userLoginInfo = userBaseInfoMapper.queryUserLoginInfo(channelUserId);
-                String mobile = userLoginInfo.getLoginName();
-                Assert.assertEquals(targetOutPut, mobile);
-                Reporter.log(PartMsg + "login_name值变更为：" + mobile);
+                dataUserLoginInfo = userBaseInfoMapper.queryUserLoginInfo(userBaseInfo.getChannelUserId());
+                Assert.assertEquals(userBaseInfo.getMobile(), dataUserLoginInfo.getLoginName());
+                Reporter.log(PartMsg + "login_name值变更为：" +  dataUserLoginInfo.getLoginName());
                 break;
             case "PwdUpdate"://修改密码
-                userLoginInfo = userBaseInfoMapper.queryUserLoginInfo(channelUserId);
-                String pwd = userLoginInfo.getLoginPwd();
-                Assert.assertEquals(targetOutPut, pwd);
-                Reporter.log(PartMsg + "login_pwd值变更为：" + pwd);
+                dataUserLoginInfo = userBaseInfoMapper.queryUserLoginInfo(userBaseInfo.getChannelUserId());
+                Assert.assertEquals(userLoginInfo.getLoginPwd(), dataUserLoginInfo.getLoginPwd());
+                Reporter.log(PartMsg + "login_pwd值变更为：" + dataUserLoginInfo.getLoginPwd());
                 break;
-
         }
     }
-
 
     //团长信息
     public static void CheckDatabaseUserTeamInfo(TeamRealtionInfoMapper teamRealtionInfoMapper, String method, UserTeamInfo userTeamInfo) {
