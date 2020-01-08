@@ -12,7 +12,7 @@ public class CheckDatabase {
     private static UserAliPayInfo userAliPayInfo;
     private static UserWeChatInfo userWeChatInfos;
     private static UserAddressInfo userAddressInfo;
-    private static UserBaseInfo userBaseInfo;
+    private static UserBaseInfo dataBaseUserBaseInfo;
     private static UserLoginInfo userLoginInfo;
     private static UserTaobaoInfo userTaobaoInfo;
     private static UserTeamInfo dataBaseUserTeamInfo;
@@ -113,6 +113,37 @@ public class CheckDatabase {
                 break;
         }
     }
+
+    public static void CheckDatabaseUserBaseInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserBaseInfo userBaseInfo){
+        switch (method) {
+            case "NickNameUpdate": //昵称更新
+                dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userBaseInfo.getChannelUserId());
+                String nickname = userBaseInfo.getNickName();
+                Assert.assertEquals(userBaseInfo.getChannelUserId(), dataBaseUserBaseInfo.getNickName());
+                DataUtils.logDatabase(1,"nick_name",nickname);
+                break;
+            case "HeadUrlImg": //修改头像
+                dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userBaseInfo.getChannelUserId());
+                String headurlimg = userBaseInfo.getHeadImg();
+                Assert.assertEquals(userBaseInfo.getHeadImg(), headurlimg);
+                DataUtils.logDatabase(1,"head_img",headurlimg);
+                break;
+            case "MobileUpadate"://修改手机
+                userLoginInfo = userBaseInfoMapper.queryUserLoginInfo(channelUserId);
+                String mobile = userLoginInfo.getLoginName();
+                Assert.assertEquals(targetOutPut, mobile);
+                Reporter.log(PartMsg + "login_name值变更为：" + mobile);
+                break;
+            case "PwdUpdate"://修改密码
+                userLoginInfo = userBaseInfoMapper.queryUserLoginInfo(channelUserId);
+                String pwd = userLoginInfo.getLoginPwd();
+                Assert.assertEquals(targetOutPut, pwd);
+                Reporter.log(PartMsg + "login_pwd值变更为：" + pwd);
+                break;
+
+        }
+    }
+
 
     //团长信息
     public static void CheckDatabaseUserTeamInfo(TeamRealtionInfoMapper teamRealtionInfoMapper, String method, UserTeamInfo userTeamInfo) {
