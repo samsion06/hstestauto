@@ -40,18 +40,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
-        userTeamInfo=new UserTeamInfo();
-        userTeamInfo.setChannelId(1);
-        userTeamInfo.setChannelUserId((int)((Math.random()*9+1)*1000)+"");
-        userTeamInfo.setAppType(3);
-        userTeamInfo.setRealName("周雄鑫");
-        userTeamInfo.setAuditTime(5201314L);
-        userTeamInfo.setAuditorName("周雄鑫");
-        userTeamInfo.setDeposit(5201314D);
-
-
-
-
+        userTeamInfo=new UserTeamInfo(1,(int)((Math.random()*9+1)*1000)+"",3,1,
+                5201314d,"周雄鑫","5201314",5201314l,5201314l,"17702015334",
+                5201314,1,1,,1,"5201314",5201314l,5201314l,"5201314",
+                "5201314",5201314l,0,"5201314",1,"www.baidu.com");
     }
 
     //@Test(description ="注册团长信息(幂等)")
@@ -233,6 +225,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setGender(1);
             registerBuilder.setAuditTime(520134L);
             registerBuilder.setAuditorName("周雄鑫");
+
 
             UserTeamInfoServiceProto.UserTeamAddressRegister.Builder userTeamAddressRegisteruilder = UserTeamInfoServiceProto.UserTeamAddressRegister.newBuilder();
             userTeamAddressRegisteruilder.setChannelUserId(userTeamInfo.getChannelUserId());

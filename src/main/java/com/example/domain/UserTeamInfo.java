@@ -26,11 +26,55 @@ public class UserTeamInfo {
     private Long auditTime;
     private Integer isDelete;
     private String auditorName;
+    private Integer isShownCommission;
+    private String licenseImg;
 
+//    public UserTeamInfo() {
+//    }
 
+    public UserTeamInfo(Integer channelId, String channelUserId, String realName, Integer appType, Double deposit, String recommend, String operatorId, Long operatorLongId, Long companyId, String mobile, Long startTime, Integer status, Integer isVirtual, Integer gender, String weixin, String stopReason, Long stopStartTime, Long stopEndTime, String headNum, String emergencyNum, Long auditTime, Integer isDelete, String auditorName, Integer isShownCommission, String licenseImg) {
+        this.channelId = channelId;
+        this.channelUserId = channelUserId;
+        this.realName = realName;
+        this.appType = appType;
+        this.deposit = deposit;
+        this.recommend = recommend;
+        this.operatorId = operatorId;
+        this.operatorLongId = operatorLongId;
+        this.companyId = companyId;
+        this.mobile = mobile;
+        this.startTime = startTime;
+        this.status = status;
+        this.isVirtual = isVirtual;
+        this.gender = gender;
+        this.weixin = weixin;
+        this.stopReason = stopReason;
+        this.stopStartTime = stopStartTime;
+        this.stopEndTime = stopEndTime;
+        this.headNum = headNum;
+        this.emergencyNum = emergencyNum;
+        this.auditTime = auditTime;
+        this.isDelete = isDelete;
+        this.auditorName = auditorName;
+        this.isShownCommission = isShownCommission;
+        this.licenseImg = licenseImg;
+    }
 
+    public String getLicenseImg() {
+        return licenseImg;
+    }
 
+    public void setLicenseImg(String licenseImg) {
+        this.licenseImg = licenseImg;
+    }
 
+    public Integer getIsShownCommission() {
+        return isShownCommission;
+    }
+
+    public void setIsShownCommission(Integer isShownCommission) {
+        this.isShownCommission = isShownCommission;
+    }
 
     public String getAuditorName() {
         return auditorName;
