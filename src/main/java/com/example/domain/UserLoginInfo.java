@@ -5,7 +5,7 @@ import java.util.Date;
 public class UserLoginInfo {
     private Long id;
     private Long userId;
-    private Long channelId;
+    private Integer channelId;
     private String channelUserId;
     private String loginName;
     private String loginPwd;
@@ -30,11 +30,11 @@ public class UserLoginInfo {
         this.userId = userId;
     }
 
-    public Long getChannelId() {
+    public Integer getChannelId() {
         return channelId;
     }
 
-    public void setChannelId(Long channelId) {
+    public void setChannelId(Integer channelId) {
         this.channelId = channelId;
     }
 

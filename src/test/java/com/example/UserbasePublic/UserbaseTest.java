@@ -1,4 +1,6 @@
 package com.example.UserbasePublic;
+import com.example.domain.UserBaseInfo;
+import com.example.domain.UserLoginInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
 import com.hs.user.base.proto.UserBaseServiceProto;
@@ -30,12 +32,30 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
+    private UserBaseInfo userBaseInfo;
+    private UserLoginInfo userLoginInfo;
+
 
 
     @BeforeTest
     public void beforeTest(){
+        String nickname = DataUtils.getRandomString(9);//随机生成用户名
+        String headimgurl = DataUtils.getRandomString(15);//随机生成头像
+        String loginName = "17720130632"; //3692091
+        String pwd = "123456";
         httpClient = HttpClients.createDefault();
 
+        //用户信息
+        userBaseInfo=new UserBaseInfo();
+        userBaseInfo.setNickName(nickname);
+        userBaseInfo.setHeadImg(headimgurl);
+        userBaseInfo.setChannelId(1);
+
+        //用户登陆
+        userLoginInfo=new UserLoginInfo();
+        userLoginInfo.setLoginName(loginName);
+        userLoginInfo.setLoginPwd(pwd);
+        userLoginInfo.setChannelId(1);
 
     }
 
@@ -53,7 +73,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(channelId, mobile, pwd, "86");
+            byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(userLoginInfo.getChannelId(), mobile, pwd, "86");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);

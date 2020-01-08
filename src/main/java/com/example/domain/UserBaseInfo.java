@@ -6,7 +6,7 @@ public class UserBaseInfo {
 
     private Long id;
     private Long userId;
-    private Long channelId;
+    private Integer channelId;
     private String channelUserId;
     private String nickName;
     private String realName;
@@ -41,11 +41,11 @@ public class UserBaseInfo {
         this.userId = userId;
     }
 
-    public Long getChannelId() {
+    public Integer getChannelId() {
         return channelId;
     }
 
-    public void setChannelId(Long channelId) {
+    public void setChannelId(Integer channelId) {
         this.channelId = channelId;
     }
 
