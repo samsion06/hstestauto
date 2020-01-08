@@ -25,6 +25,7 @@ public class UserTeamInfo {
     private String emergencyNum;
     private Long auditTime;
     private Integer isDelete;
+    private String auditorName;
 
 
     public Long getId() {
