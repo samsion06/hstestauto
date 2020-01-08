@@ -259,7 +259,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(resp));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamRegister", userTeamInfo, userTeamInfo.);
+            CheckDatabase.CheckDatabaseUserTeamInfo(teamRealtionInfoMapper, "teamRegister", userTeamInfo);
 
             //2.修改团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");
@@ -288,9 +288,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.Builder queryBatchBuilder = UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.newBuilder();
-            queryBatchBuilder.setAppType(appType);
-            queryBatchBuilder.setChannelId(channelId);
-            queryBatchBuilder.addChannelUserId(channelUserId);
+            queryBatchBuilder.setAppType(userTeamInfo.getAppType());
+            queryBatchBuilder.setChannelId(userTeamInfo.getChannelId());
+            queryBatchBuilder.addChannelUserId(userTeamInfo.getChannelUserId());
             DataUtils.logBuilder(queryBatchBuilder, "根据批量channelUserId查询团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(queryBatchBuilder.build().toByteArray()));
@@ -308,9 +308,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             HttpPost post = new HttpPost(uri);
             UserTeamInfoServiceProto.FansTeamInfoQueryRequest.Builder builder = UserTeamInfoServiceProto.FansTeamInfoQueryRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
-            commonRequest.setAppType(appType);
-            commonRequest.setChannelId(channelId);
-            commonRequest.setChannelUserId(channelUserId);
+            commonRequest.setAppType(userTeamInfo.getAppType());
+            commonRequest.setChannelId(userTeamInfo.getChannelId());
+            commonRequest.setChannelUserId(userTeamInfo.getChannelUserId());
             builder.setCommonRequest(commonRequest);
             DataUtils.logBuilder(builder, "查询粉丝团长(幂等)_");
 
@@ -329,9 +329,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builderDelete = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest1 = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
-            commonRequest1.setAppType(appType);
-            commonRequest1.setChannelId(channelId);
-            commonRequest1.setChannelUserId(channelUserId);
+            commonRequest1.setAppType(userTeamInfo.getAppType());
+            commonRequest1.setChannelId(userTeamInfo.getChannelId());
+            commonRequest1.setChannelUserId(userTeamInfo.getChannelUserId());
             builderDelete.setDeleteRequest(commonRequest);
             DataUtils.logBuilder(builder, "删除团长信息(幂等)_");
 
