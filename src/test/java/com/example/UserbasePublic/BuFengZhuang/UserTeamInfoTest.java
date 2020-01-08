@@ -242,7 +242,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             userTeamAddressRegisteruilder.setLongitude(5201314);
             userTeamAddressRegisteruilder.setLatitude(5201314);
             userTeamAddressRegisteruilder.setGeoHash("fuck");
-            userTeamAddressRegisteruilder.setGeoHash("fuck");
+            userTeamAddressRegisteruilder.setGeoHash5Km("fuck");
 
             registerBuilder.setAddress(userTeamAddressRegisteruilder);
             DataUtils.logBuilder(registerBuilder, "注册团长信息(幂等)_");
