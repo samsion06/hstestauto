@@ -118,7 +118,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponses(response, UserBaseServiceProto.userInfoPdCombine.class);
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
