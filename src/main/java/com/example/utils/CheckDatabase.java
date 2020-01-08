@@ -97,7 +97,7 @@ public class CheckDatabase {
             case "NickNameUpdate": //昵称更新
                 System.out.println(userBaseInfoMapper);
                 dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userLoginInfo.getChannelUserId());
-                Assert.assertEquals(userBaseInfo.getChannelUserId(), dataBaseUserBaseInfo.getNickName());
+                Assert.assertEquals(userBaseInfo.getNickName(), dataBaseUserBaseInfo.getNickName());
                 DataUtils.logDatabase(1,"nick_name",dataBaseUserBaseInfo.getNickName());
                 break;
             case "HeadUrlImg": //修改头像
@@ -155,5 +155,4 @@ public class CheckDatabase {
                 break;
         }
     }
-
 }
