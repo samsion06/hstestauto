@@ -40,10 +40,12 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
-        userTeamInfo=new UserTeamInfo(1,(int)((Math.random()*9+1)*1000)+"",3,1,
+        String channelUserId=(int)((Math.random()*9+1)*1000)+"";
+        userTeamInfo=new UserTeamInfo(1,channelUserId,3,1,
                 5201314d,"周雄鑫","5201314",5201314l,5201314l,"17702015334",
                 5201314,1,1,,1,"5201314",5201314l,5201314l,"5201314",
-                "5201314",5201314l,0,"5201314",1,"www.baidu.com");
+                "5201314",5201314l,0,"5201314",1,"www.baidu.com","5201314",
+                "5201314");
     }
 
     //@Test(description ="注册团长信息(幂等)")
@@ -202,29 +204,28 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setChannelId(userTeamInfo.getChannelId());
             registerBuilder.setChannelUserId(userTeamInfo.getChannelUserId());
             registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
-            registerBuilder.setDeposit(5201314);
-            registerBuilder.setEmergencyNumber("17702015334");
-            registerBuilder.setGender(1);
-            registerBuilder.setHeadNum("13660607451");
-            registerBuilder.setIsShowCommission(1);
-            registerBuilder.setIsVirtual(1);
-            registerBuilder.setLicenseImg("http://www.baidu.com/fuck.jpg");
-            registerBuilder.setMobile("17702015334");
-            registerBuilder.setOperatorId("5201314");
-            registerBuilder.setOperatorLongId(5201314L);
-            registerBuilder.setOperatorTel("17702015334");
-            registerBuilder.setRecommend("5201314");
-            registerBuilder.setSource(2);
-            registerBuilder.setStatus(1);
-            registerBuilder.setStopReason("jij小");
-            registerBuilder.setCompanyId(5201314L);
-            registerBuilder.setWeixin("xiongxinzhou");
-            registerBuilder.setCompanyName("周氏集团");
-            registerBuilder.setStartTime(202001061234L);
-            registerBuilder.setStopEndTime(202001061534L);
-            registerBuilder.setGender(1);
-            registerBuilder.setAuditTime(520134L);
-            registerBuilder.setAuditorName("周雄鑫");
+            registerBuilder.setDeposit(userTeamInfo.getDeposit());
+            registerBuilder.setEmergencyNumber(userTeamInfo.getEmergencyNum());
+            registerBuilder.setGender(userTeamInfo.getGender());
+            registerBuilder.setHeadNum(userTeamInfo.getHeadNum());
+            registerBuilder.setIsShowCommission(userTeamInfo.getIsShownCommission());
+            registerBuilder.setIsVirtual(userTeamInfo.getIsVirtual());
+            registerBuilder.setLicenseImg(userTeamInfo.getLicenseImg());
+            registerBuilder.setMobile(userTeamInfo.getMobile());
+            registerBuilder.setOperatorId(userTeamInfo.getOperatorId());
+            registerBuilder.setOperatorLongId(userTeamInfo.getOperatorLongId());
+            registerBuilder.setOperatorTel(userTeamInfo.getop);
+            registerBuilder.setRecommend(userTeamInfo.getRecommend());
+            registerBuilder.setSource(userTeamInfo.gets);
+            registerBuilder.setStatus(userTeamInfo.getStatus());
+            registerBuilder.setStopReason(userTeamInfo.getStopReason());
+            registerBuilder.setCompanyId(userTeamInfo.getCompanyId());
+            registerBuilder.setWeixin(userTeamInfo.getWeixin());
+            registerBuilder.setCompanyName(userTeamInfo.getc);
+            registerBuilder.setStartTime(userTeamInfo.getStartTime());
+            registerBuilder.setStopEndTime(userTeamInfo.getStopEndTime());
+            registerBuilder.setAuditTime(userTeamInfo.getAuditTime());
+            registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
 
 
             UserTeamInfoServiceProto.UserTeamAddressRegister.Builder userTeamAddressRegisteruilder = UserTeamInfoServiceProto.UserTeamAddressRegister.newBuilder();

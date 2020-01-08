@@ -196,14 +196,7 @@
       <workItem from="1578391295636" duration="23000" />
       <workItem from="1578446899571" duration="2710000" />
       <workItem from="1578449939926" duration="4889000" />
-      <workItem from="1578461633405" duration="3491000" />
-    </task>
-    <task id="LOCAL-00106" summary="update">
-      <created>1578366353125</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1578366353125</updated>
+      <workItem from="1578461633405" duration="4227000" />
     </task>
     <task id="LOCAL-00107" summary="update">
       <created>1578366549064</created>
@@ -541,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578463986226</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="update">
+      <created>1578465378439</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1578465378439</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,10 +561,10 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="440" y="163" key="#Project_Structure/0.23.1680.954@0.23.1680.954" timestamp="1577946722706" />
-    <state x="247" y="355" key="#com.intellij.ide.util.MemberChooser" timestamp="1578464875532">
+    <state x="247" y="355" key="#com.intellij.ide.util.MemberChooser" timestamp="1578465993289">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="247" y="355" key="#com.intellij.ide.util.MemberChooser/0.23.1680.950@0.23.1680.950" timestamp="1578464875532" />
+    <state x="247" y="355" key="#com.intellij.ide.util.MemberChooser/0.23.1680.950@0.23.1680.950" timestamp="1578465993289" />
     <state x="247" y="356" key="#com.intellij.ide.util.MemberChooser/0.23.1680.952@0.23.1680.952" timestamp="1578455012673" />
     <state x="460" y="194" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1577951701687">
       <screen x="0" y="23" width="1680" height="952" />
@@ -586,10 +586,10 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578463986100">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578465378309">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578463986100" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578465378309" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578452995285" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578277270579" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
@@ -681,7 +681,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java</url>
-          <line>107</line>
+          <line>109</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

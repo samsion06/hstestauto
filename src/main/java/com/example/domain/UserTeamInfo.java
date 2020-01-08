@@ -7,7 +7,7 @@ public class UserTeamInfo {
     private String channelUserId;
     private String realName;
     private Integer appType;
-    private Double deposit;
+    private Long deposit;
     private String recommend;
     private String operatorId;
     private Long operatorLongId;
@@ -28,11 +28,39 @@ public class UserTeamInfo {
     private String auditorName;
     private Integer isShownCommission;
     private String licenseImg;
+    private Integer source;
+    private String operatorTel;
+    private String companyName;
+
+    public Integer getSource() {
+        return source;
+    }
+
+    public void setSource(Integer source) {
+        this.source = source;
+    }
+
+    public String getOperatorTel() {
+        return operatorTel;
+    }
+
+    public void setOperatorTel(String operatorTel) {
+        this.operatorTel = operatorTel;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
 //    public UserTeamInfo() {
 //    }
 
-    public UserTeamInfo(Integer channelId, String channelUserId, String realName, Integer appType, Double deposit, String recommend, String operatorId, Long operatorLongId, Long companyId, String mobile, Long startTime, Integer status, Integer isVirtual, Integer gender, String weixin, String stopReason, Long stopStartTime, Long stopEndTime, String headNum, String emergencyNum, Long auditTime, Integer isDelete, String auditorName, Integer isShownCommission, String licenseImg) {
+
+    public UserTeamInfo(Integer channelId, String channelUserId, String realName, Integer appType, Long deposit, String recommend, String operatorId, Long operatorLongId, Long companyId, String mobile, Long startTime, Integer status, Integer isVirtual, Integer gender, String weixin, String stopReason, Long stopStartTime, Long stopEndTime, String headNum, String emergencyNum, Long auditTime, String auditorName, Integer isShownCommission, String licenseImg, Integer source, String operatorTel, String companyName) {
         this.channelId = channelId;
         this.channelUserId = channelUserId;
         this.realName = realName;
@@ -58,6 +86,9 @@ public class UserTeamInfo {
         this.auditorName = auditorName;
         this.isShownCommission = isShownCommission;
         this.licenseImg = licenseImg;
+        this.source = source;
+        this.operatorTel = operatorTel;
+        this.companyName = companyName;
     }
 
     public String getLicenseImg() {
@@ -124,11 +155,11 @@ public class UserTeamInfo {
         this.appType = appType;
     }
 
-    public Double getDeposit() {
+    public Long getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(Double deposit) {
+    public void setDeposit(Long deposit) {
         this.deposit = deposit;
     }
 
