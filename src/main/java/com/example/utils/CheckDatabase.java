@@ -28,7 +28,8 @@ public class CheckDatabase {
      */
 
     //数据库检查
-    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper, TeamRealtionInfoMapper teamRealtionInfoMapper, String method, String targetOutPut, String channelUserId){
+    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper, TeamRealtionInfoMapper teamRealtionInfoMapper,
+                                         String method, String targetOutPut, String channelUserId){
         switch (method){
             //微信解绑
             case "WeChatInfoUnbind"://微信解除绑定
@@ -112,6 +113,9 @@ public class CheckDatabase {
                 userTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(channelUserId);
                 //获取channelUserId查看是否插入成功
                 Assert.assertEquals(targetOutPut,userTeamInfo.getChannelUserId());
+                //foreach遍历对象
+                
+                
                 System.out.println(userTeamInfo);
                 DataUtils.logDatabase(2,"null",userTeamInfo.toString());
                 break;

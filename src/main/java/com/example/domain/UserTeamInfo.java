@@ -3,7 +3,7 @@ package com.example.domain;
 public class UserTeamInfo {
 
     private Long id;
-    private Long channelId;
+    private Integer channelId;
     private String channelUserId;
     private String realName;
     private Integer appType;
@@ -35,11 +35,11 @@ public class UserTeamInfo {
         this.id = id;
     }
 
-    public Long getChannelId() {
+    public Integer getChannelId() {
         return channelId;
     }
 
-    public void setChannelId(Long channelId) {
+    public void setChannelId(Integer channelId) {
         this.channelId = channelId;
     }
 
@@ -237,6 +237,7 @@ public class UserTeamInfo {
                 ", emergencyNum='" + emergencyNum + '\'' +
                 ", auditTime=" + auditTime +
                 ", isDelete=" + isDelete +
+                ", auditorName='" + auditorName + '\'' +
                 '}';
     }
 }

@@ -1,4 +1,5 @@
 package com.example.UserbasePublic.BuFengZhuang;
+import com.example.domain.UserTeamInfo;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.utils.CheckDatabase;
 import com.example.utils.DataUtils;
@@ -25,24 +26,27 @@ import java.net.URI;
 @SpringBootTest
 public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
-
     @Autowired
     private TeamRealtionInfoMapper teamRealtionInfoMapper;
 
-    private static Integer channelId=1;
-    private static String channelUserId;
-    private static Integer appType=3;
     private static CloseableHttpClient httpClient;
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
     private static JsonFormat jsonFormat;
+    private UserTeamInfo userTeamInfo;
 
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
-        channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
+        userTeamInfo=new UserTeamInfo();
+        userTeamInfo.setChannelId(1);
+        userTeamInfo.setChannelUserId((int)((Math.random()*9+1)*1000)+"");
+        userTeamInfo.setAppType(3);
+        userTeamInfo.setRealName("周雄鑫");
+        userTeamInfo.setAuditTime(5201314L);
+
     }
 
     //@Test(description ="注册团长信息(幂等)")
@@ -52,10 +56,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            builder.setAppType(appType);
+            builder.setAppType(userTeamInfo.getAppType());
             builder.setRealName("周雄鑫");
-            builder.setChannelId(channelId);
-            builder.setChannelUserId(channelUserId);
+            builder.setChannelId(userTeamInfo.getChannelId());
+            builder.setChannelUserId(userTeamInfo.getChannelUserId());
             DataUtils.logBuilder(builder,"注册团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
@@ -81,9 +85,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity =UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            entity.setAppType(appType);
-            entity.setChannelId(channelId);
-            entity.setChannelUserId(channelUserId);
+            entity.setAppType(userTeamInfo.getAppType());
+            entity.setChannelId(userTeamInfo.getChannelId());
+            entity.setChannelUserId(userTeamInfo.getChannelUserId());
             entity.setRealName("xiongxinzhou");
             builder.setUpdateRequest(entity.build());
             DataUtils.logBuilder(builder,"修改团长信息(幂等)_");
@@ -108,9 +112,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.newBuilder();
-            builder.setAppType(appType);
-            builder.setChannelId(channelId);
-            builder.addChannelUserId(channelUserId);
+            builder.setAppType(userTeamInfo.getAppType());
+            builder.setChannelId(userTeamInfo.getChannelId());
+            builder.addChannelUserId(userTeamInfo.getChannelUserId());
             DataUtils.logBuilder(builder,"根据批量channelUserId查询团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
@@ -134,9 +138,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             HttpPost post = new HttpPost(uri);
             UserTeamInfoServiceProto.FansTeamInfoQueryRequest.Builder builder = UserTeamInfoServiceProto.FansTeamInfoQueryRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
-            commonRequest.setAppType(appType);
-            commonRequest.setChannelId(channelId);
-            commonRequest.setChannelUserId(channelUserId);
+            commonRequest.setAppType(userTeamInfo.getAppType());
+            commonRequest.setChannelId(userTeamInfo.getChannelId());
+            commonRequest.setChannelUserId(userTeamInfo.getChannelUserId());
             builder.setCommonRequest(commonRequest);
             DataUtils.logBuilder(builder,"查询粉丝团长(幂等)_");
 
@@ -162,9 +166,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
-            commonRequest.setAppType(appType);
-            commonRequest.setChannelId(channelId);
-            commonRequest.setChannelUserId(channelUserId);
+            commonRequest.setAppType(userTeamInfo.getAppType());
+            commonRequest.setChannelId(userTeamInfo.getChannelId());
+            commonRequest.setChannelUserId(userTeamInfo.getChannelUserId());
             builder.setDeleteRequest(commonRequest);
             DataUtils.logBuilder(builder,"删除团长信息(幂等)_");
 
@@ -191,14 +195,15 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
                        "5.删除团长信息")
     public void userTeamCURD(){
         try {
+
             //1.注册团长 29
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder registerBuilder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            registerBuilder.setAppType(appType);
+            registerBuilder.setAppType(userTeamInfo.getAppType());
             registerBuilder.setRealName("周雄鑫");
-            registerBuilder.setChannelId(channelId);
-            registerBuilder.setChannelUserId(channelUserId);
+            registerBuilder.setChannelId(userTeamInfo.getChannelId());
+            registerBuilder.setChannelUserId(userTeamInfo.getChannelUserId());
             registerBuilder.setAuditorName("周雄鑫");
             registerBuilder.setDeposit(5201314);
             registerBuilder.setEmergencyNumber("17702015334");
@@ -225,8 +230,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setAuditorName("周雄鑫");
 
             UserTeamInfoServiceProto.UserTeamAddressRegister.Builder userTeamAddressRegisteruilder = UserTeamInfoServiceProto.UserTeamAddressRegister.newBuilder();
-            userTeamAddressRegisteruilder.setChannelUserId(channelUserId);
-            userTeamAddressRegisteruilder.setChannelId(channelId);
+            userTeamAddressRegisteruilder.setChannelUserId(userTeamInfo.getChannelUserId());
+            userTeamAddressRegisteruilder.setChannelId(userTeamInfo.getChannelId());
             userTeamAddressRegisteruilder.setAppType(1);
             userTeamAddressRegisteruilder.setProvinceCode(86);
             userTeamAddressRegisteruilder.setCityCode(86);

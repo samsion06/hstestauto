@@ -1,5 +1,6 @@
 package com.example.mapper;
 import com.example.domain.UserRleationInfo;
+import com.example.domain.UserTeamAdress;
 import com.example.domain.UserTeamInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Result;
@@ -37,6 +38,9 @@ public interface TeamRealtionInfoMapper {
     })
     public UserTeamInfo queryUserTeamInfo(String channelUserId);
 
+    @Select("select * from user_team_info where channel_user_id = #{channelUserId}")
+    //查询团长地址
+    public UserTeamAdress queryUserTeamAddressInfo(String channelUserId);
 
     //查询团长关系
     @Select("select * from user_team_relation where channel_user_id = #{channelUserId}")
