@@ -123,7 +123,7 @@ public class CheckDatabase {
                 break;
             case "teamUpdate":
                 dataBaseUserTeamInfo = teamRealtionInfoMapper.queryUserTeamInfo(userTeamInfo.getChannelUserId());
-                //读库  预期 ，目标
+                //读库  预期 ：目标
                 Assert.assertEquals(userTeamInfo.getRealName(),dataBaseUserTeamInfo.getRealName());
                 //记录
                 DataUtils.logDatabase(1, "real_name", dataBaseUserTeamInfo.getRealName());
@@ -149,7 +149,6 @@ public class CheckDatabase {
                 Assert.assertEquals(userRleationInfo.getChannelUserId(), dataBaseUserRleationInfo.getIsDelete());
                 DataUtils.logDatabase(1, "is_delete", dataBaseUserRleationInfo.getIsDelete() + "");
                 break;
-
         }
     }
 
