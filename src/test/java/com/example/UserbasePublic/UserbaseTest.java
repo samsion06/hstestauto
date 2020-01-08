@@ -26,7 +26,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;//数据库取数据用
 
-
     private static CloseableHttpClient httpClient;
     private static ByteArrayEntity byteArrayEntity;
     private static URI uri;
@@ -35,38 +34,36 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     private UserBaseInfo userBaseInfo;
     private UserLoginInfo userLoginInfo;
 
+    private static String nickname;
+    private static String headimgurl;
+    private static String loginName;
+    private static String pwd;
 
 
     @BeforeTest
     public void beforeTest(){
-        String nickname = DataUtils.getRandomString(9);//随机生成用户名
-        String headimgurl = DataUtils.getRandomString(15);//随机生成头像
-        String loginName = "17720130632"; //3692091
-        String pwd = "123456";
-
+        nickname = DataUtils.getRandomString(9);//随机生成用户名
+        headimgurl = DataUtils.getRandomString(15);//随机生成头像
+        loginName = "17720130632"; //3692091
+        pwd = "123456";
         httpClient = HttpClients.createDefault();
-
-        //用户信息
-        userBaseInfo=new UserBaseInfo();
-        userBaseInfo.setNickName(nickname);
-        userBaseInfo.setHeadImg(headimgurl);
-        userBaseInfo.setChannelId(1);
-
-
-        //用户登陆
-        userLoginInfo=new UserLoginInfo();
-        userLoginInfo.setLoginName(loginName);
-        userLoginInfo.setLoginPwd(pwd);
-        userLoginInfo.setChannelId(1);
-
     }
 
     @Test(description = "1.用户登录" +
                      "   2.获取用户基础信息" +
                      "   3.修改昵称" +
                      "   4.修改头像")
-    public void LoginAndUpdate() {
-        //注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
+    public void LoginAndUpdate() {//注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
+
+        //用户信息
+        userBaseInfo=new UserBaseInfo();
+        userBaseInfo.setNickName(nickname);
+        userBaseInfo.setHeadImg(headimgurl);
+        //用户登陆
+        userLoginInfo=new UserLoginInfo();
+        userLoginInfo.setLoginName(loginName);
+        userLoginInfo.setLoginPwd(pwd);
+        userLoginInfo.setChannelId(1);
         try {
             //登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
@@ -80,7 +77,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
             //获取用户基础信息
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/getUserBaseInfo","");
-            System.out.println(uri);
             post = new HttpPost(uri);;
             byteArrayEntity = DataTransferUtil.UserInfoRequest(userLoginInfo.getChannelId(),userLoginInfo.getChannelUserId());
             post.setEntity(byteArrayEntity);
@@ -91,7 +87,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //修改昵称
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/nick/name/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userNickNameUpdateRequestConvertBuilder(userBaseInfo.getChannelId(), userLoginInfo.getChannelUserId(), userBaseInfo.getNickName());
+            byteArrayEntity = DataTransferUtil.userNickNameUpdateRequestConvertBuilder(userLoginInfo.getChannelId(), userLoginInfo.getChannelUserId(), userBaseInfo.getNickName());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -102,7 +98,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //修改头像
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/head/img/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userHeadImgUpdateRequestConvertBuilder(userBaseInfo.getChannelId(), userLoginInfo.getChannelUserId(), userBaseInfo.getHeadImg());
+            byteArrayEntity = DataTransferUtil.userHeadImgUpdateRequestConvertBuilder(userLoginInfo.getChannelId(), userLoginInfo.getChannelUserId(), userBaseInfo.getHeadImg());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -176,6 +172,9 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
                         "2.修改密码" +
                         "3.登录")
     public void mdfMobileAndPwdUpdateTest(){
+
+
+
         String ChannelUserId="178803"; //17786709004
         try{
             String mobile="177"+(int)((Math.random()*9+1)*10000000); //修改登录得手机号
