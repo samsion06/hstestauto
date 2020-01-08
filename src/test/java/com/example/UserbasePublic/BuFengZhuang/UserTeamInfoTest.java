@@ -45,7 +45,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
                                      "5201314",5201314l,5201314l,"17702015334",
                                      5201314l,1,1,1,"5201314","周雄鑫",
                                   5201314l,5201314l,"5201314","17702015334",5201314l,
-                                  "5201314",1,"www.baidu.com",1, "17702015334","周氏集团");
+                                  "5201314",1,"www.baidu.com",1, "17702015334","周氏集团",
+                                       1);
     }
 
     //@Test(description ="注册团长信息(幂等)")
