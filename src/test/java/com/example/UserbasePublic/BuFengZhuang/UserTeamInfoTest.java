@@ -214,14 +214,14 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setMobile(userTeamInfo.getMobile());
             registerBuilder.setOperatorId(userTeamInfo.getOperatorId());
             registerBuilder.setOperatorLongId(userTeamInfo.getOperatorLongId());
-            registerBuilder.setOperatorTel(userTeamInfo.getop);
+            registerBuilder.setOperatorTel(userTeamInfo.getOperatorTel());
             registerBuilder.setRecommend(userTeamInfo.getRecommend());
-            registerBuilder.setSource(userTeamInfo.gets);
+            registerBuilder.setSource(userTeamInfo.getSource());
             registerBuilder.setStatus(userTeamInfo.getStatus());
             registerBuilder.setStopReason(userTeamInfo.getStopReason());
             registerBuilder.setCompanyId(userTeamInfo.getCompanyId());
             registerBuilder.setWeixin(userTeamInfo.getWeixin());
-            registerBuilder.setCompanyName(userTeamInfo.getc);
+            registerBuilder.setCompanyName(userTeamInfo.getCompanyName());
             registerBuilder.setStartTime(userTeamInfo.getStartTime());
             registerBuilder.setStopEndTime(userTeamInfo.getStopEndTime());
             registerBuilder.setAuditTime(userTeamInfo.getAuditTime());
@@ -259,7 +259,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(resp));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamRegister", channelUserId, channelUserId);
+            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamRegister", userTeamInfo, userTeamInfo.);
 
             //2.修改团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");

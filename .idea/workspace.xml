@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/UserTeamInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/UserTeamInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,14 +196,7 @@
       <workItem from="1578391295636" duration="23000" />
       <workItem from="1578446899571" duration="2710000" />
       <workItem from="1578449939926" duration="4889000" />
-      <workItem from="1578461633405" duration="4227000" />
-    </task>
-    <task id="LOCAL-00107" summary="update">
-      <created>1578366549064</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1578366549064</updated>
+      <workItem from="1578461633405" duration="6971000" />
     </task>
     <task id="LOCAL-00108" summary="update">
       <created>1578366777850</created>
@@ -541,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578465378439</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="update">
+      <created>1578466129459</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1578466129459</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,10 +586,10 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578465378309">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578466129325">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578465378309" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578466129325" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578452995285" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578277270579" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
@@ -656,29 +656,14 @@
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.952@0.23.1680.952" timestamp="1578315878253" />
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1578108883351" />
     <state x="519" y="334" key="com.intellij.ide.util.TipDialog/0.23.1680.960@0.23.1680.960" timestamp="1578300888343" />
-    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup" timestamp="1578389674863">
+    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup" timestamp="1578466484100">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup/0.23.1680.950@0.23.1680.950" timestamp="1578389674863" />
+    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup/0.23.1680.950@0.23.1680.950" timestamp="1578466484100" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>141</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java</url>
           <line>109</line>
