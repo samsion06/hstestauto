@@ -35,6 +35,8 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @BeforeTest
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
+
+
     }
 
     @Test(description = "1.用户登录" +
@@ -57,7 +59,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String result = CheckReponseResult.AssertResponses(response, UserBaseServiceProto.userInfoPdCombine.class);
             String ChannelUserId = DataUtils.substring(result, "userId", 10, ",", 1);
-            System.out.println(ChannelUserId);
 
             //获取用户基础信息
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/getUserBaseInfo","");
