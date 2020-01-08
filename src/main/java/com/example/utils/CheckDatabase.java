@@ -132,7 +132,6 @@ public class CheckDatabase {
                 Assert.assertEquals(userTeamInfo.getIsDelete(), dataBaseUserTeamInfo.getIsDelete());
                 DataUtils.logDatabase(1, "is_delete", dataBaseUserTeamInfo.getIsDelete() + "");
                 break;
-
         }
     }
 

@@ -32,6 +32,8 @@ public class UserTeamInfo {
     private String operatorTel;
     private String companyName;
 
+
+
     public Integer getSource() {
         return source;
     }
@@ -56,8 +58,8 @@ public class UserTeamInfo {
         this.companyName = companyName;
     }
 
-//    public UserTeamInfo() {
-//    }
+    public UserTeamInfo() {
+    }
 
 
     public UserTeamInfo(Integer channelId, String channelUserId, String realName, Integer appType, Long deposit, String recommend, String operatorId, Long operatorLongId, Long companyId, String mobile, Long startTime, Integer status, Integer isVirtual, Integer gender, String weixin, String stopReason, Long stopStartTime, Long stopEndTime, String headNum, String emergencyNum, Long auditTime, String auditorName, Integer isShownCommission, String licenseImg, Integer source, String operatorTel, String companyName) {

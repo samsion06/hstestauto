@@ -10,36 +10,6 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface TeamRealtionInfoMapper {
 
-    private Long id;
-    private Integer channelId;
-    private String channelUserId;
-    private String realName;
-    private Integer appType;
-    private Long deposit;
-    private String recommend;
-    private String operatorId;
-    private Long operatorLongId;
-    private Long companyId;
-    private String mobile;
-    private Long startTime;
-    private Integer status;
-    private Integer isVirtual;
-    private Integer gender;
-    private String weixin;
-    private String stopReason;
-    private Long stopStartTime;
-    private Long stopEndTime;
-    private String headNum;
-    private String emergencyNum;
-    private Long auditTime;
-    private Integer isDelete;
-    private String auditorName;
-    private Integer isShownCommission;
-    private String licenseImg;
-    private Integer source;
-    private String operatorTel;
-    private String companyName;
-
     //查询团长信息
     @Select("select * from user_team_info where channel_user_id = #{channelUserId}")
     @Results({

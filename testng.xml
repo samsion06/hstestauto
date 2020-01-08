@@ -36,11 +36,11 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="团长关系信息">
-        <classes>
-            <class name="com.example.UserbasePublic.UserTeamRelationTest"/>
-        </classes>
-    </test>
+<!--    <test name="团长关系信息">-->
+<!--        <classes>-->
+<!--            <class name="com.example.UserbasePublic.UserTeamRelationTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="团长信息">
         <classes>
