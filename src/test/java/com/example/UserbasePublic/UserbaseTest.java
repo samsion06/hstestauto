@@ -43,6 +43,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         String headimgurl = DataUtils.getRandomString(15);//随机生成头像
         String loginName = "17720130632"; //3692091
         String pwd = "123456";
+
         httpClient = HttpClients.createDefault();
 
         //用户信息
@@ -73,7 +74,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(userLoginInfo.getChannelId(), mobile, pwd, "86");
+            byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(userLoginInfo.getChannelId(), userLoginInfo.getLoginName(), userLoginInfo.getLoginPwd(), "86");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
