@@ -95,6 +95,7 @@ public class CheckDatabase {
                                                  UserBaseInfo userBaseInfo,UserLoginInfo userLoginInfo){
         switch (method) {
             case "NickNameUpdate": //昵称更新
+                System.out.println(userBaseInfoMapper);
                 dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userBaseInfo.getChannelUserId());
                 Assert.assertEquals(userBaseInfo.getChannelUserId(), dataBaseUserBaseInfo.getNickName());
                 DataUtils.logDatabase(1,"nick_name",dataBaseUserBaseInfo.getNickName());

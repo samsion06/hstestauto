@@ -65,10 +65,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
                      "   3.修改昵称" +
                      "   4.修改头像")
     public void LoginAndUpdate() {
-        String mobile = "17720130632"; //3692091
-        String pwd = "123456";
-        String nickname = DataUtils.getRandomString(9);//随机生成用户名
-        String headimgurl = DataUtils.getRandomString(15);//随机生成用户名
         //注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
         try {
             //登录
