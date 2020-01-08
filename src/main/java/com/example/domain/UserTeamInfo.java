@@ -28,6 +28,18 @@ public class UserTeamInfo {
     private String auditorName;
 
 
+
+
+
+
+    public String getAuditorName() {
+        return auditorName;
+    }
+
+    public void setAuditorName(String auditorName) {
+        this.auditorName = auditorName;
+    }
+
     public Long getId() {
         return id;
     }

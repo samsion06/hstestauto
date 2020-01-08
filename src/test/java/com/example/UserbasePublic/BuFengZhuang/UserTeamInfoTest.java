@@ -46,6 +46,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         userTeamInfo.setAppType(3);
         userTeamInfo.setRealName("周雄鑫");
         userTeamInfo.setAuditTime(5201314L);
+        userTeamInfo.setAuditorName("周雄鑫");
+        userTeamInfo.setDeposit(5201314D);
+
+
+
 
     }
 
@@ -201,10 +206,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder registerBuilder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
             registerBuilder.setAppType(userTeamInfo.getAppType());
-            registerBuilder.setRealName("周雄鑫");
+            registerBuilder.setRealName(userTeamInfo.getRealName());
             registerBuilder.setChannelId(userTeamInfo.getChannelId());
             registerBuilder.setChannelUserId(userTeamInfo.getChannelUserId());
-            registerBuilder.setAuditorName("周雄鑫");
+            registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
             registerBuilder.setDeposit(5201314);
             registerBuilder.setEmergencyNumber("17702015334");
             registerBuilder.setGender(1);
@@ -267,9 +272,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder updateBuilder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            entity.setAppType(appType);
-            entity.setChannelId(channelId);
-            entity.setChannelUserId(channelUserId);
+            entity.setAppType(userTeamInfo.getAppType());
+            entity.setChannelId(userTeamInfo.getChannelId());
+            entity.setChannelUserId(userTeamInfo.getChannelUserId());
             entity.setRealName("xiongxinzhou");
             updateBuilder.setUpdateRequest(entity.build());
             DataUtils.logBuilder(updateBuilder, "修改团长信息(幂等)_");
