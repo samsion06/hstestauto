@@ -282,7 +282,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.ResponseCode respa = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(respa));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamUpdate", "xiongxinzhou", channelUserId);
+            CheckDatabase.CheckDatabaseUserTeamInfo(teamRealtionInfoMapper, "teamUpdate", userTeamInfo);
 
             //3.根据批量channelUserId查询团长信息(幂等)
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
