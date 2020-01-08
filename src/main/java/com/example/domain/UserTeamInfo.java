@@ -26,6 +26,7 @@ public class UserTeamInfo {
     private Long auditTime;
     private Integer isDelete;
 
+
     public Long getId() {
         return id;
     }
