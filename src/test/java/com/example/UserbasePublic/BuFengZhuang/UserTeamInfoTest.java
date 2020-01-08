@@ -41,11 +41,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
         String channelUserId=(int)((Math.random()*9+1)*1000)+"";
-        userTeamInfo=new UserTeamInfo(1,channelUserId,3,1, 5201314d,"周雄鑫",
+        userTeamInfo=new UserTeamInfo(1,channelUserId,"周雄鑫",1, 5201314l,"周雄鑫",
                                      "5201314",5201314l,5201314l,"17702015334",
-                                     5201314,1,1,,1,"5201314",5201314l,
-                                  5201314l,"5201314","5201314",5201314l,0,
-                            "5201314",1,"www.baidu.com","5201314", "5201314");
+                                     5201314l,1,1,1,"5201314","周雄鑫",
+                                  5201314l,5201314l,"5201314","17702015334",5201314l,
+                                  "5201314",1,"www.baidu.com",1, "17702015334","周氏集团");
     }
 
     //@Test(description ="注册团长信息(幂等)")
@@ -218,7 +218,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setRecommend(userTeamInfo.getRecommend());
             registerBuilder.setSource(userTeamInfo.getSource());
             registerBuilder.setStatus(userTeamInfo.getStatus());
-            registerBuilder.setStopReason(userTeamInfo.getStopReason());
+            registerBuilder.setStopReason();
             registerBuilder.setCompanyId(userTeamInfo.getCompanyId());
             registerBuilder.setWeixin(userTeamInfo.getWeixin());
             registerBuilder.setCompanyName(userTeamInfo.getCompanyName());
