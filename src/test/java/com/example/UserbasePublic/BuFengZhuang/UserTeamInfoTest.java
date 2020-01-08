@@ -41,11 +41,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
         String channelUserId=(int)((Math.random()*9+1)*1000)+"";
-        userTeamInfo=new UserTeamInfo(1,channelUserId,3,1,
-                5201314d,"周雄鑫","5201314",5201314l,5201314l,"17702015334",
-                5201314,1,1,,1,"5201314",5201314l,5201314l,"5201314",
-                "5201314",5201314l,0,"5201314",1,"www.baidu.com","5201314",
-                "5201314");
+        userTeamInfo=new UserTeamInfo(1,channelUserId,3,1, 5201314d,"周雄鑫",
+                                     "5201314",5201314l,5201314l,"17702015334",
+                                     5201314,1,1,,1,"5201314",5201314l,
+                                  5201314l,"5201314","5201314",5201314l,0,
+                            "5201314",1,"www.baidu.com","5201314", "5201314");
     }
 
     //@Test(description ="注册团长信息(幂等)")
@@ -344,9 +344,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.ResponseCode respd = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(respd));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamDelete", "1", channelUserId);
-
-
+            CheckDatabase.CheckDatabaseUserTeamInfo(teamRealtionInfoMapper, "teamDelete", userTeamInfo);
 
         } catch (Exception e) {
             e.printStackTrace();

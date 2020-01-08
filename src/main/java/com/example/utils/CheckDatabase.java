@@ -3,7 +3,7 @@ package com.example.utils;
 import com.example.domain.*;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.mapper.UserBaseInfoMapper;
-import com.sun.xml.internal.ws.policy.AssertionSet;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -31,7 +31,7 @@ public class CheckDatabase {
 
     //数据库检查
     public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper, TeamRealtionInfoMapper teamRealtionInfoMapper,
-                                         String method, Object object, String channelUserId) {
+                                         String method, String targetOutPut, String channelUserId) {
         switch (method) {
             //微信解绑
             case "WeChatInfoUnbind"://微信解除绑定
