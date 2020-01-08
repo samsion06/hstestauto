@@ -31,7 +31,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
-    private UserBaseInfo userBaseInfo;
     private UserLoginInfo userLoginInfo;
 
     private static String nickname;
@@ -54,13 +53,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
                      "   3.修改昵称" +
                      "   4.修改头像")
     public void LoginAndUpdate() {//注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
-
         //用户信息
-        userBaseInfo=new UserBaseInfo();
+        UserBaseInfo userBaseInfo=new UserBaseInfo();
         userBaseInfo.setNickName(nickname);
         userBaseInfo.setHeadImg(headimgurl);
         //用户登陆
-        userLoginInfo=new UserLoginInfo();
+        UserLoginInfo userLoginInfo= new UserLoginInfo();
         userLoginInfo.setLoginName(loginName);
         userLoginInfo.setLoginPwd(pwd);
         userLoginInfo.setChannelId(1);
@@ -114,8 +112,11 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Test(description = "1.根据邀请码获取用户信息" +
                         "2.根据邀请码获取用户信息(幂等)")
     public void getInfoByInviteCode() {
-        try {
+        //用户信息
+        UserBaseInfo userBaseInfo=new UserBaseInfo();
+        userBaseInfo.setChannelId(1);
 
+        try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/get/by/invite/code", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.userInviteCodeQueryRequest("p88vcdo", userBaseInfo.getChannelId(),"UserInfoInviteCodeResponse");
@@ -144,10 +145,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
             //规则：userbase里面得手机号和要在映射表userindx里面得indexid有才行
             //根据手机号码获取用户信息
-            String mobile="18756989065";
+            UserBaseInfo userBaseInfo=new UserBaseInfo();
+            userBaseInfo.setMobile("18756989065");
+
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/getUserInfoByMobile", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserInfoByMobileRequest(mobile,"86",userBaseInfo.getChannelId(),"UserBaseInfo");
+            byteArrayEntity = DataTransferUtil.UserInfoByMobileRequest(userBaseInfo.getMobile(),"86",userBaseInfo.getChannelId(),"UserBaseInfo");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -157,7 +160,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/get/by/mobile", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserInfoByMobileRequest(mobile,"86",userBaseInfo.getChannelId(),"userInfoPdCombine");
+            byteArrayEntity = DataTransferUtil.UserInfoByMobileRequest(userBaseInfo.getMobile(),"86",userBaseInfo.getChannelId(),"userInfoPdCombine");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
