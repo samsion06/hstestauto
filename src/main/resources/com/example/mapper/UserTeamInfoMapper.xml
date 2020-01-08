@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hs.user.base.repository.UserTeamInfoRepository">
+  <resultMap id="BaseResultMap" type="com.hs.user.base.entity.UserTeamInfoEntity">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="channel_user_id" jdbcType="VARCHAR" property="channelUserId" />
+    <result column="channel_id" jdbcType="INTEGER" property="channelId" />
+    <result column="app_type" jdbcType="INTEGER" property="appType" />
+    <result column="deposit" jdbcType="DECIMAL" property="deposit" />
+    <result column="recommend" jdbcType="VARCHAR" property="recommend" />
+    <result column="operator_id" jdbcType="VARCHAR" property="operatorId" />
+    <result column="operator_long_id" jdbcType="BIGINT" property="operatorLongId" />
+    <result column="company_id" jdbcType="BIGINT" property="companyId" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="start_time" jdbcType="BIGINT" property="startTime" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="is_virtual" jdbcType="INTEGER" property="isVirtual" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="weixin" jdbcType="VARCHAR" property="weixin" />
+    <result column="stop_reason" jdbcType="VARCHAR" property="stopReason" />
+    <result column="stop_start_time" jdbcType="BIGINT" property="stopStartTime" />
+    <result column="stop_end_time" jdbcType="BIGINT" property="stopEndTime" />
+    <result column="head_num" jdbcType="VARCHAR" property="headNum" />
+    <result column="emergency_number" jdbcType="VARCHAR" property="emergencyNumber" />
+    <result column="audit_time" jdbcType="BIGINT" property="auditTime" />
+    <result column="auditor_name" jdbcType="VARCHAR" property="auditorName" />
+    <result column="is_show_commission" jdbcType="TINYINT" property="isShowCommission" />
+    <result column="license_number" jdbcType="VARCHAR" property="licenseNumber" />
+    <result column="license_img" jdbcType="VARCHAR" property="licenseImg" />
+    <result column="source" jdbcType="INTEGER" property="source" />
+    <result column="operator_tel" jdbcType="VARCHAR" property="operatorTel" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+  </resultMap>
+  <sql id="COMMON_FIELD_LIST">
+    id,real_name,channel_user_id,channel_id,app_type,deposit,recommend,operator_id,operator_long_id,company_id,mobile,start_time,
+    status,is_virtual,gender,weixin,stop_reason,stop_start_time,stop_end_time,head_num,emergency_number,audit_time,auditor_name,
+    is_show_commission,license_number,license_img,source,operator_tel,company_name,create_time,update_time,is_delete
+  </sql>
+
+  <select id="selectUserTeamInfo" resultMap="BaseResultMap" parameterType="com.hs.user.base.entity.UserTeamInfoEntity">
+    select  <include refid="COMMON_FIELD_LIST"></include>
+    from  user_team_info
+    where channel_user_id=#{channelUserId,jdbcType=VARCHAR} and channel_id=#{channelId,jdbcType=INTEGER} and app_type=#{appType,jdbcType=INTEGER}
+    <if test="mobile != null and mobile != ''">
+     and  mobile=#{mobile,jdbcType=VARCHAR}
+    </if>
+    and is_delete =0
+  </select>
+
+  <select id="selectUserTeamInfoBatch" resultMap="BaseResultMap" parameterType="map">
+    select  <include refid="COMMON_FIELD_LIST"></include>
+    from  user_team_info
+    where channel_user_id in
+    <foreach collection="channelUserIdList" open="("  close=")" separator="," item="item">
+      #{item,jdbcType=VARCHAR}
+    </foreach>
+    and app_type=#{appType,jdbcType=INTEGER} and channel_id=#{channelId,jdbcType=INTEGER}  and is_delete =0
+  </select>
+
+
+
+  <insert id="insert" parameterType="com.hs.user.base.entity.UserTeamInfoEntity">
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_team_info (id, real_name, channel_user_id,
+      channel_id, app_type, deposit, 
+      recommend, operator_id, operator_long_id, 
+      company_id, mobile, start_time, 
+      `status`, is_virtual, gender, 
+      weixin, stop_reason, stop_start_time, 
+      stop_end_time, head_num, emergency_number, 
+      audit_time, auditor_name, is_show_commission, 
+      license_number, license_img, `source`, 
+      operator_tel, company_name, create_time, 
+      update_time, is_delete)
+    values (#{id,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{channelUserId,jdbcType=VARCHAR}, 
+      #{channelId,jdbcType=INTEGER}, #{appType,jdbcType=INTEGER}, #{deposit,jdbcType=DECIMAL}, 
+      #{recommend,jdbcType=VARCHAR}, #{operatorId,jdbcType=VARCHAR}, #{operatorLongId,jdbcType=BIGINT}, 
+      #{companyId,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{startTime,jdbcType=BIGINT}, 
+      #{status,jdbcType=TINYINT}, #{isVirtual,jdbcType=INTEGER}, #{gender,jdbcType=TINYINT}, 
+      #{weixin,jdbcType=VARCHAR}, #{stopReason,jdbcType=VARCHAR}, #{stopStartTime,jdbcType=BIGINT}, 
+      #{stopEndTime,jdbcType=BIGINT}, #{headNum,jdbcType=VARCHAR}, #{emergencyNumber,jdbcType=VARCHAR}, 
+      #{auditTime,jdbcType=BIGINT}, #{auditorName,jdbcType=VARCHAR}, #{isShowCommission,jdbcType=TINYINT}, 
+      #{licenseNumber,jdbcType=VARCHAR}, #{licenseImg,jdbcType=VARCHAR}, #{source,jdbcType=INTEGER}, 
+      #{operatorTel,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hs.user.base.entity.UserTeamInfoEntity">
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_team_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="realName != null and realName != ''">
+        real_name,
+      </if>
+      <if test="channelUserId != null and channelUserId != ''">
+        channel_user_id,
+      </if>
+      <if test="channelId != null">
+        channel_id,
+      </if>
+      <if test="appType != null">
+        app_type,
+      </if>
+      <if test="deposit != null">
+        deposit,
+      </if>
+      <if test="recommend != null and recommend != ''">
+        recommend,
+      </if>
+      <if test="operatorId != null and operatorId != ''">
+        operator_id,
+      </if>
+      <if test="operatorLongId != null">
+        operator_long_id,
+      </if>
+      <if test="companyId != null">
+        company_id,
+      </if>
+      <if test="mobile != null and mobile != ''">
+        mobile,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="isVirtual != null">
+        is_virtual,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="weixin != null and weixin != ''">
+        weixin,
+      </if>
+      <if test="stopReason != null and stopReason != ''">
+        stop_reason,
+      </if>
+      <if test="stopStartTime != null">
+        stop_start_time,
+      </if>
+      <if test="stopEndTime != null">
+        stop_end_time,
+      </if>
+      <if test="headNum != null and headNum != ''">
+        head_num,
+      </if>
+      <if test="emergencyNumber != null and emergencyNumber != ''">
+        emergency_number,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="auditorName != null and auditorName != ''">
+        auditor_name,
+      </if>
+      <if test="isShowCommission != null">
+        is_show_commission,
+      </if>
+      <if test="licenseNumber != null and licenseNumber != ''">
+        license_number,
+      </if>
+      <if test="licenseImg != null and licenseImg != ''">
+        license_img,
+      </if>
+      <if test="source != null">
+        `source`,
+      </if>
+      <if test="operatorTel != null and operatorTel != ''">
+        operator_tel,
+      </if>
+      <if test="companyName != null and companyName != ''">
+        company_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="realName != null and realName != ''">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="channelUserId != null and channelUserId != ''">
+        #{channelUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="channelId != null">
+        #{channelId,jdbcType=INTEGER},
+      </if>
+      <if test="appType != null">
+        #{appType,jdbcType=INTEGER},
+      </if>
+      <if test="deposit != null">
+        #{deposit,jdbcType=DECIMAL},
+      </if>
+      <if test="recommend != null and recommend != ''">
+        #{recommend,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorId != null and operatorId != ''">
+        #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorLongId != null">
+        #{operatorLongId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null and mobile != ''">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isVirtual != null">
+        #{isVirtual,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="weixin != null and weixin != ''">
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="stopReason != null and stopReason != ''">
+        #{stopReason,jdbcType=VARCHAR},
+      </if>
+      <if test="stopStartTime != null">
+        #{stopStartTime,jdbcType=BIGINT},
+      </if>
+      <if test="stopEndTime != null">
+        #{stopEndTime,jdbcType=BIGINT},
+      </if>
+      <if test="headNum != null and headNum != ''">
+        #{headNum,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyNumber != null and emergencyNumber != ''">
+        #{emergencyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=BIGINT},
+      </if>
+      <if test="auditorName != null and auditorName != ''">
+        #{auditorName,jdbcType=VARCHAR},
+      </if>
+      <if test="isShowCommission != null">
+        #{isShowCommission,jdbcType=TINYINT},
+      </if>
+      <if test="licenseNumber != null and licenseNumber != ''">
+        #{licenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseImg != null and licenseImg != ''">
+        #{licenseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=INTEGER},
+      </if>
+      <if test="operatorTel != null and operatorTel != ''">
+        #{operatorTel,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null and companyName != ''">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="deleteUserTeamInfo" parameterType="com.hs.user.base.entity.UserTeamInfoEntity">
+   update user_team_info set is_delete =1,update_time=#{updateTime,jdbcType=TIMESTAMP}
+   where channel_user_id=#{channelUserId,jdbcType=VARCHAR} and channel_id=#{channelId,jdbcType=INTEGER} and app_type=#{appType,jdbcType=INTEGER}
+    <if test="mobile != null and mobile != ''">
+      and  mobile=#{mobile,jdbcType=VARCHAR}
+    </if>
+   and is_delete =0
+  </update>
+
+  <update id="updateUserTeamInfo" parameterType="com.hs.user.base.entity.UserTeamInfoEntity">
+    update user_team_info
+    <trim prefix="set" suffixOverrides=",">
+      <if test="realName != null and realName != ''">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="deposit != null">
+        deposit = #{deposit,jdbcType=DECIMAL},
+      </if>
+      <if test="recommend != null and recommend != ''">
+        recommend = #{recommend,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorId != null and operatorId != ''">
+        operator_id = #{operatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorLongId != null">
+        operator_long_id =#{operatorLongId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null and mobile != ''">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isVirtual != null">
+        is_virtual = #{isVirtual,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="weixin != null and weixin != ''">
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="stopReason != null and stopReason != ''">
+        stop_reason = #{stopReason,jdbcType=VARCHAR},
+      </if>
+      <if test="stopStartTime != null">
+        stop_start_time = #{stopStartTime,jdbcType=BIGINT},
+      </if>
+      <if test="stopEndTime != null">
+        stop_end_time = #{stopEndTime,jdbcType=BIGINT},
+      </if>
+      <if test="headNum != null and headNum != ''">
+        head_num = #{headNum,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyNumber != null and emergencyNumber != ''">
+        emergency_number = #{emergencyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=BIGINT},
+      </if>
+      <if test="auditorName != null and auditorName != ''">
+        auditor_name = #{auditorName,jdbcType=VARCHAR},
+      </if>
+      <if test="isShowCommission != null">
+        is_show_commission = #{isShowCommission,jdbcType=TINYINT},
+      </if>
+      <if test="licenseNumber != null and licenseNumber != ''">
+        license_number = #{licenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseImg != null and licenseImg != ''">
+        license_img = #{licenseImg,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=INTEGER},
+      </if>
+      <if test="operatorTel != null and operatorTel != ''">
+        operator_tel = #{operatorTel,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null and companyName != ''">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+    where channel_user_id=#{channelUserId,jdbcType=VARCHAR} and channel_id=#{channelId,jdbcType=INTEGER} and app_type=#{appType,jdbcType=INTEGER}
+    and is_delete =0
+  </update>
+</mapper>

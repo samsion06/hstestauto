@@ -31,7 +31,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     private static Integer channelId=1;
     private static String channelUserId;
-    private static Integer appType=1;
+    private static Integer appType=3;
     private static CloseableHttpClient httpClient;
     private static URI uri;
     private static HttpPost post;
@@ -199,40 +199,77 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             registerBuilder.setRealName("周雄鑫");
             registerBuilder.setChannelId(channelId);
             registerBuilder.setChannelUserId(channelUserId);
-            DataUtils.logBuilder(registerBuilder,"注册团长信息(幂等)_");
+//            registerBuilder.setAuditorName("细密是");
+//            registerBuilder.setDeposit(299229999);
+//            registerBuilder.setEmergencyNumber("17702015334");
+//            registerBuilder.setGender(1);
+//            registerBuilder.setHeadNum("13660607451");
+//            registerBuilder.setIsShowCommission(1);
+
+
+
+//
+//            builder.setAppType(1);
+//            builder.setAuditorName("细密是");
+//            builder.setChannelId(1);
+//            builder.setChannelUserId("9384439");
+//            builder.setCompanyName("小米");
+//            builder.setDeposit(299229999);
+//            builder.setEmergencyNumber("135879998778");
+//            builder.setGender(1);
+//            builder.setHeadNum("1928283833");
+//            builder.setIsShowCommission(1);
+//            builder.setIsVirtual(1);
+//            builder.setLicenseImg("/sd/fs/d/fsdf/sd/f");
+//            builder.setLicenseNumber("2121321e21321");
+//            builder.setMobile("5666623231231");
+//            builder.setOperatorId("123213");
+//            builder.setOperatorLongId(123213);
+//            builder.setOperatorTel("dfsdfwefsd");
+//            builder.setRealName("李白");
+//            builder.setRecommend("23213123");
+//            builder.setSource(2);
+//            builder.setStatus(1);
+//
+//            builder.setStopReason("销售小能手");
+//            builder.setCompanyId(22);
+//            builder.setWeixin("213123213");
+
+
+            DataUtils.logBuilder(registerBuilder, "注册团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(registerBuilder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
 
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(resp));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamRegister",channelUserId,channelUserId);
+            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamRegister", channelUserId, channelUserId);
 
             //2.修改团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder updateBuilder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
-            UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity =UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
+            UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
             entity.setAppType(appType);
             entity.setChannelId(channelId);
             entity.setChannelUserId(channelUserId);
             entity.setRealName("xiongxinzhou");
             updateBuilder.setUpdateRequest(entity.build());
-            DataUtils.logBuilder(updateBuilder,"修改团长信息(幂等)_");
+            DataUtils.logBuilder(updateBuilder, "修改团长信息(幂等)_");
 
 
             post.setEntity(new ByteArrayEntity(updateBuilder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
 
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode respa = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(respa));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamUpdate","xiongxinzhou",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamUpdate", "xiongxinzhou", channelUserId);
 
             //3.根据批量channelUserId查询团长信息(幂等)
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
@@ -241,13 +278,13 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             queryBatchBuilder.setAppType(appType);
             queryBatchBuilder.setChannelId(channelId);
             queryBatchBuilder.addChannelUserId(channelUserId);
-            DataUtils.logBuilder(queryBatchBuilder,"根据批量channelUserId查询团长信息(幂等)_");
+            DataUtils.logBuilder(queryBatchBuilder, "根据批量channelUserId查询团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(queryBatchBuilder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
 
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse respb = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(respb));
             DataUtils.logResponse(jsonFormat.printToString(resp));
@@ -262,14 +299,14 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             commonRequest.setChannelId(channelId);
             commonRequest.setChannelUserId(channelUserId);
             builder.setCommonRequest(commonRequest);
-            DataUtils.logBuilder(builder,"查询粉丝团长(幂等)_");
+            DataUtils.logBuilder(builder, "查询粉丝团长(幂等)_");
 
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
-            jsonFormat =new JsonFormat();
+            jsonFormat = new JsonFormat();
 
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.FansTeamInfoQueryResponse respc = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(respc));
             DataUtils.logResponse(jsonFormat.printToString(resp));
@@ -283,18 +320,20 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             commonRequest1.setChannelId(channelId);
             commonRequest1.setChannelUserId(channelUserId);
             builderDelete.setDeleteRequest(commonRequest);
-            DataUtils.logBuilder(builder,"删除团长信息(幂等)_");
+            DataUtils.logBuilder(builder, "删除团长信息(幂等)_");
 
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            jsonFormat =new JsonFormat();
+            jsonFormat = new JsonFormat();
 
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            Assert.assertEquals(200, response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode respd = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(respd));
             DataUtils.logResponse(jsonFormat.printToString(resp));
-            CheckDatabase.CheckDatabaseInfo(null,teamRealtionInfoMapper,"teamDelete","1",channelUserId);
+            CheckDatabase.CheckDatabaseInfo(null, teamRealtionInfoMapper, "teamDelete", "1", channelUserId);
+
+
 
         } catch (Exception e) {
             e.printStackTrace();
