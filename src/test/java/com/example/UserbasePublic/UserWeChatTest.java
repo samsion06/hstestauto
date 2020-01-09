@@ -57,6 +57,9 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     public void bindingAndunBindingTest(){
         String openId= DataUtils.getRandomString(9);    //随机生成openId
         String channelUserId=String.valueOf((int)((Math.random()*9+1)*1000)); //随机生成ChannelUserId
+
+
+
         try {
             //微信绑定
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/binding","");

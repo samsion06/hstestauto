@@ -45,7 +45,6 @@ public class UserMobileAreaTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserMobileAreaServiceProto.UserMobileAreaCodeListResponse resp = UserMobileAreaServiceProto.UserMobileAreaCodeListResponse.parseFrom(response.getEntity().getContent());
             Assert.assertFalse(resp.getUserMobileAreaCodeList().isEmpty(),"返回的对象为空");
-            //System.out.println(resp);
             Reporter.log(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();
