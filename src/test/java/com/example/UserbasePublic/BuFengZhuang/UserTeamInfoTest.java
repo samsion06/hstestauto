@@ -73,7 +73,6 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-
     @Test(description ="修改团长信息(幂等)",priority = 2)
     public void userTeamInfoUpdateChannelUserIdTest(){
         try {
