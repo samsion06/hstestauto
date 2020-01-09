@@ -241,7 +241,6 @@ public class DataTransferUtil {
         UserBaseServiceProto.UserInviteCodeQueryRequest.Builder builder = UserBaseServiceProto.UserInviteCodeQueryRequest.newBuilder();
         builder.setChannelId(channelId);
         builder.setInviteCode(inviteCode);
-        System.out.println(builder);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         if(responseClass.equals("userInfoPdCombine")){
             Reporter.log("邀请码获取用户信息(幂等)_"+incomeMessage+builder+ "}");

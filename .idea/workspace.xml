@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataTransferUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/TestFile/test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserbaseTest.LoginAndUpdate">
+  <component name="RunManager" selected="TestNG.UserbaseTest.mdfMobileAndPwdUpdateTest">
     <configuration name="SpringbootMybatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.SpringbootMybatisApplication" />
@@ -53,43 +54,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTeamInfoTest.userTeamCURD (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.BuFengZhuang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic.BuFengZhuang" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest" />
-      <option name="METHOD_NAME" value="userTeamCURD" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTeamInfoTest.userTeamCURD" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.BuFengZhuang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic.BuFengZhuang" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest" />
-      <option name="METHOD_NAME" value="userTeamCURD" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserbaseTest.LoginAndUpdate (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserbaseTest.forgetPasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -99,7 +64,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
       <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
-      <option name="METHOD_NAME" value="LoginAndUpdate" />
+      <option name="METHOD_NAME" value="forgetPasswordTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -107,7 +72,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserbaseTest.LoginAndUpdate" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UserbaseTest.getByOpenIdAndUnionldIdTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -117,7 +82,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
       <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
-      <option name="METHOD_NAME" value="LoginAndUpdate" />
+      <option name="METHOD_NAME" value="getByOpenIdAndUnionldIdTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -143,13 +108,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserbaseTest.getUsersByConditionTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
+      <option name="METHOD_NAME" value="getUsersByConditionTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserbaseTest.mdfMobileAndPwdUpdateTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
+      <option name="METHOD_NAME" value="mdfMobileAndPwdUpdateTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.UserbaseTest.LoginAndUpdate" />
+        <item itemvalue="TestNG.UserbaseTest.mdfMobileAndPwdUpdateTest" />
+        <item itemvalue="TestNG.UserbaseTest.forgetPasswordTest" />
+        <item itemvalue="TestNG.UserbaseTest.getByOpenIdAndUnionldIdTest" />
+        <item itemvalue="TestNG.UserbaseTest.getUsersByConditionTest" />
         <item itemvalue="TestNG.UserbaseTest.getUserInfoByMobile" />
-        <item itemvalue="TestNG.UserbaseTest.LoginAndUpdate (1)" />
-        <item itemvalue="TestNG.UserTeamInfoTest.userTeamCURD" />
-        <item itemvalue="TestNG.UserTeamInfoTest.userTeamCURD (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -197,14 +198,7 @@
       <workItem from="1578449939926" duration="4889000" />
       <workItem from="1578461633405" duration="15764000" />
       <workItem from="1578493495030" duration="170000" />
-      <workItem from="1578532021500" duration="1493000" />
-    </task>
-    <task id="LOCAL-00135" summary="update">
-      <created>1578384754728</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1578384754728</updated>
+      <workItem from="1578532021500" duration="1914000" />
     </task>
     <task id="LOCAL-00136" summary="update">
       <created>1578385014503</created>
@@ -542,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578533348091</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="update">
+      <created>1578533572087</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1578533572087</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,50 +588,50 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578533347976">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578533571979">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578533347976" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578533571979" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578452995285" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578277270579" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1578291251893" />
-    <state width="1638" height="459" key="GridCell.Tab.0.bottom" timestamp="1578477884966">
+    <state width="1638" height="405" key="GridCell.Tab.0.bottom" timestamp="1578533946749">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="459" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578477884966" />
+    <state width="1638" height="405" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578533946749" />
     <state width="1638" height="206" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578455078534" />
     <state width="1638" height="339" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578298792494" />
     <state width="1638" height="368" key="GridCell.Tab.0.bottom/0.23.1680.958@0.23.1680.958" timestamp="1578304884296" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="459" key="GridCell.Tab.0.center" timestamp="1578477884966">
+    <state width="1638" height="405" key="GridCell.Tab.0.center" timestamp="1578533946748">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="459" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578477884966" />
+    <state width="1638" height="405" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578533946748" />
     <state width="1638" height="206" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578455078533" />
     <state width="1638" height="339" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578298792493" />
     <state width="1638" height="368" key="GridCell.Tab.0.center/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="459" key="GridCell.Tab.0.left" timestamp="1578477884965">
+    <state width="1638" height="405" key="GridCell.Tab.0.left" timestamp="1578533946748">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="459" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578477884965" />
+    <state width="1638" height="405" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578533946748" />
     <state width="1638" height="206" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578455078533" />
     <state width="1638" height="339" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578298792492" />
     <state width="1638" height="368" key="GridCell.Tab.0.left/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578300855417" />
     <state width="1638" height="208" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="459" key="GridCell.Tab.0.right" timestamp="1578477884966">
+    <state width="1638" height="405" key="GridCell.Tab.0.right" timestamp="1578533946749">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="459" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578477884966" />
+    <state width="1638" height="405" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578533946749" />
     <state width="1638" height="206" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578455078534" />
     <state width="1638" height="339" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578298792493" />

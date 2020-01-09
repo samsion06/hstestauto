@@ -134,13 +134,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
     @Test(description = "1.根据手机号码获取用户信息" +
                         "2.根据手机号码获取用户信息（聚合）")
-    public void getUserInfoByMobile(){
+    public void getUserInfoByMobile(){//规则：userbase里面得手机号和要在映射表userindx里面得indexid有才行
         try{
-
-            //规则：userbase里面得手机号和要在映射表userindx里面得indexid有才行
             //根据手机号码获取用户信息
             UserBaseInfo userBaseInfo=new UserBaseInfo();
             userBaseInfo.setMobile("18756989065");
+            userBaseInfo.setChannelId(1);
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/getUserInfoByMobile", "");
             post = new HttpPost(uri);
@@ -173,6 +172,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         UserLoginInfo userLoginInfo=new UserLoginInfo();
         userLoginInfo.setChannelUserId("178803");//17786709004
         userLoginInfo.setLoginName("123"+(int)((Math.random()*9+1)*10000000));//修改登陆手机号
+        userLoginInfo.setChannelId(1);
 
         try{
 
