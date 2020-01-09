@@ -7,6 +7,7 @@ public class UserTaobaoInfo {
     private Long id;
     private Long userId;
     private Long channelId;
+    private String channelUserId;
     private Integer relationId;
     private Integer specialId;
     private Integer companyId;
@@ -15,6 +16,14 @@ public class UserTaobaoInfo {
     private Integer isDelete;
     private Date createTime;
     private Date updateTime;
+
+    public String getChannelUserId() {
+        return channelUserId;
+    }
+
+    public void setChannelUserId(String channelUserId) {
+        this.channelUserId = channelUserId;
+    }
 
     public Long getId() {
         return id;

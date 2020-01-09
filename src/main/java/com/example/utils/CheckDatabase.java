@@ -2,6 +2,7 @@ package com.example.utils;
 import com.example.domain.*;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.mapper.UserBaseInfoMapper;
+import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -12,7 +13,7 @@ public class CheckDatabase {
     private static UserAddressInfo userAddressInfo;
     private static UserBaseInfo dataBaseUserBaseInfo;
     private static UserLoginInfo dataUserLoginInfo;
-    private static UserTaobaoInfo userTaobaoInfo;
+    private static UserTaobaoInfo dataUserTaobaoInfo;
     private static UserTeamInfo dataBaseUserTeamInfo;
     private static UserRleationInfo dataBaseUserRleationInfo;
     private static String AllMsg = "数据库全部匹配：";
@@ -74,6 +75,22 @@ public class CheckDatabase {
             case "TaoBaoCancel"://取消授权
                 userTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(channelUserId);
                 Reporter.log(AllMsg + userTaobaoInfo);
+                break;
+        }
+    }
+
+
+    public static void CheckDatabaseUserTaobaoInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserTaobaoInfo userTaobaoInfo){
+        switch (method) {
+            case "TaoBaoAuth"://淘宝授权
+                dataUserTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(userTaobaoInfo.getChannelUserId());
+                Assert.assertEquals(userTaobaoInfo.getChannelUserId(),dataUserTaobaoInfo.getChannelUserId());
+                DataUtils.logDatabase(2, null, dataUserTaobaoInfo.toString());
+                break;
+            case "TaoBaoCancel"://取消授权
+                dataUserTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(userTaobaoInfo.getChannelUserId());
+                Assert.assertEquals(userTaobaoInfo.getChannelUserId(),dataUserTaobaoInfo.getChannelUserId());
+                DataUtils.logDatabase(2, null, dataUserTaobaoInfo.toString());
                 break;
         }
     }
