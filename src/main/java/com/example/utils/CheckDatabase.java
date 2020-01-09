@@ -8,7 +8,7 @@ import org.testng.Reporter;
 
 public class CheckDatabase {
 
-    private static UserAliPayInfo userAliPayInfo;
+    private static UserAliPayInfo dataUserAliPayInfo;
     private static UserWeChatInfo userWeChatInfos;
     private static UserAddressInfo userAddressInfo;
     private static UserBaseInfo dataBaseUserBaseInfo;
@@ -36,24 +36,6 @@ public class CheckDatabase {
                 System.out.println(userWeChatInfos);
                 Reporter.log(AllMsg + userWeChatInfos);
                 break;
-            case "AliPayBind"://支付宝绑定
-                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(channelUserId);
-                //Assert.assertEquals(userWeChatInfos.getChannel_user_id(),channelUserId);
-                System.out.println(userAliPayInfo);
-                Reporter.log(AllMsg + userAliPayInfo);
-                break;
-            case "AliPayAuth"://支付宝授权
-                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(channelUserId);
-                int bindStatus = userAliPayInfo.getStatus();
-                Assert.assertEquals(1, bindStatus);
-                Reporter.log(PartMsg + "Status值变更为：" + bindStatus);
-                break;
-            case "AliPayCancel"://取消授权
-                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(channelUserId);
-                int unbindStatus = userAliPayInfo.getStatus();
-                Assert.assertEquals(2, unbindStatus);
-                Reporter.log(PartMsg + "Status值变更为：" + unbindStatus);
-                break;
             case "AddressUpadate"://更新收货地址
                 userAddressInfo = userBaseInfoMapper.queryUserAddressInfo(channelUserId);
                 String name = userAddressInfo.getName();
@@ -67,19 +49,33 @@ public class CheckDatabase {
                 Assert.assertEquals(1, addressIsDelete);
                 Reporter.log(PartMsg + "is_delete值变更为：" + addressIsDelete);
                 break;
-            case "TaoBaoAuth"://淘宝授权
-                userTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(channelUserId);
-                System.out.println(userTaobaoInfo);
-                Reporter.log(AllMsg + userTaobaoInfo);
+        }
+    }
+
+    //支付宝信息
+    public static void CheckDatabaseUserAliPayInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserAliPayInfo userAliPayInfo){
+        switch (method) {
+            case "AliPayBind"://支付宝绑定
+                dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
+                Assert.assertEquals(userAliPayInfo.getChannelUserId(),dataUserAliPayInfo.getChannelUserId());
+                DataUtils.logDatabase(2, null, dataUserTaobaoInfo.toString());
                 break;
-            case "TaoBaoCancel"://取消授权
-                userTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(channelUserId);
-                Reporter.log(AllMsg + userTaobaoInfo);
+            case "AliPayAuth"://支付宝授权
+                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
+                int bindStatus = userAliPayInfo.getStatus();
+                Assert.assertEquals(1, bindStatus);
+                Reporter.log(PartMsg + "Status值变更为：" + bindStatus);
+                break;
+            case "AliPayCancel"://取消授权
+                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
+                int unbindStatus = userAliPayInfo.getStatus();
+                Assert.assertEquals(2, unbindStatus);
+                Reporter.log(PartMsg + "Status值变更为：" + unbindStatus);
                 break;
         }
     }
 
-
+    //淘宝信息
     public static void CheckDatabaseUserTaobaoInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserTaobaoInfo userTaobaoInfo){
         switch (method) {
             case "TaoBaoAuth"://淘宝授权
@@ -89,7 +85,7 @@ public class CheckDatabase {
                 break;
             case "TaoBaoCancel"://取消授权
                 dataUserTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(userTaobaoInfo.getChannelUserId());
-                Assert.assertEquals(userTaobaoInfo.getChannelUserId(),dataUserTaobaoInfo.getChannelUserId());
+                Assert.assertEquals(userTaobaoInfo.getTbAccount(),null);
                 DataUtils.logDatabase(2, null, dataUserTaobaoInfo.toString());
                 break;
         }
