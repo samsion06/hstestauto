@@ -10,7 +10,7 @@ public class CheckDatabase {
 
     private static UserAliPayInfo dataUserAliPayInfo;
     private static UserWeChatInfo userWeChatInfos;
-    private static UserAddressInfo userAddressInfo;
+    private static UserAddressInfo dataUserAddressInfo;
     private static UserBaseInfo dataBaseUserBaseInfo;
     private static UserLoginInfo dataUserLoginInfo;
     private static UserTaobaoInfo dataUserTaobaoInfo;
@@ -36,15 +36,20 @@ public class CheckDatabase {
                 System.out.println(userWeChatInfos);
                 Reporter.log(AllMsg + userWeChatInfos);
                 break;
+        }
+    }
+
+    public static void CheckDatabaseUserUserAddressInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserAddressInfo userAddressInfo){
+        switch (method) {
+
             case "AddressUpadate"://更新收货地址
-                userAddressInfo = userBaseInfoMapper.queryUserAddressInfo(channelUserId);
+                dataUserAddressInfo = userBaseInfoMapper.queryUserAddressInfo(userAddressInfo.getChannelUserId());
                 String name = userAddressInfo.getName();
-                Assert.assertEquals(targetOutPut, name); //名称是否有更新
+                Assert.assertEquals(userAddressInfo.getName(), dataUserAddressInfo.getName()); //名称是否有更新
                 Reporter.log(PartMsg + "name值变更为：" + name);
                 break;
             case "AddressDelete"://删除收货地址
-                userAddressInfo = userBaseInfoMapper.queryUserAddressInfo(channelUserId);
-                System.out.println(userAddressInfo);
+                dataUserAddressInfo = userBaseInfoMapper.queryUserAddressInfo(userAddressInfo.getChannelUserId());
                 int addressIsDelete = userAddressInfo.getIsDelete(); //比对
                 Assert.assertEquals(1, addressIsDelete);
                 Reporter.log(PartMsg + "is_delete值变更为：" + addressIsDelete);
@@ -63,13 +68,13 @@ public class CheckDatabase {
             case "AliPayAuth"://支付宝授权
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 Assert.assertEquals(userAliPayInfo.getStatus(),dataUserAliPayInfo.getStatus());
-                DataUtils.logDatabase(1,"Status",dataBaseUserBaseInfo.getHeadImg());
+                DataUtils.logDatabase(1,"Status",dataUserAliPayInfo.getStatus().toString());
                 break;
             case "AliPayCancel"://取消授权
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 int unbindStatus = userAliPayInfo.getStatus();
-                Assert.assertEquals(2, unbindStatus);
-                Reporter.log(PartMsg + "Status值变更为：" + unbindStatus);
+                Assert.assertEquals(userAliPayInfo.getStatus(), dataUserAliPayInfo.getStatus());
+                DataUtils.logDatabase(1,"Status",dataUserAliPayInfo.getStatus().toString());
                 break;
         }
     }
