@@ -1,9 +1,7 @@
 package com.example.mapper;
-
 import com.example.domain.*;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
 
 //所有接口方法都写在这个接口上
 @Mapper
