@@ -2,10 +2,9 @@ package com.example.UserbasePublic;
 
 import com.example.domain.UserTaobaoInfo;
 import com.example.mapper.UserBaseInfoMapper;
-import com.example.utils.CheckDatabase;
-import com.example.utils.CheckReponseResult;
-import com.example.utils.DataTransferUtil;
-import com.example.utils.HttpConfigUtil;
+import com.example.utils.*;
+import com.googlecode.protobuf.format.JsonFormat;
+import com.hs.user.base.proto.HsrjUserTaobaoAuthInfoServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
@@ -15,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -71,7 +71,9 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            CheckReponseResult.AssertResponse(response);
+            HsrjUserTaobaoAuthInfoServiceProto.HsrjUserTaobaoAuthInfoResponse resp = HsrjUserTaobaoAuthInfoServiceProto.HsrjUserTaobaoAuthInfoResponse.parseFrom(response.getEntity().getContent());
+            JsonFormat jsonFormat =new JsonFormat();
+            DataUtils.logResponse(jsonFormat.printToString(resp));
 
             Thread.sleep(3000L);
 
@@ -87,6 +89,25 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             CheckDatabase.CheckDatabaseUserTaobaoInfo(userBaseInfoMapper,"TaoBaoCancel",userTaobaoInfo);
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test(){
+        UserTaobaoInfo userTaobaoInfo =new UserTaobaoInfo();
+        userTaobaoInfo.setChannelUserId("184003");
+        try{
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/cancel", "");
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthCancelRequest(userTaobaoInfo.getChannelUserId());
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            String cancelResponseMsg = CheckReponseResult.AssertResponse(response);
+            Assert.assertEquals("RESP_CODE_SUCCESS",cancelResponseMsg);
+            CheckDatabase.CheckDatabaseUserTaobaoInfo(userBaseInfoMapper,"TaoBaoCancel",userTaobaoInfo);
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
