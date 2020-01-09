@@ -212,13 +212,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
-
-
-
-
-
     }
 
     @AfterTest
