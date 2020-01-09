@@ -45,6 +45,8 @@ public class CheckDatabase {
                 dataUserAddressInfo = userBaseInfoMapper.queryUserAddressInfo(userAddressInfo.getChannelUserId());
                 String name = userAddressInfo.getName();
                 Assert.assertEquals(userAddressInfo.getName(), dataUserAddressInfo.getName()); //名称是否有更新
+
+
                 Reporter.log(PartMsg + "name值变更为：" + name);
                 break;
             case "AddressDelete"://删除收货地址
@@ -73,7 +75,7 @@ public class CheckDatabase {
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 int unbindStatus = userAliPayInfo.getStatus();
                 Assert.assertEquals(userAliPayInfo.getStatus(),dataUserAliPayInfo.getStatus());
-                Reporter.log(PartMsg + "Status值变更为：" + unbindStatus);
+                DataUtils.logDatabase(1,"Status",dataUserAliPayInfo.getStatus().toString());
                 break;
         }
     }
