@@ -1,5 +1,6 @@
 package com.example.UserbasePublic;
 
+import com.example.domain.UserWeChatInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
 import com.hs.user.base.proto.ResultResponse;
@@ -55,10 +56,10 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Test(description = "1.微信绑定" +
             "            2.微信解绑 ")
     public void bindingAndunBindingTest(){
-        String openId= DataUtils.getRandomString(9);    //随机生成openId
-        String channelUserId=String.valueOf((int)((Math.random()*9+1)*1000)); //随机生成ChannelUserId
 
-
+        UserWeChatInfo userWeChatInfo=new UserWeChatInfo();
+        userWeChatInfo.setOpenId(DataUtils.getRandomString(9)); //随机生成openId
+        userWeChatInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*1000)));//随机生成ChannelUserId
 
         try {
             //微信绑定
