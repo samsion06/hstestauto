@@ -1,5 +1,6 @@
 package com.example.UserbasePublic;
 
+import com.example.domain.UserTaobaoInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.CheckDatabase;
 import com.example.utils.CheckReponseResult;
@@ -44,27 +45,30 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             "            3.取消授权 1个参数齐")
     public void authAndCancelTest(){
         try {
-            String channelUserId="184003";
-            String tbAccount="327420130";
-            Long companyId=1642L;
-            Long tbAccountId=327420130L;
+            UserTaobaoInfo userTaobaoInfo =new UserTaobaoInfo();
+            userTaobaoInfo.setChannelUserId("184003");
+            userTaobaoInfo.setTbAccount("327420130");
+            userTaobaoInfo.setCompanyId(1642L);
+            userTaobaoInfo.setTbAccountId(327420130L);
 
             //淘宝授权
             //184003
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthRequest(channelUserId, 528467632L,528467634L,companyId,tbAccountId,tbAccount);
+            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthRequest(userTaobaoInfo.getChannelUserId(),
+                    528467632L,528467634L,userTaobaoInfo.getCompanyId(),userTaobaoInfo.getTbAccountId(),userTaobaoInfo.getTbAccount());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String authResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",authResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"TaoBaoAuth","1",channelUserId);
+            CheckDatabase.CheckDatabaseUserTaobaoInfo(userBaseInfoMapper,"TaoBaoAuth",userTaobaoInfo);
 
             //授权查询
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/info", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthQueryRequest(channelUserId,tbAccount,companyId,tbAccountId);
+            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthQueryRequest(userTaobaoInfo.getChannelUserId(),userTaobaoInfo.getTbAccount()
+                    ,userTaobaoInfo.getCompanyId(),userTaobaoInfo.getTbAccountId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -72,42 +76,18 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
 
             Thread.sleep(3000L);
 
-            //取消收授权
+            //取消收授权 TaoBaoCancel
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/cancel", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthCancelRequest(channelUserId);
+            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthCancelRequest(userTaobaoInfo.getChannelUserId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String cancelResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",cancelResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"TaoBaoCancel","1",channelUserId);
+            CheckDatabase.CheckDatabaseUserTaobaoInfo(userBaseInfoMapper,"TaoBaoCancel",userTaobaoInfo);
 
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-   // @Test(description = "取消授权")
-    public void authCancelTest(){
-        String channelUserId="184003";
-        String tbAccount="327420130";
-        Long companyId=1642L;
-        Long tbAccountId=327420130L;
-
-        try{
-            //取消收授权
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth/cancel", "");
-            post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthCancelRequest(channelUserId);
-            post.setEntity(byteArrayEntity);
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            String cancelResponseMsg = CheckReponseResult.AssertResponse(response);
-            Assert.assertEquals("RESP_CODE_SUCCESS",cancelResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"TaoBaoCancel","1",channelUserId);
-
-        }catch (Exception e){
             e.printStackTrace();
         }
     }

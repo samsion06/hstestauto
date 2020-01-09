@@ -10,20 +10,13 @@ public class UserTaobaoInfo {
     private String channelUserId;
     private Integer relationId;
     private Integer specialId;
-    private Integer companyId;
-    private  Integer tbAccountId;
+    private Long companyId;
+    private  Long tbAccountId;
     private String tbAccount;
     private Integer isDelete;
     private Date createTime;
     private Date updateTime;
 
-    public String getChannelUserId() {
-        return channelUserId;
-    }
-
-    public void setChannelUserId(String channelUserId) {
-        this.channelUserId = channelUserId;
-    }
 
     public Long getId() {
         return id;
@@ -49,6 +42,14 @@ public class UserTaobaoInfo {
         this.channelId = channelId;
     }
 
+    public String getChannelUserId() {
+        return channelUserId;
+    }
+
+    public void setChannelUserId(String channelUserId) {
+        this.channelUserId = channelUserId;
+    }
+
     public Integer getRelationId() {
         return relationId;
     }
@@ -65,19 +66,19 @@ public class UserTaobaoInfo {
         this.specialId = specialId;
     }
 
-    public Integer getCompanyId() {
+    public Long getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(Integer companyId) {
+    public void setCompanyId(Long companyId) {
         this.companyId = companyId;
     }
 
-    public Integer getTbAccountId() {
+    public Long getTbAccountId() {
         return tbAccountId;
     }
 
-    public void setTbAccountId(Integer tbAccountId) {
+    public void setTbAccountId(Long tbAccountId) {
         this.tbAccountId = tbAccountId;
     }
 
