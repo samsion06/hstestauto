@@ -104,13 +104,13 @@ public class CheckDatabase {
                 break;
             case "MobileUpadate"://修改手机
                 dataUserLoginInfo = userBaseInfoMapper.queryUserLoginInfo(userLoginInfo.getChannelUserId());
-                Assert.assertEquals(userBaseInfo.getMobile(), dataUserLoginInfo.getLoginName());
-                DataUtils.logDatabase(1,"login_name",dataBaseUserBaseInfo.getHeadImg());
+                Assert.assertEquals(userLoginInfo.getLoginName(), dataUserLoginInfo.getLoginName());
+                DataUtils.logDatabase(1,"login_name",dataUserLoginInfo.getLoginName());
                 break;
             case "PwdUpdate"://修改密码
                 dataUserLoginInfo = userBaseInfoMapper.queryUserLoginInfo(userLoginInfo.getChannelUserId());
                 Assert.assertEquals(userLoginInfo.getLoginPwd(), dataUserLoginInfo.getLoginPwd());
-                DataUtils.logDatabase(1,"login_pwd",dataBaseUserBaseInfo.getHeadImg());
+                DataUtils.logDatabase(1,"login_pwd",dataUserLoginInfo.getLoginPwd());
                 break;
         }
     }
