@@ -174,7 +174,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         userLoginInfo.setChannelUserId("178803");//17786709004
         userLoginInfo.setLoginName("123"+(int)((Math.random()*9+1)*10000000));//修改登陆手机号
 
-
         try{
 
             //修改手机号
@@ -228,7 +227,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             userLoginInfo.setChannelId(1);
             userLoginInfo.setLoginPwd(md5pwd);
             userLoginInfo.setLoginName("15053755782");
-
             //用户忘记登录密码
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/forget/pwd", "");
             post = new HttpPost(uri);
@@ -247,11 +245,13 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Test(description = "根据查询条件查询用户列表")
     public void getUsersByConditionTest(){
         try{
-
+            UserBaseInfo userBaseInfo=new UserBaseInfo();
+            userBaseInfo.setChannelUserId("3693070");
+            userBaseInfo.setChannelId(1);
             //根据查询条件查询用户列表
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/getUsersByCondition", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserBaseInfoByConditionRequest("3693070",userBaseInfo.getChannelId());
+            byteArrayEntity = DataTransferUtil.UserBaseInfoByConditionRequest(userBaseInfo.getChannelUserId(),userBaseInfo.getChannelId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -266,7 +266,8 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Test(description = "根据微信ID和OPENID获取用户信息")
     public void getByOpenIdAndUnionldIdTest() {
         try {
-
+            UserBaseInfo userBaseInfo=new UserBaseInfo();
+            userBaseInfo.setChannelId(1);
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/get/by/unionId/openId","");
             System.out.println(uri);
             post = new HttpPost(uri);;
@@ -305,7 +306,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/status/update ","");
             post = new HttpPost(uri);;
-            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(userBaseInfo.getChannelId(), "3693070", 1);
+           // byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(userBaseInfo.getChannelId(), "3693070", 1);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -321,7 +322,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/invite/code/update ","");
             post = new HttpPost(uri);;
-            byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(userBaseInfo.getChannelId(), "3693070", "5201314");
+           // byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(userBaseInfo.getChannelId(), "3693070", "5201314");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
