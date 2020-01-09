@@ -43,13 +43,13 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
-        channelUserId=(int)((Math.random()*9+1)*100000)+"";
 
     }
 
     @Test(description ="注册团长信息(幂等)")
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
+            channelUserId=(int)((Math.random()*9+1)*100000)+"";
             //注册团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);

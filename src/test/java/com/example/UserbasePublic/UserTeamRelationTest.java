@@ -45,12 +45,12 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
-        channelUserId=String.valueOf((int)((Math.random()*9+1)*10000));
     }
 
     @Test(description = "1.绑定(新增)团长关系(幂等)")
     public void teamRelationRegisterTest(){
         try{
+            channelUserId=String.valueOf((int)((Math.random()*9+1)*10000));
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
             System.out.println(uri);
             post = new HttpPost(uri);
@@ -71,12 +71,13 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest(channelUserId);
+            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest("61296");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
             UserTeamRelationServiceProto.ResponseCode resp = UserTeamRelationServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            System.out.println(resp);
             Reporter.log(resp.toString());
         }catch (Exception e){
             e.printStackTrace();
@@ -84,7 +85,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     }
 
 
-    @Test(description = "3.团长关系聚合")
+   // @Test(description = "3.团长关系聚合")
     public void teamRelationCURD(){
         UserRleationInfo userRleationInfo =new UserRleationInfo();
         userRleationInfo.setAppType(1);
