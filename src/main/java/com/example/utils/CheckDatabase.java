@@ -41,7 +41,6 @@ public class CheckDatabase {
 
     public static void CheckDatabaseUserUserAddressInfo(UserBaseInfoMapper userBaseInfoMapper,String method,UserAddressInfo userAddressInfo){
         switch (method) {
-
             case "AddressUpadate"://更新收货地址
                 dataUserAddressInfo = userBaseInfoMapper.queryUserAddressInfo(userAddressInfo.getChannelUserId());
                 String name = userAddressInfo.getName();
@@ -73,8 +72,8 @@ public class CheckDatabase {
             case "AliPayCancel"://取消授权
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 int unbindStatus = userAliPayInfo.getStatus();
-                Assert.assertEquals(userAliPayInfo.getStatus(), dataUserAliPayInfo.getStatus());
-                DataUtils.logDatabase(1,"Status",dataUserAliPayInfo.getStatus().toString());
+                Assert.assertEquals(userAliPayInfo.getStatus(),dataUserAliPayInfo.getStatus());
+                Reporter.log(PartMsg + "Status值变更为：" + unbindStatus);
                 break;
         }
     }
