@@ -1,4 +1,5 @@
 package com.example.UserbasePublic;
+import com.example.domain.UserRleationInfo;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.utils.CheckDatabase;
 import com.example.utils.DataTransferUtil;
@@ -42,21 +43,22 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     public void beforeTest(){
         httpClient = HttpClients.createDefault();
         jsonFormat =new JsonFormat();
-        channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
+        channelUserId=String.valueOf((int)((Math.random()*9+1)*100000));
     }
 
-    //@Test(description = "1.绑定(新增)团长关系(幂等)")
+    @Test(description = "1.绑定(新增)团长关系(幂等)")
     public void teamRelationRegisterTest(){
 
-        Integer appType=1;
-        String channelUserId="5201314";
-        String teamUserId="5201314";
+        UserRleationInfo userRleationInfo =new UserRleationInfo();
+        userRleationInfo.setAppType(1);
+        userRleationInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));//随机6位channeluserid
+        userRleationInfo.setTeamUserId("5201314");
 
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
             System.out.println(uri);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest(channelUserId,channelId,appType,teamUserId);
+            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest(userRleationInfo.getChannelUserId(),channelId,userRleationInfo.getAppType(),userRleationInfo.getTeamUserId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -70,7 +72,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description = "2.解绑(删除)团长关系(幂等)")
+    @Test(description = "2.解绑(删除)团长关系(幂等)")
     public void teamRelationDeleteTest(){
         try{
 
@@ -92,15 +94,18 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
     @Test(description = "3.团长关系聚合")
     public void teamRelationCURD(){
+        UserRleationInfo userRleationInfo =new UserRleationInfo();
+        userRleationInfo.setAppType(1);
+        userRleationInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));//随机6位channeluserid
+        userRleationInfo.setTeamUserId("5201314");
 
-        String teamUserId="5201314";
         try{
 
             //绑定团长关系
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
             System.out.println(uri);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest(channelUserId,channelId,appType,teamUserId);
+            byteArrayEntity = DataTransferUtil.UserTeamRelationRegisterRequest(userRleationInfo.getChannelUserId(),channelId,userRleationInfo.getAppType(),userRleationInfo.getTeamUserId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
