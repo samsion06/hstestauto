@@ -47,7 +47,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         jsonFormat =new JsonFormat();
     }
 
-    @Test(description = "1.绑定(新增)团长关系(幂等)")
+    @Test(description = "1.绑定(新增)团长关系(幂等)",priority = 1)
     public void teamRelationRegisterTest(){
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
@@ -65,11 +65,12 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "2.解绑(删除)团长关系(幂等)")
+    @Test(description = "2.解绑(删除)团长关系(幂等)",priority = 2)
     public void teamRelationDeleteTest(){
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
             post = new HttpPost(uri);
+            System.out.println();
             byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest(channelUserId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");

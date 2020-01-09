@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 10:50:02 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 10:53:27 AM</span>
 				</a>
 			</li>
 			<li>
@@ -158,15 +158,15 @@
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>teamRelationDeleteTest</span>
-						<span class='test-time'>Jan 9, 2020 10:50:02 AM</span>
+						<span class='test-name'>teamRelationRegisterTest</span>
+						<span class='test-time'>Jan 9, 2020 10:53:27 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 10:50:02 AM</span>
-	<span class='label end-time'>Jan 9, 2020 10:50:02 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+24ms</span>
+	<span class='label start-time'>Jan 9, 2020 10:53:27 AM</span>
+	<span class='label end-time'>Jan 9, 2020 10:53:27 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+220ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -178,9 +178,34 @@
 				</tr>
 			</thead>
 			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:53:27 AM</td>
+					<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "78703"
+channelId: 1
+appType: 1
+teamUserId: "5201314"
+}</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:53:27 AM</td>
+					<td class='step-details'>responseCode {
+  msg: "RESP_CODE_SUCCESS"
+}
+userTeamRelationEntity {
+  id: 208535
+  channelUserId: "78703"
+  channelId: 1
+  appType: 1
+  teamUserId: "5201314"
+  createTime: 1578538407168
+  updateTime: 1578538407168
+}</td>
+				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:50:03 AM</td>
+					<td class='timestamp'>10:53:27 AM</td>
 					<td class='step-details'>Test passed</td>
 				</tr>
 			</tbody>
@@ -192,15 +217,15 @@
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>teamRelationRegisterTest</span>
-						<span class='test-time'>Jan 9, 2020 10:50:02 AM</span>
+						<span class='test-name'>teamRelationDeleteTest</span>
+						<span class='test-time'>Jan 9, 2020 10:53:27 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 10:50:02 AM</span>
-	<span class='label end-time'>Jan 9, 2020 10:50:03 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+244ms</span>
+	<span class='label start-time'>Jan 9, 2020 10:53:27 AM</span>
+	<span class='label end-time'>Jan 9, 2020 10:53:27 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+53ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -214,32 +239,23 @@
 			<tbody>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>10:50:03 AM</td>
-					<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "34766"
-channelId: 1
-appType: 1
+					<td class='timestamp'>10:53:27 AM</td>
+					<td class='step-details'>解绑(删除)团长关系(幂等)_传入参数: {commonRequest {
+  channelUserId: "78703"
+  channelId: 1
+  appType: 1
+}
 teamUserId: "5201314"
 }</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>10:50:03 AM</td>
-					<td class='step-details'>responseCode {
-  msg: "RESP_CODE_SUCCESS"
-}
-userTeamRelationEntity {
-  id: 208533
-  channelUserId: "34766"
-  channelId: 1
-  appType: 1
-  teamUserId: "5201314"
-  createTime: 1578538203121
-  updateTime: 1578538203121
-}</td>
+					<td class='timestamp'>10:53:27 AM</td>
+					<td class='step-details'>msg: "RESP_CODE_SUCCESS"</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:50:03 AM</td>
+					<td class='timestamp'>10:53:27 AM</td>
 					<td class='step-details'>Test passed</td>
 				</tr>
 			</tbody>
@@ -294,19 +310,19 @@ userTeamRelationEntity {
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 9, 2020 10:50:02 AM</div>
+					<div class='panel-lead'>Jan 9, 2020 10:53:27 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 9, 2020 10:50:02 AM</div>
+			 		<div class='panel-lead'>Jan 9, 2020 10:53:27 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>24ms</div>
+					<div class='panel-lead'>220ms</div>
 				</div>
 			</div>
 		</div>
@@ -334,7 +350,7 @@ userTeamRelationEntity {
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 2,
+				exceptionsChild: 4,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
