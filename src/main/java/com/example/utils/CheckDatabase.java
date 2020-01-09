@@ -61,13 +61,12 @@ public class CheckDatabase {
                 DataUtils.logDatabase(2, null, dataUserTaobaoInfo.toString());
                 break;
             case "AliPayAuth"://支付宝授权
-                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
-                int bindStatus = userAliPayInfo.getStatus();
-                Assert.assertEquals(1, bindStatus);
-                Reporter.log(PartMsg + "Status值变更为：" + bindStatus);
+                dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
+                Assert.assertEquals(userAliPayInfo.getStatus(),dataUserAliPayInfo.getStatus());
+                DataUtils.logDatabase(1,"Status",dataBaseUserBaseInfo.getHeadImg());
                 break;
             case "AliPayCancel"://取消授权
-                userAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
+                dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 int unbindStatus = userAliPayInfo.getStatus();
                 Assert.assertEquals(2, unbindStatus);
                 Reporter.log(PartMsg + "Status值变更为：" + unbindStatus);
