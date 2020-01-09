@@ -43,8 +43,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void beforeTest(){
         nickname = DataUtils.getRandomString(9);//随机生成用户名
         headimgurl = DataUtils.getRandomString(15);//随机生成头像
-        loginName = "17720130632"; //3692091
-        pwd = "123456";
         httpClient = HttpClients.createDefault();
     }
 
@@ -59,8 +57,8 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         userBaseInfo.setHeadImg(headimgurl);
         //用户登陆
         UserLoginInfo userLoginInfo= new UserLoginInfo();
-        userLoginInfo.setLoginName(loginName);
-        userLoginInfo.setLoginPwd(pwd);
+        userLoginInfo.setLoginName("17720130632");//3692091
+        userLoginInfo.setLoginPwd("123456");
         userLoginInfo.setChannelId(1);
         try {
             //登录
@@ -176,21 +174,23 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
                         "3.登录")
     public void mdfMobileAndPwdUpdateTest(){
 
+        UserLoginInfo userLoginInfo=new UserLoginInfo();
+        userLoginInfo.setChannelUserId("178803");//17786709004
+        userLoginInfo.setLoginName("123"+(int)((Math.random()*9+1)*10000000));//修改登陆手机号
 
 
-        String ChannelUserId="178803"; //17786709004
         try{
-            String mobile="177"+(int)((Math.random()*9+1)*10000000); //修改登录得手机号
+
             //修改手机号
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/mobile/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userMobileUpdateRequestConvertBuilder(userLoginInfo.getChannelId(), mobile, ChannelUserId, "86");
+            byteArrayEntity = DataTransferUtil.userMobileUpdateRequestConvertBuilder(userLoginInfo.getChannelId(), userLoginInfo.getLoginName(), userLoginInfo.getChannelUserId(), "86");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String mobileResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",mobileResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"MobileUpdate",mobile,ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"MobileUpdate",userLoginInfo.getLoginName(),userLoginInfo.getChannelUserId());
 
             //178803 将密码转换成MD5加密方式
             String pwd="123456";
@@ -200,19 +200,19 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/pwd/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userPwdUpdateRequestConvertBuilder(ChannelUserId, userLoginInfo.getChannelId(), md5pwd);
+            byteArrayEntity = DataTransferUtil.userPwdUpdateRequestConvertBuilder(userLoginInfo.getChannelUserId(), userLoginInfo.getChannelId(), md5pwd);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String pwdResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",pwdResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"PwdUpdate",md5pwd,ChannelUserId);
+            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"PwdUpdate",md5pwd,userLoginInfo.getChannelUserId());
 
             //再次登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
             post = new HttpPost(uri);
             System.out.println("mobile"+mobile+"pwd"+pwd);
-            byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(userLoginInfo.getChannelId(), mobile, pwd, "86");
+            byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(userLoginInfo.getChannelId(), userLoginInfo.getLoginName(), pwd, "86");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
