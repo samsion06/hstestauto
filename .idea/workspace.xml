@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTeamRelationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTeamRelationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +46,28 @@
       <recent name="$PROJECT_DIR$/src/main/resources/TestFile/test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserbaseTest.mdfMobileAndPwdUpdateTest">
+  <component name="RunManager" selected="TestNG.UserTeamInfoTest.fansTeamInfoQueryChannelUserIdTest">
     <configuration name="SpringbootMybatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.SpringbootMybatisApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTeamInfoTest.fansTeamInfoQueryChannelUserIdTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.BuFengZhuang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic.BuFengZhuang" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest" />
+      <option name="METHOD_NAME" value="fansTeamInfoQueryChannelUserIdTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,24 +101,6 @@
       <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
       <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
       <option name="METHOD_NAME" value="getByOpenIdAndUnionldIdTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserbaseTest.getUserInfoByMobile" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
-      <option name="METHOD_NAME" value="getUserInfoByMobile" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -147,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserTeamInfoTest.fansTeamInfoQueryChannelUserIdTest" />
         <item itemvalue="TestNG.UserbaseTest.mdfMobileAndPwdUpdateTest" />
         <item itemvalue="TestNG.UserbaseTest.forgetPasswordTest" />
         <item itemvalue="TestNG.UserbaseTest.getByOpenIdAndUnionldIdTest" />
         <item itemvalue="TestNG.UserbaseTest.getUsersByConditionTest" />
-        <item itemvalue="TestNG.UserbaseTest.getUserInfoByMobile" />
       </list>
     </recent_temporary>
   </component>
@@ -199,14 +198,7 @@
       <workItem from="1578449939926" duration="4889000" />
       <workItem from="1578461633405" duration="15764000" />
       <workItem from="1578493495030" duration="170000" />
-      <workItem from="1578532021500" duration="4382000" />
-    </task>
-    <task id="LOCAL-00143" summary="update">
-      <created>1578386007854</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1578386007854</updated>
+      <workItem from="1578532021500" duration="4623000" />
     </task>
     <task id="LOCAL-00144" summary="update">
       <created>1578386058654</created>
@@ -544,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578536018294</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="update">
+      <created>1578536645836</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1578536645836</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,72 +588,76 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578536018188">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578536645710">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578536018188" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578452995285" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578536645710" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578277270579" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1578291251893" />
-    <state width="1638" height="468" key="GridCell.Tab.0.bottom" timestamp="1578536636768">
+    <state width="1638" height="333" key="GridCell.Tab.0.bottom" timestamp="1578536877197">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="536" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578534709147" />
-    <state width="1638" height="468" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578536636768" />
+    <state width="1638" height="333" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578536877197" />
     <state width="1638" height="339" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578298792494" />
     <state width="1638" height="368" key="GridCell.Tab.0.bottom/0.23.1680.958@0.23.1680.958" timestamp="1578304884296" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="468" key="GridCell.Tab.0.center" timestamp="1578536636767">
+    <state width="1638" height="333" key="GridCell.Tab.0.center" timestamp="1578536877196">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="536" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578534709146" />
-    <state width="1638" height="468" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578536636767" />
+    <state width="1638" height="333" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578536877196" />
     <state width="1638" height="339" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578298792493" />
     <state width="1638" height="368" key="GridCell.Tab.0.center/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="468" key="GridCell.Tab.0.left" timestamp="1578536636767">
+    <state width="1638" height="333" key="GridCell.Tab.0.left" timestamp="1578536877196">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="536" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578534709145" />
-    <state width="1638" height="468" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578536636767" />
+    <state width="1638" height="333" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578536877196" />
     <state width="1638" height="339" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578298792492" />
     <state width="1638" height="368" key="GridCell.Tab.0.left/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578300855417" />
     <state width="1638" height="208" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="468" key="GridCell.Tab.0.right" timestamp="1578536636768">
+    <state width="1638" height="333" key="GridCell.Tab.0.right" timestamp="1578536877197">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="536" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578534709146" />
-    <state width="1638" height="468" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578536636768" />
+    <state width="1638" height="333" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578536877197" />
     <state width="1638" height="339" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578298792493" />
     <state width="1638" height="368" key="GridCell.Tab.0.right/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="459" key="GridCell.Tab.1.bottom" timestamp="1578477884967">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="312" key="GridCell.Tab.1.bottom" timestamp="1578536811502">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="459" key="GridCell.Tab.1.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578477884967" />
-    <state width="1638" height="459" key="GridCell.Tab.1.center" timestamp="1578477884967">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="312" key="GridCell.Tab.1.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578536811502" />
+    <state width="1638" height="312" key="GridCell.Tab.1.center" timestamp="1578536811502">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="459" key="GridCell.Tab.1.center/0.23.1680.950@0.23.1680.950" timestamp="1578477884967" />
-    <state width="1638" height="459" key="GridCell.Tab.1.left" timestamp="1578477884967">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="312" key="GridCell.Tab.1.center/0.23.1680.952@0.23.1680.952" timestamp="1578536811502" />
+    <state width="1638" height="312" key="GridCell.Tab.1.left" timestamp="1578536811501">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="459" key="GridCell.Tab.1.left/0.23.1680.950@0.23.1680.950" timestamp="1578477884967" />
-    <state width="1638" height="459" key="GridCell.Tab.1.right" timestamp="1578477884967">
-      <screen x="0" y="23" width="1680" height="950" />
+    <state width="1638" height="312" key="GridCell.Tab.1.left/0.23.1680.952@0.23.1680.952" timestamp="1578536811501" />
+    <state width="1638" height="312" key="GridCell.Tab.1.right" timestamp="1578536811502">
+      <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state width="1638" height="459" key="GridCell.Tab.1.right/0.23.1680.950@0.23.1680.950" timestamp="1578477884967" />
+    <state width="1638" height="312" key="GridCell.Tab.1.right/0.23.1680.952@0.23.1680.952" timestamp="1578536811502" />
     <state x="328" y="81" key="SettingsEditor" timestamp="1577955362247">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
@@ -675,6 +678,10 @@
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.952@0.23.1680.952" timestamp="1578493495384" />
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1578108883351" />
     <state x="519" y="334" key="com.intellij.ide.util.TipDialog/0.23.1680.960@0.23.1680.960" timestamp="1578300888343" />
+    <state x="483" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578536772557">
+      <screen x="0" y="23" width="1680" height="952" />
+    </state>
+    <state x="483" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.952@0.23.1680.952" timestamp="1578536772557" />
     <state x="505" y="231" width="670" height="676" key="search.everywhere.popup" timestamp="1578466484100">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
@@ -722,6 +729,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
           <line>131</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserTeamRelationTest.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

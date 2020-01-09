@@ -49,7 +49,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 10:23:22 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 10:26:59 AM</span>
 				</a>
 			</li>
 			<li>
@@ -174,14 +174,14 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Suite : 团长关系信息</span>
-						<span class='test-time'>Jan 9, 2020 10:23:22 AM</span>
+						<span class='test-time'>Jan 9, 2020 10:26:59 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 10:23:22 AM</span>
-	<span class='label end-time'>Jan 9, 2020 10:23:26 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+372ms</span>
+	<span class='label start-time'>Jan 9, 2020 10:26:59 AM</span>
+	<span class='label end-time'>Jan 9, 2020 10:27:02 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+955ms</span>
 </div>
 	<div class='test-desc'>Pass: 2 ; Fail: 1 ; Skip: 0 ; </div>
 	<div class='test-attributes'>
@@ -195,8 +195,8 @@
 				<li class='node level-1 leaf fail' status='fail' test-id='2'>
 					<div class='collapsible-header'>
 						<div class='node-name'>teamRelationCURD</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:25 AM</span>
-						<span class='node-duration'>0h 0m 2s+297ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:01 AM</span>
+						<span class='node-duration'>0h 0m 1s+713ms</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 						<div class='collapsible-body'>
@@ -216,8 +216,8 @@
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "567581"
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "441698"
 channelId: 1
 appType: 1
 teamUserId: "5201314"
@@ -225,19 +225,19 @@ teamUserId: "5201314"
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamRelationEntity": {"id": 208519,"channelUserId": "567581","channelId": 1,"appType": 1,"teamUserId": "5201314","createTime": 1578536605341,"updateTime": 1578536605341}}]</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamRelationEntity": {"id": 208523,"channelUserId": "441698","channelId": 1,"appType": 1,"teamUserId": "5201314","createTime": 1578536822012,"updateTime": 1578536822012}}]</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>数据库全部匹配：UserRleationInfo{id=208519, channelId=1, channelUserId='567581', appType=1, teamUserId='5201314', isDelete=0}</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>数据库全部匹配：UserRleationInfo{id=208523, channelId=1, channelUserId='441698', appType=1, teamUserId='5201314', isDelete=0}</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>解绑(删除)团长关系(幂等)_传入参数: {commonRequest {
-  channelUserId: "567581"
+  channelUserId: "441698"
   channelId: 1
   appType: 1
 }
@@ -246,14 +246,14 @@ teamUserId: "5201314"
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>返回值:[msg: "RESP_CODE_SUCCESS"
 ]</td>
 												</tr>
 												<tr class='log' status='fail'>
 													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'><pre>java.lang.AssertionError: expected [0] but found [567581]
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'><pre>java.lang.AssertionError: expected [0] but found [1]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
@@ -303,8 +303,8 @@ teamUserId: "5201314"
 				<li class='node level-1 leaf pass' status='pass' test-id='3'>
 					<div class='collapsible-header'>
 						<div class='node-name'>teamRelationDeleteTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 1s+172ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:02 AM</span>
+						<span class='node-duration'>0h 0m 0s+957ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -324,9 +324,9 @@ teamUserId: "5201314"
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>解绑(删除)团长关系(幂等)_传入参数: {commonRequest {
-  channelUserId: "57328"
+  channelUserId: "51998"
   channelId: 1
   appType: 1
 }
@@ -335,13 +335,13 @@ teamUserId: "5201314"
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>code: 1
 msg: "RESP_CODE_FAILED"</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -352,8 +352,8 @@ msg: "RESP_CODE_FAILED"</td>
 				<li class='node level-1 leaf pass' status='pass' test-id='4'>
 					<div class='collapsible-header'>
 						<div class='node-name'>teamRelationRegisterTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 1s+126ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:02 AM</span>
+						<span class='node-duration'>0h 0m 0s+915ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -373,8 +373,8 @@ msg: "RESP_CODE_FAILED"</td>
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "57328"
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "51998"
 channelId: 1
 appType: 1
 teamUserId: "5201314"
@@ -382,23 +382,23 @@ teamUserId: "5201314"
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>responseCode {
   msg: "RESP_CODE_SUCCESS"
 }
 userTeamRelationEntity {
-  id: 208520
-  channelUserId: "57328"
+  id: 208524
+  channelUserId: "51998"
   channelId: 1
   appType: 1
   teamUserId: "5201314"
-  createTime: 1578536606235
-  updateTime: 1578536606235
+  createTime: 1578536822675
+  updateTime: 1578536822675
 }</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -414,14 +414,14 @@ userTeamRelationEntity {
 				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='5'>
 					<div class='test-heading'>
 						<span class='test-name'>Suite : 团长信息</span>
-						<span class='test-time'>Jan 9, 2020 10:23:26 AM</span>
+						<span class='test-time'>Jan 9, 2020 10:27:02 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 10:23:26 AM</span>
-	<span class='label end-time'>Jan 9, 2020 10:23:27 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+818ms</span>
+	<span class='label start-time'>Jan 9, 2020 10:27:02 AM</span>
+	<span class='label end-time'>Jan 9, 2020 10:27:03 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+665ms</span>
 </div>
 	<div class='test-desc'>Pass: 6 ; Fail: 0 ; Skip: 0 ; </div>
 	<div class='test-attributes'>
@@ -435,8 +435,8 @@ userTeamRelationEntity {
 				<li class='node level-1 leaf pass' status='pass' test-id='6'>
 					<div class='collapsible-header'>
 						<div class='node-name'>fansTeamInfoDeleteAppTypeTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 1s+26ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:02 AM</span>
+						<span class='node-duration'>0h 0m 0s+816ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -456,9 +456,9 @@ userTeamRelationEntity {
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>删除团长信息(幂等)_传入参数:{deleteRequest {
-  channelUserId: "406145"
+  channelUserId: "268170"
   channelId: 1
   appType: 1
 }
@@ -466,12 +466,12 @@ userTeamRelationEntity {
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>{"code": 1,"msg": "RESP_CODE_FAILED"}</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -482,8 +482,8 @@ userTeamRelationEntity {
 				<li class='node level-1 leaf pass' status='pass' test-id='7'>
 					<div class='collapsible-header'>
 						<div class='node-name'>fansTeamInfoQueryBatchAppTypeTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 0s+919ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:02 AM</span>
+						<span class='node-duration'>0h 0m 0s+755ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -503,20 +503,20 @@ userTeamRelationEntity {
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "406145"
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "268170"
 channelId: 1
 appType: 1
 }</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>{"responseCode": {"msg": "RESP_CODE_SUCCESS"}}</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -527,8 +527,8 @@ appType: 1
 				<li class='node level-1 leaf pass' status='pass' test-id='8'>
 					<div class='collapsible-header'>
 						<div class='node-name'>fansTeamInfoQueryChannelUserIdTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 0s+864ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:02 AM</span>
+						<span class='node-duration'>0h 0m 0s+724ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -548,9 +548,9 @@ appType: 1
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>查询粉丝团长(幂等)_传入参数:{commonRequest {
-  channelUserId: "406145"
+  channelUserId: "268170"
   channelId: 1
   appType: 1
 }
@@ -558,12 +558,12 @@ appType: 1
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>{"responseCode": {"msg": "RESP_CODE_SUCCESS"}}</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -574,8 +574,8 @@ appType: 1
 				<li class='node level-1 leaf pass' status='pass' test-id='9'>
 					<div class='collapsible-header'>
 						<div class='node-name'>userTeamCURD</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 0s+832ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:02 AM</span>
+						<span class='node-duration'>0h 0m 0s+694ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -595,9 +595,9 @@ appType: 1
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>注册团长信息(幂等)_传入参数:{realName: "\345\221\250\351\233\204\351\221\253"
-channelUserId: "712861"
+channelUserId: "950762"
 channelId: 1
 appType: 1
 deposit: 5201314
@@ -623,7 +623,7 @@ source: 1
 operatorTel: "17702015334"
 companyName: "\345\221\250\346\260\217\351\233\206\345\233\242"
 address {
-  channelUserId: "712861"
+  channelUserId: "950762"
   channelId: 1
   appType: 1
   provinceCode: 86
@@ -646,15 +646,15 @@ address {
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110117,"realName": "周雄鑫","channelUserId": "712861","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536606559,"updateTime": 1578536606559},"userTeamAddressEntity": {"channelUserId": "712861","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536606559,"updateTime": 1578536606559}}]</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110121,"realName": "周雄鑫","channelUserId": "950762","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536822913,"updateTime": 1578536822913},"userTeamAddressEntity": {"channelUserId": "950762","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536822913,"updateTime": 1578536822913}}]</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
   realName: "\345\221\250\351\233\204\351\221\253"
-  channelUserId: "712861"
+  channelUserId: "950762"
   channelId: 1
   appType: 1
 }
@@ -662,32 +662,32 @@ address {
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110117,"realName": "周雄鑫","channelUserId": "712861","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536606559,"updateTime": 1578536606559},"userTeamAddressEntity": {"channelUserId": "712861","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536606559,"updateTime": 1578536606559}}]</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110121,"realName": "周雄鑫","channelUserId": "950762","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536822913,"updateTime": 1578536822913},"userTeamAddressEntity": {"channelUserId": "950762","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536822913,"updateTime": 1578536822913}}]</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>数据库部分匹配：real_name的值得变更为：周雄鑫</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "712861"
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "950762"
 channelId: 1
 appType: 1
 }</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110117,"realName": "周雄鑫","channelUserId": "712861","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536606559,"updateTime": 1578536606559},"userTeamAddressEntity": {"channelUserId": "712861","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536606559,"updateTime": 1578536606559}}]</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110121,"realName": "周雄鑫","channelUserId": "950762","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536822913,"updateTime": 1578536822913},"userTeamAddressEntity": {"channelUserId": "950762","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536822913,"updateTime": 1578536822913}}]</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>查询粉丝团长(幂等)_传入参数:{commonRequest {
-  channelUserId: "712861"
+  channelUserId: "950762"
   channelId: 1
   appType: 1
 }
@@ -695,14 +695,14 @@ appType: 1
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110117,"realName": "周雄鑫","channelUserId": "712861","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536606559,"updateTime": 1578536606559},"userTeamAddressEntity": {"channelUserId": "712861","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536606559,"updateTime": 1578536606559}}]</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110121,"realName": "周雄鑫","channelUserId": "950762","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536822913,"updateTime": 1578536822913},"userTeamAddressEntity": {"channelUserId": "950762","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536822913,"updateTime": 1578536822913}}]</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>删除团长信息(幂等)_传入参数:{commonRequest {
-  channelUserId: "712861"
+  channelUserId: "950762"
   channelId: 1
   appType: 1
 }
@@ -710,17 +710,17 @@ appType: 1
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110117,"realName": "周雄鑫","channelUserId": "712861","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536606559,"updateTime": 1578536606559},"userTeamAddressEntity": {"channelUserId": "712861","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536606559,"updateTime": 1578536606559}}]</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110121,"realName": "周雄鑫","channelUserId": "950762","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578536822913,"updateTime": 1578536822913},"userTeamAddressEntity": {"channelUserId": "950762","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578536822913,"updateTime": 1578536822913}}]</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>数据库部分匹配：is_delete的值得变更为：1</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -731,8 +731,8 @@ appType: 1
 				<li class='node level-1 leaf pass' status='pass' test-id='10'>
 					<div class='collapsible-header'>
 						<div class='node-name'>userTeamInfoRegisterChannelUserIdTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:26 AM</span>
-						<span class='node-duration'>0h 0m 0s+367ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:03 AM</span>
+						<span class='node-duration'>0h 0m 0s+340ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -752,21 +752,21 @@ appType: 1
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>注册团长信息(幂等)_传入参数:{realName: "\345\221\250\351\233\204\351\221\253"
-channelUserId: "406145"
+channelUserId: "268170"
 channelId: 1
 appType: 1
 }</td>
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
-													<td class='step-details'>{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110118,"realName": "周雄鑫","channelUserId": "406145","channelId": 1,"appType": 1,"createTime": 1578536606997,"updateTime": 1578536606997}}</td>
+													<td class='timestamp'>10:27:03 AM</td>
+													<td class='step-details'>{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110122,"realName": "周雄鑫","channelUserId": "268170","channelId": 1,"appType": 1,"createTime": 1578536823251,"updateTime": 1578536823251}}</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -777,8 +777,8 @@ appType: 1
 				<li class='node level-1 leaf pass' status='pass' test-id='11'>
 					<div class='collapsible-header'>
 						<div class='node-name'>userTeamInfoUpdateChannelUserIdTest</div>						
-						<span class='node-time'>Jan 9, 2020 10:23:27 AM</span>
-						<span class='node-duration'>0h 0m 0s+282ms</span>
+						<span class='node-time'>Jan 9, 2020 10:27:03 AM</span>
+						<span class='node-duration'>0h 0m 0s+251ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -798,10 +798,10 @@ appType: 1
 										<tbody>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
   realName: "xiongxinzhou"
-  channelUserId: "406145"
+  channelUserId: "268170"
   channelId: 1
   appType: 1
 }
@@ -809,12 +809,12 @@ appType: 1
 												</tr>
 												<tr class='log' status='debug'>
 													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>{"msg": "RESP_CODE_SUCCESS"}</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>10:23:27 AM</td>
+													<td class='timestamp'>10:27:03 AM</td>
 													<td class='step-details'>Test passed</td>
 												</tr>
 										</tbody>
@@ -901,57 +901,57 @@ appType: 1
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jan 9, 2020 10:23:22 AM</td>
+										<td>Jan 9, 2020 10:26:59 AM</td>
 										<td class='linked' test-id='1'>团长关系信息</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:25 AM</td>
+										<td>Jan 9, 2020 10:27:01 AM</td>
 										<td class='linked' test-id='2'>团长关系信息.teamRelationCURD</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='3'>团长关系信息.teamRelationDeleteTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='4'>团长关系信息.teamRelationRegisterTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='5'>团长信息</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='6'>团长信息.fansTeamInfoDeleteAppTypeTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='7'>团长信息.fansTeamInfoQueryBatchAppTypeTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='8'>团长信息.fansTeamInfoQueryChannelUserIdTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='9'>团长信息.userTeamCURD</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:03 AM</td>
 										<td class='linked' test-id='10'>团长信息.userTeamInfoRegisterChannelUserIdTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:27 AM</td>
+										<td>Jan 9, 2020 10:27:03 AM</td>
 										<td class='linked' test-id='11'>团长信息.userTeamInfoUpdateChannelUserIdTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
@@ -986,22 +986,22 @@ appType: 1
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jan 9, 2020 10:23:22 AM</td>
+										<td>Jan 9, 2020 10:26:59 AM</td>
 										<td class='linked' test-id='1'>团长关系信息</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:25 AM</td>
+										<td>Jan 9, 2020 10:27:01 AM</td>
 										<td class='linked' test-id='2'>团长关系信息.teamRelationCURD</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='3'>团长关系信息.teamRelationDeleteTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='4'>团长关系信息.teamRelationRegisterTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
@@ -1035,37 +1035,37 @@ appType: 1
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='5'>团长信息</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='6'>团长信息.fansTeamInfoDeleteAppTypeTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='7'>团长信息.fansTeamInfoQueryBatchAppTypeTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='8'>团长信息.fansTeamInfoQueryChannelUserIdTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:02 AM</td>
 										<td class='linked' test-id='9'>团长信息.userTeamCURD</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:26 AM</td>
+										<td>Jan 9, 2020 10:27:03 AM</td>
 										<td class='linked' test-id='10'>团长信息.userTeamInfoRegisterChannelUserIdTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jan 9, 2020 10:23:27 AM</td>
+										<td>Jan 9, 2020 10:27:03 AM</td>
 										<td class='linked' test-id='11'>团长信息.userTeamInfoUpdateChannelUserIdTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
@@ -1128,9 +1128,9 @@ appType: 1
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Jan 9, 2020 10:23:25 AM</td>
+                                                        <td>Jan 9, 2020 10:27:01 AM</td>
                                                         <td class='linked' test-id='2'>团长关系信息.teamRelationCURD</td>
-                                                        <td><pre><pre>java.lang.AssertionError: expected [0] but found [567581]
+                                                        <td><pre><pre>java.lang.AssertionError: expected [0] but found [1]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
@@ -1208,19 +1208,19 @@ appType: 1
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 9, 2020 10:23:22 AM</div>
+					<div class='panel-lead'>Jan 9, 2020 10:26:59 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 9, 2020 10:23:26 AM</div>
+			 		<div class='panel-lead'>Jan 9, 2020 10:27:02 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>3,372ms</div>
+					<div class='panel-lead'>2,955ms</div>
 				</div>
 			</div>
 			<div class='col s4'>

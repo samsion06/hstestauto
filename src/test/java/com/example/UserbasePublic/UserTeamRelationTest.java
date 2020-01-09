@@ -90,6 +90,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         userRleationInfo.setAppType(1);
         userRleationInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));//随机6位channeluserid
         userRleationInfo.setTeamUserId("5201314");
+        userRleationInfo.setIsDelete(1);
 
         try{
             //绑定团长关系
