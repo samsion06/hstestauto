@@ -226,12 +226,13 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             String loginPwd="123456";
             String md5pwd = MD5Util.toMD5(loginPwd.trim().toUpperCase());
             userLoginInfo.setChannelId(1);
-
+            userLoginInfo.setLoginPwd(md5pwd);
+            userLoginInfo.setLoginName("15053755782");
 
             //用户忘记登录密码
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/forget/pwd", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userForgetPwdRequest(userLoginInfo.getChannelId(),md5pwd,"15053755782","86");
+            byteArrayEntity = DataTransferUtil.userForgetPwdRequest(userLoginInfo.getChannelId(),userLoginInfo.getLoginPwd(),userLoginInfo.getLoginName(),"86");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
