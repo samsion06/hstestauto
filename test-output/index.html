@@ -34,7 +34,8 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -47,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 10:53:27 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 10:55:57 AM</span>
 				</a>
 			</li>
 			<li>
@@ -80,6 +81,18 @@
 			<!-- test toggle -->
 
 			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Suite</a></li>
+					<li><a href='#'>团长关系信息</a></li>
+					<li><a href='#'>团长信息</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
 			<!-- category toggle -->
 
 			<!-- clear filters -->
@@ -123,7 +136,7 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>8</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -138,7 +151,7 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>8</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -156,111 +169,549 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>teamRelationRegisterTest</span>
-						<span class='test-time'>Jan 9, 2020 10:53:27 AM</span>
+						<span class='test-name'>Suite : 团长关系信息</span>
+						<span class='test-time'>Jan 9, 2020 10:55:57 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 10:53:27 AM</span>
-	<span class='label end-time'>Jan 9, 2020 10:53:27 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+220ms</span>
+	<span class='label start-time'>Jan 9, 2020 10:55:57 AM</span>
+	<span class='label end-time'>Jan 9, 2020 10:55:59 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+319ms</span>
 </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>10:53:27 AM</td>
-					<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "78703"
+	<div class='test-desc'>Pass: 2 ; Fail: 0 ; Skip: 0 ; </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Suite</span>
+				<span class='category label white-text'>团长关系信息</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'>teamRelationRegisterTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:55:59 AM</span>
+						<span class='node-duration'>0h 0m 1s+649ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长关系信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>绑定(新增)团长关系(幂等)_传入参数: {channelUserId: "47834"
 channelId: 1
 appType: 1
 teamUserId: "5201314"
 }</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>10:53:27 AM</td>
-					<td class='step-details'>responseCode {
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>responseCode {
   msg: "RESP_CODE_SUCCESS"
 }
 userTeamRelationEntity {
-  id: 208535
-  channelUserId: "78703"
+  id: 208537
+  channelUserId: "47834"
   channelId: 1
   appType: 1
   teamUserId: "5201314"
-  createTime: 1578538407168
-  updateTime: 1578538407168
+  createTime: 1578538559217
+  updateTime: 1578538559217
 }</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:53:27 AM</td>
-					<td class='step-details'>Test passed</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-					</div>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
 				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>teamRelationDeleteTest</span>
-						<span class='test-time'>Jan 9, 2020 10:53:27 AM</span>
+				<li class='node level-1 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>teamRelationDeleteTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:55:59 AM</span>
+						<span class='node-duration'>0h 0m 1s+436ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 10:53:27 AM</span>
-	<span class='label end-time'>Jan 9, 2020 10:53:27 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+53ms</span>
-</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>10:53:27 AM</td>
-					<td class='step-details'>解绑(删除)团长关系(幂等)_传入参数: {commonRequest {
-  channelUserId: "78703"
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长关系信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>解绑(删除)团长关系(幂等)_传入参数: {commonRequest {
+  channelUserId: "47834"
   channelId: 1
   appType: 1
 }
 teamUserId: "5201314"
 }</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>10:53:27 AM</td>
-					<td class='step-details'>msg: "RESP_CODE_SUCCESS"</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:53:27 AM</td>
-					<td class='step-details'>Test passed</td>
-				</tr>
-			</tbody>
-		</table>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>msg: "RESP_CODE_SUCCESS"</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Suite : 团长信息</span>
+						<span class='test-time'>Jan 9, 2020 10:55:59 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 9, 2020 10:55:59 AM</span>
+	<span class='label end-time'>Jan 9, 2020 10:56:00 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+240ms</span>
+</div>
+	<div class='test-desc'>Pass: 6 ; Fail: 0 ; Skip: 0 ; </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Suite</span>
+				<span class='category label white-text'>团长信息</span>
+			</div>
 	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='5'>
+					<div class='collapsible-header'>
+						<div class='node-name'>userTeamCURD</div>						
+						<span class='node-time'>Jan 9, 2020 10:55:59 AM</span>
+						<span class='node-duration'>0h 0m 1s+363ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>注册团长信息(幂等)_传入参数:{realName: "\345\221\250\351\233\204\351\221\253"
+channelUserId: "427215"
+channelId: 1
+appType: 1
+deposit: 5201314
+recommend: "\345\221\250\351\233\204\351\221\253"
+operatorId: "5201314"
+operatorLongId: 5201314
+companyId: 5201314
+mobile: "17702015334"
+startTime: 5201314
+status: 1
+isVirtual: 1
+gender: 1
+weixin: "5201314"
+stopReason: "\345\221\250\351\233\204\351\221\253"
+stopEndTime: 5201314
+headNum: "5201314"
+emergencyNumber: "17702015334"
+auditTime: 5201314
+auditorName: "5201314"
+isShowCommission: 1
+licenseImg: "www.baidu.com"
+source: 1
+operatorTel: "17702015334"
+companyName: "\345\221\250\346\260\217\351\233\206\345\233\242"
+address {
+  channelUserId: "427215"
+  channelId: 1
+  appType: 1
+  provinceCode: 86
+  cityCode: 86
+  districtCode: 86
+  adcode: 86
+  province: "\345\271\277\344\270\234"
+  city: "\345\271\277\345\267\236"
+  district: "\346\265\267\347\217\240\345\214\272"
+  address: "\345\244\251\346\204\217\351\205\222\345\272\227"
+  community: "\345\271\270\345\235\233\345\260\217\345\214\272"
+  addressDetail: "520"
+  memberNumber: 20
+  longitude: 5201314.0
+  latitude: 5201314.0
+  geoHash: "fuck"
+  geoHash5km: "fuck"
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110127,"realName": "周雄鑫","channelUserId": "427215","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578538559401,"updateTime": 1578538559401},"userTeamAddressEntity": {"channelUserId": "427215","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578538559401,"updateTime": 1578538559401}}]</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
+  realName: "\345\221\250\351\233\204\351\221\253"
+  channelUserId: "427215"
+  channelId: 1
+  appType: 1
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110127,"realName": "周雄鑫","channelUserId": "427215","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578538559401,"updateTime": 1578538559401},"userTeamAddressEntity": {"channelUserId": "427215","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578538559401,"updateTime": 1578538559401}}]</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>数据库部分匹配：real_name的值得变更为：周雄鑫</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "427215"
+channelId: 1
+appType: 1
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110127,"realName": "周雄鑫","channelUserId": "427215","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578538559401,"updateTime": 1578538559401},"userTeamAddressEntity": {"channelUserId": "427215","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578538559401,"updateTime": 1578538559401}}]</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>查询粉丝团长(幂等)_传入参数:{commonRequest {
+  channelUserId: "427215"
+  channelId: 1
+  appType: 1
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110127,"realName": "周雄鑫","channelUserId": "427215","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578538559401,"updateTime": 1578538559401},"userTeamAddressEntity": {"channelUserId": "427215","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578538559401,"updateTime": 1578538559401}}]</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>删除团长信息(幂等)_传入参数:{commonRequest {
+  channelUserId: "427215"
+  channelId: 1
+  appType: 1
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110127,"realName": "周雄鑫","channelUserId": "427215","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578538559401,"updateTime": 1578538559401},"userTeamAddressEntity": {"channelUserId": "427215","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578538559401,"updateTime": 1578538559401}}]</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>数据库部分匹配：is_delete的值得变更为：1</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='6'>
+					<div class='collapsible-header'>
+						<div class='node-name'>userTeamInfoRegisterChannelUserIdTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:56:00 AM</span>
+						<span class='node-duration'>0h 0m 0s+333ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>注册团长信息(幂等)_传入参数:{realName: "\345\221\250\351\233\204\351\221\253"
+channelUserId: "341937"
+channelId: 1
+appType: 1
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110128,"realName": "周雄鑫","channelUserId": "341937","channelId": 1,"appType": 1,"createTime": 1578538560406,"updateTime": 1578538560406}}</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='7'>
+					<div class='collapsible-header'>
+						<div class='node-name'>userTeamInfoUpdateChannelUserIdTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:56:00 AM</span>
+						<span class='node-duration'>0h 0m 0s+254ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
+  realName: "xiongxinzhou"
+  channelUserId: "341937"
+  channelId: 1
+  appType: 1
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>{"msg": "RESP_CODE_SUCCESS"}</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<div class='node-name'>fansTeamInfoQueryBatchAppTypeTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:56:00 AM</span>
+						<span class='node-duration'>0h 0m 0s+198ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "341937"
+channelId: 1
+appType: 1
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>{"userTeamInfoList": [{"id": 110128,"realName": "xiongxinzhou","channelUserId": "341937","channelId": 1,"appType": 1,"createTime": 1578538560000,"updateTime": 1578538560000}],"responseCode": {"msg": "RESP_CODE_SUCCESS"}}</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='9'>
+					<div class='collapsible-header'>
+						<div class='node-name'>fansTeamInfoQueryChannelUserIdTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:56:00 AM</span>
+						<span class='node-duration'>0h 0m 0s+176ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>查询粉丝团长(幂等)_传入参数:{commonRequest {
+  channelUserId: "341937"
+  channelId: 1
+  appType: 1
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>{"responseCode": {"msg": "RESP_CODE_SUCCESS"}}</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='10'>
+					<div class='collapsible-header'>
+						<div class='node-name'>fansTeamInfoDeleteAppTypeTest</div>						
+						<span class='node-time'>Jan 9, 2020 10:56:00 AM</span>
+						<span class='node-duration'>0h 0m 0s+157ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+									<div class='category-list right'>
+											<span class='category label white-text'>Suite</span>
+											<span class='category label white-text'>团长信息</span>
+									</div>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>删除团长信息(幂等)_传入参数:{deleteRequest {
+  channelUserId: "341937"
+  channelId: 1
+  appType: 1
+}
+}</td>
+												</tr>
+												<tr class='log' status='debug'>
+													<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>{"msg": "RESP_CODE_SUCCESS"}</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:56:00 AM</td>
+													<td class='step-details'>Test passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
 					</div>
 				</li>
 			</ul>
@@ -288,6 +739,229 @@ teamUserId: "5201314"
 
 </div>
 <!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Suite</span>
+						<span class='category-status right'>
+							<span class='label pass'>10</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 10</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 9, 2020 10:55:57 AM</td>
+										<td class='linked' test-id='1'>团长关系信息</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='2'>团长关系信息.teamRelationRegisterTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='3'>团长关系信息.teamRelationDeleteTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='4'>团长信息</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='5'>团长信息.userTeamCURD</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='6'>团长信息.userTeamInfoRegisterChannelUserIdTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='7'>团长信息.userTeamInfoUpdateChannelUserIdTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='8'>团长信息.fansTeamInfoQueryBatchAppTypeTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='9'>团长信息.fansTeamInfoQueryChannelUserIdTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='10'>团长信息.fansTeamInfoDeleteAppTypeTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>团长关系信息</span>
+						<span class='category-status right'>
+							<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 9, 2020 10:55:57 AM</td>
+										<td class='linked' test-id='1'>团长关系信息</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='2'>团长关系信息.teamRelationRegisterTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='3'>团长关系信息.teamRelationDeleteTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>团长信息</span>
+						<span class='category-status right'>
+							<span class='label pass'>7</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 7</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='4'>团长信息</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:55:59 AM</td>
+										<td class='linked' test-id='5'>团长信息.userTeamCURD</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='6'>团长信息.userTeamInfoRegisterChannelUserIdTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='7'>团长信息.userTeamInfoUpdateChannelUserIdTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='8'>团长信息.fansTeamInfoQueryBatchAppTypeTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='9'>团长信息.fansTeamInfoQueryChannelUserIdTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 9, 2020 10:56:00 AM</td>
+										<td class='linked' test-id='10'>团长信息.fansTeamInfoDeleteAppTypeTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
 <!-- category view -->
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
@@ -298,31 +972,63 @@ teamUserId: "5201314"
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>8</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>8</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 9, 2020 10:53:27 AM</div>
+					<div class='panel-lead'>Jan 9, 2020 10:55:57 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 9, 2020 10:53:27 AM</div>
+			 		<div class='panel-lead'>Jan 9, 2020 10:55:59 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>220ms</div>
+					<div class='panel-lead'>2,319ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+						</tr>
+						<tr>
+							<td>Suite</td>
+							<td>10</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>团长关系信息</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>团长信息</td>
+							<td>7</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -335,7 +1041,7 @@ teamUserId: "5201314"
 
 		<script>
 			var statusGroup = {
-				passParent: 2,
+				passParent: 8,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
@@ -343,14 +1049,14 @@ teamUserId: "5201314"
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 2,
+				passChild: 8,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 4,
+				exceptionsChild: 26,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

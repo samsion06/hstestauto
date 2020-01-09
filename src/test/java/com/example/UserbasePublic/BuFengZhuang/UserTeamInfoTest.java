@@ -37,7 +37,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     private static Integer appType=1;
     private static Integer channelId=1;
-    private static String channelUserId;
+    private static String channelUserId =(int)((Math.random()*9+1)*100000)+"";;
 
     @BeforeTest
     public void beforeTest(){
@@ -49,7 +49,6 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     @Test(description ="注册团长信息(幂等)",priority = 1)
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
-            channelUserId=(int)((Math.random()*9+1)*100000)+"";
             //注册团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
@@ -135,6 +134,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             HttpPost post = new HttpPost(uri);
             UserTeamInfoServiceProto.FansTeamInfoQueryRequest.Builder builder = UserTeamInfoServiceProto.FansTeamInfoQueryRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
+            commonRequest.setAppType(appType);
+            commonRequest.setChannelId(channelId);
+            commonRequest.setChannelUserId(channelUserId);
             commonRequest.setAppType(appType);
             commonRequest.setChannelId(channelId);
             commonRequest.setChannelUserId(channelUserId);
