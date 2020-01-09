@@ -45,6 +45,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
         userAliPayInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
         userAliPayInfo.setAlipayUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
         userAliPayInfo.setAlipayAccount("177"+(int)((Math.random()*9+1)*10000000));
+        userAliPayInfo.setIsDelete(1);
         //生成随机字符串
         userAliPayInfo.setAlipayRealName( DataUtils.getRandomString(9));
 
@@ -73,6 +74,8 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS",authResponse);
             CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayAuth",userAliPayInfo);
 
+            //将delete 改为2 作为取消授权判断
+            userAliPayInfo.setIsDelete(2);
             //用户取消授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth/cancel","");
             post = new HttpPost(uri);
