@@ -39,15 +39,12 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             "            3.更新收货地址"+
             "            4.删除收货地址" )
     public void addressCURDTest(){
-        httpClient=HttpClients.createDefault();
-        String address= DataUtils.getRandomString(9);//随机地址
-
         UserAddressInfo userAddressInfo=new UserAddressInfo();
         userAddressInfo.setAddress(DataUtils.getRandomString(9));//随机地址
         userAddressInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
         userAddressInfo.setName(DataUtils.getRandomString(9));//随机用户名
-
         try{
+            httpClient=HttpClients.createDefault();
             //添加收货地址
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/add","");
             post = new HttpPost(uri);
@@ -79,7 +76,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String updateResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",updateResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AddressUpadate",name,ChannelUserId);
+            CheckDatabase.CheckDatabaseUserUserAddressInfo(userBaseInfoMapper,"AddressUpadate","AddressUpadate",name,ChannelUserId);
 
             //删除收货地址
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/delete","");
