@@ -17,7 +17,7 @@ public class CheckDatabase {
     private static UserRleationInfo dataBaseUserRleationInfo;
 
     //数据库检查
-    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper,String method, UserAddressInfo userAddressInfo) {
+    public static void CheckDatabaseUserUserWeChatInfo(UserBaseInfoMapper userBaseInfoMapper,String method, UserAddressInfo userAddressInfo) {
         switch (method) {
             //微信解绑
             case "WeChatInfoUnbind"://微信解除绑定
