@@ -8,11 +8,6 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="收货地址">
-        <classes>
-            <class name="com.example.UserbasePublic.UserAddressTest"/>
-        </classes>
-    </test>
 
 <!--    <test name="用户中心">-->
 <!--        <classes>-->
@@ -20,6 +15,14 @@
 <!--        </classes>-->
 <!--    </test>-->
 
+
+
+
+<!--    <test name="收货地址">-->
+<!--        <classes>-->
+<!--            <class name="com.example.UserbasePublic.UserAddressTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 <!--        <test name="支付宝中心">-->
 <!--            <classes>-->
