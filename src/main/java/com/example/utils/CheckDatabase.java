@@ -2,39 +2,33 @@ package com.example.utils;
 import com.example.domain.*;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.mapper.UserBaseInfoMapper;
-import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.testng.Assert;
 import org.testng.Reporter;
 
 public class CheckDatabase {
 
     private static UserAliPayInfo dataUserAliPayInfo;
-    private static UserWeChatInfo userWeChatInfos;
+    private static UserWeChatInfo dataUserWeChatInfos;
     private static UserAddressInfo dataUserAddressInfo;
     private static UserBaseInfo dataBaseUserBaseInfo;
     private static UserLoginInfo dataUserLoginInfo;
     private static UserTaobaoInfo dataUserTaobaoInfo;
     private static UserTeamInfo dataBaseUserTeamInfo;
     private static UserRleationInfo dataBaseUserRleationInfo;
-    private static String AllMsg = "数据库全部匹配：";
-    private static String PartMsg = "数据库部分匹配：";
 
     //数据库检查
-    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper, TeamRealtionInfoMapper teamRealtionInfoMapper,
-                                         String method, String targetOutPut, String channelUserId) {
+    public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper,String method, UserAddressInfo userAddressInfo) {
         switch (method) {
             //微信解绑
             case "WeChatInfoUnbind"://微信解除绑定
-                userWeChatInfos = userBaseInfoMapper.queryWeChatInfo(channelUserId);
-                int wechatIsDelete = userWeChatInfos.getIsDelete(); //比对
-                Assert.assertEquals(1, wechatIsDelete);
-                Reporter.log(AllMsg + "is_delete值变更为：" + wechatIsDelete);
+                dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userAddressInfo.getChannelUserId());
+                Assert.assertEquals(userAddressInfo.getIsDelete(), dataUserWeChatInfos.getIsDelete());
+                DataUtils.logDatabase(1,"name",dataUserWeChatInfos.getIsDelete().toString());
                 break;
             case "WeChatInfoBind": //微信绑定
-                userWeChatInfos = userBaseInfoMapper.queryWeChatInfo(channelUserId);
-                Assert.assertEquals(channelUserId, userWeChatInfos.getChannelUserId());
-                System.out.println(userWeChatInfos);
-                Reporter.log(AllMsg + userWeChatInfos);
+                dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userAddressInfo.getChannelUserId());
+                Assert.assertEquals(userAddressInfo.getChannelUserId(), dataUserWeChatInfos.getChannelUserId());
+                DataUtils.logDatabase(2, null, dataUserWeChatInfos.toString());
                 break;
         }
     }
@@ -45,15 +39,13 @@ public class CheckDatabase {
                 dataUserAddressInfo = userBaseInfoMapper.queryUserAddressInfo(userAddressInfo.getChannelUserId());
                 String name = userAddressInfo.getName();
                 Assert.assertEquals(userAddressInfo.getName(), dataUserAddressInfo.getName()); //名称是否有更新
-
-
-                Reporter.log(PartMsg + "name值变更为：" + name);
+                DataUtils.logDatabase(1,"name",dataUserAddressInfo.getName());
                 break;
             case "AddressDelete"://删除收货地址
                 dataUserAddressInfo = userBaseInfoMapper.queryUserAddressInfo(userAddressInfo.getChannelUserId());
                 int addressIsDelete = userAddressInfo.getIsDelete(); //比对
-                Assert.assertEquals(1, addressIsDelete);
-                Reporter.log(PartMsg + "is_delete值变更为：" + addressIsDelete);
+                Assert.assertEquals(userAddressInfo.getIsDelete(), dataUserAddressInfo.getIsDelete());
+                DataUtils.logDatabase(1,"is_delete", dataUserAddressInfo.getIsDelete().toString());
                 break;
         }
     }
