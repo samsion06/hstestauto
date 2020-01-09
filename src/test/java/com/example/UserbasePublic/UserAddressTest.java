@@ -23,7 +23,6 @@ import java.net.URI;
 public class UserAddressTest extends AbstractTestNGSpringContextTests {
 
     //地址8个接口
-
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;
 
@@ -35,8 +34,6 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
     private static HttpResponse response;
 
 
-
-
     @Test(description = "1.添加收货地址" +
             "            2.获取收货地址" +
             "            3.更新收货地址"+
@@ -44,19 +41,17 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
     public void addressCURDTest(){
         httpClient=HttpClients.createDefault();
         String address= DataUtils.getRandomString(9);//随机地址
-        String ChannelUserId=String.valueOf((int)((Math.random()*9+1)*100000));
-        String name= DataUtils.getRandomString(9);//随机用户名
-
 
         UserAddressInfo userAddressInfo=new UserAddressInfo();
-
-
+        userAddressInfo.setAddress(DataUtils.getRandomString(9));//随机地址
+        userAddressInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
+        userAddressInfo.setName(DataUtils.getRandomString(9));//随机用户名
 
         try{
             //添加收货地址
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/add","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAddressInfoAddRequest(ChannelUserId,channelId,address);
+            byteArrayEntity = DataTransferUtil.userAddressInfoAddRequest(userAddressInfo.getChannelUserId(),channelId,userAddressInfo.getAddress());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
@@ -69,7 +64,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/getByAddressId","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAddressRequest(ChannelUserId,channelId,addressId);
+            byteArrayEntity = DataTransferUtil.userAddressRequest(userAddressInfo.getChannelUserId(),channelId,addressId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -78,7 +73,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             //更新收货地址
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/update","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAddressInfoUpdateRequest(ChannelUserId,channelId,addressId,name);
+            byteArrayEntity = DataTransferUtil.userAddressInfoUpdateRequest(userAddressInfo.getChannelUserId(),channelId,addressId,userAddressInfo.getName());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
