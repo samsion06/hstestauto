@@ -1,9 +1,7 @@
 package com.example.utils;
-
 import com.example.domain.*;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.mapper.UserBaseInfoMapper;
-
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -17,17 +15,8 @@ public class CheckDatabase {
     private static UserTaobaoInfo userTaobaoInfo;
     private static UserTeamInfo dataBaseUserTeamInfo;
     private static UserRleationInfo dataBaseUserRleationInfo;
-
-
     private static String AllMsg = "数据库全部匹配：";
     private static String PartMsg = "数据库部分匹配：";
-
-    /**
-     * @param userBaseInfoMapper 查询数据库
-     * @param method             用于区分查询那个表 （检查的点不同,所以要分开）
-     * @param targetOutPut       目标值
-     * @param channelUserId      通过channel_user_id查询
-     */
 
     //数据库检查
     public static void CheckDatabaseInfo(UserBaseInfoMapper userBaseInfoMapper, TeamRealtionInfoMapper teamRealtionInfoMapper,
@@ -84,7 +73,6 @@ public class CheckDatabase {
                 break;
             case "TaoBaoCancel"://取消授权
                 userTaobaoInfo = userBaseInfoMapper.queryUserTaobaoInfo(channelUserId);
-                System.out.println(userTaobaoInfo);
                 Reporter.log(AllMsg + userTaobaoInfo);
                 break;
         }
