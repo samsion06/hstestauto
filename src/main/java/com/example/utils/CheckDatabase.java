@@ -102,8 +102,9 @@ public class CheckDatabase {
                 Assert.assertEquals(userBaseInfo.getHeadImg(), dataBaseUserBaseInfo.getHeadImg());
                 DataUtils.logDatabase(1,"head_img",dataBaseUserBaseInfo.getHeadImg());
                 break;
-            case "MobileUpadate"://修改手机
+            case "MobileUpdate"://修改手机
                 dataUserLoginInfo = userBaseInfoMapper.queryUserLoginInfo(userLoginInfo.getChannelUserId());
+                System.out.println(dataUserLoginInfo.getLoginName());
                 Assert.assertEquals(userLoginInfo.getLoginName(), dataUserLoginInfo.getLoginName());
                 DataUtils.logDatabase(1,"login_name",dataUserLoginInfo.getLoginName());
                 break;

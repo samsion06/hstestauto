@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/TestFile/test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UseraliPayTest.BindAndAuthAndCancelTest">
+  <component name="RunManager" selected="TestNG.UserbaseTest.mdfMobileAndPwdUpdateTest">
     <configuration name="SpringbootMybatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.SpringbootMybatisApplication" />
@@ -90,24 +90,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTeamRelationTest.teamRelationCURD" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserTeamRelationTest" />
-      <option name="METHOD_NAME" value="teamRelationCURD" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserTeamRelationTest.teamRelationDeleteTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -144,13 +126,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserbaseTest.mdfMobileAndPwdUpdateTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
+      <option name="METHOD_NAME" value="mdfMobileAndPwdUpdateTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UserbaseTest.mdfMobileAndPwdUpdateTest" />
         <item itemvalue="TestNG.UseraliPayTest.BindAndAuthAndCancelTest" />
         <item itemvalue="TestNG.UserTaobaoTest.authAndCancelTest" />
         <item itemvalue="TestNG.UserTaobaoTest.test" />
         <item itemvalue="TestNG.UserTeamRelationTest.teamRelationDeleteTest" />
-        <item itemvalue="TestNG.UserTeamRelationTest.teamRelationCURD" />
       </list>
     </recent_temporary>
   </component>
@@ -199,14 +199,7 @@
       <workItem from="1578461633405" duration="15764000" />
       <workItem from="1578493495030" duration="170000" />
       <workItem from="1578532021500" duration="8946000" />
-      <workItem from="1578548425310" duration="14023000" />
-    </task>
-    <task id="LOCAL-00200" summary="update">
-      <created>1578538827315</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1578538827315</updated>
+      <workItem from="1578548425310" duration="14390000" />
     </task>
     <task id="LOCAL-00201" summary="update">
       <created>1578538849246</created>
@@ -544,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578563083071</updated>
     </task>
-    <option name="localTasksCounter" value="249" />
+    <task id="LOCAL-00249" summary="update">
+      <created>1578563468470</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1578563468470</updated>
+    </task>
+    <option name="localTasksCounter" value="250" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,75 +589,75 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578563082954">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578563468362">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578563082954" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578563468362" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578541062120" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578540416600" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1578291251893" />
-    <state width="1638" height="386" key="GridCell.Tab.0.bottom" timestamp="1578563106367">
+    <state width="1638" height="492" key="GridCell.Tab.0.bottom" timestamp="1578563762282">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="386" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578563106367" />
+    <state width="1638" height="492" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578563762282" />
     <state width="1638" height="334" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578541566442" />
     <state width="1638" height="339" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578298792494" />
     <state width="1638" height="368" key="GridCell.Tab.0.bottom/0.23.1680.958@0.23.1680.958" timestamp="1578304884296" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="386" key="GridCell.Tab.0.center" timestamp="1578563106366">
+    <state width="1638" height="492" key="GridCell.Tab.0.center" timestamp="1578563762281">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="386" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578563106366" />
+    <state width="1638" height="492" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578563762281" />
     <state width="1638" height="334" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578541566441" />
     <state width="1638" height="339" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578298792493" />
     <state width="1638" height="368" key="GridCell.Tab.0.center/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="386" key="GridCell.Tab.0.left" timestamp="1578563106366">
+    <state width="1638" height="492" key="GridCell.Tab.0.left" timestamp="1578563762280">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="386" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578563106366" />
+    <state width="1638" height="492" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578563762280" />
     <state width="1638" height="334" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578541566441" />
     <state width="1638" height="339" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578279594280" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578298792492" />
     <state width="1638" height="368" key="GridCell.Tab.0.left/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578300855417" />
     <state width="1638" height="208" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="386" key="GridCell.Tab.0.right" timestamp="1578563106367">
+    <state width="1638" height="492" key="GridCell.Tab.0.right" timestamp="1578563762282">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="386" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578563106367" />
+    <state width="1638" height="492" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578563762282" />
     <state width="1638" height="334" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578541566441" />
     <state width="1638" height="339" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578279594281" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578298792493" />
     <state width="1638" height="368" key="GridCell.Tab.0.right/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="197" key="GridCell.Tab.1.bottom" timestamp="1578561287280">
+    <state width="1638" height="492" key="GridCell.Tab.1.bottom" timestamp="1578563762284">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="197" key="GridCell.Tab.1.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578561287280" />
+    <state width="1638" height="492" key="GridCell.Tab.1.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578563762284" />
     <state width="1638" height="334" key="GridCell.Tab.1.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578541566443" />
-    <state width="1638" height="197" key="GridCell.Tab.1.center" timestamp="1578561287279">
+    <state width="1638" height="492" key="GridCell.Tab.1.center" timestamp="1578563762283">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="197" key="GridCell.Tab.1.center/0.23.1680.950@0.23.1680.950" timestamp="1578561287279" />
+    <state width="1638" height="492" key="GridCell.Tab.1.center/0.23.1680.950@0.23.1680.950" timestamp="1578563762283" />
     <state width="1638" height="334" key="GridCell.Tab.1.center/0.23.1680.952@0.23.1680.952" timestamp="1578541566442" />
-    <state width="1638" height="197" key="GridCell.Tab.1.left" timestamp="1578561287279">
+    <state width="1638" height="492" key="GridCell.Tab.1.left" timestamp="1578563762283">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="197" key="GridCell.Tab.1.left/0.23.1680.950@0.23.1680.950" timestamp="1578561287279" />
+    <state width="1638" height="492" key="GridCell.Tab.1.left/0.23.1680.950@0.23.1680.950" timestamp="1578563762283" />
     <state width="1638" height="334" key="GridCell.Tab.1.left/0.23.1680.952@0.23.1680.952" timestamp="1578541566442" />
-    <state width="1638" height="197" key="GridCell.Tab.1.right" timestamp="1578561287279">
+    <state width="1638" height="492" key="GridCell.Tab.1.right" timestamp="1578563762284">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state width="1638" height="197" key="GridCell.Tab.1.right/0.23.1680.950@0.23.1680.950" timestamp="1578561287279" />
+    <state width="1638" height="492" key="GridCell.Tab.1.right/0.23.1680.950@0.23.1680.950" timestamp="1578563762284" />
     <state width="1638" height="334" key="GridCell.Tab.1.right/0.23.1680.952@0.23.1680.952" timestamp="1578541566442" />
     <state x="328" y="81" key="SettingsEditor" timestamp="1577955362247">
       <screen x="0" y="23" width="1680" height="952" />
@@ -701,37 +701,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>122</line>
+          <line>123</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>121</line>
+          <line>122</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>125</line>
+          <line>126</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>126</line>
+          <line>127</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>127</line>
+          <line>128</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>129</line>
+          <line>130</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>128</line>
+          <line>129</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -741,22 +741,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>148</line>
+          <line>149</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>149</line>
+          <line>150</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>150</line>
+          <line>151</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>151</line>
+          <line>152</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -788,6 +788,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
           <line>62</line>
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java</url>
+          <line>187</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
