@@ -17,17 +17,17 @@ public class CheckDatabase {
     private static UserRleationInfo dataBaseUserRleationInfo;
 
     //数据库检查
-    public static void CheckDatabaseUserUserWeChatInfo(UserBaseInfoMapper userBaseInfoMapper,String method, UserAddressInfo userAddressInfo) {
+    public static void CheckDatabaseUserUserWeChatInfo(UserBaseInfoMapper userBaseInfoMapper,String method, UserWeChatInfo userWeChatInfo) {
         switch (method) {
             //微信解绑
             case "WeChatInfoUnbind"://微信解除绑定
-                dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userAddressInfo.getChannelUserId());
-                Assert.assertEquals(userAddressInfo.getIsDelete(), dataUserWeChatInfos.getIsDelete());
+                dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userWeChatInfo.getChannelUserId());
+                Assert.assertEquals(userWeChatInfo.getIsDelete(), dataUserWeChatInfos.getIsDelete());
                 DataUtils.logDatabase(1,"name",dataUserWeChatInfos.getIsDelete().toString());
                 break;
             case "WeChatInfoBind": //微信绑定
-                dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userAddressInfo.getChannelUserId());
-                Assert.assertEquals(userAddressInfo.getChannelUserId(), dataUserWeChatInfos.getChannelUserId());
+                dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userWeChatInfo.getChannelUserId());
+                Assert.assertEquals(userWeChatInfo.getChannelUserId(), dataUserWeChatInfos.getChannelUserId());
                 DataUtils.logDatabase(2, null, dataUserWeChatInfos.toString());
                 break;
         }

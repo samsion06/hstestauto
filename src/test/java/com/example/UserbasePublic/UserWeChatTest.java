@@ -29,7 +29,6 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;//数据库取数据用
 
-    private static String AppId="Appid01";
     private static Integer channelId =1;
     private static CloseableHttpClient httpClient;
     private static ByteArrayEntity byteArrayEntity;
@@ -60,18 +59,20 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
         UserWeChatInfo userWeChatInfo=new UserWeChatInfo();
         userWeChatInfo.setOpenId(DataUtils.getRandomString(9)); //随机生成openId
         userWeChatInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*1000)));//随机生成ChannelUserId
+        userWeChatInfo.setAppId("Appid01");
 
         try {
             //微信绑定
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/binding","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userWeChatAuthRequest(AppId, channelId,channelUserId,openId);
+            byteArrayEntity = DataTransferUtil.userWeChatAuthRequest(userWeChatInfo.getAppId(), channelId,userWeChatInfo.getChannelUserId()
+                    ,userWeChatInfo.getOpenId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String bindResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",bindResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"WeChatInfoBind",channelUserId,channelUserId);
+            CheckDatabase.CheckDatabaseUserUserWeChatInfo(userBaseInfoMapper,"WeChatInfoBind",userWeChatInfo);
 
             //解除绑定
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/unBinding","");
