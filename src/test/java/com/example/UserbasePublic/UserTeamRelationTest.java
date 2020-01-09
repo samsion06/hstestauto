@@ -71,7 +71,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
         try{
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/delete", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest("61296");
+            byteArrayEntity = DataTransferUtil.UserTeamRelationUntyingRequest(channelUserId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
