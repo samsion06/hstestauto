@@ -49,7 +49,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
                                        1);
     }
 
-    //@Test(description ="注册团长信息(幂等)")
+    @Test(description ="注册团长信息(幂等)")
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
             //注册团长
@@ -77,7 +77,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     }
 
 
-    //@Test(description ="修改团长信息(幂等)")
+    @Test(description ="修改团长信息(幂等)")
     public void userTeamInfoUpdateChannelUserIdTest(){
         try {
 
