@@ -1,5 +1,6 @@
 package com.example.UserbasePublic;
 
+import com.example.domain.UserAliPayInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
 import com.hs.user.base.proto.UserAliPayAuthServiceProto;
@@ -39,47 +40,49 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             "                                   3.用户支付宝取消授权 OK")
     public void BindAndAuthAndCancelTest(){
 
-        //生成随机数
-        String channelUserId=String.valueOf((int)((Math.random()*9+1)*1000));
-        String alipayUserId=String.valueOf((int)((Math.random()*9+1)*1000));
-        String alipayAccount="177"+(int)((Math.random()*9+1)*10000000); //生成手机号
-
+        //生成随机数字
+        UserAliPayInfo userAliPayInfo =new UserAliPayInfo();
+        userAliPayInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
+        userAliPayInfo.setAlipayUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
+        userAliPayInfo.setAlipayAccount("177"+(int)((Math.random()*9+1)*10000000));
         //生成随机字符串
-        String alipayRealname= DataUtils.getRandomString(9);
+        userAliPayInfo.setAlipayRealName( DataUtils.getRandomString(9));
+
         try {
             httpClient= HttpClients.createDefault();
             //绑定支付宝
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/binding","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAliPayBidingRequest(channelUserId,channelId,alipayRealname,alipayAccount,alipayUserId);
+            byteArrayEntity = DataTransferUtil.userAliPayBidingRequest(userAliPayInfo.getChannelUserId(),channelId,userAliPayInfo.getAlipayRealName(),
+                    userAliPayInfo.getAlipayAccount(),userAliPayInfo.getAlipayUserId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
             String bindResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",bindResponseMsg);//expected  actual
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AliPayBind","1",channelUserId);
+            CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayBind",userAliPayInfo);
 
             //用户支付宝授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAliPayAuthRequest(channelUserId,channelId,alipayUserId);
+            byteArrayEntity = DataTransferUtil.userAliPayAuthRequest(userAliPayInfo.getChannelUserId(),channelId,alipayUserId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String authResponse = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",authResponse);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AliPayAuth","1",channelUserId);
+            CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayAuth",userAliPayInfo);
 
             //用户取消授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth/cancel","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAliPayAuthCancelRequest(channelUserId,channelId);
+            byteArrayEntity = DataTransferUtil.userAliPayAuthCancelRequest(userAliPayInfo.getChannelUserId(),channelId);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String unbindResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",unbindResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"AliPayCancel","1",channelUserId);
+            CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayCancel",userAliPayInfo);
 
         } catch (Exception e) {
             e.printStackTrace();

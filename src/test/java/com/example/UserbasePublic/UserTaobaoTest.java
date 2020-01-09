@@ -51,8 +51,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
             userTaobaoInfo.setCompanyId(1642L);
             userTaobaoInfo.setTbAccountId(327420130L);
 
-            //淘宝授权
-            //184003
+            //淘宝授权 184003
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/taobao/auth", "");
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.HsrjUserTaobaoAuthRequest(userTaobaoInfo.getChannelUserId(),
@@ -96,7 +95,4 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
     public void afterTest() throws IOException {
         httpClient.close();
     }
-
-
-
 }
