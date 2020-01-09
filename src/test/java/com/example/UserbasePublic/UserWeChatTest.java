@@ -77,13 +77,13 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             //解除绑定
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/unBinding","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userWeChatAuthUnBindRequest(openId, channelId,channelUserId,AppId);
+            byteArrayEntity = DataTransferUtil.userWeChatAuthUnBindRequest(userWeChatInfo.getOpenId(), channelId,userWeChatInfo.getChannelUserId(),userWeChatInfo.getAppId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String unbindResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",unbindResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"WeChatInfoUnbind","null",channelUserId);
+            CheckDatabase.CheckDatabaseUserUserWeChatInfo(userBaseInfoMapper,"WeChatInfoUnbind",userWeChatInfo);
 
         }catch(Exception e){
             e.printStackTrace();
