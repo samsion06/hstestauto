@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
-<!--    <test name="支付宝中心">-->
-<!--        <classes>-->
-<!--            <class name="com.example.UserbasePublic.UseraliPayTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="支付宝中心">
+        <classes>
+            <class name="com.example.UserbasePublic.UseraliPayTest"/>
+        </classes>
+    </test>
 
 <!--    <test name="微信中心">-->
 <!--        <classes>-->
@@ -24,11 +24,14 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="淘宝中心">
-        <classes>
-            <class name="com.example.UserbasePublic.UserTaobaoTest"/>
-        </classes>
-    </test>
+
+
+
+<!--    <test name="淘宝中心">-->
+<!--        <classes>-->
+<!--            <class name="com.example.UserbasePublic.UserTaobaoTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 <!--    <test name="用户国际手机区号中心">-->
 <!--            <classes>-->

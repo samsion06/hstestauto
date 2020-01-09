@@ -63,6 +63,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS",bindResponseMsg);//expected  actual
             CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayBind",userAliPayInfo);
 
+            userAliPayInfo.setStatus(1);
             //用户支付宝授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth","");
             post = new HttpPost(uri);
@@ -75,7 +76,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayAuth",userAliPayInfo);
 
             //将delete 改为2 作为取消授权判断
-            userAliPayInfo.setIsDelete(2);
+            userAliPayInfo.setStatus(2);
             //用户取消授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth/cancel","");
             post = new HttpPost(uri);

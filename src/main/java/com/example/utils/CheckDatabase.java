@@ -56,12 +56,12 @@ public class CheckDatabase {
             case "AliPayBind"://支付宝绑定
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 Assert.assertEquals(userAliPayInfo.getChannelUserId(),dataUserAliPayInfo.getChannelUserId());
-                DataUtils.logDatabase(2, null, dataUserTaobaoInfo.toString());
+                DataUtils.logDatabase(2, null, dataUserTaobaoInfo+"");
                 break;
             case "AliPayAuth"://支付宝授权
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 Assert.assertEquals(userAliPayInfo.getStatus(),dataUserAliPayInfo.getStatus());
-                DataUtils.logDatabase(1,"Status",dataUserAliPayInfo.getStatus().toString());
+                DataUtils.logDatabase(1,"Status",dataUserAliPayInfo.getStatus()+"");
                 break;
             case "AliPayCancel"://取消授权
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());

@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 04:59:57 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 9, 2020 05:03:45 PM</span>
 				</a>
 			</li>
 			<li>
@@ -123,7 +123,7 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -138,7 +138,7 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -158,15 +158,15 @@
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>authAndCancelTest</span>
-						<span class='test-time'>Jan 9, 2020 04:59:57 PM</span>
+						<span class='test-name'>BindAndAuthAndCancelTest</span>
+						<span class='test-time'>Jan 9, 2020 05:03:45 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 9, 2020 04:59:57 PM</span>
-	<span class='label end-time'>Jan 9, 2020 05:00:01 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+805ms</span>
+	<span class='label start-time'>Jan 9, 2020 05:03:45 PM</span>
+	<span class='label end-time'>Jan 9, 2020 05:03:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+52ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -180,58 +180,81 @@
 			<tbody>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>淘宝授权_传入参数: {channelUserId: "184003"
-relationId: 528467632
-specialId: 528467634
-companyId: 1642
-tbAccountId: 327420130
-tbAccount: "327420130"
+					<td class='timestamp'>5:03:46 PM</td>
+					<td class='step-details'>绑定支付宝_传入参数: {channelUserId: "783447"
+channelId: 1
+alipayRealname: "1YqoiJnwm"
+alipayAccount: "17743754834"
+alipayUserId: "909146"
 }</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
+					<td class='timestamp'>5:03:46 PM</td>
 					<td class='step-details'>返回值: [RESP_CODE_SUCCESS]</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>数据库全部匹配：UserTaobaoInfo{id=30101428, userId=0, channelId=null, relationId=528467632, specialId=528467634, companyId=1642, tbAccountId=327420130, tbAccount='327420130', isDelete=0, createTime=null, updateTime=null}</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>用户淘宝授权信息查询_传入参数: {channelUserId: "184003"
-tbAccount: "327420130"
-companyId: 1642
-tbAccountId: 327420130
-}</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>返回值:[{"hsrjUserTaobaoAuthInfo": {"channelUserId": "184003","relationId": 528467632,"specialId": 528467634,"companyId": 1642,"tbAccountId": 327420130,"tbAccount": "327420130","createTime": 1552539360000,"updateTime": 1578560398000},"responseCode": {"msg": "RESP_CODE_SUCCESS"}}]</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>用户淘宝取消授权_传入参数: {channelUserId: "184003"
-}</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>返回值: [RESP_CODE_SUCCESS]</td>
-				</tr>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
-					<td class='step-details'>数据库全部匹配：UserTaobaoInfo{id=30101428, userId=0, channelId=null, relationId=null, specialId=null, companyId=1642, tbAccountId=null, tbAccount='327420130', isDelete=0, createTime=null, updateTime=null}</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:00:01 PM</td>
+					<td class='timestamp'>5:03:46 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>aliPayAuthInfoTest</span>
+						<span class='test-time'>Jan 9, 2020 05:03:46 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 9, 2020 05:03:46 PM</span>
+	<span class='label end-time'>Jan 9, 2020 05:03:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+43ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>5:03:46 PM</td>
+					<td class='step-details'>支付宝授权查询_传入参数: {channelUserId: "2571"
+channelId: 1
+}</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>5:03:46 PM</td>
+					<td class='step-details'>返回值：[userAliPayAuth {
+  channelUserId: "2571"
+  channelId: 1
+  alipayRealname: "1aWrTwdxb"
+  alipayAccount: "17716278689"
+  alipayUserId: "6824"
+  status: 2
+  createTime: 1577067860000
+  updateTime: 1577067869000
+}
+responseCode {
+  msg: "RESP_CODE_SUCCESS"
+}
+]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>5:03:46 PM</td>
 					<td class='step-details'>Test passed</td>
 				</tr>
 			</tbody>
@@ -274,31 +297,31 @@ tbAccountId: 327420130
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 9, 2020 04:59:57 PM</div>
+					<div class='panel-lead'>Jan 9, 2020 05:03:45 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 9, 2020 05:00:01 PM</div>
+			 		<div class='panel-lead'>Jan 9, 2020 05:03:46 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>3,805ms</div>
+					<div class='panel-lead'>1,052ms</div>
 				</div>
 			</div>
 		</div>
@@ -311,7 +334,7 @@ tbAccountId: 327420130
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 2,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
@@ -319,14 +342,14 @@ tbAccountId: 327420130
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 1,
+				passChild: 2,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 8,
+				exceptionsChild: 4,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
