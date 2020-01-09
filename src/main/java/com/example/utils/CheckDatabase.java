@@ -56,7 +56,7 @@ public class CheckDatabase {
             case "AliPayBind"://支付宝绑定
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
                 Assert.assertEquals(userAliPayInfo.getChannelUserId(),dataUserAliPayInfo.getChannelUserId());
-                DataUtils.logDatabase(2, null, dataUserTaobaoInfo+"");
+                DataUtils.logDatabase(2, null, dataUserAliPayInfo.toString());
                 break;
             case "AliPayAuth"://支付宝授权
                 dataUserAliPayInfo = userBaseInfoMapper.queryAliPayInfo(userAliPayInfo.getChannelUserId());
