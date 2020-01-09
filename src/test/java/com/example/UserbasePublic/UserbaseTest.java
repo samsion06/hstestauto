@@ -31,13 +31,9 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     private static URI uri;
     private static HttpPost post;
     private static HttpResponse response;
-    private UserLoginInfo userLoginInfo;
 
     private static String nickname;
     private static String headimgurl;
-    private static String loginName;
-    private static String pwd;
-
 
     @BeforeTest
     public void beforeTest(){
@@ -195,12 +191,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //178803 将密码转换成MD5加密方式
             String pwd="123456";
             String md5pwd = MD5Util.toMD5(pwd.trim().toUpperCase());
-            System.out.println(md5pwd);
+            userLoginInfo.setLoginPwd(md5pwd);
             //修改登录密码
             httpClient = HttpClients.createDefault();
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/pwd/update", "");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userPwdUpdateRequestConvertBuilder(userLoginInfo.getChannelUserId(), userLoginInfo.getChannelId(), md5pwd);
+            byteArrayEntity = DataTransferUtil.userPwdUpdateRequestConvertBuilder(userLoginInfo.getChannelUserId(), userLoginInfo.getChannelId(), userLoginInfo.getLoginPwd());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -211,7 +207,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //再次登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
             post = new HttpPost(uri);
-            System.out.println("mobile"+mobile+"pwd"+pwd);
             byteArrayEntity = DataTransferUtil.userInfoPdLoginRequestConvertBuilder(userLoginInfo.getChannelId(), userLoginInfo.getLoginName(), pwd, "86");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
@@ -227,9 +222,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Test(description = "忘记密码(修改密码)")
     public void forgetPasswordTest(){
         try{
-
+            UserLoginInfo userLoginInfo=new UserLoginInfo();
             String loginPwd="123456";
             String md5pwd = MD5Util.toMD5(loginPwd.trim().toUpperCase());
+            userLoginInfo.setChannelId(1);
+
+
             //用户忘记登录密码
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/forget/pwd", "");
             post = new HttpPost(uri);
