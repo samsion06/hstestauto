@@ -185,7 +185,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String mobileResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",mobileResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"MobileUpdate",userLoginInfo.getLoginName(),userLoginInfo.getChannelUserId());
+            CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"MobileUpdate",null,userLoginInfo);
 
             //178803 将密码转换成MD5加密方式
             String pwd="123456";
@@ -201,8 +201,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             String pwdResponseMsg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS",pwdResponseMsg);
-            CheckDatabase.CheckDatabaseInfo(userBaseInfoMapper,null,"PwdUpdate",md5pwd,userLoginInfo.getChannelUserId());
-
+            CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"PwdUpdate",null,userLoginInfo);
             //再次登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
             post = new HttpPost(uri);
