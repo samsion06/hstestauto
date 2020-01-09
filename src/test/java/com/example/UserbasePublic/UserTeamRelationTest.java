@@ -28,7 +28,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
     //用于单接口场景
     private static Integer channelId=1;
-    private static String channelUserId;
+    private static String channelUserId=String.valueOf((int)((Math.random()*9+1)*10000));;
     private static Integer appType=1;
 
     private static CloseableHttpClient httpClient;
@@ -50,7 +50,6 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     @Test(description = "1.绑定(新增)团长关系(幂等)")
     public void teamRelationRegisterTest(){
         try{
-            channelUserId=String.valueOf((int)((Math.random()*9+1)*10000));
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/relation/register", "");
             System.out.println(uri);
             post = new HttpPost(uri);
