@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
-    <test name="支付宝中心">
-        <classes>
-            <class name="com.example.UserbasePublic.UseraliPayTest"/>
-        </classes>
-    </test>
+
 
 <!--    <test name="微信中心">-->
 <!--        <classes>-->
@@ -12,11 +8,11 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-<!--    <test name="收货地址">-->
-<!--        <classes>-->
-<!--            <class name="com.example.UserbasePublic.UserAddressTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="收货地址">
+        <classes>
+            <class name="com.example.UserbasePublic.UserAddressTest"/>
+        </classes>
+    </test>
 
 <!--    <test name="用户中心">-->
 <!--        <classes>-->
@@ -25,7 +21,11 @@
 <!--    </test>-->
 
 
-
+<!--        <test name="支付宝中心">-->
+<!--            <classes>-->
+<!--                <class name="com.example.UserbasePublic.UseraliPayTest"/>-->
+<!--            </classes>-->
+<!--        </test>-->
 
 <!--    <test name="淘宝中心">-->
 <!--        <classes>-->
