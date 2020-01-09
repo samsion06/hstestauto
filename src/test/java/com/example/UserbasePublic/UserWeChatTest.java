@@ -3,8 +3,7 @@ package com.example.UserbasePublic;
 import com.example.domain.UserWeChatInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
-import com.hs.user.base.proto.ResultResponse;
-import com.hs.user.base.proto.UserBaseServiceProto;
+
 import com.hs.user.base.proto.UserWeChatAuthServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
