@@ -65,7 +65,7 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             //用户支付宝授权
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth","");
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAliPayAuthRequest(userAliPayInfo.getChannelUserId(),channelId,alipayUserId);
+            byteArrayEntity = DataTransferUtil.userAliPayAuthRequest(userAliPayInfo.getChannelUserId(),channelId,userAliPayInfo.getAlipayUserId());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
