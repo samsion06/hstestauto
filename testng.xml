@@ -2,11 +2,11 @@
 <suite name="Suite" parallel="false">
 
 
-<!--    <test name="微信中心">-->
-<!--        <classes>-->
-<!--            <class name="com.example.UserbasePublic.UserWeChatTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="微信中心">
+        <classes>
+            <class name="com.example.UserbasePublic.UserWeChatTest"/>
+        </classes>
+    </test>
 
 
 <!--    <test name="用户中心">-->

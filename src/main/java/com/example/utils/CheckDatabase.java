@@ -23,7 +23,7 @@ public class CheckDatabase {
             case "WeChatInfoUnbind"://微信解除绑定
                 dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userWeChatInfo.getChannelUserId());
                 Assert.assertEquals(userWeChatInfo.getIsDelete(), dataUserWeChatInfos.getIsDelete());
-                DataUtils.logDatabase(1,"name",dataUserWeChatInfos.getIsDelete().toString());
+                DataUtils.logDatabase(1,"is_delete",dataUserWeChatInfos.getIsDelete().toString());
                 break;
             case "WeChatInfoBind": //微信绑定
                 dataUserWeChatInfos = userBaseInfoMapper.queryWeChatInfo(userWeChatInfo.getChannelUserId());

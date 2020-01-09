@@ -73,6 +73,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
             Assert.assertEquals("RESP_CODE_SUCCESS",bindResponseMsg);
             CheckDatabase.CheckDatabaseUserUserWeChatInfo(userBaseInfoMapper,"WeChatInfoBind",userWeChatInfo);
 
+            userWeChatInfo.setIsDelete(1);
             //解除绑定
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/unBinding","");
             post = new HttpPost(uri);
