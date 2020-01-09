@@ -78,6 +78,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS",updateResponseMsg);
             CheckDatabase.CheckDatabaseUserUserAddressInfo(userBaseInfoMapper,"AddressUpadate",userAddressInfo);
 
+            userAddressInfo.setIsDelete(1);
             //删除收货地址
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/address/delete","");
             post = new HttpPost(uri);
