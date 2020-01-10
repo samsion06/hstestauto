@@ -85,7 +85,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
     }
 
 
-   // @Test(description = "3.团长关系聚合")
+    @Test(description = "3.团长关系聚合")
     public void teamRelationCURD(){
         UserRleationInfo userRleationInfo =new UserRleationInfo();
         userRleationInfo.setAppType(1);
