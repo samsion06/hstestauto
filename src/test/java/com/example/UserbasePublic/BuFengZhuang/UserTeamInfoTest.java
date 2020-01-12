@@ -200,7 +200,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
                     5201314l,5201314l,"5201314","17702015334",5201314l,
                     "5201314",1,"www.baidu.com",1, "17702015334","周氏集团",
                     1);
-
+            
             //1.注册团长 29
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
