@@ -102,9 +102,22 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             String headUrlImg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS", headUrlImg);
             CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"HeadUrlImg", userBaseInfo, userLoginInfo);
+
+            //修改用户邀请码
+            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/invite/code/update", "", null);
+            post = new HttpPost(uri);;
+            byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(1, "176735", "abc123");
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            CheckReponseResult.AssertResponses(response, UserBaseServiceProto.ResponseCode.class);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
     }
 
     @Test(description = "1.根据邀请码获取用户信息" +
@@ -285,14 +298,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description = "修改用户标签(幂等)404")
+    @Test(description = "修改用户标签(幂等)")
     public  void userTagUpdateTest(){
-        
         try{
-
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/tag/update ","");
+            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/tag/update", "", null);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",2);
+            byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",3);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -322,12 +333,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description = "修改用户邀请码(幂等) 404")
+    @Test(description = "修改用户邀请码(幂等) 404")
     public void inviteCodeUpdateTest(){
-        try{
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/invite/code/update ","");
+        try{//176735
+            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/invite/code/update", "", null);
             post = new HttpPost(uri);;
-           // byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(userBaseInfo.getChannelId(), "3693070", "5201314");
+            byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(1, "176735", "abc123");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
