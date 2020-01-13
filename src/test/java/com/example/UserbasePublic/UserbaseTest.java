@@ -283,7 +283,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
     //@Test(description = "修改用户标签(幂等)404")
     public  void userTagUpdateTest(){
-
+        
         try{
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/tag/update ","");
@@ -299,13 +299,14 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    //@Test(description = "修改用户身份状态 404")
+    @Test(description = "修改用户身份状态 404")
     public void userStatusUpdateTest(){
         try{
-
+            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 8080, "/base/user/status/update", "", null);
+            System.out.println(uri);
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/status/update ","");
-            post = new HttpPost(uri);;
-           // byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(userBaseInfo.getChannelId(), "3693070", 1);
+            post = new HttpPost(uri);http://user-base.huasheng100.com:8080/base/user/status/update?;
+            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3693070", 1);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
