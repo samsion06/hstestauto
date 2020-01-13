@@ -332,23 +332,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             e.printStackTrace();
         }
     }
-
-    @Test(description = "修改用户标签(幂等)")
-    public  void userTagUpdateTest(){
-        try{
-            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/tag/update", "", null);
-            post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",3);
-            post.setEntity(byteArrayEntity);
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            CheckReponseResult.AssertResponse(response);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
     @AfterTest
     public void afterTest() throws IOException {
         httpClient.close();
