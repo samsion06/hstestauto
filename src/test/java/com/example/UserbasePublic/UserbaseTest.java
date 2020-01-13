@@ -54,7 +54,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         userBaseInfo.setHeadImg(headimgurl);
         //用户登陆
         UserLoginInfo userLoginInfo= new UserLoginInfo();
-        userLoginInfo.setLoginName("12375504602");//3692091
+        userLoginInfo.setLoginName("12352040885");//176735
         userLoginInfo.setLoginPwd("123456");
         userLoginInfo.setChannelId(1);
         try {
@@ -100,22 +100,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             String headUrlImg = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS", headUrlImg);
             CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"HeadUrlImg", userBaseInfo, userLoginInfo);
-
-            userBaseInfo.setUserStatus(5);
-            //修改用户身份状态 178803
-//            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
-//            post = new HttpPost(uri);
-//            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(userLoginInfo.getChannelId()
-//                    , userLoginInfo.getChannelUserId(), userBaseInfo.getUserStatus());
-//            post.setEntity(byteArrayEntity);
-//            post.setHeader("Content-Type", "application/x-protobuf");
-//            response = httpClient.execute(post);
-//            JsonFormat jsonFormat=new JsonFormat();
-//            UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
-//            DataUtils.logResponse(jsonFormat.printToString(respc));//UserStatusUpdate
-//            CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"StatusUpdate", userBaseInfo, userLoginInfo);
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -188,7 +172,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void mdfMobileAndPwdUpdateTest(){
 
         UserLoginInfo userLoginInfo=new UserLoginInfo();
-        userLoginInfo.setChannelUserId("178803");//17786709004
+        userLoginInfo.setChannelUserId("178803");//178803
         userLoginInfo.setLoginName("123"+(int)((Math.random()*9+1)*10000000));//修改登陆手机号
         userLoginInfo.setChannelId(1);
 
@@ -317,12 +301,12 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "修改用户身份状态")
+    @Test(description = "修改用户身份状态")//如果设置为2会删除用户
     public void userStatusUpdateTest(){
         try{
             uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3692091", 6);
+            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3692091", 2);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
