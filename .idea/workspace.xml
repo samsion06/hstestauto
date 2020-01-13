@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mapper/UserBaseInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/mapper/UserBaseInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,21 +211,7 @@
       <workItem from="1578838819492" duration="542000" />
       <workItem from="1578878356597" duration="3551000" />
       <workItem from="1578882516527" duration="4685000" />
-      <workItem from="1578894112991" duration="2601000" />
-    </task>
-    <task id="LOCAL-00231" summary="update">
-      <created>1578557111035</created>
-      <option name="number" value="00231" />
-      <option name="presentableId" value="LOCAL-00231" />
-      <option name="project" value="LOCAL" />
-      <updated>1578557111036</updated>
-    </task>
-    <task id="LOCAL-00232" summary="update">
-      <created>1578557362857</created>
-      <option name="number" value="00232" />
-      <option name="presentableId" value="LOCAL-00232" />
-      <option name="project" value="LOCAL" />
-      <updated>1578557362857</updated>
+      <workItem from="1578894112991" duration="2924000" />
     </task>
     <task id="LOCAL-00233" summary="update">
       <created>1578557447892</created>
@@ -555,7 +542,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578896234521</updated>
     </task>
-    <option name="localTasksCounter" value="280" />
+    <task id="LOCAL-00280" summary="update">
+      <created>1578896755444</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1578896755444</updated>
+    </task>
+    <task id="LOCAL-00281" summary="update">
+      <created>1578896903866</created>
+      <option name="number" value="00281" />
+      <option name="presentableId" value="LOCAL-00281" />
+      <option name="project" value="LOCAL" />
+      <updated>1578896903867</updated>
+    </task>
+    <option name="localTasksCounter" value="282" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,10 +601,10 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578896755309">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578896903705">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578896755309" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578896903705" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578882414790" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578540416600" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
@@ -703,47 +704,47 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="515" y="296" key="git4idea.merge.GitPullDialog/0.23.1680.950@0.23.1680.950" timestamp="1578558517358" />
-    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup" timestamp="1578466484100">
+    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup" timestamp="1578897011489">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
-    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup/0.23.1680.950@0.23.1680.950" timestamp="1578466484100" />
+    <state x="505" y="231" width="670" height="676" key="search.everywhere.popup/0.23.1680.950@0.23.1680.950" timestamp="1578897011489" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>128</line>
+          <line>131</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>127</line>
+          <line>130</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>131</line>
+          <line>134</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>132</line>
+          <line>135</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>133</line>
+          <line>136</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>135</line>
+          <line>138</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>134</line>
+          <line>137</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -753,22 +754,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>154</line>
+          <line>157</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>155</line>
+          <line>158</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>156</line>
+          <line>159</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
-          <line>157</line>
+          <line>160</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -833,7 +834,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java</url>
-          <line>147</line>
+          <line>143</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>

@@ -130,10 +130,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
 
 
-
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

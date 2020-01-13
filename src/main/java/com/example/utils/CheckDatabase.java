@@ -118,6 +118,10 @@ public class CheckDatabase {
                 Assert.assertEquals(userBaseInfo.getStatus(), dataBaseUserBaseInfo.getStatus());
                 DataUtils.logDatabase(1,"status",dataBaseUserBaseInfo.getStatus().toString());
                 break;
+            case "pushNoUpdate"://更新邀请码
+
+
+
         }
     }
 
