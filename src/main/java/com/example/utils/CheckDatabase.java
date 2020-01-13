@@ -137,8 +137,6 @@ public class CheckDatabase {
         }
     }
 
-
-
     //团长信息
     public static void CheckDatabaseUserTeamInfo(TeamRealtionInfoMapper teamRealtionInfoMapper, String method, UserTeamInfo userTeamInfo) {
         switch (method) {
