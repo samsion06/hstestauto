@@ -36,6 +36,8 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     private static String nickname;
     private static String headimgurl;
 
+    //178803 这个channeluserid不能随便改
+
     @BeforeTest
     public void beforeTest(){
         nickname = DataUtils.getRandomString(9);//随机生成用户名
@@ -247,7 +249,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void getUsersByConditionTest(){
         try{
             UserBaseInfo userBaseInfo=new UserBaseInfo();
-            userBaseInfo.setChannelUserId("3693070");
+            userBaseInfo.setChannelUserId("178803");
             userBaseInfo.setChannelId(1);
             //根据查询条件查询用户列表
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/getUsersByCondition", "");
@@ -265,7 +267,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test(description = "根据微信ID和OPENID获取用户信息")
-    public void getByOpenIdAndUnionldIdTest() {
+    public void getByOpenIdAndUnionldIdTest() { //channeluserid 178803
         try {
             UserBaseInfo userBaseInfo=new UserBaseInfo();
             userBaseInfo.setChannelId(1);
