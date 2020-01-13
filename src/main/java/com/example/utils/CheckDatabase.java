@@ -123,6 +123,7 @@ public class CheckDatabase {
                 break;
         }
     }
+
     public static void CheckDatabaseHsrjUserInfo(UserBaseInfoMapper userBaseInfoMapper,String method,HsrjUserInfo hsrjUserInfo){
         switch (method) {
             case "pushNoUpdate"://更新邀请码
