@@ -213,14 +213,7 @@
       <workItem from="1578882516527" duration="4685000" />
       <workItem from="1578894112991" duration="6333000" />
       <workItem from="1578900772370" duration="3689000" />
-      <workItem from="1578907386075" duration="1908000" />
-    </task>
-    <task id="LOCAL-00245" summary="update">
-      <created>1578561972136</created>
-      <option name="number" value="00245" />
-      <option name="presentableId" value="LOCAL-00245" />
-      <option name="project" value="LOCAL" />
-      <updated>1578561972136</updated>
+      <workItem from="1578907386075" duration="1936000" />
     </task>
     <task id="LOCAL-00246" summary="update">
       <created>1578562057140</created>
@@ -558,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578909690362</updated>
     </task>
-    <option name="localTasksCounter" value="294" />
+    <task id="LOCAL-00294" summary="update">
+      <created>1578909894323</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1578909894323</updated>
+    </task>
+    <option name="localTasksCounter" value="295" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,11 +603,11 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578909690261">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578909894220">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578902121099" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578909690261" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578909894220" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578902378814" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
