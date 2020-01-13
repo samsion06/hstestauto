@@ -159,8 +159,8 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
     @Test(description = "7.检查手机号绑定")//这里检查的是userbase表里面的mobile
     public void checkPhoneTest(){
        try{
-           String channelUserId="3692091";
-           String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
+           String channelUserId="178803";
+           String openId="oBrt31RJksETS7FWsakEes61W38k";
            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/checkPhone","");
            post = new HttpPost(uri);;
            byteArrayEntity =  DataTransferUtil.UserWeChatAuthCheckPhoneRequest(channelId,channelUserId,openId);
