@@ -79,6 +79,7 @@
         <result column="register_recommend_user_id" property="registerRecommendUserId"/>
         <result column="user_status" property="userStatus"/>
         <result column="is_delete" property="isDelete"/>
+        <result column="status" property="status"/>
 <!--        <result column="create_time" property="creatTime"/>-->
 <!--        <result column="update_time" property="updateTime"/>-->
     </resultMap>

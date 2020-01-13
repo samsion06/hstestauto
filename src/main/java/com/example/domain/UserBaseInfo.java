@@ -23,7 +23,10 @@ public class UserBaseInfo {
     private String registerRecommendUserId;
     private Integer userStatus;
     private Integer isDelete;
+    private Integer status;
+
     private Date creatTime;
     private Date updateTime;
+
 
 }

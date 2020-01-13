@@ -113,10 +113,10 @@ public class CheckDatabase {
                 Assert.assertEquals(userLoginInfo.getLoginPwd(), dataUserLoginInfo.getLoginPwd());
                 DataUtils.logDatabase(1,"login_pwd",dataUserLoginInfo.getLoginPwd());
                 break;
-            case "UserStatusUpdate"://修改用户身份状态
+            case "StatusUpdate"://修改用户身份状态
                 dataBaseUserBaseInfo = userBaseInfoMapper.queryUserBaseInfo(userLoginInfo.getChannelUserId());
-                Assert.assertEquals(userBaseInfo.getUserStatus(), dataBaseUserBaseInfo.getUserStatus());
-                DataUtils.logDatabase(1,"user_status",dataBaseUserBaseInfo.getUserStatus().toString());
+                Assert.assertEquals(userBaseInfo.getStatus(), dataBaseUserBaseInfo.getStatus());
+                DataUtils.logDatabase(1,"status",dataBaseUserBaseInfo.getStatus().toString());
                 break;
         }
     }

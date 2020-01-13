@@ -52,13 +52,11 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         UserBaseInfo userBaseInfo=new UserBaseInfo();
         userBaseInfo.setNickName(nickname);
         userBaseInfo.setHeadImg(headimgurl);
-        userBaseInfo.setUserStatus(2);
         //用户登陆
         UserLoginInfo userLoginInfo= new UserLoginInfo();
-        userLoginInfo.setLoginName("17720130632");//3692091
+        userLoginInfo.setLoginName("12375504602");//3692091
         userLoginInfo.setLoginPwd("123456");
         userLoginInfo.setChannelId(1);
-        //userLoginInfo.setChannelUserId("3692091");
         try {
             //登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");
@@ -70,6 +68,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             String result = CheckReponseResult.AssertResponses(response, UserBaseServiceProto.userInfoPdCombine.class);
             //获取channeluserid传入下个接口
             userLoginInfo.setChannelUserId(DataUtils.substring(result, "userId", 10, ",", 1));
+            System.out.println(userLoginInfo.getChannelUserId());
 
             //获取用户基础信息
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/getUserBaseInfo","");
@@ -102,18 +101,19 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS", headUrlImg);
             CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"HeadUrlImg", userBaseInfo, userLoginInfo);
 
-            //修改用户身份状态
-            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
-            post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(userLoginInfo.getChannelId()
-                    , userLoginInfo.getChannelUserId(), userBaseInfo.getUserStatus());
-            post.setEntity(byteArrayEntity);
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            JsonFormat jsonFormat=new JsonFormat();
-            UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
-            DataUtils.logResponse(jsonFormat.printToString(respc));//UserStatusUpdate
-            CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"UserStatusUpdate", userBaseInfo, userLoginInfo);
+            userBaseInfo.setUserStatus(5);
+            //修改用户身份状态 178803
+//            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
+//            post = new HttpPost(uri);
+//            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(userLoginInfo.getChannelId()
+//                    , userLoginInfo.getChannelUserId(), userBaseInfo.getUserStatus());
+//            post.setEntity(byteArrayEntity);
+//            post.setHeader("Content-Type", "application/x-protobuf");
+//            response = httpClient.execute(post);
+//            JsonFormat jsonFormat=new JsonFormat();
+//            UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
+//            DataUtils.logResponse(jsonFormat.printToString(respc));//UserStatusUpdate
+//            CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"StatusUpdate", userBaseInfo, userLoginInfo);
 
 
         } catch (Exception e) {
@@ -322,7 +322,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         try{
             uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3693070", 1);
+            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3692091", 6);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
