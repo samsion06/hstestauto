@@ -93,7 +93,7 @@ public class UserTaobaoTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-   // @Test
+   //@Test 取消授权
     public void test(){
         UserTaobaoInfo userTaobaoInfo =new UserTaobaoInfo();
         userTaobaoInfo.setChannelUserId("184003");
