@@ -131,9 +131,9 @@ public class CheckDatabase {
                 Assert.assertEquals(hsrjUserInfo.getPushNo(), dataBaseHsrjUserInfo.getPushNo());
                 DataUtils.logDatabase(1,"pushNo",dataBaseHsrjUserInfo.getPushNo().toString());
             case "userTagStatusUpdate": //更新用户标签
-
-
-
+                dataBaseHsrjUserInfo=userBaseInfoMapper.queryHsrjUserInfo(hsrjUserInfo.getChannelUserId());
+                Assert.assertEquals(hsrjUserInfo.getUserTagStatus(), dataBaseHsrjUserInfo.getUserTagStatus());
+                DataUtils.logDatabase(1,"pushNo",dataBaseHsrjUserInfo.getPushNo().toString());
         }
     }
 
