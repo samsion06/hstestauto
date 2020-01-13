@@ -272,7 +272,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/get/by/unionId/openId","");
             System.out.println(uri);
             post = new HttpPost(uri);;
-            byteArrayEntity = DataTransferUtil.userInfoUnionIdOpenIdRequestConvertBuilder(userBaseInfo.getChannelId(), "ox-FY1f0_ub3FnM_v9n7ITb1q-f0", "oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4");
+            byteArrayEntity = DataTransferUtil.userInfoUnionIdOpenIdRequestConvertBuilder(userBaseInfo.getChannelId(), "ox-FY1dRO31w9tcGLFh9YiBQQOy8", "oBrt31RJksETS7FWsakEes61W38k");
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -315,7 +315,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             System.out.println("result:" + jsonFormat.printToString(respc));
             DataUtils.logResponse(jsonFormat.printToString(respc));
             //CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
-
         }catch (Exception e){
             e.printStackTrace();
         }
