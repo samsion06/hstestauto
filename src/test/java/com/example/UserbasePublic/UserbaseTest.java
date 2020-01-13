@@ -99,6 +99,19 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS", headUrlImg);
             CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"HeadUrlImg", userBaseInfo, userLoginInfo);
 
+            //修改用户身份状态
+            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3693070", 1);
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            JsonFormat jsonFormat=new JsonFormat();
+            UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
+            DataUtils.logResponse(jsonFormat.printToString(respc));//UserStatusUpdate
+            CheckDatabase.CheckDatabaseUserBaseInfo(userBaseInfoMapper,"UserStatusUpdate", userBaseInfo, userLoginInfo);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -304,7 +317,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void userStatusUpdateTest(){
         try{
             uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
-            System.out.println(uri);
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3693070", 1);
             post.setEntity(byteArrayEntity);
@@ -313,6 +325,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             JsonFormat jsonFormat=new JsonFormat();
             UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(respc));
+            DataUtils.logResponse(jsonFormat.printToString(respc));
             //CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
 
         }catch (Exception e){
