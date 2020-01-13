@@ -53,7 +53,9 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     @Test(description = "1.用户登录" +
                      "   2.获取用户基础信息" +
                      "   3.修改昵称" +
-                     "   4.修改头像")
+                     "   4.修改头像" +
+                     "   5.修改用户邀请码" +
+                     "   6.修改用户标签")
     public void LoginAndUpdate() {//注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
         //用户信息
         UserBaseInfo userBaseInfo=new UserBaseInfo();
@@ -133,7 +135,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //修改用户标签
             uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/tag/update", "", null);
             post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",3);
+            byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",hsrjUserInfo.getUserTagStatus());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
@@ -338,25 +340,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             response = httpClient.execute(post);
             CheckReponseResult.AssertResponse(response);
 
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test(description = "修改用户身份状态")//如果设置为2会删除用户
-    public void userStatusUpdateTest(){
-        try{
-            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
-            post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3692091", 2);
-            post.setEntity(byteArrayEntity);
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            JsonFormat jsonFormat=new JsonFormat();
-            UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + jsonFormat.printToString(respc));
-            DataUtils.logResponse(jsonFormat.printToString(respc));
-            //CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
         }catch (Exception e){
             e.printStackTrace();
         }
