@@ -113,9 +113,9 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
                         "5.根据openId查询用户微信列表信息 ")
     public void weChatLoginAndGetInfoByOpenIdTest(){
         try{
-            String openId="oBrt31Sg6EqD9DJxB0Mz9EOl-Pp4";
+            String openId="oBrt31RJksETS7FWsakEes61W38k";
             String appId="Appid01";
-            String channelUserId="3692091";
+            String channelUserId="178803";
             //用户微信登录(幂等)
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/weChat/login","");
             post = new HttpPost(uri);
