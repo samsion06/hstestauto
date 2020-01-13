@@ -1,0 +1,8 @@
+#jdbc:
+#  driverClassName:  com.mysql.cj.jdbc.Driver
+#  url:  jdbc:mysql://drdshhid9174116jpublic.drds.aliyuncs.com:3306/singleuser?useUnicode=true&autoReconnect=true&allowMultiQueries=true
+#  username:  singleuser
+#  password:  Drgou_druser123
+#
+#mybatis.mapper-locations:  classpath:mapper/*Mapper.xml
+#
