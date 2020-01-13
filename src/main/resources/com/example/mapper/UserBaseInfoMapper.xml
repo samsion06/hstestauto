@@ -89,7 +89,7 @@
     </select>
 
     <!--映射花生日记用户中心字段-->
-    <resultMap id="HsrjUserInfoMap" type="com.example.domain.UserBaseInfo">
+    <resultMap id="HsrjUserInfoMap" type="com.example.domain.HsrjUserInfo">
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="channel_user_id" property="channelUserId"/>
