@@ -88,6 +88,19 @@
          select * from user_base_info where channel_user_id=#{channel_user_id}
     </select>
 
+    <!--映射花生日记用户中心字段-->
+    <resultMap id="HsrjUserInfoMap" type="com.example.domain.UserBaseInfo">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="channel_user_id" property="channelUserId"/>
+        <result column="push_no" property="pushNo"/>
+        <result column="user_tag_status" property="userTagStatus"/>
+    </resultMap>
+    <select id="queryHsrjUserInfo" parameterType="java.lang.String" resultMap="HsrjUserInfoMap">
+         select * from hsrj_user_info where channel_user_id=#{channelUserId}
+    </select>
+
+
     <!--映射微信中心 17-->
     <resultMap id="UserWeChatInfoMap" type="com.example.domain.UserWeChatInfo">
         <id column="id" property="id"/>
