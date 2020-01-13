@@ -129,6 +129,11 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //检查数据库
 
 
+
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -354,7 +359,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
     public void afterTest() throws IOException {
         httpClient.close();
     }
-
 }
 
 

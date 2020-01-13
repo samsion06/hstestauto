@@ -25,4 +25,11 @@ public interface UserBaseInfoMapper {
     //查询淘宝信息
     public UserTaobaoInfo queryUserTaobaoInfo(String channelUserId);
 
+    //查询花生日记用户
+    public HsrjUserInfo queryHsrjUserInfo(String channelUserId);
+
+
+
+
+
 }
