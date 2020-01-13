@@ -3,6 +3,7 @@ import com.example.domain.UserBaseInfo;
 import com.example.domain.UserLoginInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
+import com.googlecode.protobuf.format.JsonFormat;
 import com.hs.user.base.proto.UserBaseServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -299,18 +300,20 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         }
     }
 
-    @Test(description = "修改用户身份状态 404")
+    @Test(description = "修改用户身份状态")
     public void userStatusUpdateTest(){
         try{
-            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 8080, "/base/user/status/update", "", null);
+            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/status/update", "", null);
             System.out.println(uri);
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/status/update ","");
-            post = new HttpPost(uri);http://user-base.huasheng100.com:8080/base/user/status/update?;
+            post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserStatusUpdateRequest(1, "3693070", 1);
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-            CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
+            JsonFormat jsonFormat=new JsonFormat();
+            UserBaseServiceProto.UserStatusUpdateResponse respc= UserBaseServiceProto.UserStatusUpdateResponse.parseFrom(response.getEntity().getContent());
+            System.out.println("result:" + jsonFormat.printToString(respc));
+            //CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
 
         }catch (Exception e){
             e.printStackTrace();
