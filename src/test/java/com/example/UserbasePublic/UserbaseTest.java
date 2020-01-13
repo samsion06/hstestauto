@@ -71,7 +71,7 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         HsrjUserInfo hsrjUserInfo=new HsrjUserInfo();
         hsrjUserInfo.setPushNo(pushNo);
         hsrjUserInfo.setChannelUserId("176735");
-        hsrjUserInfo.setUserTagStatus(2);
+
 
         try {
             //登录
@@ -132,15 +132,19 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             //检查数据库
             CheckDatabase.CheckDatabaseHsrjUserInfo(userBaseInfoMapper,"pushNoUpdate",hsrjUserInfo);
 
+            hsrjUserInfo.setUserTagStatus(3);
+            System.out.println(hsrjUserInfo);
             //修改用户标签
             uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/tag/update", "", null);
             post = new HttpPost(uri);
             byteArrayEntity = DataTransferUtil.UserInfoTagRequest("178803",hsrjUserInfo.getUserTagStatus());
+            System.out.println(hsrjUserInfo.getUserTagStatus());
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
             String userStatusTag = CheckReponseResult.AssertResponse(response);
             Assert.assertEquals("RESP_CODE_SUCCESS", userStatusTag);
+            System.out.println("====================="+hsrjUserInfo);
             //检查数据库
             CheckDatabase.CheckDatabaseHsrjUserInfo(userBaseInfoMapper,"userTagStatusUpdate",hsrjUserInfo);
         } catch (Exception e) {

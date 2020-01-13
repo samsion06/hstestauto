@@ -143,11 +143,10 @@ public class DataTransferUtil {
 
     //修改用户标签(幂等)
     public static ByteArrayEntity UserInfoTagRequest( String channelUserId,Integer userTag ){
-        //178803
-        //2
         UserBaseServiceProto.UserInfoTagRequest.Builder builder = UserBaseServiceProto.UserInfoTagRequest.newBuilder();
         builder.setChannelUserId(channelUserId);
         builder.setUserTag(userTag);
+        System.out.println(builder);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
         Reporter.log("修改用户标签_"+incomeMessage+builder+ "}");
         return bytes;

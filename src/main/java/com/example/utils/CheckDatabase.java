@@ -130,10 +130,13 @@ public class CheckDatabase {
                 dataBaseHsrjUserInfo=userBaseInfoMapper.queryHsrjUserInfo(hsrjUserInfo.getChannelUserId());
                 Assert.assertEquals(hsrjUserInfo.getPushNo(), dataBaseHsrjUserInfo.getPushNo());
                 DataUtils.logDatabase(1,"pushNo",dataBaseHsrjUserInfo.getPushNo().toString());
+                break;
             case "userTagStatusUpdate": //更新用户标签
                 dataBaseHsrjUserInfo=userBaseInfoMapper.queryHsrjUserInfo(hsrjUserInfo.getChannelUserId());
+                System.out.println("database获取的值："+dataBaseHsrjUserInfo.getUserTagStatus());
                 Assert.assertEquals(hsrjUserInfo.getUserTagStatus(), dataBaseHsrjUserInfo.getUserTagStatus());
-                DataUtils.logDatabase(1,"pushNo",dataBaseHsrjUserInfo.getPushNo().toString());
+                DataUtils.logDatabase(1,"user_tag_update",dataBaseHsrjUserInfo.getUserTagStatus().toString());
+                break;
         }
     }
 
