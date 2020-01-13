@@ -110,6 +110,17 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
+            Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
+            UserBaseServiceProto.ResponseCode respc=UserBaseServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            JsonFormat jsonFormat =new JsonFormat();
+            Assert.assertEquals("RESP_CODE_SUCCESS", jsonFormat.printToString(respc));
+            DataUtils.logResponse(jsonFormat.printToString(respc));
+            //检查数据库
+
+
+
+
+
             CheckReponseResult.AssertResponses(response, UserBaseServiceProto.ResponseCode.class);
 
         } catch (Exception e) {
@@ -328,22 +339,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
             System.out.println("result:" + jsonFormat.printToString(respc));
             DataUtils.logResponse(jsonFormat.printToString(respc));
             //CheckReponseResult.AssertResponses(response, UserBaseServiceProto.UserStatusUpdateResponse.class);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    @Test(description = "修改用户邀请码(幂等) 404")
-    public void inviteCodeUpdateTest(){
-        try{//176735
-            uri = new URI(HttpConfigUtil.scheme, null, "user-base.huasheng100.com", 80, "/base/user/invite/code/update", "", null);
-            post = new HttpPost(uri);;
-            byteArrayEntity = DataTransferUtil.UserInviteCodeUpdateRequest(1, "176735", "abc123");
-            post.setEntity(byteArrayEntity);
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            CheckReponseResult.AssertResponses(response, UserBaseServiceProto.ResponseCode.class);
-
         }catch (Exception e){
             e.printStackTrace();
         }
