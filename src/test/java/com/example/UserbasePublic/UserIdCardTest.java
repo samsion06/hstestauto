@@ -41,7 +41,7 @@ public class UserIdCardTest extends AbstractTestNGSpringContextTests {
         String realName="尹小芳";
         String idCardNum="430525199204064942";
 
-            //实名认证 主要看userbase的字段
+        //实名认证 主要看userbase的字段
         try {
 
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/user/idCard/identify", "");
