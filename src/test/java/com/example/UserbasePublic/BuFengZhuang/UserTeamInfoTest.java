@@ -104,7 +104,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-   // @Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 3)
+    //@Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 3)
     public void fansTeamInfoQueryBatchAppTypeTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
@@ -129,7 +129,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-  //  @Test(description ="查询粉丝团长(幂等)",priority = 4)
+    //@Test(description ="查询粉丝团长(幂等)",priority = 4)
     public void fansTeamInfoQueryChannelUserIdTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query", "");
@@ -160,7 +160,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-   // @Test(description ="删除团长信息(幂等)",priority = 5)
+    //@Test(description ="删除团长信息(幂等)",priority = 5)
     public void fansTeamInfoDeleteAppTypeTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
