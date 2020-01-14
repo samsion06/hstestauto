@@ -55,7 +55,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         UserWeChatInfo userWeChatInfo=new UserWeChatInfo();
         userWeChatInfo.setOpenId(DataUtils.getRandomString(9)); //随机生成openId
-        userWeChatInfo.setChannelUserId(DataUtils.getRandomChannelUserId(5));//随机生成5为数字
+        userWeChatInfo.setChannelUserId(DataUtils.getRandomChannelUserId(6));//随机生成5为数字
         userWeChatInfo.setAppId("Appid01");
 
         try {

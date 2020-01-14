@@ -37,7 +37,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     private static Integer appType=2;
     private static Integer channelId=1;
-    private static String channelUserId =(int)((Math.random()*9+1)*100000)+"";;
+    private static String channelUserId =DataUtils.getRandomString(6);
 
     @BeforeTest
     public void beforeTest(){

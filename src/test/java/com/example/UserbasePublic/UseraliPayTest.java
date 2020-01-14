@@ -42,8 +42,8 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
 
         //生成随机数字
         UserAliPayInfo userAliPayInfo =new UserAliPayInfo();
-        userAliPayInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
-        userAliPayInfo.setAlipayUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
+        userAliPayInfo.setChannelUserId(DataUtils.getRandomChannelUserId(6));
+        userAliPayInfo.setAlipayUserId(DataUtils.getRandomChannelUserId(6));
         userAliPayInfo.setAlipayAccount("177"+(int)((Math.random()*9+1)*10000000));
         userAliPayInfo.setIsDelete(1);
         //生成随机字符串

@@ -1,5 +1,4 @@
 package com.example.UserbasePublic;
-
 import com.example.utils.CheckReponseResult;
 import com.example.utils.DataTransferUtil;
 import com.example.utils.HttpConfigUtil;

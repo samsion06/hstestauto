@@ -41,7 +41,7 @@ public class UserAddressTest extends AbstractTestNGSpringContextTests {
     public void addressCURDTest(){
         UserAddressInfo userAddressInfo=new UserAddressInfo();
         userAddressInfo.setAddress(DataUtils.getRandomString(9));//随机地址
-        userAddressInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*100000)));
+        userAddressInfo.setChannelUserId(DataUtils.getRandomString(6));
         userAddressInfo.setName(DataUtils.getRandomString(9));//随机用户名
         try{
             httpClient=HttpClients.createDefault();

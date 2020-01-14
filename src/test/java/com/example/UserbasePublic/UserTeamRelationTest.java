@@ -28,7 +28,7 @@ public class UserTeamRelationTest extends AbstractTestNGSpringContextTests {
 
     //用于单接口场景
     private static Integer channelId=1;
-    private static String channelUserId=String.valueOf((int)((Math.random()*9+1)*10000));;
+    private static String channelUserId=DataUtils.getRandomChannelUserId(6);;
     private static Integer appType=1;
 
     private static CloseableHttpClient httpClient;
