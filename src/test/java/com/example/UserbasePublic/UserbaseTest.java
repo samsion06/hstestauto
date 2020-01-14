@@ -43,10 +43,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
 
     @BeforeTest
     public void beforeTest(){
-        nickname = DataUtils.getRandomString(9);//随机生成用户名
-        headimgurl = DataUtils.getRandomString(15);//随机生成头像
-        pushNo= DataUtils.getRandomString(6);
-
         httpClient = HttpClients.createDefault();
     }
 
@@ -57,6 +53,11 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
                      "   5.修改用户邀请码" +
                      "   6.修改用户标签")
     public void LoginAndUpdate() {//注册后user_base_info,user_login_info,hsrj_user_info 三个表都会有数据,user_base_info登录得时候的mobile_area_code有值就要传递
+        //生成动态数据
+        String nickname=DataUtils.getRandomString(9);//随机生成用户名;
+        String headimgurl=DataUtils.getRandomString(15);//随机生成头像;
+        String pushNo=DataUtils.getRandomString(6);//随机生成邀请码
+
         //用户信息
         UserBaseInfo userBaseInfo=new UserBaseInfo();
         userBaseInfo.setNickName(nickname);
