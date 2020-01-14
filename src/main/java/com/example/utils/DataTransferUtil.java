@@ -137,7 +137,7 @@ public class DataTransferUtil {
         builder.setInviteCode(inviteCode);
         System.out.println(builder);
         ByteArrayEntity bytes=new ByteArrayEntity(builder.build().toByteArray());
-        Reporter.log("修改用户身份状态_"+incomeMessage+builder+ "}");
+        Reporter.log("修改用户邀请码"+incomeMessage+builder+ "}");
         return bytes;
     }
 
