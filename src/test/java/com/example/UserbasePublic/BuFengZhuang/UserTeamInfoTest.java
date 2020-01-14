@@ -34,6 +34,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
     private static JsonFormat jsonFormat;
+    private String channelUserId;
 
     @BeforeTest
     public void beforeTest(){
@@ -44,7 +45,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     @Test(description ="注册团长信息(幂等)",priority = 1)
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
-            String channelUserId =DataUtils.getRandomString(6);
+            channelUserId =DataUtils.getRandomString(6);
             System.out.println("单接口注册团长生成channeluserid："+channelUserId);
             //注册团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
@@ -70,10 +71,9 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="删除团长信息(幂等)",priority = 5)
+    @Test(description ="删除团长信息(幂等)",priority = 2)
     public void fansTeamInfoDeleteAppTypeTest(){
         try {
-            String channelUserId =DataUtils.getRandomString(6);
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
@@ -99,7 +99,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="修改团长信息(幂等)",priority = 2)
+    @Test(description ="修改团长信息(幂等)",priority = 3)
     public void userTeamInfoUpdateChannelUserIdTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");
@@ -129,7 +129,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 3)
+    @Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 4)
     public void fansTeamInfoQueryBatchAppTypeTest(){
         String channelUserId =DataUtils.getRandomString(6);
         try {
@@ -153,7 +153,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="查询粉丝团长(幂等)",priority = 4)
+    @Test(description ="查询粉丝团长(幂等)",priority = 5)
     public void fansTeamInfoQueryChannelUserIdTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query", "");
