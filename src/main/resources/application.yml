@@ -4,7 +4,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://drdshhid9174116j.drds.aliyuncs.com:3306/singleuser?
     username: singleuser
-    password: password
+    password: Drgou_druser123
 
 useUnicode: true&autoReconnect=true&allowMultiQueries=true
 
