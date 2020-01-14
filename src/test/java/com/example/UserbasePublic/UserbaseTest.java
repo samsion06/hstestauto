@@ -150,9 +150,6 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
 
     @Test(description = "1.根据邀请码获取用户信息" +
