@@ -65,7 +65,7 @@ public class TeamInfoQueryBatch extends AbstractJavaSamplerClient {
             HttpResponse response = httpClient.execute(post);
             //判断响应状态
             if (response.getStatusLine().getStatusCode() == 200) {
-                UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse respb = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
+                UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
                 //事务计时结束
                 sr.sampleEnd();
                 sr.setSuccessful(true);
