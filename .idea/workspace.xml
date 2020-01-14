@@ -7,14 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SpringbootMybatisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SpringbootMybatisApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQueryBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQueryBatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,14 +217,7 @@
       <workItem from="1578916999205" duration="959000" />
       <workItem from="1578922221484" duration="7000" />
       <workItem from="1578923909139" duration="518000" />
-      <workItem from="1578965640746" duration="10957000" />
-    </task>
-    <task id="LOCAL-00258" summary="update">
-      <created>1578881683612</created>
-      <option name="number" value="00258" />
-      <option name="presentableId" value="LOCAL-00258" />
-      <option name="project" value="LOCAL" />
-      <updated>1578881683612</updated>
+      <workItem from="1578965640746" duration="11022000" />
     </task>
     <task id="LOCAL-00259" summary="update">
       <created>1578882414921</created>
@@ -568,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578973370717</updated>
     </task>
-    <option name="localTasksCounter" value="307" />
+    <task id="LOCAL-00307" summary="update">
+      <created>1578985955292</created>
+      <option name="number" value="00307" />
+      <option name="presentableId" value="LOCAL-00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1578985955292</updated>
+    </task>
+    <option name="localTasksCounter" value="308" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,10 +578,10 @@
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="440" y="163" key="#Notifications/0.23.1680.952@0.23.1680.952" timestamp="1577951854934" />
-    <state x="440" y="163" key="#Project_Structure" timestamp="1577946722706">
+    <state x="440" y="163" key="#Project_Structure" timestamp="1578985988778">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
-    <state x="440" y="163" key="#Project_Structure/0.23.1680.954@0.23.1680.954" timestamp="1577946722706" />
+    <state x="440" y="163" key="#Project_Structure/0.23.1680.954@0.23.1680.954" timestamp="1578985988778" />
     <state x="247" y="355" key="#com.intellij.ide.util.MemberChooser" timestamp="1578554291021">
       <screen x="0" y="23" width="1680" height="950" />
     </state>
@@ -613,12 +607,12 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578973370609">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578985955184">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578902121099" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578973370609" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578970546063" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578985955184" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578969883027" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
