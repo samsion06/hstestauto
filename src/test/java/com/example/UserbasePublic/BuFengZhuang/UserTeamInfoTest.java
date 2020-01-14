@@ -41,10 +41,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         jsonFormat =new JsonFormat();
     }
 
-    //@Test(description ="注册团长信息(幂等)",priority = 1)
+    @Test(description ="注册团长信息(幂等)",priority = 1)
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
             String channelUserId =DataUtils.getRandomString(6);
+            System.out.println("单接口注册团长生成channeluserid："+channelUserId);
             //注册团长
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
@@ -69,17 +70,45 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
+    @Test(description ="删除团长信息(幂等)",priority = 5)
+    public void fansTeamInfoDeleteAppTypeTest(){
+        try {
+            String channelUserId =DataUtils.getRandomString(6);
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
+            post = new HttpPost(uri);
+            UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
+            UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
+            commonRequest.setAppType(2);
+            commonRequest.setChannelId(1);
+            commonRequest.setChannelUserId(channelUserId);
+            builder.setDeleteRequest(commonRequest);
+            DataUtils.logBuilder(builder,"删除团长信息(幂等)_");
+
+            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            jsonFormat =new JsonFormat();
+
+            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            System.out.println("result:" + jsonFormat.printToString(resp));
+            Reporter.log(jsonFormat.printToString(resp));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Test(description ="修改团长信息(幂等)",priority = 2)
     public void userTeamInfoUpdateChannelUserIdTest(){
         try {
-
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/update", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity =UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
             entity.setAppType(2);
             entity.setChannelId(1);
-            entity.setChannelUserId("8e845d52d22544b1b4df862b96fa18c9");
+            entity.setChannelUserId("Ocr6NZ");
             entity.setRealName("xiongxinzhou");
             entity.setStatus(0);
             builder.setUpdateRequest(entity.build());
@@ -102,19 +131,18 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     @Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 3)
     public void fansTeamInfoQueryBatchAppTypeTest(){
+        String channelUserId =DataUtils.getRandomString(6);
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.newBuilder();
             builder.setAppType(2);
             builder.setChannelId(1);
-            builder.addChannelUserId(channelUserId);
+            builder.addChannelUserId("Ocr6NZ");
             DataUtils.logBuilder(builder,"根据批量channelUserId查询团长信息(幂等)_");
-
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse resp = UserTeamInfoServiceProto.UserTeamInfoQueryBatchResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(resp));
@@ -134,15 +162,13 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
             commonRequest.setAppType(2);
             commonRequest.setChannelId(1);
-            commonRequest.setChannelUserId("8e84577fd8b145c2a35b4a85c356d7a0");
+            commonRequest.setChannelUserId("Ocr6NZ");
             builder.setCommonRequest(commonRequest);
             DataUtils.logBuilder(builder,"查询粉丝团长(幂等)_");
-
             post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             HttpResponse response = httpClient.execute(post);
             jsonFormat =new JsonFormat();
-
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.FansTeamInfoQueryResponse resp = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
             System.out.println("result:" + jsonFormat.printToString(resp));
@@ -152,35 +178,6 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             e.printStackTrace();
         }
     }
-
-    @Test(description ="删除团长信息(幂等)",priority = 5)
-    public void fansTeamInfoDeleteAppTypeTest(){
-        try {
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
-            post = new HttpPost(uri);
-            UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoDeleteRequest.newBuilder();
-            UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
-            commonRequest.setAppType(appType);
-            commonRequest.setChannelId(channelId);
-            commonRequest.setChannelUserId(channelUserId);
-            builder.setDeleteRequest(commonRequest);
-            DataUtils.logBuilder(builder,"删除团长信息(幂等)_");
-
-            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            jsonFormat =new JsonFormat();
-
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
-            UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
-            System.out.println("result:" + jsonFormat.printToString(resp));
-            Reporter.log(jsonFormat.printToString(resp));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 
     @Test(description ="1.注册团长" +
                        "2.根据批量channelUserId查询团长信息" +
