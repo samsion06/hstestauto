@@ -37,7 +37,8 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
 
     @org.testng.annotations.Test(description = "1.绑定支付宝" +
             "                                   2.用户支付宝授权" +
-            "                                   3.用户支付宝取消授权 OK")
+            "                                   3.支付宝授权查询" +
+            "                                   4.取消支付包授权 OK")
     public void BindAndAuthAndCancelTest(){
 
         //生成随机数字
