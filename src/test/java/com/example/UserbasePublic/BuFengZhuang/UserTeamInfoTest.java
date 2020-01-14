@@ -2,6 +2,7 @@ package com.example.UserbasePublic.BuFengZhuang;
 import com.example.domain.UserTeamInfo;
 import com.example.mapper.TeamRealtionInfoMapper;
 import com.example.utils.CheckDatabase;
+import com.example.utils.DataTransferUtil;
 import com.example.utils.DataUtils;
 import com.example.utils.HttpConfigUtil;
 import com.googlecode.protobuf.format.JsonFormat;
@@ -19,6 +20,8 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import sun.awt.datatransfer.DataTransferer;
+
 import java.io.IOException;
 import java.net.URI;
 
@@ -34,6 +37,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpPost post;
     private static HttpResponse response;
     private static JsonFormat jsonFormat;
+    private static ByteArrayEntity byteArrayEntity;
     private String channelUserId;
 
     @BeforeTest
@@ -197,63 +201,10 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             //1.注册团长 29
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/register", "");
             post = new HttpPost(uri);
-            UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder registerBuilder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            registerBuilder.setAppType(userTeamInfo.getAppType());
-            registerBuilder.setRealName(userTeamInfo.getRealName());
-            registerBuilder.setChannelId(userTeamInfo.getChannelId());
-            registerBuilder.setChannelUserId(userTeamInfo.getChannelUserId());
-            registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
-            registerBuilder.setDeposit(userTeamInfo.getDeposit());
-            registerBuilder.setEmergencyNumber(userTeamInfo.getEmergencyNum());
-            registerBuilder.setGender(userTeamInfo.getGender());
-            registerBuilder.setHeadNum(userTeamInfo.getHeadNum());
-            registerBuilder.setIsShowCommission(userTeamInfo.getIsShownCommission());
-            registerBuilder.setIsVirtual(userTeamInfo.getIsVirtual());
-            registerBuilder.setLicenseImg(userTeamInfo.getLicenseImg());
-            registerBuilder.setMobile(userTeamInfo.getMobile());
-            registerBuilder.setOperatorId(userTeamInfo.getOperatorId());
-            registerBuilder.setOperatorLongId(userTeamInfo.getOperatorLongId());
-            registerBuilder.setOperatorTel(userTeamInfo.getOperatorTel());
-            registerBuilder.setRecommend(userTeamInfo.getRecommend());
-            registerBuilder.setSource(userTeamInfo.getSource());
-            registerBuilder.setStatus(userTeamInfo.getStatus());
-            registerBuilder.setStopReason(userTeamInfo.getStopReason());
-            registerBuilder.setCompanyId(userTeamInfo.getCompanyId());
-            registerBuilder.setWeixin(userTeamInfo.getWeixin());
-            registerBuilder.setCompanyName(userTeamInfo.getCompanyName());
-            registerBuilder.setStartTime(userTeamInfo.getStartTime());
-            registerBuilder.setStopEndTime(userTeamInfo.getStopEndTime());
-            registerBuilder.setAuditTime(userTeamInfo.getAuditTime());
-            registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
-
-
-            UserTeamInfoServiceProto.UserTeamAddressRegister.Builder userTeamAddressRegisteruilder = UserTeamInfoServiceProto.UserTeamAddressRegister.newBuilder();
-            userTeamAddressRegisteruilder.setChannelUserId(userTeamInfo.getChannelUserId());
-            userTeamAddressRegisteruilder.setChannelId(userTeamInfo.getChannelId());
-            userTeamAddressRegisteruilder.setAppType(1);
-            userTeamAddressRegisteruilder.setProvinceCode(86);
-            userTeamAddressRegisteruilder.setCityCode(86);
-            userTeamAddressRegisteruilder.setDistrictCode(86);
-            userTeamAddressRegisteruilder.setAdcode(86);
-            userTeamAddressRegisteruilder.setProvince("广东");
-            userTeamAddressRegisteruilder.setCity("广州");
-            userTeamAddressRegisteruilder.setDistrict("海珠区");
-            userTeamAddressRegisteruilder.setAddress("天意酒店");
-            userTeamAddressRegisteruilder.setCommunity("幸坛小区");
-            userTeamAddressRegisteruilder.setAddressDetail("520");
-            userTeamAddressRegisteruilder.setMemberNumber(20);
-            userTeamAddressRegisteruilder.setLongitude(5201314);
-            userTeamAddressRegisteruilder.setLatitude(5201314);
-            userTeamAddressRegisteruilder.setGeoHash("fuck");
-            userTeamAddressRegisteruilder.setGeoHash5Km("fuck");
-
-            registerBuilder.setAddress(userTeamAddressRegisteruilder);
-            DataUtils.logBuilder(registerBuilder, "注册团长信息(幂等)_");
-
-            post.setEntity(new ByteArrayEntity(registerBuilder.build().toByteArray()));
+            byteArrayEntity= DataTransferUtil.UserTeamInfoRegisterRequest(userTeamInfo);
+            post.setEntity(byteArrayEntity);
             post.setHeader("Content-Type", "application/x-protobuf");
             response = httpClient.execute(post);
-
             Assert.assertEquals(200, response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.UserTeamInfoRegisterResponse resp = UserTeamInfoServiceProto.UserTeamInfoRegisterResponse.parseFrom(response.getEntity().getContent());
             System.out.println(jsonFormat.printToString(resp));

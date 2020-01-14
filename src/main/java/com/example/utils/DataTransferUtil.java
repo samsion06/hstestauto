@@ -1,5 +1,6 @@
 package com.example.utils;
 
+import com.example.domain.UserTeamInfo;
 import com.google.common.collect.Lists;
 import com.hs.productservice.api.proto.getdetailbyid.ProductServiceApiGetDetailById;
 import com.hs.productservice.api.proto.getdetailbyidlist.ProductServiceApiGetDetailByIdList;
@@ -612,6 +613,66 @@ public class DataTransferUtil {
     }
 
     /**
-     * 团长信息 从这个开始不封装试试
+     * 团长信息
      */
+    //团长注册
+    public static ByteArrayEntity UserTeamInfoRegisterRequest(UserTeamInfo userTeamInfo){
+        UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder registerBuilder = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
+        registerBuilder.setAppType(userTeamInfo.getAppType());
+        registerBuilder.setRealName(userTeamInfo.getRealName());
+        registerBuilder.setChannelId(userTeamInfo.getChannelId());
+        registerBuilder.setChannelUserId(userTeamInfo.getChannelUserId());
+        registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
+        registerBuilder.setDeposit(userTeamInfo.getDeposit());
+        registerBuilder.setEmergencyNumber(userTeamInfo.getEmergencyNum());
+        registerBuilder.setGender(userTeamInfo.getGender());
+        registerBuilder.setHeadNum(userTeamInfo.getHeadNum());
+        registerBuilder.setIsShowCommission(userTeamInfo.getIsShownCommission());
+        registerBuilder.setIsVirtual(userTeamInfo.getIsVirtual());
+        registerBuilder.setLicenseImg(userTeamInfo.getLicenseImg());
+        registerBuilder.setMobile(userTeamInfo.getMobile());
+        registerBuilder.setOperatorId(userTeamInfo.getOperatorId());
+        registerBuilder.setOperatorLongId(userTeamInfo.getOperatorLongId());
+        registerBuilder.setOperatorTel(userTeamInfo.getOperatorTel());
+        registerBuilder.setRecommend(userTeamInfo.getRecommend());
+        registerBuilder.setSource(userTeamInfo.getSource());
+        registerBuilder.setStatus(userTeamInfo.getStatus());
+        registerBuilder.setStopReason(userTeamInfo.getStopReason());
+        registerBuilder.setCompanyId(userTeamInfo.getCompanyId());
+        registerBuilder.setWeixin(userTeamInfo.getWeixin());
+        registerBuilder.setCompanyName(userTeamInfo.getCompanyName());
+        registerBuilder.setStartTime(userTeamInfo.getStartTime());
+        registerBuilder.setStopEndTime(userTeamInfo.getStopEndTime());
+        registerBuilder.setAuditTime(userTeamInfo.getAuditTime());
+        registerBuilder.setAuditorName(userTeamInfo.getAuditorName());
+
+        UserTeamInfoServiceProto.UserTeamAddressRegister.Builder userTeamAddressRegisteruilder = UserTeamInfoServiceProto.UserTeamAddressRegister.newBuilder();
+        userTeamAddressRegisteruilder.setChannelUserId(userTeamInfo.getChannelUserId());
+        userTeamAddressRegisteruilder.setChannelId(userTeamInfo.getChannelId());
+        userTeamAddressRegisteruilder.setAppType(1);
+        userTeamAddressRegisteruilder.setProvinceCode(86);
+        userTeamAddressRegisteruilder.setCityCode(86);
+        userTeamAddressRegisteruilder.setDistrictCode(86);
+        userTeamAddressRegisteruilder.setAdcode(86);
+        userTeamAddressRegisteruilder.setProvince("广东");
+        userTeamAddressRegisteruilder.setCity("广州");
+        userTeamAddressRegisteruilder.setDistrict("海珠区");
+        userTeamAddressRegisteruilder.setAddress("天意酒店");
+        userTeamAddressRegisteruilder.setCommunity("幸坛小区");
+        userTeamAddressRegisteruilder.setAddressDetail("520");
+        userTeamAddressRegisteruilder.setMemberNumber(20);
+        userTeamAddressRegisteruilder.setLongitude(5201314);
+        userTeamAddressRegisteruilder.setLatitude(5201314);
+        userTeamAddressRegisteruilder.setGeoHash("fuck");
+        userTeamAddressRegisteruilder.setGeoHash5Km("fuck");
+
+        registerBuilder.setAddress(userTeamAddressRegisteruilder);
+        ByteArrayEntity bytes=new ByteArrayEntity(registerBuilder.build().toByteArray());
+        DataUtils.logBuilder(registerBuilder, "注册团长信息(幂等)_");
+        return bytes;
+    }
+
+
+
+
 }
