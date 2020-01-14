@@ -17,10 +17,11 @@ import org.apache.jmeter.protocol.java.sampler.AbstractJavaSamplerClient;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
 import org.apache.jmeter.samplers.SampleResult;
 
+import java.io.IOException;
 import java.net.URI;
 
 public class TeamInfoUpdate extends AbstractJavaSamplerClient {
-    //入参变量
+
     private String ChannelUserId;
     private String realName;
     private String result;
@@ -28,14 +29,13 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
     private Integer port;
     private Integer AppType;
 
-
     @Override
     public Arguments getDefaultParameters() {
         Arguments params = new Arguments();
         params.addArgument("url", "");
         params.addArgument("port", "");
+        params.addArgument("AppType", "");//AppType
         params.addArgument("ChannelUserId", "");
-        params.addArgument("AppType", "");
         params.addArgument("realName", "");
         return params;
     }
@@ -46,19 +46,14 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
         AppType = arg0.getIntParameter("AppType");
         ChannelUserId = arg0.getParameter("ChannelUserId");
         realName = arg0.getParameter("realName");
-
-
-
-
     }
 
     public SampleResult runTest(JavaSamplerContext javaSamplerContext) {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost post = null;
+        HttpPost post=null;
         URI uri=null;
-        ByteArrayEntity byteArrayEntity=null;
+        ByteArrayEntity byteArrayEntity;
         JsonFormat jsonFormat = new JsonFormat();
-        //构建写出对象
         SampleResult sr = new SampleResult();
         try {
             //构造请求
@@ -79,11 +74,11 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
             HttpResponse response = httpClient.execute(post);
             //判断响应状态
             if (response.getStatusLine().getStatusCode() == 200) {
-                UserAliPayAuthServiceProto.UserAliPayAuthInfoResponse resp = UserAliPayAuthServiceProto.UserAliPayAuthInfoResponse.parseFrom(response.getEntity().getContent());
+                UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
                 //事务计时结束
                 sr.sampleEnd();
                 sr.setSuccessful(true);
-                result = resp.toString();
+                result = jsonFormat.printToString(resp);
             } else{
                 sr.setSuccessful(false);
                 result = String.valueOf(response.getStatusLine().getStatusCode());
@@ -100,7 +95,7 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
                 if(post != null){
                     post.releaseConnection();
                 }
-            } catch (IOException e) {
+            } catch(IOException e) {
                 e.printStackTrace();
             }
         }

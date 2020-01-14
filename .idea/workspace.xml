@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/getMyFans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,14 +217,7 @@
       <workItem from="1578916999205" duration="959000" />
       <workItem from="1578922221484" duration="7000" />
       <workItem from="1578923909139" duration="518000" />
-      <workItem from="1578965640746" duration="2253000" />
-    </task>
-    <task id="LOCAL-00248" summary="update">
-      <created>1578563083071</created>
-      <option name="number" value="00248" />
-      <option name="presentableId" value="LOCAL-00248" />
-      <option name="project" value="LOCAL" />
-      <updated>1578563083071</updated>
+      <workItem from="1578965640746" duration="2495000" />
     </task>
     <task id="LOCAL-00249" summary="update">
       <created>1578563468470</created>
@@ -566,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578917822877</updated>
     </task>
-    <option name="localTasksCounter" value="297" />
+    <task id="LOCAL-00297" summary="update">
+      <created>1578968991312</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1578968991312</updated>
+    </task>
+    <option name="localTasksCounter" value="298" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,12 +607,12 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578917822676">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578968991133">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578902121099" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578917822676" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578902378814" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578968991133" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578299650158" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
