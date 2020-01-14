@@ -7,9 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/SpringbootMybatisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/SpringbootMybatisApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/utils/DataUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/DataUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQueryBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoQueryBatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/Jmeter/TeamInfoUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserWeChatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +46,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -54,7 +59,20 @@
       <recent name="$PROJECT_DIR$/src/main/resources/TestFile/test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest">
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.BuFengZhuang.Test" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.BuFengZhuang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringbootMybatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.SpringbootMybatisApplication" />
@@ -134,31 +152,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserbaseTest.LoginAndUpdate" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UserbaseTest" />
-      <option name="METHOD_NAME" value="LoginAndUpdate" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="TestNG.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest" />
         <item itemvalue="TestNG.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest (2)" />
         <item itemvalue="TestNG.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest (1)" />
         <item itemvalue="TestNG.UserTeamInfoTest.userTeamCURD" />
-        <item itemvalue="TestNG.UserbaseTest.LoginAndUpdate" />
       </list>
     </recent_temporary>
   </component>
@@ -223,14 +223,7 @@
       <workItem from="1578916999205" duration="959000" />
       <workItem from="1578922221484" duration="7000" />
       <workItem from="1578923909139" duration="518000" />
-      <workItem from="1578965640746" duration="6550000" />
-    </task>
-    <task id="LOCAL-00257" summary="update">
-      <created>1578878876946</created>
-      <option name="number" value="00257" />
-      <option name="presentableId" value="LOCAL-00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1578878876946</updated>
+      <workItem from="1578965640746" duration="10957000" />
     </task>
     <task id="LOCAL-00258" summary="update">
       <created>1578881683612</created>
@@ -568,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578972774397</updated>
     </task>
-    <option name="localTasksCounter" value="306" />
+    <task id="LOCAL-00306" summary="update">
+      <created>1578973370717</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1578973370717</updated>
+    </task>
+    <option name="localTasksCounter" value="307" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,52 +613,52 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578972774285">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578973370609">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578902121099" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578972774285" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578973370609" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578970546063" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578969883027" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1578291251893" />
-    <state width="1638" height="344" key="GridCell.Tab.0.bottom" timestamp="1578973155907">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="173" key="GridCell.Tab.0.bottom" timestamp="1578985749933">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578909979514" />
     <state width="1638" height="344" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578973155907" />
-    <state width="1638" height="216" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578970230451" />
+    <state width="1638" height="173" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578985749933" />
     <state width="1638" height="197" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578970003901" />
     <state width="1638" height="368" key="GridCell.Tab.0.bottom/0.23.1680.958@0.23.1680.958" timestamp="1578304884296" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="344" key="GridCell.Tab.0.center" timestamp="1578973155906">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="173" key="GridCell.Tab.0.center" timestamp="1578985749932">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578909979513" />
     <state width="1638" height="344" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578973155906" />
-    <state width="1638" height="216" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578970230450" />
+    <state width="1638" height="173" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578985749932" />
     <state width="1638" height="197" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578970003900" />
     <state width="1638" height="368" key="GridCell.Tab.0.center/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="344" key="GridCell.Tab.0.left" timestamp="1578973155906">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="173" key="GridCell.Tab.0.left" timestamp="1578985749932">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578909979513" />
     <state width="1638" height="344" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578973155906" />
-    <state width="1638" height="216" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578970230450" />
+    <state width="1638" height="173" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578985749932" />
     <state width="1638" height="197" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578970003900" />
     <state width="1638" height="368" key="GridCell.Tab.0.left/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578300855417" />
     <state width="1638" height="208" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="344" key="GridCell.Tab.0.right" timestamp="1578973155907">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state width="1638" height="173" key="GridCell.Tab.0.right" timestamp="1578985749933">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578909979513" />
     <state width="1638" height="344" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578973155907" />
-    <state width="1638" height="216" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578970230451" />
+    <state width="1638" height="173" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578985749933" />
     <state width="1638" height="197" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578970003900" />
     <state width="1638" height="368" key="GridCell.Tab.0.right/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
@@ -687,12 +687,12 @@
     <state width="1638" height="284" key="GridCell.Tab.1.right/0.23.1680.950@0.23.1680.950" timestamp="1578902079884" />
     <state width="1638" height="205" key="GridCell.Tab.1.right/0.23.1680.952@0.23.1680.952" timestamp="1578882504844" />
     <state width="1638" height="198" key="GridCell.Tab.1.right/0.23.1680.954@0.23.1680.954" timestamp="1578906517549" />
-    <state x="328" y="81" key="SettingsEditor" timestamp="1578970775852">
+    <state x="328" y="81" width="1111" height="837" key="SettingsEditor" timestamp="1578985893437">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="328" y="81" key="SettingsEditor/0.23.1680.950@0.23.1680.950" timestamp="1578835179749" />
     <state x="328" y="81" key="SettingsEditor/0.23.1680.952@0.23.1680.952" timestamp="1577955362247" />
-    <state x="328" y="81" key="SettingsEditor/0.23.1680.954@0.23.1680.954" timestamp="1578970775852" />
+    <state x="328" y="81" width="1111" height="837" key="SettingsEditor/0.23.1680.954@0.23.1680.954" timestamp="1578985893437" />
     <state x="328" y="81" key="SettingsEditor/0.23.1680.956@0.23.1680.956" timestamp="1577935398338" />
     <state x="551" y="220" key="Vcs.Push.Dialog.v2" timestamp="1578923924569">
       <screen x="0" y="23" width="1680" height="950" />
@@ -720,6 +720,14 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="515" y="296" key="git4idea.merge.GitPullDialog/0.23.1680.950@0.23.1680.950" timestamp="1578558517358" />
+    <state x="234" y="196" key="new project wizard" timestamp="1578983932778">
+      <screen x="0" y="23" width="1680" height="954" />
+    </state>
+    <state x="234" y="196" key="new project wizard/0.23.1680.954@0.23.1680.954" timestamp="1578983932778" />
+    <state x="505" y="229" key="run.anything.popup" timestamp="1578982432554">
+      <screen x="0" y="23" width="1680" height="954" />
+    </state>
+    <state x="505" y="229" key="run.anything.popup/0.23.1680.954@0.23.1680.954" timestamp="1578982432554" />
     <state x="505" y="231" width="670" height="678" key="search.everywhere.popup" timestamp="1578917672802">
       <screen x="0" y="23" width="1680" height="952" />
     </state>
@@ -763,16 +771,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/utils/CheckDatabase.java</url>
           <line>65</line>
           <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java</url>
-          <line>206</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/BuFengZhuang/UserTeamInfoTest.java</url>
-          <line>207</line>
-          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserbaseTest.java</url>

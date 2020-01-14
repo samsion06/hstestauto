@@ -1,9 +1,7 @@
 package com.example.UserbasePublic;
-
 import com.example.domain.UserWeChatInfo;
 import com.example.mapper.UserBaseInfoMapper;
 import com.example.utils.*;
-
 import com.hs.user.base.proto.UserWeChatAuthServiceProto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -57,7 +55,7 @@ public class UserWeChatTest extends AbstractTestNGSpringContextTests{
 
         UserWeChatInfo userWeChatInfo=new UserWeChatInfo();
         userWeChatInfo.setOpenId(DataUtils.getRandomString(9)); //随机生成openId
-        userWeChatInfo.setChannelUserId(String.valueOf((int)((Math.random()*9+1)*1000)));//随机生成ChannelUserId
+        userWeChatInfo.setChannelUserId(DataUtils.getRandomChannelUserId(5));//随机生成5为数字
         userWeChatInfo.setAppId("Appid01");
 
         try {
