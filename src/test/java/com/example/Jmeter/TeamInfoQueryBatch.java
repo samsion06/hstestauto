@@ -47,7 +47,7 @@ public class TeamInfoQueryBatch extends AbstractJavaSamplerClient {
         SampleResult sr = new SampleResult();
         try {
             //构造请求
-            uri = new URI("http", null, url, port, "/user/team/info/query", "", null);
+            uri = new URI("http", null, url, port, "/user/team/info/query/batch", "", null);
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.Builder queryBatchBuilder = UserTeamInfoServiceProto.UserTeamInfoQueryBatchRequest.newBuilder();
             queryBatchBuilder.setAppType(AppType);

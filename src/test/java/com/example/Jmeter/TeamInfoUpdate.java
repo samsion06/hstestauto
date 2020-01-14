@@ -59,6 +59,7 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
             entity.setChannelId(1);
             entity.setChannelUserId(ChannelUserId);
             entity.setRealName(realName);
+            entity.setStatus(0);
             updateBuilder.setUpdateRequest(entity.build());
 
             sr.setSamplerData("data:\n"+updateBuilder.toString());
