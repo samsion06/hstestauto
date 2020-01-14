@@ -34,8 +34,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -48,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 14, 2020 11:32:06 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 14, 2020 11:39:23 AM</span>
 				</a>
 			</li>
 			<li>
@@ -74,7 +73,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -125,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -140,10 +138,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -158,102 +156,17 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
-					<div class='test-heading'>
-						<span class='test-name'>userTeamInfoUpdateChannelUserIdTest</span>
-						<span class='test-time'>Jan 14, 2020 11:32:06 AM</span>
-						<span class='test-status right fail'>fail</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jan 14, 2020 11:32:06 AM</span>
-	<span class='label end-time'>Jan 14, 2020 11:32:07 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+36ms</span>
-</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='debug'>
-					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
-  realName: "xiongxinzhou"
-  channelUserId: "8e845d52d22544b1b4df862b96fa18c9"
-  channelId: 1
-  appType: 2
-}
-}</td>
-				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'><pre>java.lang.AssertionError: expected [RESP_CODE_FAILED] but found [RESP_CODE_SUCCESS]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest(UserTeamInfoTest.java:98)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:205)
-	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:181)
-	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:217)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:641)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
-</pre></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>userTeamCURD</span>
-						<span class='test-time'>Jan 14, 2020 11:32:06 AM</span>
+						<span class='test-time'>Jan 14, 2020 11:39:23 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 14, 2020 11:32:06 AM</span>
-	<span class='label end-time'>Jan 14, 2020 11:32:06 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+783ms</span>
+	<span class='label start-time'>Jan 14, 2020 11:39:23 AM</span>
+	<span class='label end-time'>Jan 14, 2020 11:39:23 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+773ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -267,9 +180,9 @@
 			<tbody>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>注册团长信息(幂等)_传入参数:{realName: "xiongxinzhou"
-channelUserId: "333065"
+channelUserId: "132652"
 channelId: 1
 appType: 1
 deposit: 5201314
@@ -295,7 +208,7 @@ source: 1
 operatorTel: "17702015334"
 companyName: "\345\221\250\346\260\217\351\233\206\345\233\242"
 address {
-  channelUserId: "333065"
+  channelUserId: "132652"
   channelId: 1
   appType: 1
   provinceCode: 86
@@ -318,15 +231,15 @@ address {
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110213,"realName": "xiongxinzhou","channelUserId": "333065","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578972726337,"updateTime": 1578972726337},"userTeamAddressEntity": {"channelUserId": "333065","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578972726337,"updateTime": 1578972726337}}]</td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110217,"realName": "xiongxinzhou","channelUserId": "132652","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578973163298,"updateTime": 1578973163298},"userTeamAddressEntity": {"channelUserId": "132652","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578973163298,"updateTime": 1578973163298}}]</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
   realName: "xiongxinzhou"
-  channelUserId: "333065"
+  channelUserId: "132652"
   channelId: 1
   appType: 1
 }
@@ -334,32 +247,32 @@ address {
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110213,"realName": "xiongxinzhou","channelUserId": "333065","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578972726337,"updateTime": 1578972726337},"userTeamAddressEntity": {"channelUserId": "333065","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578972726337,"updateTime": 1578972726337}}]</td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110217,"realName": "xiongxinzhou","channelUserId": "132652","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578973163298,"updateTime": 1578973163298},"userTeamAddressEntity": {"channelUserId": "132652","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578973163298,"updateTime": 1578973163298}}]</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>数据库部分匹配：real_name的值得变更为：xiongxinzhou</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "333065"
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>根据批量channelUserId查询团长信息(幂等)_传入参数:{channelUserId: "132652"
 channelId: 1
 appType: 1
 }</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110213,"realName": "xiongxinzhou","channelUserId": "333065","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578972726337,"updateTime": 1578972726337},"userTeamAddressEntity": {"channelUserId": "333065","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578972726337,"updateTime": 1578972726337}}]</td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110217,"realName": "xiongxinzhou","channelUserId": "132652","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578973163298,"updateTime": 1578973163298},"userTeamAddressEntity": {"channelUserId": "132652","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578973163298,"updateTime": 1578973163298}}]</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>查询粉丝团长(幂等)_传入参数:{commonRequest {
-  channelUserId: "333065"
+  channelUserId: "132652"
   channelId: 1
   appType: 1
 }
@@ -367,14 +280,14 @@ appType: 1
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110213,"realName": "xiongxinzhou","channelUserId": "333065","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578972726337,"updateTime": 1578972726337},"userTeamAddressEntity": {"channelUserId": "333065","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578972726337,"updateTime": 1578972726337}}]</td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110217,"realName": "xiongxinzhou","channelUserId": "132652","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578973163298,"updateTime": 1578973163298},"userTeamAddressEntity": {"channelUserId": "132652","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578973163298,"updateTime": 1578973163298}}]</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>删除团长信息(幂等)_传入参数:{commonRequest {
-  channelUserId: "333065"
+  channelUserId: "132652"
   channelId: 1
   appType: 1
 }
@@ -382,17 +295,67 @@ appType: 1
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
-					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110213,"realName": "xiongxinzhou","channelUserId": "333065","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578972726337,"updateTime": 1578972726337},"userTeamAddressEntity": {"channelUserId": "333065","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578972726337,"updateTime": 1578972726337}}]</td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>返回值:[{"responseCode": {"msg": "RESP_CODE_SUCCESS"},"userTeamInfoEntity": {"id": 110217,"realName": "xiongxinzhou","channelUserId": "132652","channelId": 1,"appType": 1,"deposit": 5201314,"recommend": "周雄鑫","operatorId": "5201314","operatorLongId": 5201314,"companyId": 5201314,"mobile": "17702015334","startTime": 5201314,"status": 1,"isVirtual": 1,"gender": 1,"weixin": "5201314","stopReason": "周雄鑫","stopEndTime": 5201314,"headNum": "5201314","emergencyNumber": "17702015334","auditTime": 5201314,"auditorName": "5201314","isShowCommission": 1,"licenseImg": "www.baidu.com","source": 1,"operatorTel": "17702015334","companyName": "周氏集团","createTime": 1578973163298,"updateTime": 1578973163298},"userTeamAddressEntity": {"channelUserId": "132652","channelId": 1,"appType": 1,"provinceCode": 86,"cityCode": 86,"districtCode": 86,"adcode": 86,"province": "广东","city": "广州","district": "海珠区","address": "天意酒店","community": "幸坛小区","addressDetail": "520","memberNumber": 20,"longitude": 5201314.0,"latitude": 5201314.0,"geoHash": "fuck","geoHash5km": "fuck","createTime": 1578973163298,"updateTime": 1578973163298}}]</td>
 				</tr>
 				<tr class='log' status='debug'>
 					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>数据库部分匹配：is_delete的值得变更为：1</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>11:32:07 AM</td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>userTeamInfoUpdateChannelUserIdTest</span>
+						<span class='test-time'>Jan 14, 2020 11:39:23 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 14, 2020 11:39:23 AM</span>
+	<span class='label end-time'>Jan 14, 2020 11:39:23 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+33ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>修改团长信息(幂等)_传入参数:{updateRequest {
+  realName: "xiongxinzhou"
+  channelUserId: "8e845d52d22544b1b4df862b96fa18c9"
+  channelId: 1
+  appType: 2
+}
+}</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>11:39:24 AM</td>
+					<td class='step-details'>{"code": 1,"msg": "RESP_CODE_FAILED"}</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>11:39:24 AM</td>
 					<td class='step-details'>Test passed</td>
 				</tr>
 			</tbody>
@@ -426,107 +389,6 @@ appType: 1
 </div>
 <!-- test view -->
 <!-- category view -->
-<div id='exception-view' class='view hide'>
-
-    <section id='controls'>
-        <div class='controls grey lighten-4'>
-            <!-- search -->
-            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
-                <a href="#" class='search-div'>
-                    <i class='material-icons'>search</i> Search
-                </a>
-
-                <div class='input-field left hide'>
-                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-                </div>
-
-            </div>
-            <!-- search -->
-        </div>
-    </section>
-
-    <div class='subview-left left'>
-
-        <div class='view-summary'>
-            <h5>Exceptions</h3>
-                <ul id='exception-collection' class='exception-collection'>
-
-                        <li class='exception displayed active'>
-                            <div class='exception-heading'>
-                                <span class='exception-name'>java.lang.AssertionError</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-                            </div>
-                            <div class='exception-content hide'>
-                                <div class='exception-tests'>
-                                    <table class='bordered table-results'>
-                                        <thead>
-                                        <tr>
-                                            <th>Timestamp</th>
-                                            <th>TestName</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                                    <tr>
-                                                        <td>Jan 14, 2020 11:32:06 AM</td>
-                                                        <td class='linked' test-id='1'>userTeamInfoUpdateChannelUserIdTest</td>
-                                                        <td><pre><pre>java.lang.AssertionError: expected [RESP_CODE_FAILED] but found [RESP_CODE_SUCCESS]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest(UserTeamInfoTest.java:98)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:205)
-	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:181)
-	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:217)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:641)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:373)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:334)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:119)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:407)
-</pre></pre></td>
-                                                    </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
-                </ul>
-        </div>
-    </div>
-
-    <div class='subview-right left'>
-        <div class='view-summary'>
-            <h5 class='exception-name'></h5>
-        </div>
-    </div>
-</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -548,19 +410,19 @@ appType: 1
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 14, 2020 11:32:06 AM</div>
+					<div class='panel-lead'>Jan 14, 2020 11:39:23 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 14, 2020 11:32:06 AM</div>
+			 		<div class='panel-lead'>Jan 14, 2020 11:39:23 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>783ms</div>
+					<div class='panel-lead'>773ms</div>
 				</div>
 			</div>
 		</div>
@@ -573,16 +435,16 @@ appType: 1
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 1,
+				passParent: 2,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
-				passChild: 1,
-				failChild: 1,
+				passChild: 2,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
