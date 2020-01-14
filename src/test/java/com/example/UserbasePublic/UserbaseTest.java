@@ -70,10 +70,10 @@ public class UserbaseTest extends AbstractTestNGSpringContextTests {
         userLoginInfo.setChannelId(1);
 
         HsrjUserInfo hsrjUserInfo=new HsrjUserInfo();
-        hsrjUserInfo.setPushNo(pushNo);
+        hsrjUserInfo.setPushNo(pushNo.toLowerCase());
         hsrjUserInfo.setChannelUserId("176735");
 
-
+        System.out.println("穿进去的pushno"+pushNo);
         try {
             //登录
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/base/user/info/pd/login", "");

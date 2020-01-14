@@ -128,8 +128,9 @@ public class CheckDatabase {
         switch (method) {
             case "pushNoUpdate"://更新邀请码
                 dataBaseHsrjUserInfo=userBaseInfoMapper.queryHsrjUserInfo(hsrjUserInfo.getChannelUserId());
+                System.out.println("数据库取出来的"+dataBaseHsrjUserInfo.getChannelUserId());
                 Assert.assertEquals(hsrjUserInfo.getPushNo(), dataBaseHsrjUserInfo.getPushNo());
-                DataUtils.logDatabase(1,"pushNo",dataBaseHsrjUserInfo.getPushNo().toString());
+                DataUtils.logDatabase(1,"pushNo",dataBaseHsrjUserInfo.getPushNo());
                 break;
             case "userTagStatusUpdate": //更新用户标签
                 dataBaseHsrjUserInfo=userBaseInfoMapper.queryHsrjUserInfo(hsrjUserInfo.getChannelUserId());

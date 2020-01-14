@@ -24,7 +24,6 @@ public class UserBaseInfo {
     private Integer userStatus;
     private Integer isDelete;
     private Integer status;
-
     private Date creatTime;
     private Date updateTime;
 

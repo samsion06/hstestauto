@@ -50,7 +50,7 @@
 //        SampleResult sr = new SampleResult();
 //        try {
 //            //构造请求
-//            uri = new URI("http", null, url, port, "/aliPay/auth/info", "", null);
+//            uri = new URI("http", null, url, port, "/user/team/info/update", "", null);
 //            post = new HttpPost(uri);
 //
 //            UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder updateBuilder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
