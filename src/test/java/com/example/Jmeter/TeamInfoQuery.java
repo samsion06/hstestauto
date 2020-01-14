@@ -14,7 +14,7 @@ import org.apache.jmeter.samplers.SampleResult;
 import java.io.IOException;
 import java.net.URI;
 
-public class TeamInfoUpdate extends AbstractJavaSamplerClient {
+public class TeamInfoQuery extends AbstractJavaSamplerClient {
 
     private String ChannelUserId;
     private String realName;
@@ -45,25 +45,23 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
     public SampleResult runTest(JavaSamplerContext javaSamplerContext) {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost post=null;
-        URI uri;
+        URI uri=null;
         JsonFormat jsonFormat = new JsonFormat();
         SampleResult sr = new SampleResult();
         try {
             //构造请求
-            uri = new URI("http", null, url, port, "/aliPay/auth/info", "", null);
+            uri = new URI("http", null, url, port, "/user/team/info/query", "", null);
             post = new HttpPost(uri);
-
-            UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder updateBuilder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
-            UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity = UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            entity.setAppType(AppType);
-            entity.setChannelId(1);
-            entity.setChannelUserId(ChannelUserId);
-            entity.setRealName(realName);
-            updateBuilder.setUpdateRequest(entity.build());
-
-            sr.setSamplerData("data:\n"+updateBuilder.toString());
+            UserTeamInfoServiceProto.FansTeamInfoQueryRequest.Builder builder = UserTeamInfoServiceProto.FansTeamInfoQueryRequest.newBuilder();
+            UserTeamInfoServiceProto.UserTeamInfoCommonRequest.Builder commonRequest = UserTeamInfoServiceProto.UserTeamInfoCommonRequest.newBuilder();
+            commonRequest.setAppType(AppType);
+            commonRequest.setChannelId(1);
+            commonRequest.setChannelUserId(ChannelUserId);
+            builder.setCommonRequest(commonRequest);
+            //写出请求参数
+            sr.setSamplerData("data:\n"+builder.toString());
             sr.setDataType(SampleResult.TEXT);
-            post.setEntity(new ByteArrayEntity(updateBuilder.build().toByteArray()));
+            post.setEntity(new ByteArrayEntity(builder.build().toByteArray()));
             post.setHeader("Content-Type", "application/x-protobuf");
             //事务开始计时
             sr.sampleStart();
@@ -71,7 +69,7 @@ public class TeamInfoUpdate extends AbstractJavaSamplerClient {
             HttpResponse response = httpClient.execute(post);
             //判断响应状态
             if (response.getStatusLine().getStatusCode() == 200) {
-                UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+                UserTeamInfoServiceProto.FansTeamInfoQueryResponse resp = UserTeamInfoServiceProto.FansTeamInfoQueryResponse.parseFrom(response.getEntity().getContent());
                 //事务计时结束
                 sr.sampleEnd();
                 sr.setSuccessful(true);
