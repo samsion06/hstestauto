@@ -35,7 +35,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     private static HttpResponse response;
     private static JsonFormat jsonFormat;
 
-    private static Integer appType=1;
+    private static Integer appType=2;
     private static Integer channelId=1;
     private static String channelUserId =(int)((Math.random()*9+1)*100000)+"";;
 
@@ -46,7 +46,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
     }
 
-    @Test(description ="注册团长信息(幂等)",priority = 1)
+    //@Test(description ="注册团长信息(幂等)",priority = 1)
     public void userTeamInfoRegisterChannelUserIdTest() {
         try {
             //注册团长
@@ -73,7 +73,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="修改团长信息(幂等)",priority = 2)
+    //@Test(description ="修改团长信息(幂等)",priority = 2)
     public void userTeamInfoUpdateChannelUserIdTest(){
         try {
 
@@ -81,10 +81,11 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
             post = new HttpPost(uri);
             UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.Builder builder = UserTeamInfoServiceProto.UserTeamInfoUpdateRequest.newBuilder();
             UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.Builder entity =UserTeamInfoServiceProto.UserTeamInfoRegisterRequest.newBuilder();
-            entity.setAppType(appType);
+            entity.setAppType(2);
             entity.setChannelId(channelId);
-            entity.setChannelUserId(channelUserId);
+            entity.setChannelUserId("8e845d52d22544b1b4df862b96fa18c9");
             entity.setRealName("xiongxinzhou");
+            entity.setStatus(0);
             builder.setUpdateRequest(entity.build());
             DataUtils.logBuilder(builder,"修改团长信息(幂等)_");
 
@@ -94,6 +95,8 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
 
             Assert.assertEquals(200,response.getStatusLine().getStatusCode());
             UserTeamInfoServiceProto.ResponseCode resp = UserTeamInfoServiceProto.ResponseCode.parseFrom(response.getEntity().getContent());
+            Assert.assertEquals("RESP_CODE_SUCCESS",resp.getMsg());
+            System.out.println(jsonFormat.printToString(resp));
             Reporter.log(jsonFormat.printToString(resp));
 
         } catch (Exception e) {
@@ -101,7 +104,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 3)
+   // @Test(description ="根据批量channelUserId查询团长信息(幂等)",priority = 3)
     public void fansTeamInfoQueryBatchAppTypeTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query/batch", "");
@@ -126,7 +129,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="查询粉丝团长(幂等)",priority = 4)
+  //  @Test(description ="查询粉丝团长(幂等)",priority = 4)
     public void fansTeamInfoQueryChannelUserIdTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/query", "");
@@ -157,7 +160,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
         }
     }
 
-    @Test(description ="删除团长信息(幂等)",priority = 5)
+   // @Test(description ="删除团长信息(幂等)",priority = 5)
     public void fansTeamInfoDeleteAppTypeTest(){
         try {
             uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.urlyx, "/user/team/info/delete", "");
@@ -194,7 +197,7 @@ public class UserTeamInfoTest extends AbstractTestNGSpringContextTests{
     public void userTeamCURD(){
         try {
             String channelUserId=(int)((Math.random()*9+1)*100000)+"";
-            UserTeamInfo userTeamInfo=new UserTeamInfo(1,channelUserId,"周雄鑫",1, 5201314l,"周雄鑫",
+            UserTeamInfo userTeamInfo=new UserTeamInfo(1,channelUserId,"xiongxinzhou",1, 5201314l,"周雄鑫",
                     "5201314",5201314l,5201314l,"17702015334",
                     5201314l,1,1,1,"5201314","周雄鑫",
                     5201314l,5201314l,"5201314","17702015334",5201314l,
