@@ -8,7 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="447723bd-df1d-4d93-b536-26430092ead1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserIdCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UserIdCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UseraliPayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/UserbasePublic/UseraliPayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/TestFile/test" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest">
+  <component name="RunManager" selected="TestNG.UseraliPayTest.aliPayAuthInfoTest">
     <configuration name="SpringbootMybatisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.SpringbootMybatisApplication" />
@@ -72,24 +74,6 @@
       <option name="PACKAGE_NAME" value="com.example.UserbasePublic.BuFengZhuang" />
       <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest" />
       <option name="METHOD_NAME" value="fansTeamInfoDeleteAppTypeTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTeamInfoTest.fansTeamInfoQueryBatchAppTypeTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.UserbasePublic.BuFengZhuang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.UserbasePublic.BuFengZhuang" />
-      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest" />
-      <option name="METHOD_NAME" value="fansTeamInfoQueryBatchAppTypeTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -151,13 +135,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UseraliPayTest.aliPayAuthInfoTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.UserbasePublic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.UserbasePublic" />
+      <option name="MAIN_CLASS_NAME" value="com.example.UserbasePublic.UseraliPayTest" />
+      <option name="METHOD_NAME" value="aliPayAuthInfoTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UseraliPayTest.aliPayAuthInfoTest" />
         <item itemvalue="TestNG.UserTeamInfoTest.userTeamInfoUpdateChannelUserIdTest" />
         <item itemvalue="TestNG.UserTeamInfoTest.fansTeamInfoDeleteAppTypeTest" />
         <item itemvalue="TestNG.UserTeamInfoTest.userTeamInfoRegisterChannelUserIdTest" />
         <item itemvalue="TestNG.UserTeamInfoTest.fansTeamInfoQueryChannelUserIdTest (1)" />
-        <item itemvalue="TestNG.UserTeamInfoTest.fansTeamInfoQueryBatchAppTypeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -222,14 +224,7 @@
       <workItem from="1578916999205" duration="959000" />
       <workItem from="1578922221484" duration="7000" />
       <workItem from="1578923909139" duration="518000" />
-      <workItem from="1578965640746" duration="15135000" />
-    </task>
-    <task id="LOCAL-00269" summary="update">
-      <created>1578886372902</created>
-      <option name="number" value="00269" />
-      <option name="presentableId" value="LOCAL-00269" />
-      <option name="project" value="LOCAL" />
-      <updated>1578886372902</updated>
+      <workItem from="1578965640746" duration="15549000" />
     </task>
     <task id="LOCAL-00270" summary="update">
       <created>1578887019373</created>
@@ -567,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578990108941</updated>
     </task>
-    <option name="localTasksCounter" value="318" />
+    <task id="LOCAL-00318" summary="update">
+      <created>1578990183113</created>
+      <option name="number" value="00318" />
+      <option name="presentableId" value="LOCAL-00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1578990183113</updated>
+    </task>
+    <option name="localTasksCounter" value="319" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,53 +614,53 @@
       <screen x="0" y="23" width="1680" height="950" />
     </state>
     <state x="552" y="214" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.23.1680.950@0.23.1680.950" timestamp="1578044298671" />
-    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578990108829">
+    <state x="306" y="102" key="CommitChangelistDialog2" timestamp="1578990182988">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.950@0.23.1680.950" timestamp="1578902121099" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.952@0.23.1680.952" timestamp="1578973370609" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1578986944990" />
-    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578990108829" />
+    <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1578990182988" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.958@0.23.1680.958" timestamp="1578304765378" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.960@0.23.1680.960" timestamp="1578301447694" />
     <state x="306" y="102" key="CommitChangelistDialog2/0.23.1680.961@0.23.1680.961" timestamp="1578291251893" />
-    <state width="1638" height="290" key="GridCell.Tab.0.bottom" timestamp="1578990007290">
+    <state width="1638" height="229" key="GridCell.Tab.0.bottom" timestamp="1578990545800">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.bottom/0.23.1680.950@0.23.1680.950" timestamp="1578909979514" />
     <state width="1638" height="344" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1578973155907" />
     <state width="1638" height="469" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1578986509440" />
-    <state width="1638" height="290" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578990007290" />
+    <state width="1638" height="229" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1578990545800" />
     <state width="1638" height="368" key="GridCell.Tab.0.bottom/0.23.1680.958@0.23.1680.958" timestamp="1578304884296" />
     <state width="1638" height="214" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
-    <state width="1638" height="290" key="GridCell.Tab.0.center" timestamp="1578990007289">
+    <state width="1638" height="229" key="GridCell.Tab.0.center" timestamp="1578990545799">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.center/0.23.1680.950@0.23.1680.950" timestamp="1578909979513" />
     <state width="1638" height="344" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1578973155906" />
     <state width="1638" height="469" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1578986509439" />
-    <state width="1638" height="290" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578990007289" />
+    <state width="1638" height="229" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1578990545799" />
     <state width="1638" height="368" key="GridCell.Tab.0.center/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="290" key="GridCell.Tab.0.left" timestamp="1578990007289">
+    <state width="1638" height="229" key="GridCell.Tab.0.left" timestamp="1578990545798">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.left/0.23.1680.950@0.23.1680.950" timestamp="1578909979513" />
     <state width="1638" height="344" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1578973155906" />
     <state width="1638" height="469" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1578986509439" />
-    <state width="1638" height="290" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578990007289" />
+    <state width="1638" height="229" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1578990545798" />
     <state width="1638" height="368" key="GridCell.Tab.0.left/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1578300855417" />
     <state width="1638" height="208" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1578291195655" />
-    <state width="1638" height="290" key="GridCell.Tab.0.right" timestamp="1578990007289">
+    <state width="1638" height="229" key="GridCell.Tab.0.right" timestamp="1578990545799">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1638" height="163" key="GridCell.Tab.0.right/0.23.1680.950@0.23.1680.950" timestamp="1578909979513" />
     <state width="1638" height="344" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1578973155907" />
     <state width="1638" height="469" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1578986509440" />
-    <state width="1638" height="290" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578990007289" />
+    <state width="1638" height="229" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1578990545799" />
     <state width="1638" height="368" key="GridCell.Tab.0.right/0.23.1680.958@0.23.1680.958" timestamp="1578304884295" />
     <state width="1638" height="214" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1578300855418" />
     <state width="1638" height="208" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1578291195656" />
@@ -707,10 +709,11 @@
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.952@0.23.1680.952" timestamp="1578965640836" />
     <state x="519" y="332" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1578108883351" />
     <state x="519" y="334" key="com.intellij.ide.util.TipDialog/0.23.1680.960@0.23.1680.960" timestamp="1578300888343" />
-    <state x="483" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578536772557">
-      <screen x="0" y="23" width="1680" height="952" />
+    <state x="483" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578990418042">
+      <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state x="483" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.952@0.23.1680.952" timestamp="1578536772557" />
+    <state x="483" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1680.956@0.23.1680.956" timestamp="1578990418042" />
     <state x="629" y="422" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578619217928">
       <screen x="0" y="23" width="1680" height="950" />
     </state>

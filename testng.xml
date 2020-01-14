@@ -22,11 +22,11 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-<!--        <test name="支付宝中心">-->
-<!--            <classes>-->
-<!--                <class name="com.example.UserbasePublic.UseraliPayTest"/>-->
-<!--            </classes>-->
-<!--        </test>-->
+        <test name="支付宝中心">
+            <classes>
+                <class name="com.example.UserbasePublic.UseraliPayTest"/>
+            </classes>
+        </test>
 
 <!--    <test name="淘宝中心">-->
 <!--        <classes>-->
@@ -46,11 +46,11 @@
 <!--            </classes>-->
 <!--    </test>-->
 
-    <test name="团长信息">
-            <classes>
-                <class name="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest"/>
-            </classes>
-    </test>
+<!--    <test name="团长信息">-->
+<!--            <classes>-->
+<!--                <class name="com.example.UserbasePublic.BuFengZhuang.UserTeamInfoTest"/>-->
+<!--            </classes>-->
+<!--    </test>-->
 
 
     <!--testng执行方式：https://www.cnblogs.com/926xiuxiu/p/9055846.html-->

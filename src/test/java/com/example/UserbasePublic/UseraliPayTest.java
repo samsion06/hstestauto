@@ -75,6 +75,19 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS",authResponse);
             CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayAuth",userAliPayInfo);
 
+            //用户支付宝授权信息查询
+            httpClient= HttpClients.createDefault();
+            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth/info","");
+            post = new HttpPost(uri);
+            byteArrayEntity = DataTransferUtil.userAliPayAuthInfoRequest(userAliPayInfo.getChannelUserId(), channelId);
+            post.setEntity(byteArrayEntity);
+            post.setHeader("Content-Type", "application/x-protobuf");
+            response = httpClient.execute(post);
+            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
+            UserAliPayAuthServiceProto.UserAliPayAuthInfoResponse resp=  UserAliPayAuthServiceProto.UserAliPayAuthInfoResponse.parseFrom(response.getEntity().getContent());
+            System.out.println(resp.toString());
+            DataUtils.logResponse(resp.toString());
+
             //将delete 改为2 作为取消授权判断
             userAliPayInfo.setStatus(2);
             //用户取消授权
@@ -88,30 +101,6 @@ public class UseraliPayTest extends AbstractTestNGSpringContextTests {
             Assert.assertEquals("RESP_CODE_SUCCESS",unbindResponseMsg);
             CheckDatabase.CheckDatabaseUserAliPayInfo(userBaseInfoMapper,"AliPayCancel",userAliPayInfo);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                httpClient.close();
-            } catch (IOException e) {
-            }
-        }
-    }
-
-   @Test(description = "用户支付宝授权信息查询")
-    public void aliPayAuthInfoTest(){
-        String channeluserId="2571";
-        try {
-            httpClient= HttpClients.createDefault();
-            uri = new URI(HttpConfigUtil.scheme, HttpConfigUtil.url, "/aliPay/auth/info","");
-            post = new HttpPost(uri);
-            byteArrayEntity = DataTransferUtil.userAliPayAuthInfoRequest(channeluserId, channelId);
-            post.setEntity(byteArrayEntity);
-            post.setHeader("Content-Type", "application/x-protobuf");
-            response = httpClient.execute(post);
-            Assert.assertEquals(200,response.getStatusLine().getStatusCode());
-            UserAliPayAuthServiceProto.UserAliPayAuthInfoResponse resp=  UserAliPayAuthServiceProto.UserAliPayAuthInfoResponse.parseFrom(response.getEntity().getContent());
-            Reporter.log("返回值：["+resp.toString()+"]");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
